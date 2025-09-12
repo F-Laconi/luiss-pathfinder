@@ -159,11 +159,11 @@ All colors MUST be HSL.
   }
 
   .card-category {
-    @apply card-modern p-6 md:p-8 cursor-pointer;
+    @apply card-modern p-6 md:p-8 cursor-pointer group;
   }
 
   .card-course {
-    @apply card-modern p-5 cursor-pointer;
+    @apply card-modern p-5 cursor-pointer group;
   }
 
   /* Button Variants */
