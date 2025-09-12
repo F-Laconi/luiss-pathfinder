@@ -11,77 +11,77 @@ const graduatePrograms = [
   {
     id: 1,
     title: "Policies and Governance in Europe",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
     languages: ["en"],
     category: "Politics & Governance"
   },
   {
     id: 2,
     title: "Economia, Istituzioni e Mercati Finanziari",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
     languages: ["it", "en"],
     category: "Economics & Finance"
   },
   {
     id: 3,
     title: "Finance",
-    image: "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=250&fit=crop&crop=face",
     languages: ["en"],
     category: "Finance"
   },
   {
     id: 4,
     title: "Global Management and Politics",
-    image: "https://images.unsplash.com/photo-1573496774426-fe5c29db2082?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
     languages: ["en"],
     category: "Management & Politics"
   },
   {
     id: 5,
     title: "Government and Public Affairs",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
     languages: ["it", "en"],
     category: "Government & Public Affairs"
   },
   {
     id: 6,
     title: "International Relations",
-    image: "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=250&fit=crop&crop=face",
     languages: ["en"],
     category: "International Relations"
   },
   {
     id: 7,
     title: "Management",
-    image: "https://images.unsplash.com/photo-1573497161197-8d417bcb4c7b?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
     languages: ["en"],
     category: "Management"
   },
   {
     id: 8,
     title: "Marketing",
-    image: "https://images.unsplash.com/photo-1573496774380-f73b1e3bbc89?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
     languages: ["it", "en"],
     category: "Marketing"
   },
   {
     id: 9,
     title: "Strategic Management",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=250&fit=crop&crop=face",
     languages: ["it", "en"],
     category: "Strategic Management"
   },
   {
     id: 10,
     title: "Amministrazione, Finanza e Controllo",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
     languages: ["it", "en"],
     category: "Administration & Finance"
   },
   {
     id: 11,
     title: "Data Science and Management",
-    image: "https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
     languages: ["en"],
     category: "Data Science"
   }
@@ -215,11 +215,8 @@ const GraduateSchool = () => {
                 className="bg-card rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-lg transition-all duration-300 group animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Program Image with overlay */}
+                {/* Program Image */}
                 <div className="relative h-48 overflow-hidden">
-                  {/* Pink curved header like in the images */}
-                  <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-b-3xl z-10"></div>
-                  
                   <img
                     src={program.image}
                     alt={program.title}
