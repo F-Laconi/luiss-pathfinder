@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import MasterCategories from "@/components/MasterCategories";
-import FeaturedCourses from "@/components/FeaturedCourses";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -10,7 +9,6 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <MasterCategories />
-      <FeaturedCourses />
       <Footer />
     </div>
   );
