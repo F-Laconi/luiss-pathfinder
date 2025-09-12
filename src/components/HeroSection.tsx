@@ -89,7 +89,7 @@ const HeroSection = () => {
           {/* CTA Button */}
           <div className="animate-fade-up" style={{ animationDelay: "0.6s" }}>
             <Button className="btn-hero">
-              Explore Masters Programs
+              LUISS Programs
             </Button>
           </div>
         </div>

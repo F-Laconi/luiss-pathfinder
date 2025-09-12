@@ -159,7 +159,7 @@ All colors MUST be HSL.
   }
 
   .card-category {
-    @apply card-modern p-6 md:p-8 cursor-pointer group;
+    @apply card-modern p-6 md:p-8 cursor-pointer;
   }
 
   .card-course {
