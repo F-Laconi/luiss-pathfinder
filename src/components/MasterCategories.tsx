@@ -87,20 +87,6 @@ const MasterCategories = () => {
             </Link>
           ))}
         </div>
-
-        {/* Additional Info */}
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground mb-6">
-            Can't find what you're looking for? 
-          </p>
-          <Link
-            to="/courses"
-            className="inline-flex items-center text-primary hover:text-primary/80 font-medium group"
-          >
-            Browse all courses
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
       </div>
     </section>
   );
