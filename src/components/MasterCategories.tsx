@@ -70,7 +70,7 @@ const MasterCategories = () => {
 
               {/* Content */}
               <div className="text-center space-y-3">
-                <h3 className="text-card-title text-lg">
+                <h3 className="text-card-title text-lg group-hover:text-primary">
                   {school.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

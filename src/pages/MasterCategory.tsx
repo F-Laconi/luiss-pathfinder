@@ -167,7 +167,7 @@ const MasterCategory = () => {
             {courses.map((course, index) => (
               <div
                 key={course.id}
-                className="card-course animate-fade-up"
+                className="card-course animate-fade-up group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Course Image */}
@@ -189,7 +189,7 @@ const MasterCategory = () => {
                 <div className="space-y-4">
                   {/* Title and Professor */}
                   <div>
-                    <h3 className="text-card-title text-lg mb-2">
+                    <h3 className="text-card-title text-lg mb-2 group-hover:text-primary">
                       {course.title}
                     </h3>
                     <p className="text-muted-foreground text-sm">
