@@ -217,7 +217,7 @@ const CourseDetail = () => {
                     <div key={note.id} className="border rounded-lg p-4 hover:bg-muted/50 transition-colors">
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <h4 className="font-semibold">{note.studentName} - {note.year} ({note.grade})</h4>
+                          <h4 className="font-semibold">{note.studentName} - {note.year} (Grade: {note.grade})</h4>
                           <div className="flex items-center gap-2 mt-1">
                             <div className="flex items-center">
                               {Array.from({ length: Math.floor(note.rating) }, (_, i) => (
