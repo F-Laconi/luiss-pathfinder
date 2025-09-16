@@ -15,6 +15,7 @@ import governmentAffairsImage from "@/assets/government-public-affairs.png";
 import internationalRelationsImage from "@/assets/international-relations.png";
 import managementImage from "@/assets/management-course.png";
 import marketingImage from "@/assets/marketing-course.png";
+import strategicManagementImage from "@/assets/strategic-management.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -77,7 +78,7 @@ const graduatePrograms = [
   {
     id: 9,
     title: "Strategic Management",
-    image: graduateImage3,
+    image: strategicManagementImage,
     languages: ["it", "en"],
     category: "Strategic Management"
   },
