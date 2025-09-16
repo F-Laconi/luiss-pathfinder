@@ -9,6 +9,7 @@ import graduateImage2 from "@/assets/graduate-programs-2.png";
 import graduateImage3 from "@/assets/graduate-programs-3.png";
 import policiesGovernanceImage from "@/assets/policies-governance-europe.png";
 import economiaIstituzioniImage from "@/assets/economia-istituzioni.png";
+import financeImage from "@/assets/finance-course.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -29,7 +30,7 @@ const graduatePrograms = [
   {
     id: 3,
     title: "Finance",
-    image: graduateImage3,
+    image: financeImage,
     languages: ["en"],
     category: "Finance"
   },
