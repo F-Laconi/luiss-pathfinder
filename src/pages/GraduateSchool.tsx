@@ -13,6 +13,7 @@ import financeImage from "@/assets/finance-course.png";
 import globalManagementImage from "@/assets/global-management-politics.png";
 import governmentAffairsImage from "@/assets/government-public-affairs.png";
 import internationalRelationsImage from "@/assets/international-relations.png";
+import managementImage from "@/assets/management-course.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -61,7 +62,7 @@ const graduatePrograms = [
   {
     id: 7,
     title: "Management",
-    image: graduateImage3,
+    image: managementImage,
     languages: ["en"],
     category: "Management"
   },
