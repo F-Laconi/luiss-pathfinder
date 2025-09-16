@@ -35,6 +35,37 @@ const courseData = {
   prerequisites: "Basic knowledge of business administration and economics"
 };
 
+// Mock student notes data
+const studentNotes = [
+  {
+    id: 1,
+    studentName: "Marco B.",
+    year: "2024",
+    price: "€15",
+    rating: 4.5,
+    description: "Complete notes covering all lectures with detailed case studies and frameworks. Includes my personal insights and exam preparation tips that helped me get an A.",
+    pageCount: 45
+  },
+  {
+    id: 2,
+    studentName: "Sofia L.",
+    year: "2023",
+    price: "€12",
+    rating: 4.8,
+    description: "Well-organized summary notes with mind maps and visual frameworks. Perfect for quick revision before exams. Covers Porter's Five Forces in detail.",
+    pageCount: 32
+  },
+  {
+    id: 3,
+    studentName: "Andrea M.",
+    year: "2024",
+    price: "€18",
+    rating: 4.3,
+    description: "Comprehensive notes including all guest lecture content and real company examples discussed in class. Great for understanding practical applications.",
+    pageCount: 58
+  }
+];
+
 const StarRating = ({ rating }: { rating: number }) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 >= 0.5;
@@ -168,6 +199,43 @@ const CourseDetail = () => {
                 <div className="mt-6 pt-6 border-t">
                   <h4 className="font-semibold mb-2">Prerequisites</h4>
                   <p className="text-muted-foreground">{courseData.prerequisites}</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Student Notes Section */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Student Notes Available</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {studentNotes.map((note) => (
+                    <div key={note.id} className="border rounded-lg p-4 hover:bg-muted/50 transition-colors">
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <h4 className="font-semibold">{note.studentName} - {note.year}</h4>
+                          <div className="flex items-center gap-2 mt-1">
+                            <div className="flex items-center">
+                              {Array.from({ length: Math.floor(note.rating) }, (_, i) => (
+                                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                              ))}
+                              {note.rating % 1 >= 0.5 && <StarHalf className="w-4 h-4 fill-yellow-400 text-yellow-400" />}
+                              <span className="ml-1 text-sm text-muted-foreground">({note.rating})</span>
+                            </div>
+                            <span className="text-sm text-muted-foreground">• {note.pageCount} pages</span>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-bold text-lg text-primary">{note.price}</div>
+                          <Button size="sm" className="mt-1">
+                            Buy Notes
+                          </Button>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{note.description}</p>
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
