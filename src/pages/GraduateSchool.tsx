@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import graduateImage2 from "@/assets/graduate-programs-2.png";
 import graduateImage3 from "@/assets/graduate-programs-3.png";
 import policiesGovernanceImage from "@/assets/policies-governance-europe.png";
+import economiaIstituzioniImage from "@/assets/economia-istituzioni.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -21,7 +22,7 @@ const graduatePrograms = [
   {
     id: 2,
     title: "Economia, Istituzioni e Mercati Finanziari",
-    image: graduateImage2,
+    image: economiaIstituzioniImage,
     languages: ["it", "en"],
     category: "Economics & Finance"
   },
