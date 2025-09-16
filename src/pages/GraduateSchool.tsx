@@ -10,6 +10,7 @@ import graduateImage3 from "@/assets/graduate-programs-3.png";
 import policiesGovernanceImage from "@/assets/policies-governance-europe.png";
 import economiaIstituzioniImage from "@/assets/economia-istituzioni.png";
 import financeImage from "@/assets/finance-course.png";
+import globalManagementImage from "@/assets/global-management-politics.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -37,7 +38,7 @@ const graduatePrograms = [
   {
     id: 4,
     title: "Global Management and Politics",
-    image: graduateImage2,
+    image: globalManagementImage,
     languages: ["en"],
     category: "Management & Politics"
   },
