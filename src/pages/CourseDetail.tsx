@@ -82,34 +82,6 @@ const CourseDetail = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main content */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Course description */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Course Description</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6">{courseData.description}</p>
-                
-                <h4 className="font-semibold mb-3">Learning Objectives</h4>
-                <ul className="space-y-2">
-                  {courseData.learningObjectives.map((objective, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span className="text-muted-foreground">{objective}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-6 pt-6 border-t">
-                  <h4 className="font-semibold mb-2">Prerequisites</h4>
-                  <p className="text-muted-foreground">{courseData.prerequisites}</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Professor card */}
@@ -171,6 +143,34 @@ const CourseDetail = () => {
                 Add to Wishlist
               </Button>
             </div>
+          </div>
+
+          {/* Main content */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Course description */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Course Description</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-6">{courseData.description}</p>
+                
+                <h4 className="font-semibold mb-3">Learning Objectives</h4>
+                <ul className="space-y-2">
+                  {courseData.learningObjectives.map((objective, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="text-muted-foreground">{objective}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 pt-6 border-t">
+                  <h4 className="font-semibold mb-2">Prerequisites</h4>
+                  <p className="text-muted-foreground">{courseData.prerequisites}</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </main>
