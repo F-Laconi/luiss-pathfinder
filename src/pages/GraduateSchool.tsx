@@ -5,83 +5,86 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import graduateImage1 from "@/assets/graduate-programs-1.png";
+import graduateImage2 from "@/assets/graduate-programs-2.png";
+import graduateImage3 from "@/assets/graduate-programs-3.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
   {
     id: 1,
     title: "Policies and Governance in Europe",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage1,
     languages: ["en"],
     category: "Politics & Governance"
   },
   {
     id: 2,
     title: "Economia, Istituzioni e Mercati Finanziari",
-    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage2,
     languages: ["it", "en"],
     category: "Economics & Finance"
   },
   {
     id: 3,
     title: "Finance",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage3,
     languages: ["en"],
     category: "Finance"
   },
   {
     id: 4,
     title: "Global Management and Politics",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage1,
     languages: ["en"],
     category: "Management & Politics"
   },
   {
     id: 5,
     title: "Government and Public Affairs",
-    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage2,
     languages: ["it", "en"],
     category: "Government & Public Affairs"
   },
   {
     id: 6,
     title: "International Relations",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage3,
     languages: ["en"],
     category: "International Relations"
   },
   {
     id: 7,
     title: "Management",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage1,
     languages: ["en"],
     category: "Management"
   },
   {
     id: 8,
     title: "Marketing",
-    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage2,
     languages: ["it", "en"],
     category: "Marketing"
   },
   {
     id: 9,
     title: "Strategic Management",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage3,
     languages: ["it", "en"],
     category: "Strategic Management"
   },
   {
     id: 10,
     title: "Amministrazione, Finanza e Controllo",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage1,
     languages: ["it", "en"],
     category: "Administration & Finance"
   },
   {
     id: 11,
     title: "Data Science and Management",
-    image: "https://images.unsplash.com/photo-1494790108755-2616c96c8b9e?w=400&h=250&fit=crop&crop=face",
+    image: graduateImage2,
     languages: ["en"],
     category: "Data Science"
   }
