@@ -17,6 +17,7 @@ import managementImage from "@/assets/management-course.png";
 import marketingImage from "@/assets/marketing-course.png";
 import strategicManagementImage from "@/assets/strategic-management.png";
 import amministrazioneFinanzaImage from "@/assets/amministrazione-finanza.png";
+import dataScienceImage from "@/assets/data-science-management.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -93,7 +94,7 @@ const graduatePrograms = [
   {
     id: 11,
     title: "Data Science and Management",
-    image: graduateImage2,
+    image: dataScienceImage,
     languages: ["en"],
     category: "Data Science"
   }
