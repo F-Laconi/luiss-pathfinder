@@ -12,6 +12,7 @@ import economiaIstituzioniImage from "@/assets/economia-istituzioni.png";
 import financeImage from "@/assets/finance-course.png";
 import globalManagementImage from "@/assets/global-management-politics.png";
 import governmentAffairsImage from "@/assets/government-public-affairs.png";
+import internationalRelationsImage from "@/assets/international-relations.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -53,7 +54,7 @@ const graduatePrograms = [
   {
     id: 6,
     title: "International Relations",
-    image: graduateImage3,
+    image: internationalRelationsImage,
     languages: ["en"],
     category: "International Relations"
   },
