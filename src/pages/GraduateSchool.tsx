@@ -5,16 +5,16 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import graduateImage1 from "@/assets/graduate-programs-1.png";
 import graduateImage2 from "@/assets/graduate-programs-2.png";
 import graduateImage3 from "@/assets/graduate-programs-3.png";
+import policiesGovernanceImage from "@/assets/policies-governance-europe.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
   {
     id: 1,
     title: "Policies and Governance in Europe",
-    image: graduateImage1,
+    image: policiesGovernanceImage,
     languages: ["en"],
     category: "Politics & Governance"
   },
@@ -35,7 +35,7 @@ const graduatePrograms = [
   {
     id: 4,
     title: "Global Management and Politics",
-    image: graduateImage1,
+    image: graduateImage2,
     languages: ["en"],
     category: "Management & Politics"
   },
@@ -56,7 +56,7 @@ const graduatePrograms = [
   {
     id: 7,
     title: "Management",
-    image: graduateImage1,
+    image: graduateImage3,
     languages: ["en"],
     category: "Management"
   },
@@ -77,7 +77,7 @@ const graduatePrograms = [
   {
     id: 10,
     title: "Amministrazione, Finanza e Controllo",
-    image: graduateImage1,
+    image: graduateImage2,
     languages: ["it", "en"],
     category: "Administration & Finance"
   },
