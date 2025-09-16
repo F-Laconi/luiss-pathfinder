@@ -92,7 +92,7 @@ const graduatePrograms = [
 
 const GraduateSchool = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState("title");
+  const [sortBy, setSortBy] = useState("default");
   const [filterBy, setFilterBy] = useState("all");
 
   const filteredPrograms = graduatePrograms.filter(program => {
@@ -109,6 +109,7 @@ const GraduateSchool = () => {
   const sortedPrograms = [...filteredPrograms].sort((a, b) => {
     if (sortBy === "title") return a.title.localeCompare(b.title);
     if (sortBy === "category") return a.category.localeCompare(b.category);
+    if (sortBy === "default") return a.id - b.id;
     return 0;
   });
 
@@ -188,6 +189,7 @@ const GraduateSchool = () => {
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="default">Default Order</SelectItem>
                   <SelectItem value="title">Program Name</SelectItem>
                   <SelectItem value="category">Category</SelectItem>
                 </SelectContent>
