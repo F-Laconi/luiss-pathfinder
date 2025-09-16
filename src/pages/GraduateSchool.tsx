@@ -16,6 +16,7 @@ import internationalRelationsImage from "@/assets/international-relations.png";
 import managementImage from "@/assets/management-course.png";
 import marketingImage from "@/assets/marketing-course.png";
 import strategicManagementImage from "@/assets/strategic-management.png";
+import amministrazioneFinanzaImage from "@/assets/amministrazione-finanza.png";
 
 // Graduate programs data based on the images
 const graduatePrograms = [
@@ -85,7 +86,7 @@ const graduatePrograms = [
   {
     id: 10,
     title: "Amministrazione, Finanza e Controllo",
-    image: graduateImage2,
+    image: amministrazioneFinanzaImage,
     languages: ["it", "en"],
     category: "Administration & Finance"
   },
