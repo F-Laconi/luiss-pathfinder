@@ -41,6 +41,7 @@ const studentNotes = [
     id: 1,
     studentName: "Marco B.",
     year: "2024",
+    grade: "28/30",
     price: "€15",
     rating: 4.5,
     description: "Complete notes covering all lectures with detailed case studies and frameworks. Includes my personal insights and exam preparation tips that helped me get an A.",
@@ -50,6 +51,7 @@ const studentNotes = [
     id: 2,
     studentName: "Sofia L.",
     year: "2023",
+    grade: "30/30",
     price: "€12",
     rating: 4.8,
     description: "Well-organized summary notes with mind maps and visual frameworks. Perfect for quick revision before exams. Covers Porter's Five Forces in detail.",
@@ -59,6 +61,7 @@ const studentNotes = [
     id: 3,
     studentName: "Andrea M.",
     year: "2024",
+    grade: "26/30",
     price: "€18",
     rating: 4.3,
     description: "Comprehensive notes including all guest lecture content and real company examples discussed in class. Great for understanding practical applications.",
@@ -214,7 +217,7 @@ const CourseDetail = () => {
                     <div key={note.id} className="border rounded-lg p-4 hover:bg-muted/50 transition-colors">
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <h4 className="font-semibold">{note.studentName} - {note.year}</h4>
+                          <h4 className="font-semibold">{note.studentName} - {note.year} ({note.grade})</h4>
                           <div className="flex items-center gap-2 mt-1">
                             <div className="flex items-center">
                               {Array.from({ length: Math.floor(note.rating) }, (_, i) => (
