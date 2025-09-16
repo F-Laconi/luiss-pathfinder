@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, Filter, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -256,10 +257,12 @@ const GraduateSchool = () => {
                   </div>
 
                   {/* Action Button */}
-                  <Button className="w-full group">
-                    View Program Details
-                    <Flag className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                  </Button>
+                  <Link to={`/course/${program.id}`}>
+                    <Button className="w-full group">
+                      View Program Details
+                      <Flag className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
