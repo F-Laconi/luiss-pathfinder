@@ -49,7 +49,7 @@ const Index = () => {
             </div>
           </Link>
 
-          {/* Find Who Needs You */}
+          {/* Find Your Business Partner */}
           <div className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-10 md:p-14 cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30">
             <div className="flex flex-col items-center space-y-6">
               <div className="relative">
@@ -60,7 +60,7 @@ const Index = () => {
               </div>
               <div className="space-y-2">
                 <h2 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
-                  Find Who Needs You
+                  Find Your Business Partner
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground group-hover:text-foreground/80 transition-colors">
                   Connect with opportunities
