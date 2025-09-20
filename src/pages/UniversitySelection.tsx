@@ -4,55 +4,67 @@ import { Search, GraduationCap, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import luissLogo from "@/assets/luiss-logo.png";
+import bocconiLogo from "@/assets/bocconi-logo.png";
+import cattolicaLogo from "@/assets/cattolica-logo.png";
+import sapienzaLogo from "@/assets/sapienza-logo.png";
+import polimiLogo from "@/assets/polimi-logo.png";
+import uniboLogo from "@/assets/unibo-logo.png";
 
 const universities = [
   {
     id: "luiss",
     name: "LUISS Guido Carli",
     description: "Business, Economics, Law, Political Science",
-    logo: "🏛️",
+    logo: luissLogo,
     students: "8,000+",
-    programs: "30+"
+    programs: "30+",
+    color: "from-blue-600 to-blue-800"
   },
   {
     id: "bocconi",
     name: "Università Bocconi", 
     description: "Business, Economics, Finance, Management",
-    logo: "🏢",
+    logo: bocconiLogo,
     students: "14,000+",
-    programs: "40+"
+    programs: "40+",
+    color: "from-red-600 to-red-800"
   },
   {
     id: "cattolica",
     name: "Università Cattolica",
     description: "Humanities, Economics, Medicine, Psychology",
-    logo: "⛪",
+    logo: cattolicaLogo,
     students: "42,000+",
-    programs: "100+"
+    programs: "100+",
+    color: "from-red-700 to-red-900"
   },
   {
     id: "sapienza",
     name: "Sapienza Università di Roma",
     description: "Engineering, Medicine, Sciences, Humanities",
-    logo: "🏛️",
+    logo: sapienzaLogo,
     students: "116,000+",
-    programs: "300+"
+    programs: "300+",
+    color: "from-blue-700 to-indigo-800"
   },
   {
     id: "polimi",
     name: "Politecnico di Milano",
     description: "Engineering, Architecture, Design",
-    logo: "🔧",
+    logo: polimiLogo,
     students: "47,000+",
-    programs: "50+"
+    programs: "50+",
+    color: "from-cyan-600 to-blue-700"
   },
   {
     id: "unibo",
     name: "Università di Bologna",
     description: "Humanities, Sciences, Medicine, Engineering",
-    logo: "📚",
+    logo: uniboLogo,
     students: "87,000+",
-    programs: "200+"
+    programs: "200+",
+    color: "from-amber-600 to-orange-700"
   }
 ];
 
@@ -123,8 +135,15 @@ const UniversitySelection = () => {
               <Card key={university.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30">
                 <CardContent className="p-8">
                   <div className="text-center">
-                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                      {university.logo}
+                    <div className="relative mb-6">
+                      <div className={`w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl mx-auto p-4`}>
+                        <img 
+                          src={university.logo} 
+                          alt={`${university.name} logo`}
+                          className="w-full h-full object-contain filter brightness-0 invert"
+                        />
+                      </div>
+                      <div className={`absolute -inset-2 bg-gradient-to-r ${university.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}></div>
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {university.name}
