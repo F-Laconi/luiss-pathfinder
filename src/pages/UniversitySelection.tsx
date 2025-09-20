@@ -110,42 +110,16 @@ const UniversitySelection = () => {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredUniversities.map(university => <Card key={university.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30">
-                <CardContent className="p-8">
-                  <div className="text-center">
-                    <div className="relative mb-6">
-                      <div className={`w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl mx-auto p-4`}>
-                        <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-contain filter brightness-0 invert" />
-                      </div>
-                      <div className={`absolute -inset-2 bg-gradient-to-r ${university.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}></div>
+            {filteredUniversities.map(university => <Card key={university.id} className="hover:shadow-lg transition-shadow duration-200 cursor-pointer">
+                <CardContent className="p-6">
+                  <Link to="/course-explorer" className="flex flex-col items-center text-center">
+                    <div className="w-20 h-20 bg-card border-2 border-border rounded-lg flex items-center justify-center mb-4 p-3">
+                      <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-contain" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-sm font-medium text-foreground">
                       {university.name}
                     </h3>
-                    <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                      {university.description}
-                    </p>
-                    
-                    <div className="flex justify-between text-xs text-muted-foreground mb-6 bg-muted/30 rounded-lg p-3">
-                      <div>
-                        <span className="font-medium">{university.students}</span>
-                        <br />
-                        <span>Students</span>
-                      </div>
-                      <div>
-                        <span className="font-medium">{university.programs}</span>
-                        <br />
-                        <span>Programs</span>
-                      </div>
-                    </div>
-
-                    <Link to="/course-explorer">
-                      <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        Explore Programs
-                        <ChevronRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </Link>
-                  </div>
+                  </Link>
                 </CardContent>
               </Card>)}
           </div>
