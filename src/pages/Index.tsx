@@ -37,7 +37,7 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: '0.3s' }}>
           {/* Make the Right Choice */}
           <Link 
-            to="/course-explorer"
+            to="/universities"
             className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(59,130,246,0.15)] hover:border-primary/30"
           >
             <div className="flex flex-col items-center space-y-6">
