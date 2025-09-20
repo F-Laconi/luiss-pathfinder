@@ -110,18 +110,14 @@ const UniversitySelection = () => {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredUniversities.map(university => <Card key={university.id} className="hover:shadow-lg transition-shadow duration-200 cursor-pointer">
-                <CardContent className="p-6">
-                  <Link to="/course-explorer" className="flex flex-col items-center text-center">
-                    <div className="w-20 h-20 bg-card border-2 border-border rounded-lg flex items-center justify-center mb-4 p-3">
-                      <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-contain" />
-                    </div>
-                    <h3 className="text-sm font-medium text-foreground">
-                      {university.name}
-                    </h3>
-                  </Link>
-                </CardContent>
-              </Card>)}
+            {filteredUniversities.map(university => <Link key={university.id} to="/course-explorer" className="flex flex-col items-center text-center hover:opacity-80 transition-opacity duration-200">
+                <div className="w-32 h-32 bg-card border-2 border-border rounded-lg flex items-center justify-center mb-4 p-4">
+                  <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-sm font-medium text-foreground">
+                  {university.name}
+                </h3>
+              </Link>)}
           </div>
 
           {filteredUniversities.length === 0 && <div className="text-center py-16">
