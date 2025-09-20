@@ -1,43 +1,83 @@
 import { Link } from "react-router-dom";
-import { Compass, UserCheck } from "lucide-react";
+import { Compass, UserCheck, Sparkles } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
-      <div className="container max-w-4xl mx-auto px-6 text-center">
-        {/* Brand Title */}
-        <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-16 animate-fade-up">
-          UniCompass
-        </h1>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30 flex items-center justify-center relative overflow-hidden">
+      {/* Floating Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
 
-        {/* Icon Options */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+      <div className="container max-w-5xl mx-auto px-6 text-center relative z-10">
+        {/* Brand Title with Enhanced Styling */}
+        <div className="mb-20 animate-fade-up">
+          <div className="relative inline-block">
+            <h1 className="text-6xl md:text-9xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent mb-6 relative">
+              UniCompass
+              <div className="absolute -top-2 -right-2 text-accent animate-pulse">
+                <Sparkles className="w-8 h-8 md:w-12 md:h-12" />
+              </div>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground font-medium opacity-80">
+              Navigate Your Academic Journey
+            </p>
+          </div>
+        </div>
+
+        {/* Enhanced Icon Options */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: '0.3s' }}>
           {/* Make the Right Choice */}
           <Link 
             to="/course-explorer"
-            className="group card-modern p-8 md:p-12 hover:scale-105 transition-all duration-300 hover:shadow-[var(--shadow-hero)]"
+            className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(59,130,246,0.15)] hover:border-primary/30"
           >
-            <div className="flex flex-col items-center space-y-4">
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center group-hover:animate-float">
-                <Compass className="w-10 h-10 md:w-12 md:h-12 text-white" />
+            <div className="flex flex-col items-center space-y-6">
+              <div className="relative">
+                <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
+                  <Compass className="w-12 h-12 md:w-14 md:h-14 text-white" />
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
-              <h2 className="text-xl md:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                Make the Right Choice
-              </h2>
+              <div className="space-y-2">
+                <h2 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                  Make the Right Choice
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground group-hover:text-foreground/80 transition-colors">
+                  Explore courses and find your path
+                </p>
+              </div>
             </div>
           </Link>
 
           {/* Find Who Needs You */}
-          <div className="group card-modern p-8 md:p-12 cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-[var(--shadow-hero)]">
-            <div className="flex flex-col items-center space-y-4">
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-accent to-secondary rounded-2xl flex items-center justify-center group-hover:animate-float">
-                <UserCheck className="w-10 h-10 md:w-12 md:h-12 text-white" />
+          <div className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-10 md:p-14 cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30">
+            <div className="flex flex-col items-center space-y-6">
+              <div className="relative">
+                <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-accent via-orange-400 to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-accent/20">
+                  <UserCheck className="w-12 h-12 md:w-14 md:h-14 text-white" />
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
-              <h2 className="text-xl md:text-2xl font-semibold text-foreground group-hover:text-accent transition-colors">
-                Find Who Needs You
-              </h2>
+              <div className="space-y-2">
+                <h2 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                  Find Who Needs You
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground group-hover:text-foreground/80 transition-colors">
+                  Connect with opportunities
+                </p>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Subtle Call to Action */}
+        <div className="mt-16 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+          <p className="text-sm text-muted-foreground/60 font-medium">
+            Choose your journey and unlock your potential
+          </p>
         </div>
       </div>
     </div>
