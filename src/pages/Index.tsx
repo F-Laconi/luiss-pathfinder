@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import { Compass, UserCheck } from "lucide-react";
+import compassWallpaper from "@/assets/compass-wallpaper.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-100 via-blue-50 to-cyan-100 flex items-center justify-center relative overflow-hidden">
+    <div 
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url(${compassWallpaper})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-violet-200/60 rounded-full blur-3xl animate-float"></div>
