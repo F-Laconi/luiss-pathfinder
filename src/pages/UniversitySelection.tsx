@@ -83,35 +83,35 @@ const UniversitySelection = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-4 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
+      <section className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-4 animate-fade-in">
+            <div className="flex items-center justify-center mb-8 animate-fade-in">
               <div className="relative">
-                <GraduationCap className="w-12 h-12 text-primary mr-3 animate-pulse" />
+                <GraduationCap className="w-20 h-20 text-primary mr-4 animate-pulse" />
                 <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 Find Your Dream University
               </h1>
             </div>
-            <p className="text-sm md:text-base text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed animate-fade-in">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
               🎓 Discover Italy's most prestigious universities and unlock your academic potential. 
               Your future starts with the right choice!
             </p>
 
             {/* Search Bar */}
-            <div className="relative max-w-xl mx-auto mb-8 animate-scale-in">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl animate-pulse"></div>
+            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-primary w-5 h-5" />
+                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6" />
                 <Input 
                   type="text" 
                   placeholder="🔍 Search your perfect university..." 
                   value={searchQuery} 
                   onChange={e => setSearchQuery(e.target.value)} 
-                  className="pl-12 pr-4 py-4 text-base rounded-2xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-xl transition-all duration-300 hover:shadow-primary/10" 
+                  className="pl-16 pr-6 py-8 text-lg rounded-3xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-2xl transition-all duration-300 hover:shadow-primary/10" 
                 />
               </div>
             </div>
