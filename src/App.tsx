@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import CourseExplorer from "./pages/CourseExplorer";
 import MasterCategory from "./pages/MasterCategory";
 import GraduateSchool from "./pages/GraduateSchool";
 import CourseDetail from "./pages/CourseDetail";
@@ -19,6 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/course-explorer" element={<CourseExplorer />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />
           <Route path="/school/:schoolId" element={<MasterCategory />} />
