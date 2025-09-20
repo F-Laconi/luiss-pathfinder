@@ -83,48 +83,104 @@ const UniversitySelection = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
+        <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <GraduationCap className="w-16 h-16 text-primary mr-4" />
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                Choose Your University
+            <div className="flex items-center justify-center mb-8 animate-fade-in">
+              <div className="relative">
+                <GraduationCap className="w-20 h-20 text-primary mr-4 animate-pulse" />
+                <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                Find Your Dream University
               </h1>
             </div>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Discover the perfect academic institution for your future. Explore top universities 
-              and find programs that match your ambitions.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+              🎓 Discover Italy's most prestigious universities and unlock your academic potential. 
+              Your future starts with the right choice!
             </p>
 
             {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto mb-16">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
-              <Input type="text" placeholder="Search universities or programs..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-12 pr-4 py-6 text-lg rounded-2xl border-2 border-border/50 focus:border-primary/50 bg-card/50 backdrop-blur-sm" />
+            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
+              <div className="relative">
+                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6" />
+                <Input 
+                  type="text" 
+                  placeholder="🔍 Search your perfect university..." 
+                  value={searchQuery} 
+                  onChange={e => setSearchQuery(e.target.value)} 
+                  className="pl-16 pr-6 py-8 text-lg rounded-3xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-2xl transition-all duration-300 hover:shadow-primary/10" 
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Universities Grid */}
-      <section className="py-16">
+      <section className="py-20 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredUniversities.map(university => <Link key={university.id} to="/course-explorer" className="flex flex-col items-center text-center hover:opacity-80 transition-opacity duration-200">
-                <div className="w-32 h-32 bg-card border-2 border-border rounded-lg flex items-center justify-center mb-4 p-4">
-                  <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-contain" />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              ✨ Top Italian Universities
+            </h2>
+            <p className="text-lg text-muted-foreground">Click on any university to explore their amazing programs!</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            {filteredUniversities.map((university, index) => 
+              <Link 
+                key={university.id} 
+                to="/course-explorer" 
+                className="group flex flex-col items-center text-center transition-all duration-500 hover:scale-110 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative mb-6">
+                  <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center p-6 shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3`}>
+                    <img 
+                      src={university.logo} 
+                      alt={`${university.name} logo`} 
+                      className="w-full h-full object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
+                    />
+                  </div>
+                  <div className={`absolute -inset-4 bg-gradient-to-r ${university.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500`}></div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce">
+                    <span className="text-xs font-bold text-white">🎯</span>
+                  </div>
                 </div>
-                <h3 className="text-sm font-medium text-foreground">
+                
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 max-w-48 leading-tight">
                   {university.name}
                 </h3>
-              </Link>)}
+                
+                <div className="flex items-center space-x-2 text-xs text-muted-foreground mb-4">
+                  <span className="bg-primary/10 px-3 py-1 rounded-full">👥 {university.students}</span>
+                  <span className="bg-accent/10 px-3 py-1 rounded-full">📚 {university.programs}</span>
+                </div>
+                
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                  <span className="inline-flex items-center text-sm font-medium text-primary">
+                    Explore Programs 
+                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            )}
           </div>
 
-          {filteredUniversities.length === 0 && <div className="text-center py-16">
-              <p className="text-muted-foreground text-lg">
-                No universities found matching your search.
+          {filteredUniversities.length === 0 && 
+            <div className="text-center py-20 animate-fade-in">
+              <div className="text-6xl mb-4">🔍</div>
+              <p className="text-xl text-muted-foreground mb-2">
+                No universities found matching your search
               </p>
-            </div>}
+              <p className="text-sm text-muted-foreground">
+                Try searching for a different term or browse all universities
+              </p>
+            </div>
+          }
         </div>
       </section>
 
