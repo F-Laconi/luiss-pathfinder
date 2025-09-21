@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Plus, User, Mail, Briefcase, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -10,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import corkBoardBg from "@/assets/cork-board-background.jpg";
 
 const profileSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -20,6 +20,17 @@ const profileSchema = z.object({
 });
 
 type Profile = z.infer<typeof profileSchema>;
+
+const stickyColors = [
+  'bg-yellow-200 border-yellow-300',
+  'bg-pink-200 border-pink-300', 
+  'bg-green-200 border-green-300',
+  'bg-blue-200 border-blue-300',
+  'bg-purple-200 border-purple-300',
+  'bg-orange-200 border-orange-300',
+  'bg-red-200 border-red-300',
+  'bg-indigo-200 border-indigo-300'
+];
 
 const StudentBoard = () => {
   const [profiles, setProfiles] = useState<Profile[]>([
@@ -33,9 +44,23 @@ const StudentBoard = () => {
     {
       name: "Sofia Bianchi",
       email: "sofia.bianchi@example.com",
-      university: "Politecnico di Milano",
+      university: "Politecnico di Milano", 
       skills: "Data Analysis, Python, Machine Learning",
       bio: "Engineering student specialized in data science. Interested in AI-driven projects and sustainable technology solutions."
+    },
+    {
+      name: "Luca Verdi",
+      email: "luca.verdi@example.com",
+      university: "Università Cattolica",
+      skills: "Marketing, Social Media, Content Creation",
+      bio: "Business student with a passion for digital marketing and brand development."
+    },
+    {
+      name: "Elena Neri",
+      email: "elena.neri@example.com", 
+      university: "LUISS University",
+      skills: "Finance, Excel, Financial Modeling",
+      bio: "Economics student interested in fintech and investment analysis projects."
     }
   ]);
   const [isOpen, setIsOpen] = useState(false);
@@ -57,36 +82,42 @@ const StudentBoard = () => {
     setIsOpen(false);
   };
 
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 py-6">
-          <Link to="/business-partner" className="inline-flex items-center text-primary-foreground hover:opacity-80 transition-opacity mb-4">
-            ← Back to Business Partner
-          </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Student Project Board</h1>
-          <p className="text-lg opacity-90 max-w-3xl">
-            Connect with fellow students and join exciting projects. Share your profile and discover collaboration opportunities.
-          </p>
-        </div>
-      </header>
+  const getRandomRotation = () => {
+    const rotations = ['rotate-1', '-rotate-1', 'rotate-2', '-rotate-2', 'rotate-0'];
+    return rotations[Math.floor(Math.random() * rotations.length)];
+  };
 
-      {/* Main Content */}
-      <main className="container mx-auto px-6 py-8">
+  return (
+    <div className="min-h-screen" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      {/* Header Overlay */}
+      <div className="bg-black/70 backdrop-blur-sm">
+        <header className="text-white">
+          <div className="container mx-auto px-6 py-6">
+            <Link to="/business-partner" className="inline-flex items-center text-white hover:opacity-80 transition-opacity mb-4">
+              ← Back to Business Partner
+            </Link>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">Student Project Board</h1>
+            <p className="text-lg opacity-90 max-w-3xl">
+              Connect with fellow students and join exciting projects. Pin your profile to the board!
+            </p>
+          </div>
+        </header>
+      </div>
+
+      {/* Main Content - Cork Board */}
+      <main className="container mx-auto px-6 py-8 relative">
         {/* Add Profile Button */}
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl font-bold text-foreground">Available Students</h2>
+        <div className="flex justify-center mb-8">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-              <Button className="gap-2">
-                <Plus className="w-4 h-4" />
-                Add Your Profile
+              <Button size="lg" className="gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold shadow-lg">
+                <Plus className="w-5 h-5" />
+                Pin Your Profile to the Board
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-2xl">
+            <DialogContent className="max-w-2xl bg-white">
               <DialogHeader>
-                <DialogTitle>Add Your Profile</DialogTitle>
+                <DialogTitle className="text-xl">Pin Your Profile to the Board</DialogTitle>
               </DialogHeader>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -162,7 +193,7 @@ const StudentBoard = () => {
                       Cancel
                     </Button>
                     <Button type="submit">
-                      Add Profile
+                      Pin Profile
                     </Button>
                   </div>
                 </form>
@@ -171,51 +202,69 @@ const StudentBoard = () => {
           </Dialog>
         </div>
 
-        {/* Profiles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {profiles.map((profile, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-              <div className="space-y-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <User className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{profile.name}</h3>
-                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+        {/* Sticky Notes Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+          {profiles.map((profile, index) => {
+            const colorClass = stickyColors[index % stickyColors.length];
+            const rotation = getRandomRotation();
+            
+            return (
+              <div key={index} className={`relative ${rotation} hover:rotate-0 transition-transform duration-300 group cursor-pointer`}>
+                {/* Pin */}
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-2 border-red-600 shadow-md z-10 group-hover:scale-110 transition-transform"></div>
+                
+                {/* Sticky Note */}
+                <div className={`w-64 h-72 ${colorClass} border-2 rounded-sm shadow-lg p-4 relative overflow-hidden group-hover:shadow-xl transition-all duration-300`}>
+                  {/* Slight fold effect */}
+                  <div className="absolute top-0 right-0 w-6 h-6 bg-black/5 transform rotate-45 translate-x-3 -translate-y-3"></div>
+                  
+                  <div className="space-y-3 h-full flex flex-col">
+                    <div className="text-center border-b border-black/20 pb-2">
+                      <h3 className="font-bold text-lg text-gray-800 leading-tight">{profile.name}</h3>
+                      <div className="flex items-center justify-center gap-1 text-xs text-gray-600 mt-1">
                         <GraduationCap className="w-3 h-3" />
-                        {profile.university}
+                        <span className="font-medium">{profile.university}</span>
                       </div>
                     </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <Briefcase className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-foreground">{profile.skills}</span>
-                  </div>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed">{profile.bio}</p>
-                  
-                  <div className="flex items-center gap-2 pt-2 border-t">
-                    <Mail className="w-4 h-4 text-muted-foreground" />
-                    <a href={`mailto:${profile.email}`} className="text-sm text-primary hover:underline">
-                      Contact
-                    </a>
+                    
+                    <div className="flex-1 space-y-3">
+                      <div>
+                        <div className="flex items-center gap-1 mb-1">
+                          <Briefcase className="w-3 h-3 text-gray-600" />
+                          <span className="text-xs font-semibold text-gray-700">Skills:</span>
+                        </div>
+                        <p className="text-xs text-gray-700 leading-relaxed font-medium">{profile.skills}</p>
+                      </div>
+                      
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-600 leading-relaxed">{profile.bio}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-auto pt-2 border-t border-black/20">
+                      <a 
+                        href={`mailto:${profile.email}`} 
+                        className="flex items-center justify-center gap-2 text-xs bg-black/10 hover:bg-black/20 rounded px-2 py-1.5 transition-colors font-medium text-gray-700"
+                      >
+                        <Mail className="w-3 h-3" />
+                        Contact Me
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Card>
-          ))}
+            );
+          })}
         </div>
 
         {profiles.length === 0 && (
           <div className="text-center py-12">
-            <User className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">No profiles yet</h3>
-            <p className="text-muted-foreground">Be the first to add your profile to the board!</p>
+            <div className="bg-yellow-200 border-2 border-yellow-300 rounded-sm p-8 mx-auto max-w-md shadow-lg relative rotate-2">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-2 border-red-600"></div>
+              <User className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+              <h3 className="text-lg font-bold text-gray-800 mb-2">No profiles yet</h3>
+              <p className="text-gray-600 text-sm">Be the first to pin your profile to the board!</p>
+            </div>
           </div>
         )}
       </main>
