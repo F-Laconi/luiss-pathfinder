@@ -55,10 +55,12 @@ const BusinessPartner = () => {
                   Discover exciting career opportunities that match your skills and aspirations. 
                   Connect with companies seeking talented individuals like you.
                 </p>
-                <Button size="lg" className="w-full group-hover:shadow-md transition-shadow" onClick={() => alert('Job search functionality coming soon!')}>
-                  Find Opportunities
-                  <Search className="w-4 h-4 ml-2" />
-                </Button>
+                <Link to="/student-board">
+                  <Button size="lg" className="w-full group-hover:shadow-md transition-shadow">
+                    Find Opportunities
+                    <Search className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
 
