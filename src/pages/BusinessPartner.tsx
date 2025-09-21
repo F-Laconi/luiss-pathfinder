@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import { Search, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const BusinessPartner = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 py-8">
@@ -57,11 +55,7 @@ const BusinessPartner = () => {
                   Discover exciting career opportunities that match your skills and aspirations. 
                   Connect with companies seeking talented individuals like you.
                 </p>
-                <Button 
-                  size="lg" 
-                  className="w-full group-hover:shadow-md transition-shadow"
-                  onClick={() => alert('Job search functionality coming soon!')}
-                >
+                <Button size="lg" className="w-full group-hover:shadow-md transition-shadow" onClick={() => alert('Job search functionality coming soon!')}>
                   Find Opportunities
                   <Search className="w-4 h-4 ml-2" />
                 </Button>
@@ -79,12 +73,7 @@ const BusinessPartner = () => {
                   Find the perfect candidate for your team. Post job openings and connect with 
                   qualified professionals ready to contribute to your success.
                 </p>
-                <Button 
-                  variant="secondary" 
-                  size="lg" 
-                  className="w-full group-hover:shadow-md transition-shadow"
-                  onClick={() => alert('Job posting functionality coming soon!')}
-                >
+                <Button variant="secondary" size="lg" className="w-full group-hover:shadow-md transition-shadow" onClick={() => alert('Job posting functionality coming soon!')}>
                   Post a Job
                   <Briefcase className="w-4 h-4 ml-2" />
                 </Button>
@@ -95,26 +84,7 @@ const BusinessPartner = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-            Ready to Make the Connection?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals who have found their perfect business match through our platform.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={() => alert('Registration coming soon!')}>
-              Get Started Today
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/">Return Home</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+      
+    </div>;
 };
-
 export default BusinessPartner;
