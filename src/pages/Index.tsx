@@ -59,7 +59,10 @@ const Index = () => {
           </Link>
 
           {/* Find Your Business Partner */}
-          <div className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-10 md:p-14 cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30">
+          <Link 
+            to="/business-partner"
+            className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30"
+          >
             <div className="flex flex-col items-center space-y-6">
               <div className="relative">
                 <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-accent via-orange-400 to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-accent/20">
@@ -76,7 +79,7 @@ const Index = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Subtle Call to Action */}

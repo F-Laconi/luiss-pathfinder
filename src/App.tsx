@@ -9,6 +9,7 @@ import CourseExplorer from "./pages/CourseExplorer";
 import MasterCategory from "./pages/MasterCategory";
 import GraduateSchool from "./pages/GraduateSchool";
 import CourseDetail from "./pages/CourseDetail";
+import BusinessPartner from "./pages/BusinessPartner";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/universities" element={<UniversitySelection />} />
           <Route path="/course-explorer" element={<CourseExplorer />} />
+          <Route path="/business-partner" element={<BusinessPartner />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />
           <Route path="/school/:schoolId" element={<MasterCategory />} />
