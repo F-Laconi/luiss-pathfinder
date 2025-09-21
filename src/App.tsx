@@ -10,6 +10,7 @@ import MasterCategory from "./pages/MasterCategory";
 import GraduateSchool from "./pages/GraduateSchool";
 import CourseDetail from "./pages/CourseDetail";
 import BusinessPartner from "./pages/BusinessPartner";
+import PostPosition from "./pages/PostPosition";
 import StudentBoard from "./pages/StudentBoard";
 import NotFound from "./pages/NotFound";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/universities" element={<UniversitySelection />} />
           <Route path="/course-explorer" element={<CourseExplorer />} />
           <Route path="/business-partner" element={<BusinessPartner />} />
+          <Route path="/post-position" element={<PostPosition />} />
           <Route path="/student-board" element={<StudentBoard />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />

@@ -73,10 +73,12 @@ const BusinessPartner = () => {
                   Find the perfect candidate for your team. Post job openings and connect with 
                   qualified professionals ready to contribute to your success.
                 </p>
-                <Button variant="secondary" size="lg" className="w-full group-hover:shadow-md transition-shadow" onClick={() => alert('Job posting functionality coming soon!')}>
-                  Post a Job
-                  <Briefcase className="w-4 h-4 ml-2" />
-                </Button>
+                <Link to="/post-position">
+                  <Button variant="secondary" size="lg" className="w-full group-hover:shadow-md transition-shadow">
+                    Post a Project
+                    <Briefcase className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
