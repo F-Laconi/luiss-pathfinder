@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import corkBoardBg from "@/assets/cork-board-background.jpg";
+import corkBoardBg from "@/assets/new-cork-board-background.jpg";
 
 const profileSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
