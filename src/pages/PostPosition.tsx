@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-import whiteboardBackground from "@/assets/whiteboard-background.jpg";
+import cleanBackground from "@/assets/clean-background.png";
 
 // Mock data for existing projects
 const mockProjects = [
@@ -78,7 +78,7 @@ const PostPosition = () => {
   return (
     <div 
       className="min-h-screen bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: `url(${whiteboardBackground})` }}
+      style={{ backgroundImage: `url(${cleanBackground})` }}
     >
       <div className="absolute inset-0 bg-white/90"></div>
       
