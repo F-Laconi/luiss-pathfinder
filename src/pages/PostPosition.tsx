@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-import corkBackground from "@/assets/cork-board-background.jpg";
+import whiteboardBackground from "@/assets/whiteboard-background.jpg";
 
 // Mock data for existing projects
 const mockProjects = [
@@ -78,40 +78,34 @@ const PostPosition = () => {
   return (
     <div 
       className="min-h-screen bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: `url(${corkBackground})` }}
+      style={{ backgroundImage: `url(${whiteboardBackground})` }}
     >
-      <div className="absolute inset-0 bg-amber-50/80"></div>
+      <div className="absolute inset-0 bg-white/90"></div>
       
       <div className="relative z-10 min-h-screen p-6">
         {/* Header */}
         <div className="mb-8">
           <Link 
             to="/business-partner" 
-            className="inline-flex items-center text-amber-800 hover:text-amber-900 font-medium mb-4"
+            className="inline-flex items-center text-gray-700 hover:text-gray-900 font-medium mb-4"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Business Partner
           </Link>
           
           <div className="flex justify-between items-start">
-            <div className="bg-blue-200 p-6 rounded-lg shadow-lg transform -rotate-1 max-w-2xl">
-              <div className="absolute -top-2 right-4">
-                <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-              </div>
-              <h1 className="text-3xl font-bold text-blue-800 mb-2">Student Project Board</h1>
-              <p className="text-blue-700">
-                Discover amazing student projects looking for collaborators!
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-2xl">
+              <h1 className="text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
+              <p className="text-gray-600 text-lg">
+                Discover innovative student projects seeking talented collaborators
               </p>
             </div>
             
             <Dialog open={showForm} onOpenChange={setShowForm}>
               <DialogTrigger asChild>
-                <div className="bg-green-200 p-4 rounded-lg shadow-lg transform rotate-1">
-                  <div className="absolute -top-2 left-4">
-                    <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-                  </div>
-                  <Button className="bg-green-600 hover:bg-green-700 text-white">
-                    <Plus className="w-4 h-4 mr-2" />
+                <div className="bg-blue-600 hover:bg-blue-700 transition-colors rounded-xl shadow-lg">
+                  <Button className="bg-transparent hover:bg-transparent text-white text-lg px-8 py-6 h-auto">
+                    <Plus className="w-5 h-5 mr-2" />
                     Post My Project
                   </Button>
                 </div>
@@ -235,47 +229,54 @@ const PostPosition = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => {
-            const colors = [
-              "bg-yellow-200 text-yellow-800",
-              "bg-pink-200 text-pink-800", 
-              "bg-green-200 text-green-800",
-              "bg-purple-200 text-purple-800",
-              "bg-blue-200 text-blue-800",
-              "bg-orange-200 text-orange-800"
+            const gradients = [
+              "from-blue-50 to-blue-100 border-blue-200",
+              "from-purple-50 to-purple-100 border-purple-200", 
+              "from-green-50 to-green-100 border-green-200",
+              "from-orange-50 to-orange-100 border-orange-200",
+              "from-pink-50 to-pink-100 border-pink-200",
+              "from-indigo-50 to-indigo-100 border-indigo-200"
             ];
-            const rotations = ["rotate-1", "-rotate-1", "rotate-0.5", "-rotate-0.5", "rotate-2", "-rotate-2"];
             
             return (
               <Dialog key={project.id}>
                 <DialogTrigger asChild>
                   <div 
-                    className={`${colors[index % colors.length]} p-6 rounded-lg shadow-lg transform ${rotations[index % rotations.length]} cursor-pointer hover:scale-105 transition-transform`}
+                    className={`bg-gradient-to-br ${gradients[index % gradients.length]} p-6 rounded-xl shadow-lg border-2 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
                   >
-                    <div className="absolute -top-2 left-4">
-                      <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="bg-white/80 px-3 py-1 rounded-full text-xs font-medium text-gray-600">
+                        {project.stage}
+                      </div>
+                      <Eye className="w-5 h-5 text-gray-400" />
                     </div>
-                    <h3 className="font-bold text-lg mb-2">{project.title}</h3>
-                    <p className="text-sm mb-3 opacity-90">{project.briefDescription}</p>
-                    <div className="flex flex-wrap gap-1 mb-3">
+                    <h3 className="font-bold text-xl mb-3 text-gray-900">{project.title}</h3>
+                    <p className="text-gray-700 mb-4 text-sm leading-relaxed">{project.briefDescription}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => (
                         <span 
                           key={skillIndex}
-                          className="px-2 py-1 bg-white/50 rounded text-xs"
+                          className="px-3 py-1 bg-white/90 rounded-full text-xs font-medium text-gray-700 border"
                         >
                           {skill}
                         </span>
                       ))}
                       {project.skillsNeeded.length > 3 && (
-                        <span className="px-2 py-1 bg-white/50 rounded text-xs">
+                        <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
                           +{project.skillsNeeded.length - 3} more
                         </span>
                       )}
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium">by {project.author}</span>
-                      <Eye className="w-4 h-4" />
+                    <div className="flex items-center justify-between pt-2 border-t border-white/50">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                          <span className="text-xs font-bold text-gray-600">{project.author[0]}</span>
+                        </div>
+                        <span className="text-sm font-medium text-gray-800">{project.author}</span>
+                      </div>
+                      <Users className="w-4 h-4 text-gray-500" />
                     </div>
                   </div>
                 </DialogTrigger>
