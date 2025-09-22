@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import cleanBackground from "@/assets/clean-background.png";
+import boardBorder from "@/assets/board-border.jpg";
 
 // Mock data for existing projects
 const mockProjects = [
@@ -76,11 +77,22 @@ const PostPosition = () => {
   };
 
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: `url(${cleanBackground})` }}
-    >
-      <div className="absolute inset-0 bg-white/90"></div>
+    <div className="relative">
+      {/* Fixed Border Frame */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-50"
+        style={{
+          border: '40px solid transparent',
+          borderImage: `url(${boardBorder}) 40 repeat`,
+          borderImageSlice: '40 fill'
+        }}
+      ></div>
+      
+      <div 
+        className="min-h-screen bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: `url(${cleanBackground})` }}
+      >
+        <div className="absolute inset-0 bg-white/90"></div>
       
       <div className="relative z-10 min-h-screen p-6">
         {/* Header */}
@@ -328,6 +340,7 @@ const PostPosition = () => {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 };
