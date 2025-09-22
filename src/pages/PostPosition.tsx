@@ -1,56 +1,79 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Pin, Send, Users, Target, Lightbulb } from "lucide-react";
+import { ArrowLeft, Pin, Plus, Users, Lightbulb, Target, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import corkBackground from "@/assets/cork-board-background.jpg";
 
+// Mock data for existing projects
+const mockProjects = [
+  {
+    id: 1,
+    title: "EcoTrack App",
+    briefDescription: "Mobile app to track personal carbon footprint",
+    skillsNeeded: ["React Native", "Backend Development", "UI/UX Design"],
+    author: "Marco R.",
+    fullDescription: "A comprehensive mobile application that helps users track their daily carbon footprint through various activities. We're looking to add more features and improve the user experience.",
+    stage: "MVP Ready",
+    goals: "Scale to 10k users and add social features"
+  },
+  {
+    id: 2,
+    title: "StudyBuddy Platform",
+    briefDescription: "Peer-to-peer study matching platform for university students",
+    skillsNeeded: ["Frontend Development", "Marketing", "Data Analysis"],
+    author: "Sofia M.",
+    fullDescription: "A platform that connects university students based on their study subjects and schedules. We've validated the concept and need help scaling.",
+    stage: "Beta Testing",
+    goals: "Launch in 5 universities across Italy"
+  },
+  {
+    id: 3,
+    title: "LocalArt Marketplace",
+    briefDescription: "Digital marketplace for local artists to sell their work",
+    skillsNeeded: ["E-commerce Development", "Digital Marketing", "Photography"],
+    author: "Luca T.",
+    fullDescription: "An online marketplace specifically designed for local artists to showcase and sell their artwork. We need help with the technical implementation and marketing strategy.",
+    stage: "Concept",
+    goals: "Onboard 100 artists in first 6 months"
+  }
+];
+
 const PostPosition = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+  const [projects, setProjects] = useState(mockProjects);
   
   const form = useForm({
     defaultValues: {
-      projectName: "",
-      description: "",
+      title: "",
+      briefDescription: "",
       skillsNeeded: "",
-      contactInfo: "",
-      projectStage: "",
+      fullDescription: "",
+      stage: "",
       goals: ""
     }
   });
 
   const onSubmit = (data: any) => {
-    console.log("Project posted:", data);
-    setIsSubmitted(true);
+    const newProject = {
+      id: projects.length + 1,
+      title: data.title,
+      briefDescription: data.briefDescription,
+      skillsNeeded: data.skillsNeeded.split(',').map((skill: string) => skill.trim()),
+      author: "You",
+      fullDescription: data.fullDescription,
+      stage: data.stage,
+      goals: data.goals
+    };
+    setProjects([...projects, newProject]);
+    setShowForm(false);
+    form.reset();
   };
-
-  if (isSubmitted) {
-    return (
-      <div 
-        className="min-h-screen bg-cover bg-center bg-no-repeat relative"
-        style={{ backgroundImage: `url(${corkBackground})` }}
-      >
-        <div className="absolute inset-0 bg-amber-50/80"></div>
-        <div className="relative z-10 min-h-screen flex items-center justify-center p-6">
-          <div className="bg-green-200 p-8 rounded-lg shadow-lg transform rotate-1 max-w-md text-center">
-            <div className="absolute -top-2 left-4">
-              <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-            </div>
-            <h2 className="text-2xl font-bold text-green-800 mb-4">Project Posted!</h2>
-            <p className="text-green-700 mb-6">Your project is now live on our board. Students will reach out to you soon!</p>
-            <Link to="/business-partner">
-              <Button className="bg-green-600 hover:bg-green-700 text-white">
-                Back to Business Partner
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div 
@@ -70,218 +93,238 @@ const PostPosition = () => {
             Back to Business Partner
           </Link>
           
-          <div className="bg-blue-200 p-6 rounded-lg shadow-lg transform -rotate-1 max-w-2xl">
-            <div className="absolute -top-2 right-4">
-              <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
+          <div className="flex justify-between items-start">
+            <div className="bg-blue-200 p-6 rounded-lg shadow-lg transform -rotate-1 max-w-2xl">
+              <div className="absolute -top-2 right-4">
+                <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
+              </div>
+              <h1 className="text-3xl font-bold text-blue-800 mb-2">Student Project Board</h1>
+              <p className="text-blue-700">
+                Discover amazing student projects looking for collaborators!
+              </p>
             </div>
-            <h1 className="text-3xl font-bold text-blue-800 mb-2">Post Your Project</h1>
-            <p className="text-blue-700">
-              Have a project that needs talented students to help it grow? Post it here!
-            </p>
-          </div>
-        </div>
-
-        {/* Form */}
-        <div className="max-w-4xl mx-auto">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Project Name */}
-                <div className="bg-yellow-200 p-6 rounded-lg shadow-lg transform rotate-1">
+            
+            <Dialog open={showForm} onOpenChange={setShowForm}>
+              <DialogTrigger asChild>
+                <div className="bg-green-200 p-4 rounded-lg shadow-lg transform rotate-1">
                   <div className="absolute -top-2 left-4">
                     <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
                   </div>
-                  <FormField
-                    control={form.control}
-                    name="projectName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-yellow-800 font-bold flex items-center">
-                          <Lightbulb className="w-4 h-4 mr-2" />
-                          Project Name
-                        </FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="My Amazing Startup" 
-                            className="bg-white/80 border-yellow-300"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                {/* Project Stage */}
-                <div className="bg-pink-200 p-6 rounded-lg shadow-lg transform -rotate-1">
-                  <div className="absolute -top-2 right-4">
-                    <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-                  </div>
-                  <FormField
-                    control={form.control}
-                    name="projectStage"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-pink-800 font-bold flex items-center">
-                          <Target className="w-4 h-4 mr-2" />
-                          Project Stage
-                        </FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="Prototype, MVP, Growing, etc." 
-                            className="bg-white/80 border-pink-300"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              </div>
-
-              {/* Description */}
-              <div className="bg-green-200 p-6 rounded-lg shadow-lg transform rotate-0.5">
-                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                  <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-                </div>
-                <FormField
-                  control={form.control}
-                  name="description"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-green-800 font-bold">
-                        Project Description
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Tell us about your project, what it does, and your vision..."
-                          className="bg-white/80 border-green-300 min-h-[120px]"
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Skills Needed */}
-                <div className="bg-purple-200 p-6 rounded-lg shadow-lg transform -rotate-1">
-                  <div className="absolute -top-2 left-4">
-                    <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-                  </div>
-                  <FormField
-                    control={form.control}
-                    name="skillsNeeded"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-purple-800 font-bold flex items-center">
-                          <Users className="w-4 h-4 mr-2" />
-                          Skills Needed
-                        </FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Marketing, Development, Design, Business Strategy..."
-                            className="bg-white/80 border-purple-300"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                {/* Goals */}
-                <div className="bg-orange-200 p-6 rounded-lg shadow-lg transform rotate-1">
-                  <div className="absolute -top-2 right-4">
-                    <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-                  </div>
-                  <FormField
-                    control={form.control}
-                    name="goals"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-orange-800 font-bold">
-                          Growth Goals
-                        </FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="What do you want to achieve? Scale to 1000 users, launch in new markets..."
-                            className="bg-white/80 border-orange-300"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              </div>
-
-              {/* Contact Info */}
-              <div className="bg-cyan-200 p-6 rounded-lg shadow-lg transform -rotate-0.5">
-                <div className="absolute -top-2 left-1/3">
-                  <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-                </div>
-                <FormField
-                  control={form.control}
-                  name="contactInfo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-cyan-800 font-bold">
-                        How can students reach you?
-                      </FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="email@example.com, LinkedIn, Discord..."
-                          className="bg-white/80 border-cyan-300"
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div className="flex justify-center pt-6">
-                <div className="bg-red-200 p-4 rounded-lg shadow-lg transform rotate-1">
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                    <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="bg-red-600 hover:bg-red-700 text-white px-8"
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    Post Project
+                  <Button className="bg-green-600 hover:bg-green-700 text-white">
+                    <Plus className="w-4 h-4 mr-2" />
+                    Post My Project
                   </Button>
                 </div>
-              </div>
-            </form>
-          </Form>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle>Post Your Project</DialogTitle>
+                </DialogHeader>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                    <FormField
+                      control={form.control}
+                      name="title"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Project Title</FormLabel>
+                          <FormControl>
+                            <Input placeholder="My Amazing Project" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="briefDescription"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Brief Description</FormLabel>
+                          <FormControl>
+                            <Textarea 
+                              placeholder="A short description of your project..."
+                              className="min-h-[80px]"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="skillsNeeded"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Skills Needed (comma separated)</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="React, Design, Marketing, etc."
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="stage"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Project Stage</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="Concept, MVP, Beta, etc."
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="fullDescription"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Full Description</FormLabel>
+                          <FormControl>
+                            <Textarea 
+                              placeholder="Detailed description of your project, goals, and what kind of help you need..."
+                              className="min-h-[120px]"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="goals"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Goals</FormLabel>
+                          <FormControl>
+                            <Textarea 
+                              placeholder="What do you want to achieve?"
+                              className="min-h-[80px]"
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <Button type="submit" className="w-full">
+                      Post Project
+                    </Button>
+                  </form>
+                </Form>
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
 
-        {/* Help Text */}
-        <div className="mt-12 max-w-2xl mx-auto">
-          <div className="bg-amber-200 p-6 rounded-lg shadow-lg transform rotate-0.5">
-            <div className="absolute -top-2 right-6">
-              <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
-            </div>
-            <h3 className="text-amber-800 font-bold mb-2">💡 Tips for a Great Post</h3>
-            <ul className="text-amber-700 space-y-1 text-sm">
-              <li>• Be specific about what help you need</li>
-              <li>• Mention any compensation or equity opportunities</li>
-              <li>• Include your project's current traction or achievements</li>
-              <li>• Be clear about time commitment expectations</li>
-            </ul>
-          </div>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {projects.map((project, index) => {
+            const colors = [
+              "bg-yellow-200 text-yellow-800",
+              "bg-pink-200 text-pink-800", 
+              "bg-green-200 text-green-800",
+              "bg-purple-200 text-purple-800",
+              "bg-blue-200 text-blue-800",
+              "bg-orange-200 text-orange-800"
+            ];
+            const rotations = ["rotate-1", "-rotate-1", "rotate-0.5", "-rotate-0.5", "rotate-2", "-rotate-2"];
+            
+            return (
+              <Dialog key={project.id}>
+                <DialogTrigger asChild>
+                  <div 
+                    className={`${colors[index % colors.length]} p-6 rounded-lg shadow-lg transform ${rotations[index % rotations.length]} cursor-pointer hover:scale-105 transition-transform`}
+                  >
+                    <div className="absolute -top-2 left-4">
+                      <Pin className="w-6 h-6 text-red-600 transform rotate-45" />
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">{project.title}</h3>
+                    <p className="text-sm mb-3 opacity-90">{project.briefDescription}</p>
+                    <div className="flex flex-wrap gap-1 mb-3">
+                      {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => (
+                        <span 
+                          key={skillIndex}
+                          className="px-2 py-1 bg-white/50 rounded text-xs"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                      {project.skillsNeeded.length > 3 && (
+                        <span className="px-2 py-1 bg-white/50 rounded text-xs">
+                          +{project.skillsNeeded.length - 3} more
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium">by {project.author}</span>
+                      <Eye className="w-4 h-4" />
+                    </div>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold mb-2">Project Stage</h4>
+                      <p className="text-sm text-gray-600">{project.stage}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold mb-2">Description</h4>
+                      <p className="text-sm text-gray-600">{project.fullDescription}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold mb-2">Skills Needed</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.skillsNeeded.map((skill, skillIndex) => (
+                          <span 
+                            key={skillIndex}
+                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold mb-2">Goals</h4>
+                      <p className="text-sm text-gray-600">{project.goals}</p>
+                    </div>
+                    
+                    <div className="pt-4 border-t">
+                      <p className="text-sm text-gray-500 mb-3">Interested in collaborating?</p>
+                      <Button className="w-full">
+                        <Users className="w-4 h-4 mr-2" />
+                        Contact {project.author}
+                      </Button>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            );
+          })}
         </div>
       </div>
     </div>
