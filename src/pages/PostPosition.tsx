@@ -77,7 +77,7 @@ const PostPosition = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative min-h-screen">
       {/* Fixed Border Frame */}
       <div 
         className="fixed inset-0 pointer-events-none z-50"
@@ -94,7 +94,7 @@ const PostPosition = () => {
       >
         <div className="absolute inset-0 bg-white/90"></div>
         
-        <div className="relative z-10 min-h-screen p-6">
+        <div className="relative z-10 min-h-screen p-6 pt-8 pb-8">
           {/* Header */}
           <div className="mb-8">
             <Link 
