@@ -78,14 +78,13 @@ const PostPosition = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* Full Page Frame */}
+      {/* Page Border Frame */}
       <div 
         className="fixed inset-0 pointer-events-none z-50"
         style={{
-          backgroundImage: `url(${pageFrame})`,
-          backgroundSize: '100% 100%',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center'
+          border: '20px solid',
+          borderImage: `url(${pageFrame}) 20 stretch`,
+          borderImageSlice: '20'
         }}
       />
       
