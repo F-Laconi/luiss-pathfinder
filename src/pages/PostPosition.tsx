@@ -82,9 +82,9 @@ const PostPosition = () => {
       <div 
         className="fixed inset-0 pointer-events-none z-50"
         style={{
-          border: '20px solid',
-          borderImage: `url(${boardBorder}) 20 stretch`,
-          borderImageSlice: '20'
+          border: '30px solid',
+          borderImage: `url(${boardBorder}) 30 stretch`,
+          borderImageSlice: '30'
         }}
       />
       
@@ -94,7 +94,7 @@ const PostPosition = () => {
       >
         <div className="absolute inset-0 bg-white/90"></div>
         
-        <div className="relative z-10 min-h-screen p-6 pt-8 pb-8">
+        <div className="relative z-10 min-h-screen px-6 py-8">
           {/* Header */}
           <div className="mb-8">
             <Link 
