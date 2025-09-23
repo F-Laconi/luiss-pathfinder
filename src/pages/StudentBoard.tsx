@@ -88,9 +88,11 @@ const StudentBoard = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="min-h-screen relative" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      {/* Full background overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
       {/* Header Overlay */}
-      <div className="bg-black/90 backdrop-blur-sm">
+      <div className="relative z-10 bg-black/30 backdrop-blur-sm">
         <header className="text-white">
           <div className="container mx-auto px-6 py-6">
             <Link to="/business-partner" className="inline-flex items-center text-white hover:opacity-80 transition-opacity mb-4">
@@ -105,7 +107,7 @@ const StudentBoard = () => {
       </div>
 
       {/* Main Content - Cork Board */}
-      <main className="container mx-auto px-6 py-8 relative">
+      <main className="container mx-auto px-6 py-8 relative z-10">
         {/* Add Profile Button */}
         <div className="flex justify-center mb-8">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
