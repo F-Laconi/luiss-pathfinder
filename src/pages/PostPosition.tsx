@@ -80,11 +80,12 @@ const PostPosition = () => {
     <div className="relative min-h-screen">
       {/* Fixed Border Frame */}
       <div 
-        className="fixed inset-0 pointer-events-none z-50"
+        className="absolute inset-0 pointer-events-none z-50"
         style={{
-          border: '30px solid',
-          borderImage: `url(${boardBorder}) 30 stretch`,
-          borderImageSlice: '30'
+          border: '20px solid',
+          borderImage: `url(${boardBorder}) 20 stretch`,
+          borderImageSlice: '20',
+          minHeight: '100vh'
         }}
       />
       
