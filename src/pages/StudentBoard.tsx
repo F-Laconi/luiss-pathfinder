@@ -22,14 +22,14 @@ const profileSchema = z.object({
 type Profile = z.infer<typeof profileSchema>;
 
 const stickyColors = [
-  'bg-yellow-300 border-yellow-400',
-  'bg-pink-300 border-pink-400', 
-  'bg-green-300 border-green-400',
-  'bg-blue-300 border-blue-400',
-  'bg-purple-300 border-purple-400',
-  'bg-orange-300 border-orange-400',
-  'bg-red-300 border-red-400',
-  'bg-indigo-300 border-indigo-400'
+  'bg-yellow-400 border-yellow-500',
+  'bg-pink-400 border-pink-500', 
+  'bg-green-400 border-green-500',
+  'bg-blue-400 border-blue-500',
+  'bg-purple-400 border-purple-500',
+  'bg-orange-400 border-orange-500',
+  'bg-red-400 border-red-500',
+  'bg-indigo-400 border-indigo-500'
 ];
 
 const StudentBoard = () => {
