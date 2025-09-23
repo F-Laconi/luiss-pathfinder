@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import cleanBackground from "@/assets/clean-background.png";
-import boardBorder from "@/assets/board-border.jpg";
+import pageFrame from "@/assets/page-frame.png";
 
 // Mock data for existing projects
 const mockProjects = [
@@ -78,14 +78,14 @@ const PostPosition = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* Fixed Border Frame */}
+      {/* Full Page Frame */}
       <div 
-        className="absolute inset-0 pointer-events-none z-50"
+        className="fixed inset-0 pointer-events-none z-50"
         style={{
-          border: '20px solid',
-          borderImage: `url(${boardBorder}) 20 stretch`,
-          borderImageSlice: '20',
-          minHeight: '100vh'
+          backgroundImage: `url(${pageFrame})`,
+          backgroundSize: '100% 100%',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
         }}
       />
       
