@@ -90,7 +90,7 @@ const StudentBoard = () => {
   return (
     <div className="min-h-screen" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Header Overlay */}
-      <div className="bg-black/80 backdrop-blur-sm">
+      <div className="bg-black/90 backdrop-blur-sm">
         <header className="text-white">
           <div className="container mx-auto px-6 py-6">
             <Link to="/business-partner" className="inline-flex items-center text-white hover:opacity-80 transition-opacity mb-4">
