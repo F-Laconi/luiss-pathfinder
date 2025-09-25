@@ -141,16 +141,11 @@ const UniversitySelection = () => {
                 <div className="relative mb-6">
                   <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center p-6 shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3`}>
                     {university.id === 'luiss' ? (
-                      <div className="relative w-full h-full flex items-center justify-center">
+                      <div className="relative w-full h-full">
                         <img 
                           src={luissColumn} 
                           alt="LUISS Column" 
-                          className="absolute inset-0 w-full h-full object-cover" 
-                        />
-                        <img 
-                          src={university.logo} 
-                          alt={`${university.name} logo`} 
-                          className="relative z-10 w-1/3 h-1/3 object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
+                          className="w-full h-full object-cover" 
                         />
                       </div>
                     ) : (
