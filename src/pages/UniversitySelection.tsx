@@ -145,12 +145,12 @@ const UniversitySelection = () => {
                         <img 
                           src={luissColumn} 
                           alt="LUISS Column" 
-                          className="absolute inset-0 w-full h-full object-contain opacity-80" 
+                          className="absolute inset-0 w-full h-full object-cover" 
                         />
                         <img 
                           src={university.logo} 
                           alt={`${university.name} logo`} 
-                          className="relative z-10 w-1/2 h-1/2 object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
+                          className="relative z-10 w-1/3 h-1/3 object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
                         />
                       </div>
                     ) : (
