@@ -144,7 +144,7 @@ const UniversitySelection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative mb-6">
-                  <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center p-6 shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3`}>
+                  <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3 overflow-hidden`}>
                     {university.id === 'luiss' ? (
                       <div className="relative w-full h-full">
                         <img 
