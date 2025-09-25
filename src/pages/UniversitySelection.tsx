@@ -15,6 +15,7 @@ import sapienzaEmblem from "@/assets/sapienza-emblem.png";
 import polimiLogo from "@/assets/polimi-logo.png";
 import polimiEmblem from "@/assets/polimi-emblem.png";
 import uniboLogo from "@/assets/unibo-logo.png";
+import uniboEmblem from "@/assets/unibo-emblem.png";
 const universities = [{
   id: "luiss",
   name: "LUISS Guido Carli",
@@ -181,6 +182,14 @@ const UniversitySelection = () => {
                         <img 
                           src={polimiEmblem} 
                           alt="Polimi Emblem" 
+                          className="w-full h-full object-cover" 
+                        />
+                      </div>
+                    ) : university.id === 'unibo' ? (
+                      <div className="relative w-full h-full">
+                        <img 
+                          src={uniboEmblem} 
+                          alt="UniBo Emblem" 
                           className="w-full h-full object-cover" 
                         />
                       </div>
