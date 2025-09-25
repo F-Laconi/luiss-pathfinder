@@ -9,6 +9,7 @@ import luissColumn from "@/assets/luiss-column.png";
 import bocconiLogo from "@/assets/bocconi-logo.png";
 import bocconiBrand from "@/assets/bocconi-brand.png";
 import cattolicaLogo from "@/assets/cattolica-logo.png";
+import cattolicaEmblem from "@/assets/cattolica-emblem.png";
 import sapienzaLogo from "@/assets/sapienza-logo.png";
 import polimiLogo from "@/assets/polimi-logo.png";
 import uniboLogo from "@/assets/unibo-logo.png";
@@ -154,6 +155,14 @@ const UniversitySelection = () => {
                         <img 
                           src={bocconiBrand} 
                           alt="Bocconi Brand" 
+                          className="w-full h-full object-cover" 
+                        />
+                      </div>
+                    ) : university.id === 'cattolica' ? (
+                      <div className="relative w-full h-full">
+                        <img 
+                          src={cattolicaEmblem} 
+                          alt="Cattolica Emblem" 
                           className="w-full h-full object-cover" 
                         />
                       </div>
