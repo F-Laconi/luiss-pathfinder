@@ -15,7 +15,7 @@ import sapienzaEmblem from "@/assets/sapienza-emblem.png";
 import polimiLogo from "@/assets/polimi-logo.png";
 import polimiEmblem from "@/assets/polimi-emblem.png";
 import uniboLogo from "@/assets/unibo-logo.png";
-import uniboEmblem from "@/assets/unibo-emblem.png";
+import uniboEmblem from "@/assets/unibo-emblem-new.png";
 const universities = [{
   id: "luiss",
   name: "LUISS Guido Carli",
