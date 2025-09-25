@@ -11,6 +11,7 @@ import bocconiBrand from "@/assets/bocconi-brand.png";
 import cattolicaLogo from "@/assets/cattolica-logo.png";
 import cattolicaEmblem from "@/assets/cattolica-emblem.png";
 import sapienzaLogo from "@/assets/sapienza-logo.png";
+import sapienzaEmblem from "@/assets/sapienza-emblem.png";
 import polimiLogo from "@/assets/polimi-logo.png";
 import uniboLogo from "@/assets/unibo-logo.png";
 const universities = [{
@@ -163,6 +164,14 @@ const UniversitySelection = () => {
                         <img 
                           src={cattolicaEmblem} 
                           alt="Cattolica Emblem" 
+                          className="w-full h-full object-cover" 
+                        />
+                      </div>
+                    ) : university.id === 'sapienza' ? (
+                      <div className="relative w-full h-full">
+                        <img 
+                          src={sapienzaEmblem} 
+                          alt="Sapienza Emblem" 
                           className="w-full h-full object-cover" 
                         />
                       </div>
