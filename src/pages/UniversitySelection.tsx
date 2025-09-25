@@ -197,7 +197,7 @@ const UniversitySelection = () => {
                       <img 
                         src={university.logo} 
                         alt={`${university.name} logo`} 
-                        className="w-full h-full object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
+                        className="w-full h-full object-cover filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
                       />
                     )}
                   </div>
