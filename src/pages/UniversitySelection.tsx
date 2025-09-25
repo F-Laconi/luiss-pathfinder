@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import luissLogo from "@/assets/luiss-logo.png";
+import luissColumn from "@/assets/luiss-column.png";
 import bocconiLogo from "@/assets/bocconi-logo.png";
 import cattolicaLogo from "@/assets/cattolica-logo.png";
 import sapienzaLogo from "@/assets/sapienza-logo.png";
@@ -139,11 +140,26 @@ const UniversitySelection = () => {
               >
                 <div className="relative mb-6">
                   <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center p-6 shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3`}>
-                    <img 
-                      src={university.logo} 
-                      alt={`${university.name} logo`} 
-                      className="w-full h-full object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
-                    />
+                    {university.id === 'luiss' ? (
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <img 
+                          src={luissColumn} 
+                          alt="LUISS Column" 
+                          className="absolute inset-0 w-full h-full object-contain filter brightness-0 invert opacity-30" 
+                        />
+                        <img 
+                          src={university.logo} 
+                          alt={`${university.name} logo`} 
+                          className="relative z-10 w-2/3 h-2/3 object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
+                        />
+                      </div>
+                    ) : (
+                      <img 
+                        src={university.logo} 
+                        alt={`${university.name} logo`} 
+                        className="w-full h-full object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
+                      />
+                    )}
                   </div>
                   <div className={`absolute -inset-4 bg-gradient-to-r ${university.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500`}></div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce">
