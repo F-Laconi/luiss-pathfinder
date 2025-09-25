@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import luissLogo from "@/assets/luiss-logo.png";
 import luissColumn from "@/assets/luiss-column.png";
 import bocconiLogo from "@/assets/bocconi-logo.png";
+import bocconiBrand from "@/assets/bocconi-brand.png";
 import cattolicaLogo from "@/assets/cattolica-logo.png";
 import sapienzaLogo from "@/assets/sapienza-logo.png";
 import polimiLogo from "@/assets/polimi-logo.png";
@@ -145,6 +146,14 @@ const UniversitySelection = () => {
                         <img 
                           src={luissColumn} 
                           alt="LUISS Column" 
+                          className="w-full h-full object-cover" 
+                        />
+                      </div>
+                    ) : university.id === 'bocconi' ? (
+                      <div className="relative w-full h-full">
+                        <img 
+                          src={bocconiBrand} 
+                          alt="Bocconi Brand" 
                           className="w-full h-full object-cover" 
                         />
                       </div>
