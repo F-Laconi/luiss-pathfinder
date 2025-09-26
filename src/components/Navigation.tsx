@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Menu, X, BookOpen, Heart, User } from "lucide-react";
+import { Search, Menu, X, BookOpen, Heart, User, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,15 +26,33 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/masters" className="text-foreground hover:text-primary transition-colors">
-              Masters
-            </Link>
-            <Link to="/courses" className="text-foreground hover:text-primary transition-colors">
-              Courses
-            </Link>
-            <Link to="/professors" className="text-foreground hover:text-primary transition-colors">
-              Professors
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors cursor-pointer">
+                <span>Navigate</span>
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuItem asChild>
+                  <Link to="/course-explorer" className="w-full">
+                    Make the right choice
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem disabled className="font-semibold text-muted-foreground">
+                  Find your business partner
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="pl-6">
+                  <Link to="/student-board" className="w-full">
+                    Looking for a position
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="pl-6">
+                  <Link to="/post-position" className="w-full">
+                    Post a position
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Desktop Actions */}
