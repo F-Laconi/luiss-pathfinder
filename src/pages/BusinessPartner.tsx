@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Search, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Navigation from "@/components/Navigation";
 const BusinessPartner = () => {
   return <div className="min-h-screen bg-background">
+      <Navigation />
+      
       {/* Header */}
       <header className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 py-8">

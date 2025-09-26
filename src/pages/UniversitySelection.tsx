@@ -4,6 +4,7 @@ import { Search, GraduationCap, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Navigation from "@/components/Navigation";
 import luissLogo from "@/assets/luiss-logo.png";
 import luissColumn from "@/assets/luiss-column.png";
 import bocconiLogo from "@/assets/bocconi-logo.png";
@@ -69,24 +70,10 @@ const UniversitySelection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
   return <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold text-primary">
-              UniCompass
-            </Link>
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
-                Home
-              </Link>
-              <Link to="/course-explorer" className="text-muted-foreground hover:text-foreground transition-colors">
-                Courses
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Navigation />
+      
+      {/* Header - simplified to avoid duplication */}
+      <div className="pt-16"></div>
 
       {/* Hero Section */}
       <section className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">

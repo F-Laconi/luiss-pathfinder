@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Navigation from "@/components/Navigation";
 import corkBoardBg from "@/assets/cork-board-background.jpg";
 
 const profileSchema = z.object({
@@ -88,7 +89,9 @@ const StudentBoard = () => {
   };
 
   return (
-    <div className="min-h-screen relative" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div>
+      <Navigation />
+      <div className="min-h-screen relative" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Full background overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
       {/* Header Overlay */}
@@ -270,6 +273,7 @@ const StudentBoard = () => {
           </div>
         )}
       </main>
+      </div>
     </div>
   );
 };

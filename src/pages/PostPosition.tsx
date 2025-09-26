@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
+import Navigation from "@/components/Navigation";
 import cleanBackground from "@/assets/clean-background.png";
 import pageFrame from "@/assets/page-frame.png";
 
@@ -77,7 +78,9 @@ const PostPosition = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div>
+      <Navigation />
+      <div className="relative min-h-screen pt-16">
       {/* Page Border Frame */}
       <div 
         className="fixed inset-0 pointer-events-none z-50"

@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { Compass, UserCheck } from "lucide-react";
+import Navigation from "@/components/Navigation";
 import compassWallpaper from "@/assets/compass-wallpaper.jpg";
 
 const Index = () => {
   return (
-    <div 
+    <div>
+      <Navigation />
+      <div
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(${compassWallpaper})`,
@@ -88,6 +91,7 @@ const Index = () => {
             Choose your journey and unlock your potential
           </p>
         </div>
+      </div>
       </div>
     </div>
   );
