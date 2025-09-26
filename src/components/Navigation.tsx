@@ -33,13 +33,21 @@ const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56">
                 <DropdownMenuItem asChild>
+                  <Link to="/" className="w-full">
+                    Home
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
                   <Link to="/course-explorer" className="w-full">
                     Make the right choice
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem disabled className="font-semibold text-muted-foreground">
-                  Find your business partner
+                <DropdownMenuItem asChild>
+                  <Link to="/business-partner" className="w-full">
+                    Find your business partner
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="pl-6">
                   <Link to="/student-board" className="w-full">
