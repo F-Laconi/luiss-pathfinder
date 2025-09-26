@@ -344,6 +344,7 @@ const PostPosition = () => {
           </div>
         </div>
       </div>
+     </div>
     </div>
   );
 };
