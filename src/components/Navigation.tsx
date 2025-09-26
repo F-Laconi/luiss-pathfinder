@@ -19,7 +19,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary">
+          <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative">
             <BookOpen className="h-6 w-6" />
             <span>LUISS Explorer</span>
           </Link>
