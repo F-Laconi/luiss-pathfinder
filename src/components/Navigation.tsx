@@ -29,7 +29,7 @@ const Navigation = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="start" 
-              className="w-64 bg-gradient-to-br from-background/40 via-background/30 to-muted/10 border border-border/10 shadow-xl backdrop-blur-md rounded-xl p-2"
+              className="w-64 bg-gradient-to-br from-background/80 via-background/70 to-muted/40 border border-border/30 shadow-xl backdrop-blur-md rounded-xl p-2"
             >
               <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
                 <Link to="/" className="w-full flex items-center space-x-2 p-2">
