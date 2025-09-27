@@ -23,7 +23,7 @@ const Index = () => {
         <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-cyan-200/60 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container max-w-5xl mx-auto px-6 text-center relative z-10">
+      <div className="container max-w-5xl mx-auto px-6 text-center relative z-40">
         {/* Brand Title with Enhanced Styling */}
         <div className="mb-20 animate-fade-up">
           <div className="relative inline-block">
