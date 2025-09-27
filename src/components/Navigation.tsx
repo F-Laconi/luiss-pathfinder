@@ -21,7 +21,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative">
             <BookOpen className="h-6 w-6" />
-            <span>LUISS Explorer</span>
+            <span>UniCompass</span>
           </Link>
 
           {/* Desktop Navigation */}
