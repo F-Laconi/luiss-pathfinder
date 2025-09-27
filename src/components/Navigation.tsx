@@ -15,9 +15,9 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-md border-b border-border/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-12">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative">
             <BookOpen className="h-6 w-6" />
@@ -89,7 +89,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-border shadow-lg">
+          <div className="md:hidden absolute top-12 left-0 right-0 bg-white border-b border-border shadow-lg">
             <div className="p-4 space-y-4">
               <Link
                 to="/masters"
