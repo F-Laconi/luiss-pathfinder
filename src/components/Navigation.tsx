@@ -19,48 +19,47 @@ const Navigation = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative">
-            <BookOpen className="h-6 w-6" />
-            <span>UniCompass</span>
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative cursor-pointer">
+                <BookOpen className="h-6 w-6" />
+                <span>UniCompass</span>
+                <ChevronDown className="h-4 w-4" />
+              </Link>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-56">
+              <DropdownMenuItem asChild>
+                <Link to="/" className="w-full">
+                  Home
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <Link to="/course-explorer" className="w-full">
+                  Make the right choice
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <Link to="/business-partner" className="w-full">
+                  Find your business partner
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="pl-6">
+                <Link to="/student-board" className="w-full">
+                  Looking for a position
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="pl-6">
+                <Link to="/post-position" className="w-full">
+                  Post a position
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors cursor-pointer">
-                <span>Navigate</span>
-                <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                <DropdownMenuItem asChild>
-                  <Link to="/" className="w-full">
-                    Home
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link to="/course-explorer" className="w-full">
-                    Make the right choice
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link to="/business-partner" className="w-full">
-                    Find your business partner
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="pl-6">
-                  <Link to="/student-board" className="w-full">
-                    Looking for a position
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="pl-6">
-                  <Link to="/post-position" className="w-full">
-                    Post a position
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
 
           {/* Desktop Actions */}
