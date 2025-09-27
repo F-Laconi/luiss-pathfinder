@@ -27,32 +27,40 @@ const Navigation = () => {
                 <ChevronDown className="h-4 w-4" />
               </Link>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-56">
-              <DropdownMenuItem asChild>
-                <Link to="/" className="w-full">
-                  Home
+            <DropdownMenuContent 
+              align="start" 
+              className="w-64 bg-gradient-to-br from-background via-background to-muted/20 border border-border/20 shadow-xl backdrop-blur-md rounded-xl p-2"
+            >
+              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+                <Link to="/" className="w-full flex items-center space-x-2 p-2">
+                  <BookOpen className="h-4 w-4" />
+                  <span>Home</span>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
-                <Link to="/course-explorer" className="w-full">
-                  Make the right choice
+              <DropdownMenuSeparator className="bg-border/30 my-2" />
+              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+                <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
+                  <Search className="h-4 w-4" />
+                  <span>Make the right choice</span>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
-                <Link to="/business-partner" className="w-full">
-                  Find your business partner
+              <DropdownMenuSeparator className="bg-border/30 my-2" />
+              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+                <Link to="/business-partner" className="w-full flex items-center space-x-2 p-2">
+                  <Heart className="h-4 w-4" />
+                  <span>Find your business partner</span>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="pl-6">
-                <Link to="/student-board" className="w-full">
-                  Looking for a position
+              <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
+                <Link to="/student-board" className="w-full flex items-center space-x-2 p-2">
+                  <User className="h-4 w-4" />
+                  <span>Looking for a position</span>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="pl-6">
-                <Link to="/post-position" className="w-full">
-                  Post a position
+              <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
+                <Link to="/post-position" className="w-full flex items-center space-x-2 p-2">
+                  <Menu className="h-4 w-4" />
+                  <span>Post a position</span>
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
