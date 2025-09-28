@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Sparkles, Target, Users, Rocket, Heart, BookOpen, Lightbulb } from "lucide-react";
 
@@ -138,11 +139,11 @@ const About = () => {
 
             {/* CTA Section */}
             <div className="text-center mt-20">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg">
+              <Link to="/" className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg">
                 <BookOpen className="h-5 w-5" />
                 Start Your Journey
                 <Sparkles className="h-5 w-5" />
-              </div>
+              </Link>
             </div>
           </div>
         </div>
