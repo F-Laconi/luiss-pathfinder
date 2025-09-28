@@ -13,6 +13,7 @@ import CourseDetail from "./pages/CourseDetail";
 import BusinessPartner from "./pages/BusinessPartner";
 import PostPosition from "./pages/PostPosition";
 import StudentBoard from "./pages/StudentBoard";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/business-partner" element={<BusinessPartner />} />
           <Route path="/post-position" element={<PostPosition />} />
           <Route path="/student-board" element={<StudentBoard />} />
+          <Route path="/about" element={<About />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />
           <Route path="/school/:schoolId" element={<MasterCategory />} />
