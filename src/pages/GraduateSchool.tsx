@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Filter, Flag } from "lucide-react";
+import { Search, Filter, Flag, Globe, GraduationCap, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import graduateImage2 from "@/assets/graduate-programs-2.png";
@@ -25,67 +26,67 @@ const graduatePrograms = [{
   id: 1,
   title: "Policies and Governance in Europe",
   image: policiesGovernanceImage,
-  languages: ["en"],
+  languages: ["English"],
   category: "Politics & Governance"
 }, {
   id: 2,
   title: "Economia, Istituzioni e Mercati Finanziari",
   image: economiaIstituzioniImage,
-  languages: ["it", "en"],
+  languages: ["English", "Italian"],
   category: "Economics & Finance"
 }, {
   id: 3,
   title: "Finance",
   image: financeImage,
-  languages: ["en"],
+  languages: ["English"],
   category: "Finance"
 }, {
   id: 4,
   title: "Global Management and Politics",
   image: globalManagementImage,
-  languages: ["en"],
+  languages: ["English"],
   category: "Management & Politics"
 }, {
   id: 5,
   title: "Government and Public Affairs",
   image: governmentAffairsImage,
-  languages: ["it", "en"],
+  languages: ["English", "Italian"],
   category: "Government & Public Affairs"
 }, {
   id: 6,
   title: "International Relations",
   image: internationalRelationsImage,
-  languages: ["en"],
+  languages: ["English"],
   category: "International Relations"
 }, {
   id: 7,
   title: "Management",
   image: managementImage,
-  languages: ["en"],
+  languages: ["English"],
   category: "Management"
 }, {
   id: 8,
   title: "Marketing",
   image: marketingImage,
-  languages: ["it", "en"],
+  languages: ["English", "Italian"],
   category: "Marketing"
 }, {
   id: 9,
   title: "Strategic Management",
   image: strategicManagementImage,
-  languages: ["it", "en"],
+  languages: ["English", "Italian"],
   category: "Strategic Management"
 }, {
   id: 10,
   title: "Amministrazione, Finanza e Controllo",
   image: amministrazioneFinanzaImage,
-  languages: ["it", "en"],
+  languages: ["English", "Italian"],
   category: "Administration & Finance"
 }, {
   id: 11,
   title: "Data Science and Management",
   image: dataScienceImage,
-  languages: ["en"],
+  languages: ["English"],
   category: "Data Science"
 }];
 const GraduateSchool = () => {
@@ -95,8 +96,8 @@ const GraduateSchool = () => {
   const filteredPrograms = graduatePrograms.filter(program => {
     const matchesSearch = program.title.toLowerCase().includes(searchQuery.toLowerCase()) || program.category.toLowerCase().includes(searchQuery.toLowerCase());
     if (filterBy === "all") return matchesSearch;
-    if (filterBy === "english") return matchesSearch && program.languages.includes("en");
-    if (filterBy === "italian") return matchesSearch && program.languages.includes("it");
+    if (filterBy === "english") return matchesSearch && program.languages.includes("English");
+    if (filterBy === "italian") return matchesSearch && program.languages.includes("Italian");
     return matchesSearch;
   });
   const sortedPrograms = [...filteredPrograms].sort((a, b) => {
@@ -106,16 +107,11 @@ const GraduateSchool = () => {
     return 0;
   });
   const renderLanguageFlags = (languages: string[]) => {
-    return <div className="flex space-x-1">
-        {languages.includes("it") && <div className="w-6 h-4 rounded-sm overflow-hidden border border-gray-200">
-            <div className="w-full h-full bg-gradient-to-r from-green-500 via-white to-red-500"></div>
-          </div>}
-        {languages.includes("en") && <div className="w-6 h-4 rounded-sm overflow-hidden border border-gray-200">
-            <div className="w-full h-full bg-gradient-to-b from-blue-800 via-white to-red-600 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-transparent to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-transparent to-red-600"></div>
-            </div>
-          </div>}
+    return <div className="flex gap-1">
+        {languages.map(lang => <Badge key={lang} variant="secondary" className="text-xs">
+            <Globe className="h-3 w-3 mr-1" />
+            {lang === "English" ? "EN" : "IT"}
+          </Badge>)}
       </div>;
   };
   return <div className="min-h-screen bg-background">
