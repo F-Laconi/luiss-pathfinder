@@ -17,14 +17,14 @@ import globalManagementImage from "@/assets/global-management-politics.png";
 import governmentAffairsImage from "@/assets/government-public-affairs.png";
 import internationalRelationsImage from "@/assets/international-relations.png";
 
-// Post-graduate programs data
+// LUISS Post-graduate PhD programs data
 const postGraduatePrograms = [
   {
     id: 1,
     title: "PhD in Economics",
     image: economiaIstituzioniImage,
     languages: ["English"],
-    category: "Economics & Finance"
+    category: "Economics"
   },
   {
     id: 2,
@@ -35,52 +35,17 @@ const postGraduatePrograms = [
   },
   {
     id: 3,
-    title: "PhD in Political Science",
+    title: "PhD in Politics",
     image: policiesGovernanceImage,
-    languages: ["English", "Italian"],
-    category: "Politics & Governance"
+    languages: ["English"],
+    category: "Politics"
   },
   {
     id: 4,
-    title: "Research Doctorate in Finance",
+    title: "PhD in Law and Business",
     image: financeImage,
     languages: ["English"],
-    category: "Finance"
-  },
-  {
-    id: 5,
-    title: "PhD in International Relations",
-    image: internationalRelationsImage,
-    languages: ["English"],
-    category: "International Relations"
-  },
-  {
-    id: 6,
-    title: "Advanced Research Program in Public Policy",
-    image: governmentAffairsImage,
-    languages: ["English", "Italian"],
-    category: "Government & Public Affairs"
-  },
-  {
-    id: 7,
-    title: "Postdoctoral Research Fellowship",
-    image: graduateImage1,
-    languages: ["English"],
-    category: "Research"
-  },
-  {
-    id: 8,
-    title: "Executive PhD Program",
-    image: graduateImage2,
-    languages: ["English", "Italian"],
-    category: "Executive Education"
-  },
-  {
-    id: 9,
-    title: "PhD in Data Science",
-    image: graduateImage3,
-    languages: ["English"],
-    category: "Data Science"
+    category: "Law & Business"
   }
 ];
 
@@ -130,12 +95,12 @@ const PostGraduateSchool = () => {
               Post Graduate School
             </h1>
             <p className="text-subtitle mb-8">
-              Advanced degree programs for research and specialized study. Pursue PhD programs and 
-              advanced research opportunities to become a leader in your field.
+              LUISS Guido Carli offers four doctoral programs designed to prepare independent researchers 
+              with strong publication and teaching experience opportunities.
             </p>
             <div className="flex justify-center space-x-8 text-sm">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">9</div>
+                <div className="text-2xl font-bold text-primary">4</div>
                 <div className="text-muted-foreground">PhD Programs</div>
               </div>
               <div className="text-center">
@@ -143,8 +108,8 @@ const PostGraduateSchool = () => {
                 <div className="text-muted-foreground">Research Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">150+</div>
-                <div className="text-muted-foreground">Research Fellows</div>
+                <div className="text-2xl font-bold text-primary">100+</div>
+                <div className="text-muted-foreground">PhD Candidates</div>
               </div>
             </div>
           </div>
