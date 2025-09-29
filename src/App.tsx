@@ -10,6 +10,7 @@ import CourseExplorer from "./pages/CourseExplorer";
 import MasterCategory from "./pages/MasterCategory";
 import GraduateSchool from "./pages/GraduateSchool";
 import UndergraduateSchool from "./pages/UndergraduateSchool";
+import PostGraduateSchool from "./pages/PostGraduateSchool";
 import CourseDetail from "./pages/CourseDetail";
 import BusinessPartner from "./pages/BusinessPartner";
 import PostPosition from "./pages/PostPosition";
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/school/undergraduate" element={<UndergraduateSchool />} />
+          <Route path="/school/postgraduate" element={<PostGraduateSchool />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />
           <Route path="/school/:schoolId" element={<MasterCategory />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
