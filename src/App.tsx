@@ -16,6 +16,7 @@ import BusinessPartner from "./pages/BusinessPartner";
 import PostPosition from "./pages/PostPosition";
 import StudentBoard from "./pages/StudentBoard";
 import About from "./pages/About";
+import EasterEgg from "./pages/EasterEgg";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/post-position" element={<PostPosition />} />
           <Route path="/student-board" element={<StudentBoard />} />
           <Route path="/about" element={<About />} />
+          <Route path="/easter-egg" element={<EasterEgg />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/school/undergraduate" element={<UndergraduateSchool />} />
           <Route path="/school/postgraduate" element={<PostGraduateSchool />} />

@@ -13,10 +13,10 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10"></div>
           <div className="container mx-auto px-4 lg:px-8 py-20">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
+              <Link to="/easter-egg" className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in hover:bg-primary/20 hover:scale-105 transition-all duration-300 cursor-pointer">
                 <Sparkles className="h-4 w-4" />
                 Made with passion by LUISS students
-              </div>
+              </Link>
               
               <h1 className="font-playfair text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
                 About
