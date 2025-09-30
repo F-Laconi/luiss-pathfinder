@@ -123,94 +123,112 @@ const UniversitySelection = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {filteredUniversities.map((university, index) => 
-              <Link 
-                key={university.id} 
-                to="/course-explorer" 
-                className="group flex flex-col items-center text-center transition-all duration-500 hover:scale-110 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative mb-6">
-                  <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3 overflow-hidden`}>
-                    {university.id === 'luiss' ? (
-                      <div className="relative w-full h-full">
+            {filteredUniversities.map((university, index) => {
+              const content = (
+                <>
+                  <div className="relative mb-6">
+                    <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3 overflow-hidden`}>
+                      {university.id === 'luiss' ? (
+                        <div className="relative w-full h-full">
+                          <img 
+                            src={luissColumn} 
+                            alt="LUISS Column" 
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
+                      ) : university.id === 'bocconi' ? (
+                        <div className="relative w-full h-full">
+                          <img 
+                            src={bocconiBrand} 
+                            alt="Bocconi Brand" 
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
+                      ) : university.id === 'cattolica' ? (
+                        <div className="relative w-full h-full">
+                          <img 
+                            src={cattolicaEmblem} 
+                            alt="Cattolica Emblem" 
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
+                      ) : university.id === 'sapienza' ? (
+                        <div className="relative w-full h-full">
+                          <img 
+                            src={sapienzaEmblem} 
+                            alt="Sapienza Emblem" 
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
+                      ) : university.id === 'polimi' ? (
+                        <div className="relative w-full h-full">
+                          <img 
+                            src={polimiEmblem} 
+                            alt="Polimi Emblem" 
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
+                      ) : university.id === 'unibo' ? (
+                        <div className="relative w-full h-full">
+                          <img 
+                            src={uniboEmblem} 
+                            alt="UniBo Emblem" 
+                            className="w-full h-full object-cover" 
+                          />
+                        </div>
+                      ) : (
                         <img 
-                          src={luissColumn} 
-                          alt="LUISS Column" 
-                          className="w-full h-full object-cover" 
+                          src={university.logo} 
+                          alt={`${university.name} logo`} 
+                          className="w-full h-full object-cover filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
                         />
-                      </div>
-                    ) : university.id === 'bocconi' ? (
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={bocconiBrand} 
-                          alt="Bocconi Brand" 
-                          className="w-full h-full object-cover" 
-                        />
-                      </div>
-                    ) : university.id === 'cattolica' ? (
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={cattolicaEmblem} 
-                          alt="Cattolica Emblem" 
-                          className="w-full h-full object-cover" 
-                        />
-                      </div>
-                    ) : university.id === 'sapienza' ? (
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={sapienzaEmblem} 
-                          alt="Sapienza Emblem" 
-                          className="w-full h-full object-cover" 
-                        />
-                      </div>
-                    ) : university.id === 'polimi' ? (
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={polimiEmblem} 
-                          alt="Polimi Emblem" 
-                          className="w-full h-full object-cover" 
-                        />
-                      </div>
-                    ) : university.id === 'unibo' ? (
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={uniboEmblem} 
-                          alt="UniBo Emblem" 
-                          className="w-full h-full object-cover" 
-                        />
-                      </div>
-                    ) : (
-                      <img 
-                        src={university.logo} 
-                        alt={`${university.name} logo`} 
-                        className="w-full h-full object-cover filter brightness-0 invert group-hover:scale-110 transition-transform duration-300" 
-                      />
-                    )}
+                      )}
+                    </div>
+                    <div className={`absolute -inset-4 bg-gradient-to-r ${university.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500`}></div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce">
+                      <span className="text-xs font-bold text-white">🎯</span>
+                    </div>
                   </div>
-                  <div className={`absolute -inset-4 bg-gradient-to-r ${university.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500`}></div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce">
-                    <span className="text-xs font-bold text-white">🎯</span>
+                  
+                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 max-w-48 leading-tight">
+                    {university.name}
+                  </h3>
+                  
+                  <div className="flex items-center space-x-2 text-xs text-muted-foreground mb-4">
+                    <span className="bg-primary/10 px-3 py-1 rounded-full">👥 {university.students}</span>
+                    <span className="bg-accent/10 px-3 py-1 rounded-full">📚 {university.programs}</span>
                   </div>
+                  
+                  {university.id === 'luiss' && (
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      <span className="inline-flex items-center text-sm font-medium text-primary">
+                        Explore Programs 
+                        <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  )}
+                </>
+              );
+
+              return university.id === 'luiss' ? (
+                <Link 
+                  key={university.id} 
+                  to="/course-explorer" 
+                  className="group flex flex-col items-center text-center transition-all duration-500 hover:scale-110 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {content}
+                </Link>
+              ) : (
+                <div 
+                  key={university.id} 
+                  className="flex flex-col items-center text-center animate-fade-in opacity-50"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {content}
                 </div>
-                
-                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 max-w-48 leading-tight">
-                  {university.name}
-                </h3>
-                
-                <div className="flex items-center space-x-2 text-xs text-muted-foreground mb-4">
-                  <span className="bg-primary/10 px-3 py-1 rounded-full">👥 {university.students}</span>
-                  <span className="bg-accent/10 px-3 py-1 rounded-full">📚 {university.programs}</span>
-                </div>
-                
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  <span className="inline-flex items-center text-sm font-medium text-primary">
-                    Explore Programs 
-                    <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </div>
-              </Link>
-            )}
+              );
+            })}
           </div>
 
           {filteredUniversities.length === 0 && 
