@@ -126,7 +126,7 @@ const UniversitySelection = () => {
             {filteredUniversities.map((university, index) => 
               <Link 
                 key={university.id} 
-                to={university.id === 'luiss' ? '/easter-egg' : '/course-explorer'}
+                to="/course-explorer" 
                 className="group flex flex-col items-center text-center transition-all duration-500 hover:scale-110 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
