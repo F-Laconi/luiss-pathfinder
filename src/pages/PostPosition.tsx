@@ -10,6 +10,8 @@ import { useForm } from "react-hook-form";
 import Navigation from "@/components/Navigation";
 import cleanBackground from "@/assets/clean-background.png";
 import pageFrame from "@/assets/page-frame.png";
+import { ProjectCanvas } from "@/components/ProjectCanvas";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Mock data for existing projects
 const mockProjects = [
@@ -108,239 +110,255 @@ const PostPosition = () => {
               Back to Business Partner
             </Link>
             
-            <div className="flex justify-between items-start">
-              <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-2xl">
-                <h1 className="text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
-                <p className="text-gray-600 text-lg">
-                  Discover innovative student projects seeking talented collaborators
-                </p>
-              </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-7xl mx-auto">
+              <h1 className="text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
+              <p className="text-gray-600 text-lg mb-6">
+                Discover innovative student projects seeking talented collaborators
+              </p>
               
-              <Dialog open={showForm} onOpenChange={setShowForm}>
-                <DialogTrigger asChild>
-                  <div className="bg-blue-600 hover:bg-blue-700 transition-colors rounded-xl shadow-lg">
-                    <Button className="bg-transparent hover:bg-transparent text-white text-lg px-8 py-6 h-auto">
-                      <Plus className="w-5 h-5 mr-2" />
-                      Post My Project
-                    </Button>
+              <Tabs defaultValue="projects" className="w-full">
+                <TabsList className="grid w-full grid-cols-2 mb-6">
+                  <TabsTrigger value="projects">View Projects</TabsTrigger>
+                  <TabsTrigger value="canvas">Canvas</TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="projects" className="mt-0">
+                  <div className="flex justify-end mb-6">
+              
+                    <Dialog open={showForm} onOpenChange={setShowForm}>
+                      <DialogTrigger asChild>
+                        <div className="bg-blue-600 hover:bg-blue-700 transition-colors rounded-xl shadow-lg">
+                          <Button className="bg-transparent hover:bg-transparent text-white text-lg px-8 py-6 h-auto">
+                            <Plus className="w-5 h-5 mr-2" />
+                            Post My Project
+                          </Button>
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle>Post Your Project</DialogTitle>
+                        </DialogHeader>
+                        <Form {...form}>
+                          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                            <FormField
+                              control={form.control}
+                              name="title"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Project Title</FormLabel>
+                                  <FormControl>
+                                    <Input placeholder="My Amazing Project" {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="briefDescription"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Brief Description</FormLabel>
+                                  <FormControl>
+                                    <Textarea 
+                                      placeholder="A short description of your project..."
+                                      className="min-h-[80px]"
+                                      {...field} 
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="skillsNeeded"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Skills Needed (comma separated)</FormLabel>
+                                  <FormControl>
+                                    <Input 
+                                      placeholder="React, Design, Marketing, etc."
+                                      {...field} 
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="stage"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Project Stage</FormLabel>
+                                  <FormControl>
+                                    <Input 
+                                      placeholder="Concept, MVP, Beta, etc."
+                                      {...field} 
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="fullDescription"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Full Description</FormLabel>
+                                  <FormControl>
+                                    <Textarea 
+                                      placeholder="Detailed description of your project, goals, and what kind of help you need..."
+                                      className="min-h-[120px]"
+                                      {...field} 
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <FormField
+                              control={form.control}
+                              name="goals"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Goals</FormLabel>
+                                  <FormControl>
+                                    <Textarea 
+                                      placeholder="What do you want to achieve?"
+                                      className="min-h-[80px]"
+                                      {...field} 
+                                    />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                            
+                            <Button type="submit" className="w-full">
+                              Post Project
+                            </Button>
+                          </form>
+                        </Form>
+                      </DialogContent>
+                    </Dialog>
                   </div>
-                </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                  <DialogHeader>
-                    <DialogTitle>Post Your Project</DialogTitle>
-                  </DialogHeader>
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                      <FormField
-                        control={form.control}
-                        name="title"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Project Title</FormLabel>
-                            <FormControl>
-                              <Input placeholder="My Amazing Project" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                  
+                  {/* Projects Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {projects.map((project, index) => {
+                      const gradients = [
+                        "from-blue-50 to-blue-100 border-blue-200",
+                        "from-purple-50 to-purple-100 border-purple-200", 
+                        "from-green-50 to-green-100 border-green-200",
+                        "from-orange-50 to-orange-100 border-orange-200",
+                        "from-pink-50 to-pink-100 border-pink-200",
+                        "from-indigo-50 to-indigo-100 border-indigo-200"
+                      ];
                       
-                      <FormField
-                        control={form.control}
-                        name="briefDescription"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Brief Description</FormLabel>
-                            <FormControl>
-                              <Textarea 
-                                placeholder="A short description of your project..."
-                                className="min-h-[80px]"
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="skillsNeeded"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Skills Needed (comma separated)</FormLabel>
-                            <FormControl>
-                              <Input 
-                                placeholder="React, Design, Marketing, etc."
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="stage"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Project Stage</FormLabel>
-                            <FormControl>
-                              <Input 
-                                placeholder="Concept, MVP, Beta, etc."
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="fullDescription"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Full Description</FormLabel>
-                            <FormControl>
-                              <Textarea 
-                                placeholder="Detailed description of your project, goals, and what kind of help you need..."
-                                className="min-h-[120px]"
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="goals"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Goals</FormLabel>
-                            <FormControl>
-                              <Textarea 
-                                placeholder="What do you want to achieve?"
-                                className="min-h-[80px]"
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <Button type="submit" className="w-full">
-                        Post Project
-                      </Button>
-                    </form>
-                  </Form>
-                </DialogContent>
-              </Dialog>
-            </div>
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {projects.map((project, index) => {
-              const gradients = [
-                "from-blue-50 to-blue-100 border-blue-200",
-                "from-purple-50 to-purple-100 border-purple-200", 
-                "from-green-50 to-green-100 border-green-200",
-                "from-orange-50 to-orange-100 border-orange-200",
-                "from-pink-50 to-pink-100 border-pink-200",
-                "from-indigo-50 to-indigo-100 border-indigo-200"
-              ];
-              
-              return (
-                <Dialog key={project.id}>
-                  <DialogTrigger asChild>
-                    <div 
-                      className={`bg-gradient-to-br ${gradients[index % gradients.length]} p-6 rounded-xl shadow-lg border-2 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="bg-white/80 px-3 py-1 rounded-full text-xs font-medium text-gray-600">
-                          {project.stage}
-                        </div>
-                        <Eye className="w-5 h-5 text-gray-400" />
-                      </div>
-                      <h3 className="font-bold text-xl mb-3 text-gray-900">{project.title}</h3>
-                      <p className="text-gray-700 mb-4 text-sm leading-relaxed">{project.briefDescription}</p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => (
-                          <span 
-                            key={skillIndex}
-                            className="px-3 py-1 bg-white/90 rounded-full text-xs font-medium text-gray-700 border"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                        {project.skillsNeeded.length > 3 && (
-                          <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
-                            +{project.skillsNeeded.length - 3} more
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex items-center justify-between pt-2 border-t border-white/50">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                            <span className="text-xs font-bold text-gray-600">{project.author[0]}</span>
-                          </div>
-                          <span className="text-sm font-medium text-gray-800">{project.author}</span>
-                        </div>
-                        <Users className="w-4 h-4 text-gray-500" />
-                      </div>
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl">{project.title}</DialogTitle>
-                    </DialogHeader>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold mb-2">Project Stage</h4>
-                        <p className="text-sm text-gray-600">{project.stage}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold mb-2">Description</h4>
-                        <p className="text-sm text-gray-600">{project.fullDescription}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold mb-2">Skills Needed</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {project.skillsNeeded.map((skill, skillIndex) => (
-                            <span 
-                              key={skillIndex}
-                              className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                      return (
+                        <Dialog key={project.id}>
+                          <DialogTrigger asChild>
+                            <div 
+                              className={`bg-gradient-to-br ${gradients[index % gradients.length]} p-6 rounded-xl shadow-lg border-2 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
                             >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold mb-2">Goals</h4>
-                        <p className="text-sm text-gray-600">{project.goals}</p>
-                      </div>
-                      
-                      <div className="pt-4 border-t">
-                        <p className="text-sm text-gray-500 mb-3">Interested in collaborating?</p>
-                        <Button className="w-full">
-                          <Users className="w-4 h-4 mr-2" />
-                          Contact {project.author}
-                        </Button>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              );
-            })}
+                              <div className="flex items-start justify-between mb-4">
+                                <div className="bg-white/80 px-3 py-1 rounded-full text-xs font-medium text-gray-600">
+                                  {project.stage}
+                                </div>
+                                <Eye className="w-5 h-5 text-gray-400" />
+                              </div>
+                              <h3 className="font-bold text-xl mb-3 text-gray-900">{project.title}</h3>
+                              <p className="text-gray-700 mb-4 text-sm leading-relaxed">{project.briefDescription}</p>
+                              <div className="flex flex-wrap gap-2 mb-4">
+                                {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => (
+                                  <span 
+                                    key={skillIndex}
+                                    className="px-3 py-1 bg-white/90 rounded-full text-xs font-medium text-gray-700 border"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
+                                {project.skillsNeeded.length > 3 && (
+                                  <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
+                                    +{project.skillsNeeded.length - 3} more
+                                  </span>
+                                )}
+                              </div>
+                              <div className="flex items-center justify-between pt-2 border-t border-white/50">
+                                <div className="flex items-center space-x-2">
+                                  <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                    <span className="text-xs font-bold text-gray-600">{project.author[0]}</span>
+                                  </div>
+                                  <span className="text-sm font-medium text-gray-800">{project.author}</span>
+                                </div>
+                                <Users className="w-4 h-4 text-gray-500" />
+                              </div>
+                            </div>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-2xl">
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+                            </DialogHeader>
+                            <div className="space-y-4">
+                              <div>
+                                <h4 className="font-semibold mb-2">Project Stage</h4>
+                                <p className="text-sm text-gray-600">{project.stage}</p>
+                              </div>
+                              
+                              <div>
+                                <h4 className="font-semibold mb-2">Description</h4>
+                                <p className="text-sm text-gray-600">{project.fullDescription}</p>
+                              </div>
+                              
+                              <div>
+                                <h4 className="font-semibold mb-2">Skills Needed</h4>
+                                <div className="flex flex-wrap gap-2">
+                                  {project.skillsNeeded.map((skill, skillIndex) => (
+                                    <span 
+                                      key={skillIndex}
+                                      className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                                    >
+                                      {skill}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                              
+                              <div>
+                                <h4 className="font-semibold mb-2">Goals</h4>
+                                <p className="text-sm text-gray-600">{project.goals}</p>
+                              </div>
+                              
+                              <div className="pt-4 border-t">
+                                <p className="text-sm text-gray-500 mb-3">Interested in collaborating?</p>
+                                <Button className="w-full">
+                                  <Users className="w-4 h-4 mr-2" />
+                                  Contact {project.author}
+                                </Button>
+                              </div>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      );
+                    })}
+                  </div>
+                </TabsContent>
+                
+                <TabsContent value="canvas" className="mt-0">
+                  <div className="w-full" style={{ height: "calc(100vh - 300px)" }}>
+                    <ProjectCanvas />
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </div>
           </div>
         </div>
       </div>
