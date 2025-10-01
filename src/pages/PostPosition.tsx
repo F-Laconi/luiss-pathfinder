@@ -10,8 +10,7 @@ import { useForm } from "react-hook-form";
 import Navigation from "@/components/Navigation";
 import cleanBackground from "@/assets/clean-background.png";
 import pageFrame from "@/assets/page-frame.png";
-import { ProjectCanvas } from "@/components/ProjectCanvas";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import canvasFrame from "@/assets/canvas-frame.png";
 
 // Mock data for existing projects
 const mockProjects = [
@@ -110,20 +109,25 @@ const PostPosition = () => {
               Back to Business Partner
             </Link>
             
-            <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-7xl mx-auto">
-              <h1 className="text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
-              <p className="text-gray-600 text-lg mb-6">
-                Discover innovative student projects seeking talented collaborators
-              </p>
+            <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-7xl mx-auto relative overflow-hidden">
+              {/* Canvas Background */}
+              <div 
+                className="absolute inset-0 opacity-30 pointer-events-none"
+                style={{
+                  backgroundImage: `url(${canvasFrame})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat"
+                }}
+              />
               
-              <Tabs defaultValue="projects" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-6">
-                  <TabsTrigger value="projects">View Projects</TabsTrigger>
-                  <TabsTrigger value="canvas">Canvas</TabsTrigger>
-                </TabsList>
+              <div className="relative z-10">
+                <h1 className="text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
+                <p className="text-gray-600 text-lg mb-6">
+                  Discover innovative student projects seeking talented collaborators
+                </p>
                 
-                <TabsContent value="projects" className="mt-0">
-                  <div className="flex justify-end mb-6">
+                <div className="flex justify-end mb-6">
               
                     <Dialog open={showForm} onOpenChange={setShowForm}>
                       <DialogTrigger asChild>
@@ -249,115 +253,108 @@ const PostPosition = () => {
                         </Form>
                       </DialogContent>
                     </Dialog>
-                  </div>
-                  
-                  {/* Projects Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => {
-                      const gradients = [
-                        "from-blue-50 to-blue-100 border-blue-200",
-                        "from-purple-50 to-purple-100 border-purple-200", 
-                        "from-green-50 to-green-100 border-green-200",
-                        "from-orange-50 to-orange-100 border-orange-200",
-                        "from-pink-50 to-pink-100 border-pink-200",
-                        "from-indigo-50 to-indigo-100 border-indigo-200"
-                      ];
-                      
-                      return (
-                        <Dialog key={project.id}>
-                          <DialogTrigger asChild>
-                            <div 
-                              className={`bg-gradient-to-br ${gradients[index % gradients.length]} p-6 rounded-xl shadow-lg border-2 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
-                            >
-                              <div className="flex items-start justify-between mb-4">
-                                <div className="bg-white/80 px-3 py-1 rounded-full text-xs font-medium text-gray-600">
-                                  {project.stage}
-                                </div>
-                                <Eye className="w-5 h-5 text-gray-400" />
+                </div>
+                
+                {/* Projects Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {projects.map((project, index) => {
+                    const gradients = [
+                      "from-blue-50 to-blue-100 border-blue-200",
+                      "from-purple-50 to-purple-100 border-purple-200", 
+                      "from-green-50 to-green-100 border-green-200",
+                      "from-orange-50 to-orange-100 border-orange-200",
+                      "from-pink-50 to-pink-100 border-pink-200",
+                      "from-indigo-50 to-indigo-100 border-indigo-200"
+                    ];
+                    
+                    return (
+                      <Dialog key={project.id}>
+                        <DialogTrigger asChild>
+                          <div 
+                            className={`bg-gradient-to-br ${gradients[index % gradients.length]} p-6 rounded-xl shadow-lg border-2 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+                          >
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="bg-white/80 px-3 py-1 rounded-full text-xs font-medium text-gray-600">
+                                {project.stage}
                               </div>
-                              <h3 className="font-bold text-xl mb-3 text-gray-900">{project.title}</h3>
-                              <p className="text-gray-700 mb-4 text-sm leading-relaxed">{project.briefDescription}</p>
-                              <div className="flex flex-wrap gap-2 mb-4">
-                                {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => (
+                              <Eye className="w-5 h-5 text-gray-400" />
+                            </div>
+                            <h3 className="font-bold text-xl mb-3 text-gray-900">{project.title}</h3>
+                            <p className="text-gray-700 mb-4 text-sm leading-relaxed">{project.briefDescription}</p>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                              {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => (
+                                <span 
+                                  key={skillIndex}
+                                  className="px-3 py-1 bg-white/90 rounded-full text-xs font-medium text-gray-700 border"
+                                >
+                                  {skill}
+                                </span>
+                              ))}
+                              {project.skillsNeeded.length > 3 && (
+                                <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
+                                  +{project.skillsNeeded.length - 3} more
+                                </span>
+                              )}
+                            </div>
+                            <div className="flex items-center justify-between pt-2 border-t border-white/50">
+                              <div className="flex items-center space-x-2">
+                                <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                  <span className="text-xs font-bold text-gray-600">{project.author[0]}</span>
+                                </div>
+                                <span className="text-sm font-medium text-gray-800">{project.author}</span>
+                              </div>
+                              <Users className="w-4 h-4 text-gray-500" />
+                            </div>
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl">
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-4">
+                            <div>
+                              <h4 className="font-semibold mb-2">Project Stage</h4>
+                              <p className="text-sm text-gray-600">{project.stage}</p>
+                            </div>
+                            
+                            <div>
+                              <h4 className="font-semibold mb-2">Description</h4>
+                              <p className="text-sm text-gray-600">{project.fullDescription}</p>
+                            </div>
+                            
+                            <div>
+                              <h4 className="font-semibold mb-2">Skills Needed</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {project.skillsNeeded.map((skill, skillIndex) => (
                                   <span 
                                     key={skillIndex}
-                                    className="px-3 py-1 bg-white/90 rounded-full text-xs font-medium text-gray-700 border"
+                                    className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
                                   >
                                     {skill}
                                   </span>
                                 ))}
-                                {project.skillsNeeded.length > 3 && (
-                                  <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
-                                    +{project.skillsNeeded.length - 3} more
-                                  </span>
-                                )}
-                              </div>
-                              <div className="flex items-center justify-between pt-2 border-t border-white/50">
-                                <div className="flex items-center space-x-2">
-                                  <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                                    <span className="text-xs font-bold text-gray-600">{project.author[0]}</span>
-                                  </div>
-                                  <span className="text-sm font-medium text-gray-800">{project.author}</span>
-                                </div>
-                                <Users className="w-4 h-4 text-gray-500" />
                               </div>
                             </div>
-                          </DialogTrigger>
-                          <DialogContent className="max-w-2xl">
-                            <DialogHeader>
-                              <DialogTitle className="text-2xl">{project.title}</DialogTitle>
-                            </DialogHeader>
-                            <div className="space-y-4">
-                              <div>
-                                <h4 className="font-semibold mb-2">Project Stage</h4>
-                                <p className="text-sm text-gray-600">{project.stage}</p>
-                              </div>
-                              
-                              <div>
-                                <h4 className="font-semibold mb-2">Description</h4>
-                                <p className="text-sm text-gray-600">{project.fullDescription}</p>
-                              </div>
-                              
-                              <div>
-                                <h4 className="font-semibold mb-2">Skills Needed</h4>
-                                <div className="flex flex-wrap gap-2">
-                                  {project.skillsNeeded.map((skill, skillIndex) => (
-                                    <span 
-                                      key={skillIndex}
-                                      className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
-                                    >
-                                      {skill}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-                              
-                              <div>
-                                <h4 className="font-semibold mb-2">Goals</h4>
-                                <p className="text-sm text-gray-600">{project.goals}</p>
-                              </div>
-                              
-                              <div className="pt-4 border-t">
-                                <p className="text-sm text-gray-500 mb-3">Interested in collaborating?</p>
-                                <Button className="w-full">
-                                  <Users className="w-4 h-4 mr-2" />
-                                  Contact {project.author}
-                                </Button>
-                              </div>
+                            
+                            <div>
+                              <h4 className="font-semibold mb-2">Goals</h4>
+                              <p className="text-sm text-gray-600">{project.goals}</p>
                             </div>
-                          </DialogContent>
-                        </Dialog>
-                      );
-                    })}
-                  </div>
-                </TabsContent>
-                
-                <TabsContent value="canvas" className="mt-0">
-                  <div className="w-full" style={{ height: "calc(100vh - 300px)" }}>
-                    <ProjectCanvas />
-                  </div>
-                </TabsContent>
-              </Tabs>
+                            
+                            <div className="pt-4 border-t">
+                              <p className="text-sm text-gray-500 mb-3">Interested in collaborating?</p>
+                              <Button className="w-full">
+                                <Users className="w-4 h-4 mr-2" />
+                                Contact {project.author}
+                              </Button>
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
