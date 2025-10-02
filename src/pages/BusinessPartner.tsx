@@ -9,38 +9,50 @@ const BusinessPartner = () => {
       <Navigation />
       
       {/* Hero Header with Gradient */}
-      <header className="bg-background border-b">
-        <div className="container mx-auto px-6 py-16 md:py-24">
+      <header className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+        
+        <div className="relative container mx-auto px-6 py-20 md:py-28">
           <Link 
             to="/" 
-            className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium mb-12 transition-colors"
+            className="inline-flex items-center text-muted-foreground hover:text-primary font-medium mb-16 transition-colors group"
           >
-            <span>←</span>
+            <span className="group-hover:-translate-x-1 transition-transform inline-block">←</span>
             <span className="ml-2">Back to Home</span>
           </Link>
           
           <div className="max-w-5xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight">
-              Connect Talent with Opportunity
+            <div className="inline-block mb-6">
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                Professional Network
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-foreground leading-[1.1]">
+              Connect Talent with
+              <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                Outstanding Opportunities
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed mb-12">
-              A professional platform bridging exceptional talent with outstanding career opportunities. 
-              Join thousands of professionals building their future.
+            
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-16">
+              Join a thriving ecosystem where exceptional talent meets innovative companies. 
+              Build meaningful connections that drive careers forward.
             </p>
             
-            {/* Stats */}
-            <div className="flex gap-12 pt-8 border-t">
-              <div>
-                <div className="text-3xl font-bold text-foreground mb-1">500+</div>
-                <div className="text-sm text-muted-foreground">Active Companies</div>
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+              <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-all hover:shadow-lg">
+                <div className="text-4xl font-bold text-primary mb-2">500+</div>
+                <div className="text-sm font-medium text-muted-foreground">Active Companies</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-foreground mb-1">2,500+</div>
-                <div className="text-sm text-muted-foreground">Open Positions</div>
+              <div className="bg-card border border-border rounded-2xl p-6 hover:border-secondary/50 transition-all hover:shadow-lg">
+                <div className="text-4xl font-bold text-secondary mb-2">2,500+</div>
+                <div className="text-sm font-medium text-muted-foreground">Open Positions</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-foreground mb-1">95%</div>
-                <div className="text-sm text-muted-foreground">Match Success</div>
+              <div className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all hover:shadow-lg">
+                <div className="text-4xl font-bold text-accent mb-2">95%</div>
+                <div className="text-sm font-medium text-muted-foreground">Success Rate</div>
               </div>
             </div>
           </div>
