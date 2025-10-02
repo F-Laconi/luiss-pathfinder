@@ -9,42 +9,38 @@ const BusinessPartner = () => {
       <Navigation />
       
       {/* Hero Header with Gradient */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background py-24 md:py-32">
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25"></div>
-        
-        <div className="relative container mx-auto px-6">
+      <header className="bg-background border-b">
+        <div className="container mx-auto px-6 py-16 md:py-24">
           <Link 
             to="/" 
-            className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium mb-12 transition-all group"
+            className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium mb-12 transition-colors"
           >
-            <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
+            <span>←</span>
             <span className="ml-2">Back to Home</span>
           </Link>
           
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-foreground leading-tight">
-              Find Your Perfect
-              <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mt-2">
-                Business Match
-              </span>
+          <div className="max-w-5xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight">
+              Connect Talent with Opportunity
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-16">
-              Connect exceptional talent with outstanding opportunities in a thriving professional ecosystem.
+            <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed mb-12">
+              A professional platform bridging exceptional talent with outstanding career opportunities. 
+              Join thousands of professionals building their future.
             </p>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-              <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
-                <div className="text-4xl font-bold bg-gradient-to-br from-primary to-primary/60 bg-clip-text text-transparent mb-2">500+</div>
-                <div className="text-sm text-muted-foreground">Companies</div>
+            <div className="flex gap-12 pt-8 border-t">
+              <div>
+                <div className="text-3xl font-bold text-foreground mb-1">500+</div>
+                <div className="text-sm text-muted-foreground">Active Companies</div>
               </div>
-              <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
-                <div className="text-4xl font-bold bg-gradient-to-br from-secondary to-secondary/60 bg-clip-text text-transparent mb-2">2.5K+</div>
-                <div className="text-sm text-muted-foreground">Opportunities</div>
+              <div>
+                <div className="text-3xl font-bold text-foreground mb-1">2,500+</div>
+                <div className="text-sm text-muted-foreground">Open Positions</div>
               </div>
-              <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
-                <div className="text-4xl font-bold bg-gradient-to-br from-accent to-accent/60 bg-clip-text text-transparent mb-2">95%</div>
-                <div className="text-sm text-muted-foreground">Success Rate</div>
+              <div>
+                <div className="text-3xl font-bold text-foreground mb-1">95%</div>
+                <div className="text-sm text-muted-foreground">Match Success</div>
               </div>
             </div>
           </div>
