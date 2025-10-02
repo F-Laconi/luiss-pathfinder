@@ -140,11 +140,11 @@ const EasterEgg = () => {
             </p>
           </div>
           <Link 
-            to="/about" 
+            to="/" 
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary via-accent to-secondary text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform duration-300 shadow-2xl hover:shadow-primary/50"
           >
             <Zap className="h-5 w-5" />
-            Back to About
+            Back to Home
             <Sparkles className="h-5 w-5" />
           </Link>
         </div>
