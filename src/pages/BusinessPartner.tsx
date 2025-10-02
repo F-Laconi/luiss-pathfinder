@@ -23,11 +23,6 @@ const BusinessPartner = () => {
           </Link>
           
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 animate-fade-in">
-              <Award className="w-4 h-4 text-accent" />
-              <span className="text-sm text-primary-foreground font-medium">Trusted by 10,000+ Professionals</span>
-            </div>
-            
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary-foreground leading-tight animate-fade-up">
               Connect with Your
               <span className="block bg-gradient-to-r from-accent via-white to-accent bg-clip-text text-transparent mt-2">
