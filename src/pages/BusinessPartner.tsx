@@ -62,9 +62,6 @@ const BusinessPartner = () => {
         
         <div className="container mx-auto px-6 relative">
           <div className="text-center mb-20">
-            <div className="inline-block mb-4 px-4 py-2 bg-secondary/10 rounded-full">
-              <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Get Started</span>
-            </div>
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
               How Can We Help You?
             </h2>
