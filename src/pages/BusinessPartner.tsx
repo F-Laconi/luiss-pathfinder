@@ -9,51 +9,46 @@ const BusinessPartner = () => {
       <Navigation />
       
       {/* Hero Header with Gradient */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-secondary min-h-[70vh] flex items-center">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent)]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)]"></div>
+      <header className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background py-24 md:py-32">
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25"></div>
         
-        <div className="relative container mx-auto px-6 py-20">
+        <div className="relative container mx-auto px-6">
           <Link 
             to="/" 
-            className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground font-medium mb-8 transition-all group"
+            className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium mb-12 transition-all group"
           >
             <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
             <span className="ml-2">Back to Home</span>
           </Link>
           
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary-foreground leading-tight animate-fade-up">
-              Connect with Your
-              <span className="block bg-gradient-to-r from-accent via-white to-accent bg-clip-text text-transparent mt-2">
-                Perfect Business Match
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-foreground leading-tight">
+              Find Your Perfect
+              <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mt-2">
+                Business Match
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl leading-relaxed animate-fade-up mb-8" style={{ animationDelay: '0.1s' }}>
-              Bridge the gap between exceptional talent and outstanding opportunities. 
-              Join a thriving ecosystem where ambition meets possibility.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-16">
+              Connect exceptional talent with outstanding opportunities in a thriving professional ecosystem.
             </p>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-foreground mb-1">500+</div>
-                <div className="text-sm text-primary-foreground/80">Active Companies</div>
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+              <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
+                <div className="text-4xl font-bold bg-gradient-to-br from-primary to-primary/60 bg-clip-text text-transparent mb-2">500+</div>
+                <div className="text-sm text-muted-foreground">Companies</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-foreground mb-1">2,500+</div>
-                <div className="text-sm text-primary-foreground/80">Opportunities</div>
+              <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
+                <div className="text-4xl font-bold bg-gradient-to-br from-secondary to-secondary/60 bg-clip-text text-transparent mb-2">2.5K+</div>
+                <div className="text-sm text-muted-foreground">Opportunities</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-foreground mb-1">95%</div>
-                <div className="text-sm text-primary-foreground/80">Success Rate</div>
+              <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
+                <div className="text-4xl font-bold bg-gradient-to-br from-accent to-accent/60 bg-clip-text text-transparent mb-2">95%</div>
+                <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
       </header>
 
       {/* Main Action Cards */}
