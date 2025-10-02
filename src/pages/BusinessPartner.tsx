@@ -61,39 +61,6 @@ const BusinessPartner = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
       </header>
 
-      {/* Features Section */}
-      <section className="py-20 md:py-28 relative bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Everything You Need to Succeed
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {[
-              { icon: Users, title: "Verified Network", desc: "Access pre-vetted professionals and companies" },
-              { icon: Shield, title: "Secure Platform", desc: "Your data protected with enterprise-grade security" },
-              { icon: TrendingUp, title: "Growth Focused", desc: "Tools to accelerate your career or business" },
-              { icon: Award, title: "Quality First", desc: "Curated opportunities that match your goals" }
-            ].map((feature, idx) => (
-              <Card key={idx} className="border-border/50 hover:border-primary/50 transition-all hover:shadow-lg group">
-                <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <feature.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-foreground">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Main Action Cards */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-background via-background to-muted/20 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.03),transparent_70%)]"></div>
