@@ -17,14 +17,6 @@ const BusinessPartner = () => {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl"></div>
         
         <div className="relative container mx-auto px-6 py-20 md:py-28">
-          <Link 
-            to="/" 
-            className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground font-medium mb-16 transition-colors group"
-          >
-            <span className="group-hover:-translate-x-1 transition-transform inline-block">←</span>
-            <span className="ml-2">Back to Home</span>
-          </Link>
-          
           <div className="max-w-5xl">
             <div className="inline-block mb-6">
               <span className="text-sm font-semibold text-primary-foreground uppercase tracking-wider px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
