@@ -61,7 +61,7 @@ const BusinessPartner = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.03),transparent_70%)]"></div>
         
         <div className="container mx-auto px-6 relative">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
               How Can We Help You?
             </h2>
