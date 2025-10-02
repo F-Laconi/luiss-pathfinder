@@ -59,34 +59,6 @@ const EasterEgg = () => {
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="group relative bg-card/80 backdrop-blur-sm border border-secondary/20 rounded-3xl p-8 hover:border-secondary/60 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/60 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
-                <Target className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">Personalized Journey</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Every student is unique. Our platform adapts to your goals, learning style, and career aspirations to create a truly personalized roadmap.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="group relative bg-card/80 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 hover:border-primary/60 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">Career Outcomes</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                We track real career trajectories and employment data to show you which programs lead to your dream job—not just in theory, but in practice.
-              </p>
-            </div>
-          </div>
-
           {/* Card 5 */}
           <div className="group relative bg-card/80 backdrop-blur-sm border border-accent/20 rounded-3xl p-8 hover:border-accent/60 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
