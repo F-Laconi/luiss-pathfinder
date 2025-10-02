@@ -9,16 +9,17 @@ const BusinessPartner = () => {
       <Navigation />
       
       {/* Hero Header with Gradient */}
-      <header className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+      <header className="relative bg-gradient-to-br from-primary via-primary/90 to-secondary overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_50%)]"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl"></div>
         
         <div className="relative container mx-auto px-6 py-20 md:py-28">
           <Link 
             to="/" 
-            className="inline-flex items-center text-muted-foreground hover:text-primary font-medium mb-16 transition-colors group"
+            className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground font-medium mb-16 transition-colors group"
           >
             <span className="group-hover:-translate-x-1 transition-transform inline-block">←</span>
             <span className="ml-2">Back to Home</span>
@@ -26,36 +27,36 @@ const BusinessPartner = () => {
           
           <div className="max-w-5xl">
             <div className="inline-block mb-6">
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <span className="text-sm font-semibold text-primary-foreground uppercase tracking-wider px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
                 Professional Network
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-foreground leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-primary-foreground leading-[1.1]">
               Connect Talent with
-              <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              <span className="block mt-2 text-accent">
                 Outstanding Opportunities
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-16">
+            <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl leading-relaxed mb-16">
               Join a thriving ecosystem where exceptional talent meets innovative companies. 
               Build meaningful connections that drive careers forward.
             </p>
             
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
-              <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-all hover:shadow-lg">
-                <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                <div className="text-sm font-medium text-muted-foreground">Active Companies</div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all hover:shadow-xl">
+                <div className="text-4xl font-bold text-primary-foreground mb-2">500+</div>
+                <div className="text-sm font-medium text-primary-foreground/80">Active Companies</div>
               </div>
-              <div className="bg-card border border-border rounded-2xl p-6 hover:border-secondary/50 transition-all hover:shadow-lg">
-                <div className="text-4xl font-bold text-secondary mb-2">2,500+</div>
-                <div className="text-sm font-medium text-muted-foreground">Open Positions</div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all hover:shadow-xl">
+                <div className="text-4xl font-bold text-primary-foreground mb-2">2,500+</div>
+                <div className="text-sm font-medium text-primary-foreground/80">Open Positions</div>
               </div>
-              <div className="bg-card border border-border rounded-2xl p-6 hover:border-accent/50 transition-all hover:shadow-lg">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all hover:shadow-xl">
                 <div className="text-4xl font-bold text-accent mb-2">95%</div>
-                <div className="text-sm font-medium text-muted-foreground">Success Rate</div>
+                <div className="text-sm font-medium text-primary-foreground/80">Success Rate</div>
               </div>
             </div>
           </div>
