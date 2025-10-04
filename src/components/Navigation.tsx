@@ -84,36 +84,32 @@ const Navigation = () => {
                 </Link>
               </DropdownMenuItem>
               {isCourseExplorerActive && (
-                <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
-                  <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
-                    <BookOpen className="h-4 w-4" />
-                    <span>Course Explorer</span>
-                  </Link>
-                </DropdownMenuItem>
-              )}
-              {isUndergraduateActive && (
-                <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
-                  <Link to="/school/undergraduate" className="w-full flex items-center space-x-2 p-2">
-                    <BookOpen className="h-4 w-4" />
-                    <span>Undergraduate</span>
-                  </Link>
-                </DropdownMenuItem>
-              )}
-              {isGraduateActive && (
-                <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
-                  <Link to="/school/graduate" className="w-full flex items-center space-x-2 p-2">
-                    <BookOpen className="h-4 w-4" />
-                    <span>Graduate</span>
-                  </Link>
-                </DropdownMenuItem>
-              )}
-              {isPostGraduateActive && (
-                <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
-                  <Link to="/school/postgraduate" className="w-full flex items-center space-x-2 p-2">
-                    <BookOpen className="h-4 w-4" />
-                    <span>Post Graduate</span>
-                  </Link>
-                </DropdownMenuItem>
+                <>
+                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
+                    <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
+                      <BookOpen className="h-4 w-4" />
+                      <span>Course Explorer</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8">
+                    <Link to="/school/undergraduate" className="w-full flex items-center space-x-2 p-2">
+                      <BookOpen className="h-4 w-4" />
+                      <span>Undergraduate</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8">
+                    <Link to="/school/graduate" className="w-full flex items-center space-x-2 p-2">
+                      <BookOpen className="h-4 w-4" />
+                      <span>Graduate</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8">
+                    <Link to="/school/postgraduate" className="w-full flex items-center space-x-2 p-2">
+                      <BookOpen className="h-4 w-4" />
+                      <span>Post Graduate</span>
+                    </Link>
+                  </DropdownMenuItem>
+                </>
               )}
               <DropdownMenuSeparator className="bg-border/30 my-2" />
               <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
