@@ -63,21 +63,21 @@ const Navigation = () => {
               align="start" 
               className="w-64 bg-background/95 dark:bg-gray-900/95 border border-border shadow-2xl backdrop-blur-md rounded-xl p-3 z-[100]"
             >
-              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/' ? 'bg-primary/10 text-primary font-semibold' : ''}`}>
                 <Link to="/" className="w-full flex items-center space-x-2 p-2">
                   <BookOpen className="h-4 w-4" />
                   <span>Home</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-border/30 my-2" />
-              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/about' ? 'bg-primary/10 text-primary font-semibold' : ''}`}>
                 <Link to="/about" className="w-full flex items-center space-x-2 p-2">
                   <User className="h-4 w-4" />
                   <span>About</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-border/30 my-2" />
-              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/universities' ? 'bg-primary/10 text-primary font-semibold' : ''}`}>
                 <Link to="/universities" className="w-full flex items-center space-x-2 p-2">
                   <Search className="h-4 w-4" />
                   <span>Make the right choice</span>
@@ -85,25 +85,25 @@ const Navigation = () => {
               </DropdownMenuItem>
               {isCourseExplorerActive && (
                 <>
-                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
+                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/course-explorer' ? 'bg-accent/10 text-accent-foreground font-semibold' : ''}`}>
                     <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
                       <BookOpen className="h-4 w-4" />
                       <span>Course Explorer</span>
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8">
+                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/undergraduate' ? 'bg-accent/10 text-accent-foreground font-semibold' : ''}`}>
                     <Link to="/school/undergraduate" className="w-full flex items-center space-x-2 p-2">
                       <BookOpen className="h-4 w-4" />
                       <span>Undergraduate</span>
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8">
+                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/graduate' ? 'bg-accent/10 text-accent-foreground font-semibold' : ''}`}>
                     <Link to="/school/graduate" className="w-full flex items-center space-x-2 p-2">
                       <BookOpen className="h-4 w-4" />
                       <span>Graduate</span>
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8">
+                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/postgraduate' ? 'bg-accent/10 text-accent-foreground font-semibold' : ''}`}>
                     <Link to="/school/postgraduate" className="w-full flex items-center space-x-2 p-2">
                       <BookOpen className="h-4 w-4" />
                       <span>Post Graduate</span>
@@ -112,19 +112,19 @@ const Navigation = () => {
                 </>
               )}
               <DropdownMenuSeparator className="bg-border/30 my-2" />
-              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/business-partner' ? 'bg-primary/10 text-primary font-semibold' : ''}`}>
                 <Link to="/business-partner" className="w-full flex items-center space-x-2 p-2">
                   <Heart className="h-4 w-4" />
                   <span>Find your business partner</span>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/student-board' ? 'bg-accent/10 text-accent-foreground font-semibold' : ''}`}>
                 <Link to="/student-board" className="w-full flex items-center space-x-2 p-2">
                   <User className="h-4 w-4" />
                   <span>Looking for a position</span>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/post-position' ? 'bg-accent/10 text-accent-foreground font-semibold' : ''}`}>
                 <Link to="/post-position" className="w-full flex items-center space-x-2 p-2">
                   <Menu className="h-4 w-4" />
                   <span>Post a position</span>
