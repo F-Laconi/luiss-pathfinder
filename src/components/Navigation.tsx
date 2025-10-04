@@ -67,6 +67,13 @@ const Navigation = () => {
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-border/30 my-2" />
               <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
+                <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
+                  <Search className="h-4 w-4" />
+                  <span>Course Explorer</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator className="bg-border/30 my-2" />
+              <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
                 <Link to="/universities" className="w-full flex items-center space-x-2 p-2">
                   <Search className="h-4 w-4" />
                   <span>Make the right choice</span>
