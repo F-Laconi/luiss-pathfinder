@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Search, Menu, X, BookOpen, Heart, User, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,9 +12,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Check if current route is course-explorer or related pages
+  const isCourseExplorerActive = location.pathname === '/course-explorer' || 
+    location.pathname === '/school/undergraduate' || 
+    location.pathname === '/school/graduate' || 
+    location.pathname === '/school/postgraduate';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,12 +79,14 @@ const Navigation = () => {
                   <span>Make the right choice</span>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
-                <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
-                  <BookOpen className="h-4 w-4" />
-                  <span>Course Explorer</span>
-                </Link>
-              </DropdownMenuItem>
+              {isCourseExplorerActive && (
+                <DropdownMenuItem asChild className="rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4">
+                  <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
+                    <BookOpen className="h-4 w-4" />
+                    <span>Course Explorer</span>
+                  </Link>
+                </DropdownMenuItem>
+              )}
               <DropdownMenuSeparator className="bg-border/30 my-2" />
               <DropdownMenuItem asChild className="rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer">
                 <Link to="/business-partner" className="w-full flex items-center space-x-2 p-2">
