@@ -16,6 +16,7 @@ import BusinessPartner from "./pages/BusinessPartner";
 import PostPosition from "./pages/PostPosition";
 import StudentBoard from "./pages/StudentBoard";
 import About from "./pages/About";
+import Suggestions from "./pages/Suggestions";
 import EasterEgg from "./pages/EasterEgg";
 import NotFound from "./pages/NotFound";
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/post-position" element={<PostPosition />} />
           <Route path="/student-board" element={<StudentBoard />} />
           <Route path="/about" element={<About />} />
+          <Route path="/suggestions" element={<Suggestions />} />
           <Route path="/easter-egg" element={<EasterEgg />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/school/undergraduate" element={<UndergraduateSchool />} />

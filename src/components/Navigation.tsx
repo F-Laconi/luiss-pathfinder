@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X, BookOpen, Heart, User, ChevronDown } from "lucide-react";
+import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -23,7 +23,7 @@ const Navigation = () => {
     location.pathname === '/school/graduate' || 
     location.pathname === '/school/postgraduate';
   
-  const isHomeActive = location.pathname === '/' || location.pathname === '/about';
+  const isHomeActive = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/suggestions';
   
   const isUndergraduateActive = location.pathname === '/school/undergraduate';
   const isGraduateActive = location.pathname === '/school/graduate';
@@ -72,12 +72,20 @@ const Navigation = () => {
                 </Link>
               </DropdownMenuItem>
               {isHomeActive && (
-                <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/about' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
-                  <Link to="/about" className="w-full flex items-center space-x-2 p-2">
-                    <User className="h-4 w-4" />
-                    <span>About</span>
-                  </Link>
-                </DropdownMenuItem>
+                <>
+                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/about' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                    <Link to="/about" className="w-full flex items-center space-x-2 p-2">
+                      <User className="h-4 w-4" />
+                      <span>About</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/suggestions' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                    <Link to="/suggestions" className="w-full flex items-center space-x-2 p-2">
+                      <Lightbulb className="h-4 w-4" />
+                      <span>Suggestions</span>
+                    </Link>
+                  </DropdownMenuItem>
+                </>
               )}
               <DropdownMenuSeparator className="bg-border/30 my-2" />
               <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/universities' ? 'bg-primary/20 text-primary font-semibold border-l-2 border-primary' : ''}`}>
