@@ -81,7 +81,281 @@ const programsData: Record<string, any> = {
           { name: "Fixed Income Securities", credits: 6, description: "Bond markets and interest rate analysis" },
           { name: "Financial Econometrics", credits: 6, description: "Econometric methods in finance" },
         ]
+  },
+  "2": {
+    title: "Master in Economia, Istituzioni e Mercati Finanziari",
+    category: "Economics & Finance",
+    languages: ["English", "Italian"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "This program provides a deep understanding of economic theory, financial markets, and institutional frameworks. Students develop expertise in economic analysis, financial regulation, and policy-making.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Macroeconomics", credits: 9, description: "Advanced macroeconomic theory and applications" },
+          { name: "Microeconomics", credits: 9, description: "Consumer and producer theory, market structures" },
+          { name: "Mathematics for Economics", credits: 6, description: "Mathematical tools for economic analysis" },
+          { name: "Statistics for Economics", credits: 6, description: "Statistical methods and econometrics" },
+        ]
       },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Financial Markets and Institutions", credits: 9, description: "Structure and operation of financial systems" },
+          { name: "Monetary Economics", credits: 9, description: "Central banking and monetary policy" },
+          { name: "International Economics", credits: 6, description: "Global trade and finance" },
+          { name: "Econometrics", credits: 6, description: "Advanced econometric techniques" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Financial Regulation and Supervision", credits: 9, description: "Regulatory frameworks for financial institutions" },
+          { name: "European Economic Policy", credits: 9, description: "EU economic governance and policy" },
+          { name: "Applied Economic Analysis", credits: 6, description: "Real-world economic problem solving" },
+          { name: "Elective Course", credits: 6, description: "Specialized topics in economics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 24, description: "Independent research in economics or finance" },
+          { name: "Internship", credits: 6, description: "Practical experience in financial institutions" },
+        ]
+      }
+    ]
+  },
+  "4": {
+    title: "Master in Global Management and Politics",
+    category: "Management & Politics",
+    languages: ["English"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "An interdisciplinary program combining business management with political science, focusing on the intersection of global governance, corporate strategy, and international affairs.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Global Business Strategy", credits: 9, description: "Strategic management in international contexts" },
+          { name: "International Political Economy", credits: 9, description: "Politics and economics in global markets" },
+          { name: "Comparative Politics", credits: 6, description: "Political systems and governance structures" },
+          { name: "Cross-Cultural Management", credits: 6, description: "Managing across cultures and borders" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Global Governance and Institutions", credits: 9, description: "International organizations and frameworks" },
+          { name: "Corporate Diplomacy", credits: 9, description: "Business-government relations" },
+          { name: "International Trade Policy", credits: 6, description: "Trade agreements and regulations" },
+          { name: "Geopolitical Risk Analysis", credits: 6, description: "Assessing political risks in business" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Sustainability and Global Challenges", credits: 9, description: "Environmental and social governance" },
+          { name: "Emerging Markets Management", credits: 9, description: "Business strategies for developing economies" },
+          { name: "Crisis Management and Diplomacy", credits: 6, description: "Managing international crises" },
+          { name: "Elective Course", credits: 6, description: "Advanced specialized topics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 24, description: "Research on global management or politics" },
+          { name: "Global Leadership Workshop", credits: 6, description: "Practical leadership skills development" },
+        ]
+      }
+    ]
+  },
+  "5": {
+    title: "Master in Government and Public Affairs",
+    category: "Government & Public Affairs",
+    languages: ["English", "Italian"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "This program prepares professionals for leadership roles in public administration, government relations, and public policy. Focus on effective governance, policy analysis, and public service.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Public Administration Theory", credits: 9, description: "Foundations of public sector management" },
+          { name: "Public Policy Analysis", credits: 9, description: "Policy formulation and evaluation methods" },
+          { name: "Constitutional Law and Governance", credits: 6, description: "Legal frameworks for public administration" },
+          { name: "Research Methods for Public Policy", credits: 6, description: "Quantitative and qualitative research" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Public Finance and Budgeting", credits: 9, description: "Government financial management" },
+          { name: "Government Relations and Lobbying", credits: 9, description: "Advocacy and stakeholder engagement" },
+          { name: "Public Sector Ethics", credits: 6, description: "Ethical decision-making in government" },
+          { name: "Strategic Communication", credits: 6, description: "Public affairs and media relations" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Policy Implementation and Evaluation", credits: 9, description: "From policy to practice" },
+          { name: "Digital Government", credits: 9, description: "E-government and technology in public service" },
+          { name: "Public-Private Partnerships", credits: 6, description: "Collaboration models" },
+          { name: "Elective Course", credits: 6, description: "Specialized public affairs topics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 21, description: "Research on public administration or policy" },
+          { name: "Government Internship", credits: 6, description: "Practical experience in public sector" },
+          { name: "Leadership Seminar", credits: 3, description: "Public sector leadership skills" },
+        ]
+      }
+    ]
+  },
+  "6": {
+    title: "Master in International Relations",
+    category: "International Relations",
+    languages: ["English"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "A comprehensive program focusing on global politics, diplomacy, international security, and foreign policy. Prepares students for careers in diplomacy, international organizations, and global affairs.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "International Relations Theory", credits: 9, description: "Major theories and paradigms in IR" },
+          { name: "Global Political Economy", credits: 9, description: "Economics and politics in global context" },
+          { name: "International Law", credits: 6, description: "Legal frameworks governing international relations" },
+          { name: "Research Methods in International Relations", credits: 6, description: "Methodological approaches to IR research" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "International Security Studies", credits: 9, description: "Security threats and defense strategies" },
+          { name: "Diplomacy and Negotiation", credits: 9, description: "Diplomatic practice and negotiation skills" },
+          { name: "Regional Studies", credits: 6, description: "In-depth analysis of specific world regions" },
+          { name: "Conflict Resolution", credits: 6, description: "Peacemaking and conflict management" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Human Rights and Humanitarian Law", credits: 9, description: "International protection of human rights" },
+          { name: "Global Development and Cooperation", credits: 9, description: "Development aid and international cooperation" },
+          { name: "Cybersecurity and Digital Diplomacy", credits: 6, description: "Technology in international relations" },
+          { name: "Elective Course", credits: 6, description: "Advanced IR topics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 24, description: "Original research in international relations" },
+          { name: "Diplomatic Simulation", credits: 6, description: "Practical diplomacy exercises" },
+        ]
+      }
+    ]
+  },
+  "9": {
+    title: "Master in Strategic Management",
+    category: "Strategic Management",
+    languages: ["English", "Italian"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "This program focuses on developing strategic thinking and decision-making skills for senior management roles. Emphasis on corporate strategy, organizational transformation, and competitive advantage.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Strategic Analysis and Planning", credits: 9, description: "Tools and frameworks for strategy formulation" },
+          { name: "Competitive Strategy", credits: 9, description: "Building and sustaining competitive advantage" },
+          { name: "Corporate Governance", credits: 6, description: "Board structures and executive oversight" },
+          { name: "Advanced Financial Analysis", credits: 6, description: "Financial strategy and valuation" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Business Model Innovation", credits: 9, description: "Creating and transforming business models" },
+          { name: "Strategic Leadership", credits: 9, description: "Leading organizational change" },
+          { name: "Mergers, Acquisitions & Restructuring", credits: 6, description: "Corporate restructuring strategies" },
+          { name: "Data-Driven Strategy", credits: 6, description: "Analytics for strategic decisions" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Global Strategy", credits: 9, description: "International expansion and strategy" },
+          { name: "Digital Transformation Strategy", credits: 9, description: "Technology-driven strategic change" },
+          { name: "Sustainable Business Strategy", credits: 6, description: "ESG and sustainability in strategy" },
+          { name: "Elective Course", credits: 6, description: "Specialized strategy topics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 21, description: "Strategic management research project" },
+          { name: "Strategy Consulting Project", credits: 6, description: "Real-world consulting engagement" },
+          { name: "Executive Workshop", credits: 3, description: "C-level strategic thinking" },
+        ]
+      }
+    ]
+  },
+  "10": {
+    title: "Master in Amministrazione, Finanza e Controllo",
+    category: "Administration & Finance",
+    languages: ["English", "Italian"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "This program prepares students for roles in financial management, administration, and control. Focus on accounting, auditing, financial reporting, and management control systems.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Advanced Financial Accounting", credits: 9, description: "Complex accounting transactions and standards" },
+          { name: "Management Accounting", credits: 9, description: "Cost accounting and decision-making" },
+          { name: "Corporate Finance", credits: 6, description: "Financial decision-making and valuation" },
+          { name: "Business Law", credits: 6, description: "Legal aspects of business operations" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Internal Auditing and Control", credits: 9, description: "Audit procedures and internal controls" },
+          { name: "Management Control Systems", credits: 9, description: "Performance measurement and control" },
+          { name: "Tax Planning and Strategy", credits: 6, description: "Corporate taxation and planning" },
+          { name: "Financial Reporting Standards", credits: 6, description: "IFRS and accounting regulations" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Risk Management and Compliance", credits: 9, description: "Enterprise risk management frameworks" },
+          { name: "Treasury and Cash Management", credits: 9, description: "Liquidity and treasury operations" },
+          { name: "Digital Accounting and FinTech", credits: 6, description: "Technology in accounting and finance" },
+          { name: "Elective Course", credits: 6, description: "Specialized accounting topics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 21, description: "Research in accounting or finance" },
+          { name: "Professional Practicum", credits: 6, description: "Hands-on experience in firms" },
+          { name: "Professional Ethics Seminar", credits: 3, description: "Ethical standards in accounting" },
+        ]
+      }
+    ]
+  },
+  "11": {
       {
         name: "Third Semester",
         courses: [
@@ -500,6 +774,14 @@ function getCareerPaths(id: string): string[] {
       "Public Affairs Consultant",
       "NGO Program Director"
     ],
+    "2": [
+      "Economic Analyst",
+      "Financial Economist",
+      "Policy Advisor",
+      "Central Bank Economist",
+      "Financial Regulator",
+      "Economic Consultant"
+    ],
     "3": [
       "Investment Banker",
       "Portfolio Manager",
@@ -507,6 +789,30 @@ function getCareerPaths(id: string): string[] {
       "Risk Manager",
       "Corporate Finance Manager",
       "Financial Consultant"
+    ],
+    "4": [
+      "Global Strategy Consultant",
+      "International Business Manager",
+      "Corporate Affairs Director",
+      "International Relations Manager",
+      "Political Risk Analyst",
+      "Global Operations Manager"
+    ],
+    "5": [
+      "Public Affairs Manager",
+      "Government Relations Director",
+      "Policy Advisor",
+      "Lobbyist",
+      "Public Administration Manager",
+      "NGO Director"
+    ],
+    "6": [
+      "Diplomat",
+      "International Affairs Analyst",
+      "Foreign Policy Advisor",
+      "International Development Officer",
+      "UN/International Organization Officer",
+      "Security Analyst"
     ],
     "7": [
       "Management Consultant",
@@ -523,6 +829,22 @@ function getCareerPaths(id: string): string[] {
       "Market Research Analyst",
       "Product Manager",
       "Marketing Consultant"
+    ],
+    "9": [
+      "Strategy Consultant",
+      "Chief Strategy Officer",
+      "Business Unit Manager",
+      "Corporate Development Director",
+      "Strategic Planner",
+      "Management Consultant"
+    ],
+    "10": [
+      "Chief Financial Officer",
+      "Controller",
+      "Internal Auditor",
+      "Financial Manager",
+      "Accounting Manager",
+      "Risk Manager"
     ],
     "11": [
       "Data Scientist",
