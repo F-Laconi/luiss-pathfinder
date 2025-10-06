@@ -9,6 +9,7 @@ import UniversitySelection from "./pages/UniversitySelection";
 import CourseExplorer from "./pages/CourseExplorer";
 import MasterCategory from "./pages/MasterCategory";
 import GraduateSchool from "./pages/GraduateSchool";
+import GraduateProgramDetail from "./pages/GraduateProgramDetail";
 import UndergraduateSchool from "./pages/UndergraduateSchool";
 import PostGraduateSchool from "./pages/PostGraduateSchool";
 import CourseDetail from "./pages/CourseDetail";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/suggestions" element={<Suggestions />} />
           <Route path="/easter-egg" element={<EasterEgg />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
+          <Route path="/graduate/program/:id" element={<GraduateProgramDetail />} />
           <Route path="/school/undergraduate" element={<UndergraduateSchool />} />
           <Route path="/school/postgraduate" element={<PostGraduateSchool />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />
