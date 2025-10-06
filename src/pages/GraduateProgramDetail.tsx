@@ -55,33 +55,6 @@ const programsData: Record<string, any> = {
       }
     ]
   },
-  "3": {
-    title: "Master in Finance",
-    category: "Finance",
-    languages: ["English"],
-    duration: "2 years",
-    credits: 120,
-    intake: "September",
-    description: "A comprehensive program designed to prepare students for careers in investment banking, asset management, corporate finance, and financial consulting. Combines theoretical foundations with practical applications.",
-    semesters: [
-      {
-        name: "First Semester",
-        courses: [
-          { name: "Corporate Finance", credits: 9, description: "Advanced corporate financial decision-making and valuation" },
-          { name: "Financial Markets and Institutions", credits: 9, description: "Structure and functioning of global financial markets" },
-          { name: "Quantitative Methods for Finance", credits: 6, description: "Statistical and mathematical tools for financial analysis" },
-          { name: "Financial Accounting", credits: 6, description: "Accounting principles and financial statement analysis" },
-        ]
-      },
-      {
-        name: "Second Semester",
-        courses: [
-          { name: "Investment Analysis and Portfolio Management", credits: 9, description: "Portfolio theory and investment strategies" },
-          { name: "Derivatives and Risk Management", credits: 9, description: "Options, futures, and hedging strategies" },
-          { name: "Fixed Income Securities", credits: 6, description: "Bond markets and interest rate analysis" },
-          { name: "Financial Econometrics", credits: 6, description: "Econometric methods in finance" },
-        ]
-  },
   "2": {
     title: "Master in Economia, Istituzioni e Mercati Finanziari",
     category: "Economics & Finance",
@@ -123,6 +96,52 @@ const programsData: Record<string, any> = {
         courses: [
           { name: "Master's Thesis", credits: 24, description: "Independent research in economics or finance" },
           { name: "Internship", credits: 6, description: "Practical experience in financial institutions" },
+        ]
+      }
+    ]
+  },
+  "3": {
+    title: "Master in Finance",
+    category: "Finance",
+    languages: ["English"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "A comprehensive program designed to prepare students for careers in investment banking, asset management, corporate finance, and financial consulting. Combines theoretical foundations with practical applications.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Corporate Finance", credits: 9, description: "Advanced corporate financial decision-making and valuation" },
+          { name: "Financial Markets and Institutions", credits: 9, description: "Structure and functioning of global financial markets" },
+          { name: "Quantitative Methods for Finance", credits: 6, description: "Statistical and mathematical tools for financial analysis" },
+          { name: "Financial Accounting", credits: 6, description: "Accounting principles and financial statement analysis" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Investment Analysis and Portfolio Management", credits: 9, description: "Portfolio theory and investment strategies" },
+          { name: "Derivatives and Risk Management", credits: 9, description: "Options, futures, and hedging strategies" },
+          { name: "Fixed Income Securities", credits: 6, description: "Bond markets and interest rate analysis" },
+          { name: "Financial Econometrics", credits: 6, description: "Econometric methods in finance" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Mergers and Acquisitions", credits: 9, description: "Corporate restructuring and M&A strategies" },
+          { name: "International Finance", credits: 9, description: "Global financial management and exchange rates" },
+          { name: "Behavioral Finance", credits: 6, description: "Psychology and decision-making in finance" },
+          { name: "FinTech and Digital Finance", credits: 6, description: "Innovation in financial technology" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 21, description: "Research project in finance" },
+          { name: "Applied Finance Workshop", credits: 6, description: "Real-world case studies and simulations" },
+          { name: "Professional Development Seminar", credits: 3, description: "Career preparation and industry insights" },
         ]
       }
     ]
@@ -263,6 +282,97 @@ const programsData: Record<string, any> = {
       }
     ]
   },
+  "7": {
+    title: "Master in Management",
+    category: "Management",
+    languages: ["English"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "This program prepares students for leadership roles across various industries by developing strategic thinking, analytical skills, and managerial competencies. Focus on innovation, sustainability, and global business challenges.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Strategic Management", credits: 9, description: "Corporate strategy formulation and implementation" },
+          { name: "Organizational Behavior", credits: 9, description: "Leadership, motivation, and team dynamics" },
+          { name: "Managerial Economics", credits: 6, description: "Economic principles for business decisions" },
+          { name: "Financial Management", credits: 6, description: "Financial analysis and decision-making" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Marketing Management", credits: 9, description: "Marketing strategy and customer insights" },
+          { name: "Operations and Supply Chain Management", credits: 9, description: "Process optimization and logistics" },
+          { name: "Data Analytics for Business", credits: 6, description: "Data-driven decision making" },
+          { name: "Business Ethics and Corporate Governance", credits: 6, description: "Ethical frameworks and governance" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "Innovation and Entrepreneurship", credits: 9, description: "Creating and scaling new ventures" },
+          { name: "International Business Management", credits: 9, description: "Global strategy and cross-cultural management" },
+          { name: "Digital Transformation", credits: 6, description: "Technology-driven business change" },
+          { name: "Elective Course", credits: 6, description: "Specialized management topics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 24, description: "Independent research in management" },
+          { name: "Business Consulting Project", credits: 6, description: "Real-world consulting experience" },
+        ]
+      }
+    ]
+  },
+  "8": {
+    title: "Master in Marketing",
+    category: "Marketing",
+    languages: ["English", "Italian"],
+    duration: "2 years",
+    credits: 120,
+    intake: "September",
+    description: "A cutting-edge program focusing on digital marketing, brand management, consumer behavior, and marketing analytics. Prepares students for leadership roles in marketing and commercial functions.",
+    semesters: [
+      {
+        name: "First Semester",
+        courses: [
+          { name: "Marketing Strategy", credits: 9, description: "Strategic marketing planning and execution" },
+          { name: "Consumer Behavior and Market Research", credits: 9, description: "Understanding customer psychology and research methods" },
+          { name: "Brand Management", credits: 6, description: "Building and managing strong brands" },
+          { name: "Marketing Analytics", credits: 6, description: "Data analysis for marketing decisions" },
+        ]
+      },
+      {
+        name: "Second Semester",
+        courses: [
+          { name: "Digital Marketing and Social Media", credits: 9, description: "Online marketing strategies and platforms" },
+          { name: "Marketing Communications", credits: 9, description: "Integrated communication strategies" },
+          { name: "Product and Service Innovation", credits: 6, description: "Developing new market offerings" },
+          { name: "Pricing Strategy", credits: 6, description: "Pricing models and revenue optimization" },
+        ]
+      },
+      {
+        name: "Third Semester",
+        courses: [
+          { name: "AI in Marketing", credits: 9, description: "Artificial intelligence applications in marketing" },
+          { name: "Customer Experience Management", credits: 9, description: "Creating exceptional customer journeys" },
+          { name: "International Marketing", credits: 6, description: "Global marketing strategies" },
+          { name: "Elective Course", credits: 6, description: "Specialized marketing topics" },
+        ]
+      },
+      {
+        name: "Fourth Semester",
+        courses: [
+          { name: "Master's Thesis", credits: 21, description: "Research project in marketing" },
+          { name: "Marketing Campaign Project", credits: 6, description: "Hands-on campaign development" },
+          { name: "Professional Workshop", credits: 3, description: "Industry skills and networking" },
+        ]
+      }
+    ]
+  },
   "9": {
     title: "Master in Strategic Management",
     category: "Strategic Management",
@@ -356,117 +466,6 @@ const programsData: Record<string, any> = {
     ]
   },
   "11": {
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Mergers and Acquisitions", credits: 9, description: "Corporate restructuring and M&A strategies" },
-          { name: "International Finance", credits: 9, description: "Global financial management and exchange rates" },
-          { name: "Behavioral Finance", credits: 6, description: "Psychology and decision-making in finance" },
-          { name: "FinTech and Digital Finance", credits: 6, description: "Innovation in financial technology" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 21, description: "Research project in finance" },
-          { name: "Applied Finance Workshop", credits: 6, description: "Real-world case studies and simulations" },
-          { name: "Professional Development Seminar", credits: 3, description: "Career preparation and industry insights" },
-        ]
-      }
-    ]
-  },
-  "7": {
-    title: "Master in Management",
-    category: "Management",
-    languages: ["English"],
-    duration: "2 years",
-    credits: 120,
-    intake: "September",
-    description: "This program prepares students for leadership roles across various industries by developing strategic thinking, analytical skills, and managerial competencies. Focus on innovation, sustainability, and global business challenges.",
-    semesters: [
-      {
-        name: "First Semester",
-        courses: [
-          { name: "Strategic Management", credits: 9, description: "Corporate strategy formulation and implementation" },
-          { name: "Organizational Behavior", credits: 9, description: "Leadership, motivation, and team dynamics" },
-          { name: "Managerial Economics", credits: 6, description: "Economic principles for business decisions" },
-          { name: "Financial Management", credits: 6, description: "Financial analysis and decision-making" },
-        ]
-      },
-      {
-        name: "Second Semester",
-        courses: [
-          { name: "Marketing Management", credits: 9, description: "Marketing strategy and customer insights" },
-          { name: "Operations and Supply Chain Management", credits: 9, description: "Process optimization and logistics" },
-          { name: "Data Analytics for Business", credits: 6, description: "Data-driven decision making" },
-          { name: "Business Ethics and Corporate Governance", credits: 6, description: "Ethical frameworks and governance" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Innovation and Entrepreneurship", credits: 9, description: "Creating and scaling new ventures" },
-          { name: "International Business Management", credits: 9, description: "Global strategy and cross-cultural management" },
-          { name: "Digital Transformation", credits: 6, description: "Technology-driven business change" },
-          { name: "Elective Course", credits: 6, description: "Specialized management topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 24, description: "Independent research in management" },
-          { name: "Business Consulting Project", credits: 6, description: "Real-world consulting experience" },
-        ]
-      }
-    ]
-  },
-  "8": {
-    title: "Master in Marketing",
-    category: "Marketing",
-    languages: ["English", "Italian"],
-    duration: "2 years",
-    credits: 120,
-    intake: "September",
-    description: "A cutting-edge program focusing on digital marketing, brand management, consumer behavior, and marketing analytics. Prepares students for leadership roles in marketing and commercial functions.",
-    semesters: [
-      {
-        name: "First Semester",
-        courses: [
-          { name: "Marketing Strategy", credits: 9, description: "Strategic marketing planning and execution" },
-          { name: "Consumer Behavior and Market Research", credits: 9, description: "Understanding customer psychology and research methods" },
-          { name: "Brand Management", credits: 6, description: "Building and managing strong brands" },
-          { name: "Marketing Analytics", credits: 6, description: "Data analysis for marketing decisions" },
-        ]
-      },
-      {
-        name: "Second Semester",
-        courses: [
-          { name: "Digital Marketing and Social Media", credits: 9, description: "Online marketing strategies and platforms" },
-          { name: "Marketing Communications", credits: 9, description: "Integrated communication strategies" },
-          { name: "Product and Service Innovation", credits: 6, description: "Developing new market offerings" },
-          { name: "Pricing Strategy", credits: 6, description: "Pricing models and revenue optimization" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "AI in Marketing", credits: 9, description: "Artificial intelligence applications in marketing" },
-          { name: "Customer Experience Management", credits: 9, description: "Creating exceptional customer journeys" },
-          { name: "International Marketing", credits: 6, description: "Global marketing strategies" },
-          { name: "Elective Course", credits: 6, description: "Specialized marketing topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 21, description: "Research project in marketing" },
-          { name: "Marketing Campaign Project", credits: 6, description: "Hands-on campaign development" },
-          { name: "Professional Workshop", credits: 3, description: "Industry skills and networking" },
-        ]
-      }
-    ]
-  },
-  "11": {
     title: "Master in Data Science and Management",
     category: "Data Science",
     languages: ["English"],
@@ -543,7 +542,7 @@ const GraduateProgramDetail = () => {
       <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-purple-500/5 to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,transparent,black)]" />
         <div className="container mx-auto px-4 lg:px-8 relative">
-          <Link to="/graduate" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <Link to="/school/graduate" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-6 transition-colors">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Graduate Programs
           </Link>
@@ -766,94 +765,17 @@ const GraduateProgramDetail = () => {
 
 function getCareerPaths(id: string): string[] {
   const careers: Record<string, string[]> = {
-    "1": [
-      "EU Policy Advisor",
-      "Political Analyst",
-      "Diplomat",
-      "Government Relations Manager",
-      "Public Affairs Consultant",
-      "NGO Program Director"
-    ],
-    "2": [
-      "Economic Analyst",
-      "Financial Economist",
-      "Policy Advisor",
-      "Central Bank Economist",
-      "Financial Regulator",
-      "Economic Consultant"
-    ],
-    "3": [
-      "Investment Banker",
-      "Portfolio Manager",
-      "Financial Analyst",
-      "Risk Manager",
-      "Corporate Finance Manager",
-      "Financial Consultant"
-    ],
-    "4": [
-      "Global Strategy Consultant",
-      "International Business Manager",
-      "Corporate Affairs Director",
-      "International Relations Manager",
-      "Political Risk Analyst",
-      "Global Operations Manager"
-    ],
-    "5": [
-      "Public Affairs Manager",
-      "Government Relations Director",
-      "Policy Advisor",
-      "Lobbyist",
-      "Public Administration Manager",
-      "NGO Director"
-    ],
-    "6": [
-      "Diplomat",
-      "International Affairs Analyst",
-      "Foreign Policy Advisor",
-      "International Development Officer",
-      "UN/International Organization Officer",
-      "Security Analyst"
-    ],
-    "7": [
-      "Management Consultant",
-      "Business Development Manager",
-      "Strategy Manager",
-      "Operations Manager",
-      "Entrepreneur",
-      "General Manager"
-    ],
-    "8": [
-      "Marketing Manager",
-      "Brand Manager",
-      "Digital Marketing Specialist",
-      "Market Research Analyst",
-      "Product Manager",
-      "Marketing Consultant"
-    ],
-    "9": [
-      "Strategy Consultant",
-      "Chief Strategy Officer",
-      "Business Unit Manager",
-      "Corporate Development Director",
-      "Strategic Planner",
-      "Management Consultant"
-    ],
-    "10": [
-      "Chief Financial Officer",
-      "Controller",
-      "Internal Auditor",
-      "Financial Manager",
-      "Accounting Manager",
-      "Risk Manager"
-    ],
-    "11": [
-      "Data Scientist",
-      "Business Intelligence Manager",
-      "AI/ML Engineer",
-      "Chief Data Officer",
-      "Analytics Consultant",
-      "Data Strategy Manager"
-    ]
+    "1": ["EU Policy Advisor", "Political Analyst", "Diplomat", "Government Relations Manager", "Public Affairs Consultant", "NGO Program Director"],
+    "2": ["Economic Analyst", "Financial Economist", "Policy Advisor", "Central Bank Economist", "Financial Regulator", "Economic Consultant"],
+    "3": ["Investment Banker", "Portfolio Manager", "Financial Analyst", "Risk Manager", "Corporate Finance Manager", "Financial Consultant"],
+    "4": ["Global Strategy Consultant", "International Business Manager", "Corporate Affairs Director", "International Relations Manager", "Political Risk Analyst", "Global Operations Manager"],
+    "5": ["Public Affairs Manager", "Government Relations Director", "Policy Advisor", "Lobbyist", "Public Administration Manager", "NGO Director"],
+    "6": ["Diplomat", "International Affairs Analyst", "Foreign Policy Advisor", "International Development Officer", "UN/International Organization Officer", "Security Analyst"],
+    "7": ["Management Consultant", "Business Development Manager", "Strategy Manager", "Operations Manager", "Entrepreneur", "General Manager"],
+    "8": ["Marketing Manager", "Brand Manager", "Digital Marketing Specialist", "Market Research Analyst", "Product Manager", "Marketing Consultant"],
+    "9": ["Strategy Consultant", "Chief Strategy Officer", "Business Unit Manager", "Corporate Development Director", "Strategic Planner", "Management Consultant"],
+    "10": ["Chief Financial Officer", "Controller", "Internal Auditor", "Financial Manager", "Accounting Manager", "Risk Manager"],
+    "11": ["Data Scientist", "Business Intelligence Manager", "AI/ML Engineer", "Chief Data Officer", "Analytics Consultant", "Data Strategy Manager"]
   };
   return careers[id] || careers["3"];
 }
