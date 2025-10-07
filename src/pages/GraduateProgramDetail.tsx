@@ -101,47 +101,53 @@ const programsData: Record<string, any> = {
     ]
   },
   "3": {
-    title: "Master in Finance",
+    title: "Finance (Corporate Finance)",
     category: "Finance",
     languages: ["English"],
-    duration: "2 years",
-    credits: 120,
+    duration: "1 year",
+    credits: 65,
     intake: "September",
-    description: "A comprehensive program designed to prepare students for careers in investment banking, asset management, corporate finance, and financial consulting. Combines theoretical foundations with practical applications.",
+    description: "The Master in Financial Management – Major in Corporate Finance is a highly specialised degree designed for those who want to pursue a career in corporate finance divisions. It prepares students to respond to emerging financial challenges, manage investment and financing decisions.",
     semesters: [
       {
-        name: "First Semester",
+        name: "Term 1 - General Management",
         courses: [
-          { name: "Corporate Finance", credits: 9, description: "Advanced corporate financial decision-making and valuation" },
-          { name: "Financial Markets and Institutions", credits: 9, description: "Structure and functioning of global financial markets" },
-          { name: "Quantitative Methods for Finance", credits: 6, description: "Statistical and mathematical tools for financial analysis" },
-          { name: "Financial Accounting", credits: 6, description: "Accounting principles and financial statement analysis" },
+          { name: "Corporate Strategy", credits: 5, description: "Strategic planning and business strategy formulation" },
+          { name: "Compliance and Risk Management", credits: 5, description: "Regulatory compliance and risk assessment" },
+          { name: "Accounting", credits: 5, description: "Financial accounting principles and practices" },
+          { name: "Financial Management", credits: 5, description: "Corporate financial decision making" },
+          { name: "Quantitative Methods for Finance", credits: 5, description: "Statistical and mathematical tools for finance" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Term 2 - Core Courses",
         courses: [
-          { name: "Investment Analysis and Portfolio Management", credits: 9, description: "Portfolio theory and investment strategies" },
-          { name: "Derivatives and Risk Management", credits: 9, description: "Options, futures, and hedging strategies" },
-          { name: "Fixed Income Securities", credits: 6, description: "Bond markets and interest rate analysis" },
-          { name: "Financial Econometrics", credits: 6, description: "Econometric methods in finance" },
+          { name: "Corporate Finance", credits: 6, description: "Advanced corporate financial management" },
+          { name: "Statistics", credits: 4, description: "Statistical analysis for finance" },
+          { name: "Advanced Accounting for Finance", credits: 5, description: "Complex accounting for financial professionals" },
+          { name: "Financial Ratio Analysis", credits: 4, description: "Financial statement analysis techniques" },
+          { name: "Planning and Control", credits: 4, description: "Financial planning and control systems" },
+          { name: "Capital Markets", credits: 5, description: "Structure and operation of capital markets" },
+          { name: "Trade Finance", credits: 4, description: "International trade financing" },
         ]
       },
       {
-        name: "Third Semester",
+        name: "Term 3 - Advanced Courses",
         courses: [
-          { name: "Mergers and Acquisitions", credits: 9, description: "Corporate restructuring and M&A strategies" },
-          { name: "International Finance", credits: 9, description: "Global financial management and exchange rates" },
-          { name: "Behavioral Finance", credits: 6, description: "Psychology and decision-making in finance" },
-          { name: "FinTech and Digital Finance", credits: 6, description: "Innovation in financial technology" },
+          { name: "Derivatives", credits: 4, description: "Options, futures, and derivative securities" },
+          { name: "Business Valuation Methods", credits: 5, description: "Company valuation techniques" },
+          { name: "Mergers and Acquisitions", credits: 5, description: "M&A strategy and execution" },
+          { name: "Corporate Banking", credits: 4, description: "Corporate banking operations" },
+          { name: "Private Equity and Venture Capital", credits: 5, description: "PE/VC investment strategies" },
+          { name: "Business Restructuring", credits: 4, description: "Corporate restructuring and turnaround" },
+          { name: "Financial Risk Management", credits: 4, description: "Risk identification and mitigation" },
+          { name: "Bloomberg Financial Lab", credits: 2, description: "Bloomberg terminal training" },
         ]
       },
       {
-        name: "Fourth Semester",
+        name: "Term 4 - Internship",
         courses: [
-          { name: "Master's Thesis", credits: 21, description: "Research project in finance" },
-          { name: "Applied Finance Workshop", credits: 6, description: "Real-world case studies and simulations" },
-          { name: "Professional Development Seminar", credits: 3, description: "Career preparation and industry insights" },
+          { name: "Curricular Internship", credits: 12, description: "Hands-on professional experience in corporate finance, investment banking, or financial consulting" },
         ]
       }
     ]
