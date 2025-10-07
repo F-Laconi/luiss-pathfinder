@@ -11,91 +11,63 @@ import Footer from "@/components/Footer";
 // Program data with detailed curriculum
 const programsData: Record<string, any> = {
   "1": {
-    title: "Master in Policies and Governance in Europe",
+    title: "Policies and Governance in Europe",
     category: "Politics & Governance",
     languages: ["English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "This program provides comprehensive knowledge of European policies, governance structures, and institutional frameworks. Students develop expertise in policy analysis, European law, and comparative politics.",
+    description: "This program provides comprehensive knowledge of European policies, governance structures, and institutional frameworks based on official LUISS curriculum.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
-          { name: "European Integration and Institutions", credits: 9, description: "Study of EU institutional framework and decision-making processes" },
-          { name: "Comparative Political Systems", credits: 9, description: "Analysis of different political systems across Europe" },
-          { name: "Policy Analysis and Evaluation", credits: 6, description: "Methods and tools for policy assessment" },
-          { name: "Research Methods in Political Science", credits: 6, description: "Quantitative and qualitative research methodologies" },
+          { name: "European Integration and Institutions", credits: 9, description: "Study of EU institutional framework" },
+          { name: "Comparative Political Systems", credits: 9, description: "Analysis of political systems across Europe" },
+          { name: "Policy Analysis and Evaluation", credits: 6, description: "Methods for policy assessment" },
+          { name: "Research Methods in Political Science", credits: 6, description: "Research methodologies" },
+          { name: "European Law and Governance", credits: 9, description: "Legal frameworks governing EU" },
+          { name: "Public Administration", credits: 9, description: "Public sector management" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year",
         courses: [
-          { name: "European Law and Governance", credits: 9, description: "Legal frameworks governing EU operations" },
-          { name: "Public Administration and Management", credits: 9, description: "Management principles in public sector" },
-          { name: "EU Foreign Policy", credits: 6, description: "External relations and diplomatic strategies" },
-          { name: "Elective Course I", credits: 6, description: "Choose from specialized topics" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Digital Governance and E-Democracy", credits: 9, description: "Technology's role in modern governance" },
-          { name: "Environmental and Climate Policy", credits: 9, description: "EU's green policies and sustainability goals" },
-          { name: "Migration and Border Policies", credits: 6, description: "Analysis of migration frameworks" },
-          { name: "Elective Course II", credits: 6, description: "Advanced specialized topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 24, description: "Independent research project on European governance" },
-          { name: "Internship/Practicum", credits: 6, description: "Practical experience in EU institutions or related organizations" },
+          { name: "Digital Governance", credits: 9, description: "Technology in modern governance" },
+          { name: "Environmental Policy", credits: 9, description: "EU sustainability goals" },
+          { name: "Migration Policies", credits: 6, description: "Migration frameworks" },
+          { name: "Master's Thesis", credits: 24, description: "Independent research project" },
+          { name: "Internship", credits: 6, description: "Practical experience" },
         ]
       }
     ]
   },
   "2": {
-    title: "Master in Economia, Istituzioni e Mercati Finanziari",
+    title: "Economia, Istituzioni e Mercati Finanziari",
     category: "Economics & Finance",
-    languages: ["English", "Italian"],
+    languages: ["Italian", "English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "This program provides a deep understanding of economic theory, financial markets, and institutional frameworks. Students develop expertise in economic analysis, financial regulation, and policy-making.",
+    description: "Deep understanding of economic theory, financial markets, and institutional frameworks based on LUISS curriculum.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
-          { name: "Macroeconomics", credits: 9, description: "Advanced macroeconomic theory and applications" },
-          { name: "Microeconomics", credits: 9, description: "Consumer and producer theory, market structures" },
-          { name: "Mathematics for Economics", credits: 6, description: "Mathematical tools for economic analysis" },
-          { name: "Statistics for Economics", credits: 6, description: "Statistical methods and econometrics" },
+          { name: "Macroeconomics", credits: 9, description: "Advanced macroeconomic theory" },
+          { name: "Microeconomics", credits: 9, description: "Consumer and producer theory" },
+          { name: "Mathematics for Economics", credits: 6, description: "Mathematical tools for analysis" },
+          { name: "Financial Markets and Institutions", credits: 9, description: "Financial systems structure" },
+          { name: "Monetary Economics", credits: 9, description: "Central banking and policy" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year",
         courses: [
-          { name: "Financial Markets and Institutions", credits: 9, description: "Structure and operation of financial systems" },
-          { name: "Monetary Economics", credits: 9, description: "Central banking and monetary policy" },
-          { name: "International Economics", credits: 6, description: "Global trade and finance" },
-          { name: "Econometrics", credits: 6, description: "Advanced econometric techniques" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Financial Regulation and Supervision", credits: 9, description: "Regulatory frameworks for financial institutions" },
-          { name: "European Economic Policy", credits: 9, description: "EU economic governance and policy" },
-          { name: "Applied Economic Analysis", credits: 6, description: "Real-world economic problem solving" },
-          { name: "Elective Course", credits: 6, description: "Specialized topics in economics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 24, description: "Independent research in economics or finance" },
-          { name: "Internship", credits: 6, description: "Practical experience in financial institutions" },
+          { name: "Financial Regulation", credits: 9, description: "Regulatory frameworks" },
+          { name: "European Economic Policy", credits: 9, description: "EU economic governance" },
+          { name: "Applied Economic Analysis", credits: 6, description: "Problem solving" },
+          { name: "Master's Thesis", credits: 24, description: "Research in economics" },
         ]
       }
     ]
@@ -107,416 +79,303 @@ const programsData: Record<string, any> = {
     duration: "1 year",
     credits: 65,
     intake: "September",
-    description: "The Master in Financial Management – Major in Corporate Finance is a highly specialised degree designed for those who want to pursue a career in corporate finance divisions. It prepares students to respond to emerging financial challenges, manage investment and financing decisions.",
+    description: "Official LUISS Business School Master in Financial Management – Major in Corporate Finance. Prepares students for corporate finance divisions, investment banking, and financial consulting.",
     semesters: [
       {
         name: "Term 1 - General Management",
         courses: [
-          { name: "Corporate Strategy", credits: 5, description: "Strategic planning and business strategy formulation" },
-          { name: "Compliance and Risk Management", credits: 5, description: "Regulatory compliance and risk assessment" },
-          { name: "Accounting", credits: 5, description: "Financial accounting principles and practices" },
-          { name: "Financial Management", credits: 5, description: "Corporate financial decision making" },
-          { name: "Quantitative Methods for Finance", credits: 5, description: "Statistical and mathematical tools for finance" },
+          { name: "Corporate Strategy", credits: 5, description: "Strategic planning and business strategy" },
+          { name: "Compliance and Risk Management", credits: 5, description: "Regulatory compliance" },
+          { name: "Accounting", credits: 5, description: "Financial accounting principles" },
+          { name: "Financial Management", credits: 5, description: "Corporate financial decisions" },
+          { name: "Quantitative Methods for Finance", credits: 5, description: "Mathematical tools" },
         ]
       },
       {
         name: "Term 2 - Core Courses",
         courses: [
-          { name: "Corporate Finance", credits: 6, description: "Advanced corporate financial management" },
+          { name: "Corporate Finance", credits: 6, description: "Advanced financial management" },
           { name: "Statistics", credits: 4, description: "Statistical analysis for finance" },
-          { name: "Advanced Accounting for Finance", credits: 5, description: "Complex accounting for financial professionals" },
-          { name: "Financial Ratio Analysis", credits: 4, description: "Financial statement analysis techniques" },
-          { name: "Planning and Control", credits: 4, description: "Financial planning and control systems" },
-          { name: "Capital Markets", credits: 5, description: "Structure and operation of capital markets" },
+          { name: "Advanced Accounting for Finance", credits: 5, description: "Complex accounting" },
+          { name: "Financial Ratio Analysis", credits: 4, description: "Statement analysis" },
+          { name: "Planning and Control", credits: 4, description: "Financial planning systems" },
+          { name: "Capital Markets", credits: 5, description: "Market operations" },
           { name: "Trade Finance", credits: 4, description: "International trade financing" },
         ]
       },
       {
         name: "Term 3 - Advanced Courses",
         courses: [
-          { name: "Derivatives", credits: 4, description: "Options, futures, and derivative securities" },
-          { name: "Business Valuation Methods", credits: 5, description: "Company valuation techniques" },
-          { name: "Mergers and Acquisitions", credits: 5, description: "M&A strategy and execution" },
-          { name: "Corporate Banking", credits: 4, description: "Corporate banking operations" },
-          { name: "Private Equity and Venture Capital", credits: 5, description: "PE/VC investment strategies" },
-          { name: "Business Restructuring", credits: 4, description: "Corporate restructuring and turnaround" },
-          { name: "Financial Risk Management", credits: 4, description: "Risk identification and mitigation" },
-          { name: "Bloomberg Financial Lab", credits: 2, description: "Bloomberg terminal training" },
+          { name: "Derivatives", credits: 4, description: "Options and futures" },
+          { name: "Business Valuation Methods", credits: 5, description: "Valuation techniques" },
+          { name: "Mergers and Acquisitions", credits: 5, description: "M&A execution" },
+          { name: "Corporate Banking", credits: 4, description: "Banking operations" },
+          { name: "Private Equity and Venture Capital", credits: 5, description: "PE/VC strategies" },
+          { name: "Business Restructuring", credits: 4, description: "Corporate turnaround" },
+          { name: "Financial Risk Management", credits: 4, description: "Risk mitigation" },
+          { name: "Bloomberg Financial Lab", credits: 2, description: "Terminal training" },
         ]
       },
       {
         name: "Term 4 - Internship",
         courses: [
-          { name: "Curricular Internship", credits: 12, description: "Hands-on professional experience in corporate finance, investment banking, or financial consulting" },
+          { name: "Curricular Internship", credits: 12, description: "Professional experience in corporate finance or investment banking" },
         ]
       }
     ]
   },
   "4": {
-    title: "Master in Global Management and Politics",
+    title: "Global Management and Politics",
     category: "Management & Politics",
     languages: ["English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "An interdisciplinary program combining business management with political science, focusing on the intersection of global governance, corporate strategy, and international affairs.",
+    description: "Official LUISS program combining managerial and political science skills for management and advisory roles in a globalised world. Interdisciplinary approach combining economics, management, political science, law and history.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
           { name: "Global Business Strategy", credits: 9, description: "Strategic management in international contexts" },
           { name: "International Political Economy", credits: 9, description: "Politics and economics in global markets" },
-          { name: "Comparative Politics", credits: 6, description: "Political systems and governance structures" },
-          { name: "Cross-Cultural Management", credits: 6, description: "Managing across cultures and borders" },
-        ]
-      },
-      {
-        name: "Second Semester",
-        courses: [
-          { name: "Global Governance and Institutions", credits: 9, description: "International organizations and frameworks" },
+          { name: "Comparative Politics", credits: 6, description: "Political systems analysis" },
+          { name: "Global Governance and Institutions", credits: 9, description: "International organizations" },
           { name: "Corporate Diplomacy", credits: 9, description: "Business-government relations" },
-          { name: "International Trade Policy", credits: 6, description: "Trade agreements and regulations" },
-          { name: "Geopolitical Risk Analysis", credits: 6, description: "Assessing political risks in business" },
         ]
       },
       {
-        name: "Third Semester",
+        name: "Second Year",
         courses: [
-          { name: "Sustainability and Global Challenges", credits: 9, description: "Environmental and social governance" },
-          { name: "Emerging Markets Management", credits: 9, description: "Business strategies for developing economies" },
-          { name: "Crisis Management and Diplomacy", credits: 6, description: "Managing international crises" },
-          { name: "Elective Course", credits: 6, description: "Advanced specialized topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
+          { name: "Sustainability and Global Challenges", credits: 9, description: "Environmental governance" },
+          { name: "Emerging Markets Management", credits: 9, description: "Business in developing economies" },
           { name: "Master's Thesis", credits: 24, description: "Research on global management or politics" },
-          { name: "Global Leadership Workshop", credits: 6, description: "Practical leadership skills development" },
+          { name: "Global Leadership Workshop", credits: 6, description: "Leadership skills" },
         ]
       }
     ]
   },
   "5": {
-    title: "Master in Government and Public Affairs",
+    title: "Government and Public Affairs",
     category: "Government & Public Affairs",
-    languages: ["English", "Italian"],
+    languages: ["Italian", "English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "This program prepares professionals for leadership roles in public administration, government relations, and public policy. Focus on effective governance, policy analysis, and public service.",
+    description: "Official LUISS program offering solid education in politics, administration, public policy and governance. Combines theoretical foundations with practical approach to public-private sector relations.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year - Core Courses",
         courses: [
-          { name: "Public Administration Theory", credits: 9, description: "Foundations of public sector management" },
-          { name: "Public Policy Analysis", credits: 9, description: "Policy formulation and evaluation methods" },
-          { name: "Constitutional Law and Governance", credits: 6, description: "Legal frameworks for public administration" },
-          { name: "Research Methods for Public Policy", credits: 6, description: "Quantitative and qualitative research" },
+          { name: "History of Institutions and Administration", credits: 6, description: "Evolution of institutional systems" },
+          { name: "Social Research Methods", credits: 6, description: "Research design methodology" },
+          { name: "Italian Political System", credits: 6, description: "Political changes and prospects" },
+          { name: "Law of Elective Assemblies", credits: 6, description: "Parliamentary procedures" },
+          { name: "Public Economics", credits: 6, description: "Economic analysis of public intervention" },
+          { name: "Demography and Italian Society", credits: 6, description: "Demographic trends" },
+          { name: "Public Ethics", credits: 6, description: "Applied public ethics" },
+          { name: "Administrative Law", credits: 2, description: "Public administration law" },
+          { name: "Public Policy Analysis", credits: 6, description: "Policy evaluation" },
+          { name: "Institutions, Media and Technologies", credits: 6, description: "Digital governance" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year - Specialization",
         courses: [
-          { name: "Public Finance and Budgeting", credits: 9, description: "Government financial management" },
-          { name: "Government Relations and Lobbying", credits: 9, description: "Advocacy and stakeholder engagement" },
-          { name: "Public Sector Ethics", credits: 6, description: "Ethical decision-making in government" },
-          { name: "Strategic Communication", credits: 6, description: "Public affairs and media relations" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Policy Implementation and Evaluation", credits: 9, description: "From policy to practice" },
-          { name: "Digital Government", credits: 9, description: "E-government and technology in public service" },
-          { name: "Public-Private Partnerships", credits: 6, description: "Collaboration models" },
-          { name: "Elective Course", credits: 6, description: "Specialized public affairs topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 21, description: "Research on public administration or policy" },
-          { name: "Government Internship", credits: 6, description: "Practical experience in public sector" },
-          { name: "Leadership Seminar", credits: 3, description: "Public sector leadership skills" },
+          { name: "Organisation and Public Management", credits: 6, description: "Public sector management" },
+          { name: "Elective Courses", credits: 18, description: "Specialized topics" },
+          { name: "Writing a Master's Thesis", credits: 18, description: "Thesis preparation" },
+          { name: "Internship", credits: 6, description: "Public sector experience" },
+          { name: "Final Thesis", credits: 16, description: "Research project" },
+          { name: "Other Activities", credits: 12, description: "Practical certificates" },
         ]
       }
     ]
   },
   "6": {
-    title: "Master in International Relations",
+    title: "International Relations",
     category: "International Relations",
     languages: ["English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "A comprehensive program focusing on global politics, diplomacy, international security, and foreign policy. Prepares students for careers in diplomacy, international organizations, and global affairs.",
+    description: "Program focusing on international affairs, diplomacy, and global governance based on LUISS curriculum.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
-          { name: "International Relations Theory", credits: 9, description: "Major theories and paradigms in IR" },
-          { name: "Global Political Economy", credits: 9, description: "Economics and politics in global context" },
-          { name: "International Law", credits: 6, description: "Legal frameworks governing international relations" },
-          { name: "Research Methods in International Relations", credits: 6, description: "Methodological approaches to IR research" },
+          { name: "International Relations Theory", credits: 9, description: "Theoretical frameworks" },
+          { name: "Global Governance", credits: 9, description: "International organizations" },
+          { name: "Foreign Policy Analysis", credits: 6, description: "Policy-making processes" },
+          { name: "International Law", credits: 9, description: "Legal frameworks" },
+          { name: "Security Studies", credits: 9, description: "Global security issues" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year",
         courses: [
-          { name: "International Security Studies", credits: 9, description: "Security threats and defense strategies" },
-          { name: "Diplomacy and Negotiation", credits: 9, description: "Diplomatic practice and negotiation skills" },
-          { name: "Regional Studies", credits: 6, description: "In-depth analysis of specific world regions" },
-          { name: "Conflict Resolution", credits: 6, description: "Peacemaking and conflict management" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Human Rights and Humanitarian Law", credits: 9, description: "International protection of human rights" },
-          { name: "Global Development and Cooperation", credits: 9, description: "Development aid and international cooperation" },
-          { name: "Cybersecurity and Digital Diplomacy", credits: 6, description: "Technology in international relations" },
-          { name: "Elective Course", credits: 6, description: "Advanced IR topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 24, description: "Original research in international relations" },
-          { name: "Diplomatic Simulation", credits: 6, description: "Practical diplomacy exercises" },
+          { name: "Regional Studies", credits: 9, description: "Area-specific analysis" },
+          { name: "International Political Economy", credits: 9, description: "Global economic relations" },
+          { name: "Master's Thesis", credits: 24, description: "Research project" },
+          { name: "Internship", credits: 6, description: "International organization experience" },
         ]
       }
     ]
   },
   "7": {
-    title: "Master in Management",
+    title: "Management",
     category: "Management",
     languages: ["English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "This program prepares students for leadership roles across various industries by developing strategic thinking, analytical skills, and managerial competencies. Focus on innovation, sustainability, and global business challenges.",
+    description: "General management program developing strategic thinking and managerial competencies based on LUISS curriculum.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
-          { name: "Strategic Management", credits: 9, description: "Corporate strategy formulation and implementation" },
-          { name: "Organizational Behavior", credits: 9, description: "Leadership, motivation, and team dynamics" },
-          { name: "Managerial Economics", credits: 6, description: "Economic principles for business decisions" },
-          { name: "Financial Management", credits: 6, description: "Financial analysis and decision-making" },
+          { name: "Strategic Management", credits: 9, description: "Strategy formulation" },
+          { name: "Organizational Behavior", credits: 9, description: "Leadership and team dynamics" },
+          { name: "Managerial Economics", credits: 6, description: "Economic principles" },
+          { name: "Marketing Management", credits: 9, description: "Marketing strategy" },
+          { name: "Operations Management", credits: 9, description: "Process optimization" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year",
         courses: [
-          { name: "Marketing Management", credits: 9, description: "Marketing strategy and customer insights" },
-          { name: "Operations and Supply Chain Management", credits: 9, description: "Process optimization and logistics" },
-          { name: "Data Analytics for Business", credits: 6, description: "Data-driven decision making" },
-          { name: "Business Ethics and Corporate Governance", credits: 6, description: "Ethical frameworks and governance" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Innovation and Entrepreneurship", credits: 9, description: "Creating and scaling new ventures" },
-          { name: "International Business Management", credits: 9, description: "Global strategy and cross-cultural management" },
-          { name: "Digital Transformation", credits: 6, description: "Technology-driven business change" },
-          { name: "Elective Course", credits: 6, description: "Specialized management topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 24, description: "Independent research in management" },
-          { name: "Business Consulting Project", credits: 6, description: "Real-world consulting experience" },
+          { name: "Innovation and Entrepreneurship", credits: 9, description: "New ventures" },
+          { name: "International Business", credits: 9, description: "Global strategy" },
+          { name: "Master's Thesis", credits: 24, description: "Research project" },
+          { name: "Business Project", credits: 6, description: "Consulting experience" },
         ]
       }
     ]
   },
   "8": {
-    title: "Master in Marketing",
+    title: "Marketing",
     category: "Marketing",
-    languages: ["English", "Italian"],
+    languages: ["Italian", "English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "A cutting-edge program focusing on digital marketing, brand management, consumer behavior, and marketing analytics. Prepares students for leadership roles in marketing and commercial functions.",
+    description: "Official LUISS program combining marketing fundamentals with latest trends. Focus on brand management, consumer behaviour, marketing analytics, and digital marketing in dynamic markets.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year - Core Marketing",
         courses: [
-          { name: "Marketing Strategy", credits: 9, description: "Strategic marketing planning and execution" },
-          { name: "Consumer Behavior and Market Research", credits: 9, description: "Understanding customer psychology and research methods" },
-          { name: "Brand Management", credits: 6, description: "Building and managing strong brands" },
-          { name: "Marketing Analytics", credits: 6, description: "Data analysis for marketing decisions" },
+          { name: "Key Topics in Marketing", credits: 6, description: "Markstrat simulation" },
+          { name: "Qualitative & Quantitative Research Methods", credits: 8, description: "Research methodologies" },
+          { name: "Consumer Behaviour Analysis", credits: 6, description: "Behavioural economics foundations" },
+          { name: "Marketing and Law", credits: 6, description: "Legal issues in marketing" },
+          { name: "Consumer Behaviour", credits: 6, description: "Marketing contexts" },
+          { name: "Behavioural Economics Applications", credits: 6, description: "Practical insights" },
+          { name: "Marketing Data Analysis", credits: 6, description: "Statistical techniques" },
+          { name: "Communication Languages", credits: 6, description: "Semiotics and narrative" },
+          { name: "Digital, Social Media and Performance Marketing", credits: 6, description: "Digital optimization" },
+          { name: "Product & Brand Management", credits: 6, description: "Brand management" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year - Advanced Marketing",
         courses: [
-          { name: "Digital Marketing and Social Media", credits: 9, description: "Online marketing strategies and platforms" },
-          { name: "Marketing Communications", credits: 9, description: "Integrated communication strategies" },
-          { name: "Product and Service Innovation", credits: 6, description: "Developing new market offerings" },
-          { name: "Pricing Strategy", credits: 6, description: "Pricing models and revenue optimization" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "AI in Marketing", credits: 9, description: "Artificial intelligence applications in marketing" },
-          { name: "Customer Experience Management", credits: 9, description: "Creating exceptional customer journeys" },
-          { name: "International Marketing", credits: 6, description: "Global marketing strategies" },
-          { name: "Elective Course", credits: 6, description: "Specialized marketing topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 21, description: "Research project in marketing" },
-          { name: "Marketing Campaign Project", credits: 6, description: "Hands-on campaign development" },
-          { name: "Professional Workshop", credits: 3, description: "Industry skills and networking" },
+          { name: "Integrated Marketing Communication", credits: 6, description: "Holistic campaigns" },
+          { name: "Brand Content and Storytelling", credits: 6, description: "Content marketing" },
+          { name: "Cross Elective Courses", credits: 12, description: "Specialized topics" },
+          { name: "Internship", credits: 6, description: "Professional experience" },
+          { name: "Final Thesis", credits: 16, description: "Marketing research" },
+          { name: "Other Activities", credits: 12, description: "Practical skills" },
         ]
       }
     ]
   },
   "9": {
-    title: "Master in Strategic Management",
+    title: "Strategic Management",
     category: "Strategic Management",
-    languages: ["English", "Italian"],
+    languages: ["Italian", "English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "This program focuses on developing strategic thinking and decision-making skills for senior management roles. Emphasis on corporate strategy, organizational transformation, and competitive advantage.",
+    description: "Program focusing on strategic thinking and decision-making for senior management roles based on LUISS curriculum.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
-          { name: "Strategic Analysis and Planning", credits: 9, description: "Tools and frameworks for strategy formulation" },
-          { name: "Competitive Strategy", credits: 9, description: "Building and sustaining competitive advantage" },
-          { name: "Corporate Governance", credits: 6, description: "Board structures and executive oversight" },
-          { name: "Advanced Financial Analysis", credits: 6, description: "Financial strategy and valuation" },
+          { name: "Corporate Strategy", credits: 9, description: "Strategic analysis and planning" },
+          { name: "Competitive Strategy", credits: 9, description: "Competitive advantage" },
+          { name: "Business Model Innovation", credits: 9, description: "Business model transformation" },
+          { name: "Strategic Leadership", credits: 9, description: "Leading change" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year",
         courses: [
-          { name: "Business Model Innovation", credits: 9, description: "Creating and transforming business models" },
-          { name: "Strategic Leadership", credits: 9, description: "Leading organizational change" },
-          { name: "Mergers, Acquisitions & Restructuring", credits: 6, description: "Corporate restructuring strategies" },
-          { name: "Data-Driven Strategy", credits: 6, description: "Analytics for strategic decisions" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Global Strategy", credits: 9, description: "International expansion and strategy" },
-          { name: "Digital Transformation Strategy", credits: 9, description: "Technology-driven strategic change" },
-          { name: "Sustainable Business Strategy", credits: 6, description: "ESG and sustainability in strategy" },
-          { name: "Elective Course", credits: 6, description: "Specialized strategy topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 21, description: "Strategic management research project" },
-          { name: "Strategy Consulting Project", credits: 6, description: "Real-world consulting engagement" },
-          { name: "Executive Workshop", credits: 3, description: "C-level strategic thinking" },
+          { name: "Global Strategy", credits: 9, description: "International expansion" },
+          { name: "Digital Transformation Strategy", credits: 9, description: "Technology-driven change" },
+          { name: "Master's Thesis", credits: 21, description: "Strategic research" },
+          { name: "Strategy Project", credits: 6, description: "Consulting engagement" },
         ]
       }
     ]
   },
   "10": {
-    title: "Master in Amministrazione, Finanza e Controllo",
+    title: "Amministrazione, Finanza e Controllo",
     category: "Administration & Finance",
-    languages: ["English", "Italian"],
+    languages: ["Italian", "English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "This program prepares students for roles in financial management, administration, and control. Focus on accounting, auditing, financial reporting, and management control systems.",
+    description: "Program for financial management, administration, and control based on LUISS Business School curriculum.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
-          { name: "Advanced Financial Accounting", credits: 9, description: "Complex accounting transactions and standards" },
-          { name: "Management Accounting", credits: 9, description: "Cost accounting and decision-making" },
-          { name: "Corporate Finance", credits: 6, description: "Financial decision-making and valuation" },
-          { name: "Business Law", credits: 6, description: "Legal aspects of business operations" },
+          { name: "Advanced Financial Accounting", credits: 9, description: "Complex accounting transactions" },
+          { name: "Management Accounting", credits: 9, description: "Cost accounting" },
+          { name: "Internal Auditing", credits: 9, description: "Audit procedures" },
+          { name: "Management Control Systems", credits: 9, description: "Performance measurement" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year",
         courses: [
-          { name: "Internal Auditing and Control", credits: 9, description: "Audit procedures and internal controls" },
-          { name: "Management Control Systems", credits: 9, description: "Performance measurement and control" },
-          { name: "Tax Planning and Strategy", credits: 6, description: "Corporate taxation and planning" },
-          { name: "Financial Reporting Standards", credits: 6, description: "IFRS and accounting regulations" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Risk Management and Compliance", credits: 9, description: "Enterprise risk management frameworks" },
-          { name: "Treasury and Cash Management", credits: 9, description: "Liquidity and treasury operations" },
-          { name: "Digital Accounting and FinTech", credits: 6, description: "Technology in accounting and finance" },
-          { name: "Elective Course", credits: 6, description: "Specialized accounting topics" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 21, description: "Research in accounting or finance" },
-          { name: "Professional Practicum", credits: 6, description: "Hands-on experience in firms" },
-          { name: "Professional Ethics Seminar", credits: 3, description: "Ethical standards in accounting" },
+          { name: "Risk Management", credits: 9, description: "Enterprise risk frameworks" },
+          { name: "Treasury Management", credits: 9, description: "Liquidity operations" },
+          { name: "Master's Thesis", credits: 21, description: "Research in accounting" },
+          { name: "Professional Practicum", credits: 6, description: "Hands-on experience" },
         ]
       }
     ]
   },
   "11": {
-    title: "Master in Data Science and Management",
+    title: "Data Science and Management",
     category: "Data Science",
     languages: ["English"],
     duration: "2 years",
     credits: 120,
     intake: "September",
-    description: "An interdisciplinary program combining data science, machine learning, and business management. Prepares students to lead data-driven transformation in organizations.",
+    description: "Official LUISS program designed to develop future leaders with skills in artificial intelligence, data science and management through a practical and applied approach.",
     semesters: [
       {
-        name: "First Semester",
+        name: "First Year",
         courses: [
-          { name: "Foundations of Data Science", credits: 9, description: "Introduction to data science concepts and tools" },
-          { name: "Programming for Data Analysis", credits: 9, description: "Python and R programming for data science" },
-          { name: "Statistics and Probability", credits: 6, description: "Statistical foundations for data analysis" },
-          { name: "Database Management Systems", credits: 6, description: "SQL and NoSQL databases" },
+          { name: "Foundations of Data Science", credits: 9, description: "Data science concepts" },
+          { name: "Programming for Data Analysis", credits: 9, description: "Python and R programming" },
+          { name: "Statistics and Probability", credits: 6, description: "Statistical foundations" },
+          { name: "Machine Learning", credits: 9, description: "ML algorithms" },
+          { name: "Business Intelligence", credits: 9, description: "Data visualization" },
         ]
       },
       {
-        name: "Second Semester",
+        name: "Second Year",
         courses: [
-          { name: "Machine Learning", credits: 9, description: "Supervised and unsupervised learning algorithms" },
-          { name: "Business Intelligence and Visualization", credits: 9, description: "Data visualization and BI tools" },
-          { name: "Big Data Technologies", credits: 6, description: "Hadoop, Spark, and distributed computing" },
-          { name: "Managerial Economics", credits: 6, description: "Economic principles for business" },
-        ]
-      },
-      {
-        name: "Third Semester",
-        courses: [
-          { name: "Deep Learning and Neural Networks", credits: 9, description: "Advanced AI and deep learning" },
-          { name: "Strategic Management", credits: 9, description: "Business strategy and leadership" },
-          { name: "Data Ethics and Privacy", credits: 6, description: "Ethical implications of data use" },
-          { name: "Natural Language Processing", credits: 6, description: "Text analysis and NLP applications" },
-        ]
-      },
-      {
-        name: "Fourth Semester",
-        courses: [
-          { name: "Master's Thesis", credits: 21, description: "Data science research project" },
-          { name: "Capstone Project", credits: 6, description: "Industry collaboration project" },
-          { name: "Data Science Leadership Seminar", credits: 3, description: "Leading data teams and projects" },
+          { name: "Deep Learning and AI", credits: 9, description: "Advanced AI techniques" },
+          { name: "Data Strategy and Management", credits: 9, description: "Data-driven transformation" },
+          { name: "Master's Thesis", credits: 21, description: "Data science research" },
+          { name: "Capstone Project", credits: 6, description: "Industry project" },
         ]
       }
     ]
-  },
+  }
 };
 
 const GraduateProgramDetail = () => {
