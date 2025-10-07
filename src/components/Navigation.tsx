@@ -21,7 +21,9 @@ const Navigation = () => {
   const isCourseExplorerActive = location.pathname === '/course-explorer' || 
     location.pathname === '/school/undergraduate' || 
     location.pathname === '/school/graduate' || 
-    location.pathname === '/school/postgraduate';
+    location.pathname === '/school/postgraduate' ||
+    location.pathname.startsWith('/graduate/program/') ||
+    location.pathname.startsWith('/course/');
   
   const isHomeActive = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/suggestions';
   
