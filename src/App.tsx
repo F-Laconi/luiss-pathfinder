@@ -11,6 +11,7 @@ import MasterCategory from "./pages/MasterCategory";
 import GraduateSchool from "./pages/GraduateSchool";
 import GraduateProgramDetail from "./pages/GraduateProgramDetail";
 import UndergraduateSchool from "./pages/UndergraduateSchool";
+import UndergraduateProgramDetail from "./pages/UndergraduateProgramDetail";
 import PostGraduateSchool from "./pages/PostGraduateSchool";
 import CourseDetail from "./pages/CourseDetail";
 import BusinessPartner from "./pages/BusinessPartner";
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/school/graduate" element={<GraduateSchool />} />
           <Route path="/graduate/program/:id" element={<GraduateProgramDetail />} />
           <Route path="/school/undergraduate" element={<UndergraduateSchool />} />
+          <Route path="/undergraduate/program/:id" element={<UndergraduateProgramDetail />} />
           <Route path="/school/postgraduate" element={<PostGraduateSchool />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />
           <Route path="/school/:schoolId" element={<MasterCategory />} />

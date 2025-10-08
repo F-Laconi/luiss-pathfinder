@@ -8,56 +8,65 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 
-// Undergraduate programs data
-const undergraduatePrograms = [{
-  id: "economics",
-  title: "Economics and Social Sciences",
-  image: "/src/assets/economics-icon.jpg",
-  languages: ["English", "Italian"],
-  category: "Economics"
-}, {
-  id: "management",
-  title: "Management",
-  image: "/src/assets/management-course.png",
-  languages: ["English", "Italian"],
-  category: "Business"
-}, {
-  id: "law",
-  title: "Law",
-  image: "/src/assets/law-icon.jpg",
-  languages: ["Italian"],
-  category: "Law"
-}, {
-  id: "politics",
-  title: "Political Science",
-  image: "/src/assets/politics-icon.jpg",
-  languages: ["English", "Italian"],
-  category: "Politics"
-}, {
-  id: "marketing",
-  title: "Marketing and Communication",
-  image: "/src/assets/marketing-icon.jpg",
-  languages: ["English", "Italian"],
-  category: "Business"
-}, {
-  id: "finance",
-  title: "Finance and Banking",
-  image: "/src/assets/finance-course.png",
-  languages: ["English"],
-  category: "Finance"
-}, {
-  id: "international-relations",
-  title: "International Relations",
-  image: "/src/assets/international-relations.png",
-  languages: ["English"],
-  category: "Politics"
-}, {
-  id: "data-science",
-  title: "Data Science and Analytics",
-  image: "/src/assets/data-science-management.png",
-  languages: ["English"],
-  category: "Technology"
-}];
+// Undergraduate programs data matching the detail page
+const undergraduatePrograms = [
+  {
+    id: "1",
+    title: "Global Law",
+    image: "/src/assets/law-icon.jpg",
+    languages: ["English"],
+    category: "Law"
+  },
+  {
+    id: "2",
+    title: "Business Administration",
+    image: "/src/assets/management-course.png",
+    languages: ["English"],
+    category: "Business"
+  },
+  {
+    id: "3",
+    title: "Management and Artificial Intelligence",
+    image: "/src/assets/data-science-management.png",
+    languages: ["English"],
+    category: "Technology"
+  },
+  {
+    id: "4",
+    title: "Economics and Business",
+    image: "/src/assets/economics-icon.jpg",
+    languages: ["English"],
+    category: "Economics"
+  },
+  {
+    id: "5",
+    title: "Politics: Philosophy and Economics",
+    image: "/src/assets/politics-icon.jpg",
+    languages: ["English"],
+    category: "Politics"
+  },
+  {
+    id: "6",
+    title: "Giurisprudenza",
+    image: "/src/assets/law-icon.jpg",
+    languages: ["Italian"],
+    category: "Law"
+  },
+  {
+    id: "7",
+    title: "Economics and Management",
+    image: "/src/assets/economics-icon.jpg",
+    languages: ["Italian"],
+    category: "Economics"
+  },
+  {
+    id: "8",
+    title: "Political Science",
+    image: "/src/assets/politics-icon.jpg",
+    languages: ["Italian"],
+    category: "Politics"
+  }
+];
 const UndergraduateSchool = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("default");
@@ -178,7 +187,7 @@ const UndergraduateSchool = () => {
                 </CardContent>
                 <CardFooter className="p-6 pt-0">
                   <Button asChild className="w-full group-hover:bg-primary/90 transition-colors">
-                    <Link to={`/course/${program.id}`}>
+                    <Link to={`/undergraduate/program/${program.id}`}>
                       <TrendingUp className="h-4 w-4 mr-2" />
                       View Program Details
                     </Link>
