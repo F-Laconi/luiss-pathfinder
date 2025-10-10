@@ -98,16 +98,37 @@ const UndergraduateSchool = () => {
           </Badge>)}
       </div>;
   };
-  return <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
+  return <main className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
       <Navigation />
       
+      {/* SEO Meta - would be better in head but inline for now */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "LUISS Undergraduate Programs",
+          "description": "Bachelor's degree programs at LUISS University",
+          "numberOfItems": undergraduatePrograms.length,
+          "itemListElement": undergraduatePrograms.map((prog, idx) => ({
+            "@type": "Course",
+            "position": idx + 1,
+            "name": prog.title,
+            "description": `${prog.category} undergraduate program at LUISS`,
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "LUISS University"
+            }
+          }))
+        })}
+      </script>
+      
       {/* Header Section */}
-      <div className="pt-20 pb-12 px-4 lg:px-8">
+      <header className="pt-20 pb-12 px-4 lg:px-8">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              Undergraduate Programs
+              LUISS Undergraduate Programs
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Discover our comprehensive undergraduate programs designed to prepare you for success in your chosen field
@@ -129,8 +150,12 @@ const UndergraduateSchool = () => {
               </div>
             </div>
           </div>
+        </div>
+      </header>
 
           {/* Search and Filter Bar */}
+        <section className="container mx-auto px-4 lg:px-8 mb-8">
+          <h2 className="sr-only">Search and Filter Programs</h2>
           <Card className="mb-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border-0 shadow-lg">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row gap-4">
@@ -162,13 +187,21 @@ const UndergraduateSchool = () => {
               </div>
             </CardContent>
           </Card>
+        </section>
 
           {/* Programs Grid */}
+        <section className="container mx-auto px-4 lg:px-8">
+          <h2 className="sr-only">Available Programs</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {sortedPrograms.map(program => <Card key={program.id} className="group hover:shadow-xl transition-all duration-300 bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm border-0 overflow-hidden">
                 <CardHeader className="p-0">
                   <div className="relative h-48 overflow-hidden">
-                    <img src={program.image} alt={program.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img 
+                      src={program.image} 
+                      alt={`${program.title} undergraduate program at LUISS University`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                    />
                     <div className="absolute top-3 right-3">
                       {renderLanguageFlags(program.languages)}
                     </div>
@@ -195,8 +228,10 @@ const UndergraduateSchool = () => {
                 </CardFooter>
               </Card>)}
           </div>
+        </section>
 
           {/* No Results */}
+        <div className="container mx-auto px-4 lg:px-8">
           {sortedPrograms.length === 0 && <div className="text-center py-12">
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-xl font-semibold mb-2">No programs found</h3>
@@ -205,7 +240,6 @@ const UndergraduateSchool = () => {
               </p>
             </div>}
         </div>
-      </div>
-    </div>;
+    </main>;
 };
 export default UndergraduateSchool;

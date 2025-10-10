@@ -5,7 +5,7 @@ import compassWallpaper from "@/assets/compass-wallpaper.jpg";
 
 const Index = () => {
   return (
-    <div>
+    <main>
       <Navigation />
       <div
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -93,7 +93,23 @@ const Index = () => {
         </div>
       </div>
       </div>
-    </div>
+
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "UniCompass - LUISS University Navigator",
+          "description": "Academic program explorer for LUISS University students",
+          "url": "https://unicompass.lovable.app",
+          "logo": "https://unicompass.lovable.app/logo.png",
+          "offers": {
+            "@type": "Offer",
+            "category": "Educational Services"
+          }
+        })}
+      </script>
+    </main>
   );
 };
 

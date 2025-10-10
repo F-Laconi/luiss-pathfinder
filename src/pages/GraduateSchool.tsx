@@ -114,15 +114,36 @@ const GraduateSchool = () => {
           </Badge>)}
       </div>;
   };
-  return <div className="min-h-screen bg-background">
+  return <main className="min-h-screen bg-background">
       <Navigation />
       
+      {/* SEO Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "LUISS Graduate Programs",
+          "description": "Master's degree programs at LUISS University",
+          "numberOfItems": graduatePrograms.length,
+          "itemListElement": graduatePrograms.map((prog, idx) => ({
+            "@type": "Course",
+            "position": idx + 1,
+            "name": prog.title,
+            "description": `${prog.category} graduate program at LUISS`,
+            "provider": {
+              "@type": "EducationalOrganization",
+              "name": "LUISS University"
+            }
+          }))
+        })}
+      </script>
+      
       {/* Header Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-purple-500/10 to-purple-600/10">
+      <header className="pt-24 pb-12 bg-gradient-to-br from-purple-500/10 to-purple-600/10">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Graduate School
+              LUISS Graduate School Programs
             </h1>
             <p className="text-subtitle mb-8">
               Master's degree programs for advanced studies. Explore our comprehensive graduate programs 
@@ -144,10 +165,10 @@ const GraduateSchool = () => {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Filters and Search */}
-      <section className="py-8 border-b border-border">
+      <section className="py-8 border-b border-border" aria-label="Search and filter programs">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row gap-4 justify-between">
             {/* Search */}
@@ -185,15 +206,21 @@ const GraduateSchool = () => {
       </section>
 
       {/* Programs Grid */}
-      <section className="py-12">
+      <section className="py-12" aria-label="Graduate programs list">
         <div className="container mx-auto px-4 lg:px-8">
+          <h2 className="sr-only">Available Graduate Programs</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sortedPrograms.map((program, index) => <div key={program.id} className="bg-card rounded-2xl overflow-hidden shadow-sm border border-border hover:shadow-lg transition-all duration-300 group animate-fade-up" style={{
             animationDelay: `${index * 0.1}s`
           }}>
                 {/* Program Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img src={program.image} alt={program.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <img 
+                    src={program.image} 
+                    alt={`${program.title} graduate program at LUISS University`}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                  />
                   
                   {/* Language flags */}
                   <div className="absolute top-4 right-4 z-20">
@@ -224,6 +251,6 @@ const GraduateSchool = () => {
       </section>
 
       <Footer />
-    </div>;
+    </main>;
 };
 export default GraduateSchool;
