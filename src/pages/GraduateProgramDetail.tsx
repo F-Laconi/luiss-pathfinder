@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, BookOpen, Clock, Award, Globe, Users, Calendar, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -502,25 +502,35 @@ const GraduateProgramDetail = () => {
                     </AccordionTrigger>
                     <AccordionContent className="pt-4">
                       <div className="space-y-3">
-                        {semester.courses.map((course: any, courseIndex: number) => (
-                          <Card key={courseIndex} className="group hover:shadow-md transition-all duration-300 border-border/50">
-                            <CardHeader className="pb-3">
-                              <div className="flex items-start justify-between gap-4">
-                                <div className="flex-1">
-                                  <CardTitle className="text-base group-hover:text-primary transition-colors">
-                                    {course.name}
-                                  </CardTitle>
-                                  <CardDescription className="mt-2">
-                                    {course.description}
-                                  </CardDescription>
-                                </div>
-                                <Badge variant="secondary" className="shrink-0">
-                                  {course.credits} ECTS
-                                </Badge>
-                              </div>
-                            </CardHeader>
-                          </Card>
-                        ))}
+                        {semester.courses.map((course: any, courseIndex: number) => {
+                          const courseId = `${id}-${semIndex}-${courseIndex}`;
+                          return (
+                            <Link 
+                              key={courseIndex} 
+                              to={`/course/${courseId}`}
+                              className="block"
+                            >
+                              <Card className="group hover:shadow-md transition-all duration-300 border-border/50 cursor-pointer hover:border-primary/50">
+                                <CardHeader className="pb-3">
+                                  <div className="flex items-start justify-between gap-4">
+                                    <div className="flex-1">
+                                      <CardTitle className="text-base group-hover:text-primary transition-colors flex items-center gap-2">
+                                        {course.name}
+                                        <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                      </CardTitle>
+                                      <CardDescription className="mt-2">
+                                        {course.description}
+                                      </CardDescription>
+                                    </div>
+                                    <Badge variant="secondary" className="shrink-0">
+                                      {course.credits} ECTS
+                                    </Badge>
+                                  </div>
+                                </CardHeader>
+                              </Card>
+                            </Link>
+                          );
+                        })}
                       </div>
                     </AccordionContent>
                   </AccordionItem>

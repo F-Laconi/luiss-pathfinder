@@ -18,21 +18,34 @@ const professorData = {
   attendanceMandatory: true
 };
 
-// Mock course data - in a real app this would be fetched based on courseId
-const courseData = {
-  title: "Strategic Management",
-  category: "Management",
-  duration: "12 weeks",
-  credits: "6 ECTS",
-  language: "English",
-  description: "This course provides a comprehensive understanding of strategic management principles and their application in modern business environments. Students will learn to analyze competitive landscapes, develop strategic plans, and implement organizational changes.",
-  learningObjectives: [
-    "Understand the fundamentals of strategic planning",
-    "Analyze competitive environments and market dynamics",
-    "Develop strategic recommendations for real business cases",
-    "Master frameworks for strategic decision-making"
-  ],
-  prerequisites: "Basic knowledge of business administration and economics"
+// Graduate programs data to extract courses from
+const graduateCoursesData: Record<string, any> = {
+  "1-0-0": { name: "European Integration and Institutions", credits: 9, description: "Comprehensive study of EU institutional framework, decision-making processes, and the evolution of European integration", programId: "1" },
+  "1-0-1": { name: "Comparative Political Systems", credits: 9, description: "In-depth analysis of political systems across Europe, constitutional frameworks, and governance structures", programId: "1" },
+  "1-0-2": { name: "Policy Analysis and Evaluation", credits: 6, description: "Advanced methods for policy assessment, impact evaluation, and evidence-based policymaking", programId: "1" },
+  "1-0-3": { name: "Research Methods in Political Science", credits: 6, description: "Quantitative and qualitative research methodologies for political science research", programId: "1" },
+  "1-0-4": { name: "European Law and Governance", credits: 9, description: "Legal frameworks governing the European Union, constitutional law, and regulatory systems", programId: "1" },
+  "1-0-5": { name: "Public Administration", credits: 9, description: "Theory and practice of public sector management, administrative reforms, and bureaucracy", programId: "1" },
+  "1-1-0": { name: "Digital Governance", credits: 9, description: "Technology's role in modern governance, e-government, digital transformation of public services", programId: "1" },
+  "1-1-1": { name: "Environmental Policy", credits: 9, description: "EU environmental policies, climate change governance, and sustainability goals", programId: "1" },
+  "1-1-2": { name: "Migration Policies", credits: 6, description: "European migration frameworks, asylum systems, and integration policies", programId: "1" },
+  "2-0-0": { name: "Macroeconomics", credits: 9, description: "Advanced macroeconomic theory, economic growth, business cycles, and fiscal policy", programId: "2" },
+  "2-0-1": { name: "Microeconomics", credits: 9, description: "Consumer theory, producer theory, market structures, and welfare economics", programId: "2" },
+  "2-0-2": { name: "Mathematics for Economics", credits: 6, description: "Mathematical tools for economic analysis including calculus, optimization, and linear algebra", programId: "2" },
+  "2-0-3": { name: "Financial Markets and Institutions", credits: 9, description: "Structure and functioning of financial systems, banking, and capital markets", programId: "2" },
+  "2-0-4": { name: "Monetary Economics", credits: 9, description: "Central banking, monetary policy, inflation, and interest rates", programId: "2" },
+  "2-1-0": { name: "Financial Regulation", credits: 9, description: "Regulatory frameworks for financial markets, Basel accords, and compliance", programId: "2" },
+  "2-1-1": { name: "European Economic Policy", credits: 9, description: "EU economic governance, single market, and economic integration", programId: "2" },
+  "2-1-2": { name: "Applied Economic Analysis", credits: 6, description: "Practical application of economic theory to real-world problems and policy challenges", programId: "2" },
+  "3-0-0": { name: "Corporate Strategy", credits: 5, description: "Strategic planning, competitive analysis, and business strategy formulation for corporations", programId: "3" },
+  "3-0-1": { name: "Compliance and Risk Management", credits: 5, description: "Regulatory compliance frameworks, enterprise risk management, and internal controls", programId: "3" },
+  "3-0-2": { name: "Accounting", credits: 5, description: "Financial accounting principles, IFRS standards, and financial reporting", programId: "3" },
+  "3-0-3": { name: "Financial Management", credits: 5, description: "Corporate financial decisions, capital budgeting, and working capital management", programId: "3" },
+  "3-0-4": { name: "Quantitative Methods for Finance", credits: 5, description: "Mathematical and statistical tools for financial analysis and modeling", programId: "3" },
+  "3-1-0": { name: "Corporate Finance", credits: 6, description: "Advanced corporate finance including M&A, capital structure, and valuation", programId: "3" },
+  "3-1-1": { name: "Statistics", credits: 4, description: "Statistical analysis for finance, hypothesis testing, and regression analysis", programId: "3" },
+  "3-1-2": { name: "Advanced Accounting for Finance", credits: 5, description: "Complex accounting topics including consolidation and financial instruments", programId: "3" },
+  "3-1-3": { name: "Financial Ratio Analysis", credits: 4, description: "Analysis of financial statements using ratio analysis and profitability metrics", programId: "3" },
 };
 
 // Mock student notes data
@@ -90,6 +103,13 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 const CourseDetail = () => {
   const { courseId } = useParams();
+  
+  const course = graduateCoursesData[courseId || ""] || {
+    name: "Course Not Found",
+    credits: 0,
+    description: "This course could not be found.",
+    programId: "1"
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -105,13 +125,13 @@ const CourseDetail = () => {
         {/* Course header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
-            <h1 className="text-4xl font-bold text-foreground">{courseData.title}</h1>
-            <Badge variant="secondary">{courseData.category}</Badge>
+            <h1 className="text-4xl font-bold text-foreground">{course.name}</h1>
+            <Badge variant="secondary">LUISS Graduate</Badge>
           </div>
           <div className="flex items-center gap-6 text-muted-foreground">
-            <span>{courseData.duration}</span>
-            <span>{courseData.credits}</span>
-            <span>{courseData.language}</span>
+            <span>12 weeks</span>
+            <span>{course.credits} ECTS</span>
+            <span>English</span>
           </div>
         </div>
 
@@ -187,21 +207,31 @@ const CourseDetail = () => {
                 <CardTitle>Course Description</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-6">{courseData.description}</p>
+                <p className="text-muted-foreground mb-6">{course.description}</p>
                 
                 <h4 className="font-semibold mb-3">Learning Objectives</h4>
                 <ul className="space-y-2">
-                  {courseData.learningObjectives.map((objective, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span className="text-muted-foreground">{objective}</span>
-                    </li>
-                  ))}
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Master theoretical frameworks and concepts</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Apply knowledge to real-world scenarios and case studies</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Develop critical thinking and analytical skills</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Prepare for professional practice in the field</span>
+                  </li>
                 </ul>
 
                 <div className="mt-6 pt-6 border-t">
                   <h4 className="font-semibold mb-2">Prerequisites</h4>
-                  <p className="text-muted-foreground">{courseData.prerequisites}</p>
+                  <p className="text-muted-foreground">Bachelor's degree or equivalent qualification. Basic knowledge of the subject area recommended.</p>
                 </div>
               </CardContent>
             </Card>
