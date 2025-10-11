@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Filter, Globe, BookOpen, GraduationCap, TrendingUp } from "lucide-react";
+import { Search, Globe, BookOpen, GraduationCap, TrendingUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -67,6 +67,7 @@ const undergraduatePrograms = [
     category: "Politics"
   }
 ];
+
 const UndergraduateSchool = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("default");
@@ -90,18 +91,25 @@ const UndergraduateSchool = () => {
         return 0;
     }
   });
+
   const renderLanguageFlags = (languages: string[]) => {
-    return <div className="flex gap-1">
-        {languages.map(lang => <Badge key={lang} variant="secondary" className="text-xs">
-            <Globe className="h-3 w-3 mr-1" />
+    return (
+      <div className="flex gap-2">
+        {languages.map(lang => (
+          <Badge key={lang} className="bg-primary/10 text-primary border-primary/20 font-medium px-3 py-1">
+            <Globe className="h-3 w-3 mr-1.5" />
             {lang === "English" ? "EN" : "IT"}
-          </Badge>)}
-      </div>;
+          </Badge>
+        ))}
+      </div>
+    );
   };
-  return <main className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
+
+  return (
+    <main className="min-h-screen bg-background mesh-gradient">
       <Navigation />
       
-      {/* SEO Meta - would be better in head but inline for now */}
+      {/* SEO Meta */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -122,124 +130,171 @@ const UndergraduateSchool = () => {
         })}
       </script>
       
-      {/* Header Section */}
-      <header className="pt-20 pb-12 px-4 lg:px-8">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
-              LUISS Undergraduate Programs
+      {/* Hero Section */}
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-[140px] animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass shadow-[var(--shadow-md)] text-primary text-sm font-semibold mb-6">
+              <GraduationCap className="h-5 w-5" />
+              <span>Undergraduate Programs</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+              <span className="text-gradient-primary">Bachelor's Degrees</span>
+              <br />
+              <span className="text-foreground">at LUISS</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover our comprehensive undergraduate programs designed to prepare you for success in your chosen field
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Launch your career with world-class education. Choose from{" "}
+              <span className="text-foreground font-semibold">{undergraduatePrograms.length} programs</span>{" "}
+              designed for tomorrow's leaders.
             </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{undergraduatePrograms.length}</div>
-                <div className="text-sm text-muted-foreground">Programs Available</div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto pt-6">
+              <div className="glass rounded-2xl p-6 shadow-[var(--shadow-md)]">
+                <div className="text-3xl font-bold text-gradient-primary mb-2">{undergraduatePrograms.length}</div>
+                <div className="text-sm text-muted-foreground">Programs</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">2</div>
+              <div className="glass rounded-2xl p-6 shadow-[var(--shadow-md)]">
+                <div className="text-3xl font-bold text-gradient-accent mb-2">2</div>
                 <div className="text-sm text-muted-foreground">Languages</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">6</div>
+              <div className="glass rounded-2xl p-6 shadow-[var(--shadow-md)]">
+                <div className="text-3xl font-bold text-gradient-primary mb-2">6</div>
                 <div className="text-sm text-muted-foreground">Study Areas</div>
               </div>
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
-          {/* Search and Filter Bar */}
-        <section className="container mx-auto px-4 lg:px-8 mb-8">
-          <h2 className="sr-only">Search and Filter Programs</h2>
-          <Card className="mb-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border-0 shadow-lg">
-            <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex-1 relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                  <Input placeholder="Search programs by title or category..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10 bg-white/80 dark:bg-gray-800/80" />
-                </div>
-                <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-full md:w-48 bg-white/80 dark:bg-gray-800/80">
-                    <SelectValue placeholder="Sort by" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="default">Default Order</SelectItem>
-                    <SelectItem value="title">Program Title</SelectItem>
-                    <SelectItem value="category">Category</SelectItem>
-                  </SelectContent>
-                </Select>
+      {/* Filters and Search Section */}
+      <section className="py-12 relative">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+              {/* Search Bar */}
+              <div className="relative flex-1">
+                <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-primary/60" />
+                <Input
+                  placeholder="Search programs by name or category..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-14 h-14 glass text-base rounded-2xl border-border/50 focus:border-primary/50 transition-all duration-300 shadow-[var(--shadow-md)]"
+                />
+              </div>
+              
+              {/* Filters */}
+              <div className="flex gap-4 flex-wrap lg:flex-nowrap">
                 <Select value={filterLanguage} onValueChange={setFilterLanguage}>
-                  <SelectTrigger className="w-full md:w-48 bg-white/80 dark:bg-gray-800/80">
-                    <Filter className="h-4 w-4 mr-2" />
+                  <SelectTrigger className="min-w-[180px] h-14 rounded-2xl glass border-border/50 hover:border-primary/50 transition-all duration-300 shadow-[var(--shadow-md)]">
+                    <Globe className="h-5 w-5 mr-2 text-primary" />
                     <SelectValue placeholder="Language" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="rounded-xl glass">
                     <SelectItem value="all">All Languages</SelectItem>
                     <SelectItem value="English">English</SelectItem>
                     <SelectItem value="Italian">Italian</SelectItem>
                   </SelectContent>
                 </Select>
+                
+                <Select value={sortBy} onValueChange={setSortBy}>
+                  <SelectTrigger className="min-w-[180px] h-14 rounded-2xl glass border-border/50 hover:border-primary/50 transition-all duration-300 shadow-[var(--shadow-md)]">
+                    <TrendingUp className="h-5 w-5 mr-2 text-secondary" />
+                    <SelectValue placeholder="Sort by" />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-xl glass">
+                    <SelectItem value="default">Default</SelectItem>
+                    <SelectItem value="title">Title</SelectItem>
+                    <SelectItem value="category">Category</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
-            </CardContent>
-          </Card>
-        </section>
-
-          {/* Programs Grid */}
-        <section className="container mx-auto px-4 lg:px-8">
-          <h2 className="sr-only">Available Programs</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {sortedPrograms.map(program => <Card key={program.id} className="group hover:shadow-xl transition-all duration-300 bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm border-0 overflow-hidden">
-                <CardHeader className="p-0">
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={program.image} 
-                      alt={`${program.title} undergraduate program at LUISS University`}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
-                    />
-                    <div className="absolute top-3 right-3">
-                      {renderLanguageFlags(program.languages)}
-                    </div>
-                    <div className="absolute top-3 left-3">
-                      <Badge variant="outline" className="bg-white/90 text-primary">
-                        {program.category}
-                      </Badge>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <CardTitle className="text-lg mb-3 group-hover:text-primary transition-colors">
-                    {program.title}
-                  </CardTitle>
-                  
-                </CardContent>
-                <CardFooter className="p-6 pt-0">
-                  <Button asChild className="w-full group-hover:bg-primary/90 transition-colors">
-                    <Link to={`/undergraduate/program/${program.id}`}>
-                      <TrendingUp className="h-4 w-4 mr-2" />
-                      View Program Details
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>)}
+            </div>
+            
+            {/* Results Count */}
+            <div className="mt-8 flex items-center gap-3 px-6 py-3 glass rounded-2xl w-fit shadow-[var(--shadow-sm)]">
+              <BookOpen className="h-5 w-5 text-primary" />
+              <span className="text-sm font-semibold text-foreground">{sortedPrograms.length} programs available</span>
+            </div>
           </div>
-        </section>
-
-          {/* No Results */}
-        <div className="container mx-auto px-4 lg:px-8">
-          {sortedPrograms.length === 0 && <div className="text-center py-12">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold mb-2">No programs found</h3>
-              <p className="text-muted-foreground">
-                Try adjusting your search or filter criteria
-              </p>
-            </div>}
         </div>
-    </main>;
+      </section>
+
+      {/* Programs Grid */}
+      <section className="py-16 pb-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {sortedPrograms.map((program, index) => (
+                <Link
+                  key={program.id}
+                  to={`/undergraduate/program/${program.id}`}
+                  className="group animate-fade-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <Card className="h-full card-glass overflow-hidden group-hover:shadow-[var(--shadow-glow)]">
+                    <CardHeader className="p-0">
+                      <div className="relative h-56 overflow-hidden">
+                        <img
+                          src={program.image}
+                          alt={`${program.title} program at LUISS`}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500"></div>
+                        <Badge className="absolute top-6 right-6 bg-gradient-to-r from-primary to-secondary text-white border-0 shadow-xl font-semibold px-4 py-1.5 text-xs">
+                          {program.category}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="p-7 space-y-5">
+                      <CardTitle className="text-2xl font-bold leading-tight group-hover:text-gradient-primary transition-all duration-300 line-clamp-2">
+                        {program.title}
+                      </CardTitle>
+                    </CardContent>
+                    <CardFooter className="p-7 pt-0 flex items-center justify-between">
+                      {renderLanguageFlags(program.languages)}
+                      <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                        <span>Explore</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+            
+            {sortedPrograms.length === 0 && (
+              <div className="text-center py-24 glass rounded-3xl">
+                <div className="inline-block p-6 rounded-full bg-muted/50 mb-6">
+                  <Search className="h-12 w-12 text-muted-foreground" />
+                </div>
+                <p className="text-xl font-semibold text-foreground mb-2">No programs found</p>
+                <p className="text-base text-muted-foreground mb-6">Try adjusting your search or filters</p>
+                <Button
+                  onClick={() => {
+                    setSearchQuery("");
+                    setFilterLanguage("all");
+                  }}
+                  className="bg-primary text-primary-foreground hover:bg-primary-hover px-8 py-6 rounded-xl text-base font-semibold shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-all duration-300"
+                >
+                  Clear All Filters
+                </Button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 };
+
 export default UndergraduateSchool;
