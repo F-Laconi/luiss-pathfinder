@@ -126,9 +126,9 @@ const UniversitySelection = () => {
                   value={searchQuery} 
                   onChange={e => {
                     setSearchQuery(e.target.value);
-                    setShowDropdown(e.target.value.length > 0);
+                    setShowDropdown(true);
                   }}
-                  onFocus={() => searchQuery.length > 0 && setShowDropdown(true)}
+                  onFocus={() => setShowDropdown(true)}
                   className="pl-16 pr-6 py-8 text-lg rounded-3xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-2xl transition-all duration-300 hover:shadow-primary/10" 
                 />
               </div>
