@@ -35,6 +35,12 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Keep navigation visible on /universities page
+      if (location.pathname === '/universities') {
+        setIsVisible(true);
+        return;
+      }
+
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -50,10 +56,10 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, location.pathname]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-sm border-b border-border/10 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-lg transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
@@ -67,7 +73,7 @@ const Navigation = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="start" 
-              className="w-96 max-h-[80vh] overflow-y-auto bg-background/95 dark:bg-gray-900/95 border border-border shadow-2xl backdrop-blur-md rounded-xl p-3 z-[100]"
+              className="w-96 max-h-[80vh] overflow-y-auto bg-card border-2 border-border shadow-2xl rounded-xl p-3"
             >
               <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/' ? 'bg-primary/20 text-primary font-semibold border-l-2 border-primary' : ''}`}>
                 <Link to="/" className="w-full flex items-center space-x-2 p-2">
@@ -263,50 +269,18 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-12 left-0 right-0 bg-white border-b border-border shadow-lg">
-            <div className="p-4 space-y-4">
-              <Link
-                to="/masters"
-                className="block py-2 text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Masters Programs
+          {/* Mobile Actions */}
+          <div className="flex md:hidden items-center space-x-2">
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/profile">
+                <User className="h-5 w-5" />
               </Link>
-              <Link
-                to="/courses"
-                className="block py-2 text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                All Courses
-              </Link>
-              <Link
-                to="/professors"
-                className="block py-2 text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Professors
-              </Link>
-              <div className="pt-4 border-t border-border">
-                <Button variant="default" className="w-full" onClick={() => { setIsAuthOpen(true); setIsMenuOpen(false); }}>
-                  Sign Up
-                </Button>
-              </div>
-            </div>
+            </Button>
+            <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
+              Sign Up
+            </Button>
           </div>
-        )}
+        </div>
       </div>
       
       <AuthDialog open={isAuthOpen} onOpenChange={setIsAuthOpen} />

@@ -107,18 +107,18 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Main Headline */}
           <div className="space-y-4 animate-fade-up">
-            <h1 className="hero-text">
+            <h1 className="hero-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Find the right LUISS 
               <br />
               <span className="text-accent">master and course</span>
               <br />
               for you
             </h1>
-            <p className="hero-subtitle max-w-2xl mx-auto">
+            <p className="hero-subtitle max-w-2xl mx-auto text-base sm:text-lg md:text-xl px-4">
               Explore master's programs, discover courses, read student reviews, 
               and connect with professors before you enroll. Make informed decisions 
               about your academic future.
@@ -175,24 +175,24 @@ const HeroSection = () => {
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto pt-8 animate-fade-up" style={{
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto pt-8 animate-fade-up px-4" style={{
           animationDelay: "0.4s"
         }}>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">25+</div>
-              <div className="text-white/80 text-sm">Master Programs</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white">25+</div>
+              <div className="text-white/80 text-xs sm:text-sm">Master Programs</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">200+</div>
-              <div className="text-white/80 text-sm">Courses</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white">200+</div>
+              <div className="text-white/80 text-xs sm:text-sm">Courses</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">150+</div>
-              <div className="text-white/80 text-sm">Professors</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white">150+</div>
+              <div className="text-white/80 text-xs sm:text-sm">Professors</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">1.2k+</div>
-              <div className="text-white/80 text-sm">Student Reviews</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white">1.2k+</div>
+              <div className="text-white/80 text-xs sm:text-sm">Student Reviews</div>
             </div>
           </div>
 
@@ -215,8 +215,8 @@ const HeroSection = () => {
       </div>
 
       {/* Program Choices Section */}
-      <section id="program-choices" className="absolute bottom-0 left-0 right-0 pb-12">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section id="program-choices" className="absolute bottom-0 left-0 right-0 pb-8 sm:pb-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Undergraduate */}
             
