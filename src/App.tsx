@@ -22,6 +22,7 @@ import About from "./pages/About";
 import Suggestions from "./pages/Suggestions";
 import EasterEgg from "./pages/EasterEgg";
 import SearchResults from "./pages/SearchResults";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/student-board" element={<StudentBoard />} />
           <Route path="/about" element={<About />} />
           <Route path="/suggestions" element={<Suggestions />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/easter-egg" element={<EasterEgg />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/school/graduate" element={<GraduateSchool />} />
