@@ -35,6 +35,12 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Keep navigation visible on /universities page
+      if (location.pathname === '/universities') {
+        setIsVisible(true);
+        return;
+      }
+
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -50,7 +56,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, location.pathname]);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-lg transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
