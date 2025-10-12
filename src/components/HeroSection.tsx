@@ -150,11 +150,7 @@ const HeroSection = () => {
 
             {/* Suggestions Dropdown */}
             {showSuggestions && filteredSuggestions.length > 0 && (
-              <>
-                {/* Backdrop to hide content below */}
-                <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40" onClick={() => setShowSuggestions(false)}></div>
-                
-                <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-2xl shadow-[var(--shadow-xl)] border border-border z-50 overflow-hidden max-h-96 overflow-y-auto">
+              <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-2xl shadow-[var(--shadow-xl)] border border-border z-50 overflow-hidden max-h-96 overflow-y-auto">
                 {filteredSuggestions.map((suggestion) => (
                   <button
                     key={suggestion.id}
@@ -175,7 +171,6 @@ const HeroSection = () => {
                   </button>
                 ))}
               </div>
-              </>
             )}
           </div>
 
