@@ -137,6 +137,7 @@ const UniversitySelection = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
   
@@ -185,6 +186,19 @@ const UniversitySelection = () => {
       setFocusedIndex(-1);
     }
   }, [searchQuery, suggestions.length]);
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+        setFocusedIndex(-1);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -213,7 +227,7 @@ const UniversitySelection = () => {
             {/* Search Bar with Autocomplete */}
             <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
-              <div className="relative">
+              <div className="relative" ref={containerRef}>
                 <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6 z-10" />
                 <Input 
                   ref={inputRef}
