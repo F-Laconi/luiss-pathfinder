@@ -137,6 +137,118 @@ const universities = [{
   students: "40,000+",
   programs: "110+",
   color: "from-red-700 to-pink-800"
+}, {
+  id: "polito",
+  name: "Politecnico di Torino",
+  description: "Engineering, Architecture, Industrial Design",
+  logo: luissLogo,
+  students: "35,000+",
+  programs: "45+",
+  color: "from-blue-700 to-indigo-800"
+}, {
+  id: "genova",
+  name: "Università di Genova",
+  description: "Engineering, Medicine, Sciences, Economics",
+  logo: luissLogo,
+  students: "32,000+",
+  programs: "100+",
+  color: "from-red-600 to-orange-700"
+}, {
+  id: "ca-foscari",
+  name: "Ca' Foscari Venezia",
+  description: "Economics, Languages, Humanities, Sciences",
+  logo: luissLogo,
+  students: "23,000+",
+  programs: "70+",
+  color: "from-cyan-700 to-blue-800"
+}, {
+  id: "trento",
+  name: "Università di Trento",
+  description: "Engineering, Economics, Sciences, Law",
+  logo: luissLogo,
+  students: "17,000+",
+  programs: "50+",
+  color: "from-purple-600 to-indigo-700"
+}, {
+  id: "verona",
+  name: "Università di Verona",
+  description: "Economics, Medicine, Sciences, Humanities",
+  logo: luissLogo,
+  students: "25,000+",
+  programs: "80+",
+  color: "from-yellow-600 to-orange-700"
+}, {
+  id: "palermo",
+  name: "Università di Palermo",
+  description: "Medicine, Engineering, Law, Architecture",
+  logo: luissLogo,
+  students: "40,000+",
+  programs: "120+",
+  color: "from-amber-600 to-red-700"
+}, {
+  id: "bari",
+  name: "Università di Bari",
+  description: "Law, Medicine, Economics, Sciences",
+  logo: luissLogo,
+  students: "45,000+",
+  programs: "110+",
+  color: "from-teal-600 to-blue-700"
+}, {
+  id: "perugia",
+  name: "Università di Perugia",
+  description: "Medicine, Law, Economics, Sciences",
+  logo: luissLogo,
+  students: "28,000+",
+  programs: "85+",
+  color: "from-green-600 to-teal-700"
+}, {
+  id: "siena",
+  name: "Università di Siena",
+  description: "Economics, Law, Medicine, Humanities",
+  logo: luissLogo,
+  students: "17,000+",
+  programs: "55+",
+  color: "from-orange-600 to-amber-700"
+}, {
+  id: "parma",
+  name: "Università di Parma",
+  description: "Medicine, Engineering, Food Science, Economics",
+  logo: luissLogo,
+  students: "30,000+",
+  programs: "90+",
+  color: "from-yellow-700 to-orange-800"
+}, {
+  id: "salerno",
+  name: "Università di Salerno",
+  description: "Engineering, Medicine, Economics, Law",
+  logo: luissLogo,
+  students: "34,000+",
+  programs: "95+",
+  color: "from-blue-600 to-cyan-700"
+}, {
+  id: "catania",
+  name: "Università di Catania",
+  description: "Medicine, Engineering, Law, Sciences",
+  logo: luissLogo,
+  students: "43,000+",
+  programs: "105+",
+  color: "from-red-700 to-rose-800"
+}, {
+  id: "normale-pisa",
+  name: "Scuola Normale Superiore",
+  description: "Sciences, Humanities, Elite Research",
+  logo: luissLogo,
+  students: "600+",
+  programs: "10+",
+  color: "from-indigo-700 to-purple-800"
+}, {
+  id: "santanna",
+  name: "Scuola Superiore Sant'Anna",
+  description: "Social Sciences, Engineering, Elite Programs",
+  logo: luissLogo,
+  students: "800+",
+  programs: "12+",
+  color: "from-purple-700 to-pink-800"
 }];
 const UniversitySelection = () => {
   const [searchQuery, setSearchQuery] = useState("");
