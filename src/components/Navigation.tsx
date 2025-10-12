@@ -107,12 +107,14 @@ const Navigation = () => {
                       <span>LUISS University</span>
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/undergraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
-                    <Link to="/school/undergraduate" className="w-full flex items-center space-x-2 p-2">
-                      <BookOpen className="h-4 w-4" />
-                      <span>Undergraduate</span>
-                    </Link>
-                  </DropdownMenuItem>
+                  {!isGraduateActive && !isPostGraduateActive && (
+                    <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/undergraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                      <Link to="/school/undergraduate" className="w-full flex items-center space-x-2 p-2">
+                        <BookOpen className="h-4 w-4" />
+                        <span>Undergraduate</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  )}
                   {isUndergraduateActive && (
                     <>
                       <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/1' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
@@ -157,12 +159,14 @@ const Navigation = () => {
                       </DropdownMenuItem>
                     </>
                   )}
-                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/graduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
-                    <Link to="/school/graduate" className="w-full flex items-center space-x-2 p-2">
-                      <BookOpen className="h-4 w-4" />
-                      <span>Graduate</span>
-                    </Link>
-                  </DropdownMenuItem>
+                  {!isUndergraduateActive && !isPostGraduateActive && (
+                    <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/graduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                      <Link to="/school/graduate" className="w-full flex items-center space-x-2 p-2">
+                        <BookOpen className="h-4 w-4" />
+                        <span>Graduate</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  )}
                   {isGraduateActive && (
                     <>
                       <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/1' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
@@ -222,12 +226,14 @@ const Navigation = () => {
                       </DropdownMenuItem>
                     </>
                   )}
-                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/postgraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
-                    <Link to="/school/postgraduate" className="w-full flex items-center space-x-2 p-2">
-                      <BookOpen className="h-4 w-4" />
-                      <span>Post Graduate</span>
-                    </Link>
-                  </DropdownMenuItem>
+                  {!isUndergraduateActive && !isGraduateActive && (
+                    <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/postgraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                      <Link to="/school/postgraduate" className="w-full flex items-center space-x-2 p-2">
+                        <BookOpen className="h-4 w-4" />
+                        <span>Post Graduate</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  )}
                 </>
               )}
               <DropdownMenuSeparator className="bg-border/30 my-2" />
