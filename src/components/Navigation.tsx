@@ -66,7 +66,7 @@ const Navigation = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative cursor-pointer">
-                <BookOpen className="h-6 w-6" />
+                <Menu className="h-6 w-6" />
                 <span>UniCompass</span>
                 <ChevronDown className="h-4 w-4" />
               </Link>
