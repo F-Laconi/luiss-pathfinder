@@ -73,7 +73,7 @@ const Navigation = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="start" 
-              className="w-96 max-h-[80vh] overflow-y-auto bg-background/95 dark:bg-gray-900/95 border border-border shadow-2xl backdrop-blur-md rounded-xl p-3 z-[100]"
+              className="w-96 max-h-[80vh] overflow-y-auto bg-background border border-border shadow-2xl rounded-xl p-3 z-[9999]"
             >
               <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/' ? 'bg-primary/20 text-primary font-semibold border-l-2 border-primary' : ''}`}>
                 <Link to="/" className="w-full flex items-center space-x-2 p-2">
