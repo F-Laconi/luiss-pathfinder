@@ -249,6 +249,182 @@ const universities = [{
   students: "800+",
   programs: "12+",
   color: "from-purple-700 to-pink-800"
+}, {
+  id: "brescia",
+  name: "Università di Brescia",
+  description: "Engineering, Medicine, Economics, Law",
+  logo: luissLogo,
+  students: "16,000+",
+  programs: "60+",
+  color: "from-blue-600 to-indigo-700"
+}, {
+  id: "modena",
+  name: "Università di Modena e Reggio Emilia",
+  description: "Engineering, Medicine, Economics, Law",
+  logo: luissLogo,
+  students: "24,000+",
+  programs: "75+",
+  color: "from-yellow-600 to-red-700"
+}, {
+  id: "urbino",
+  name: "Università di Urbino",
+  description: "Humanities, Law, Sciences, Economics",
+  logo: luissLogo,
+  students: "15,000+",
+  programs: "50+",
+  color: "from-purple-600 to-pink-700"
+}, {
+  id: "laquila",
+  name: "Università dell'Aquila",
+  description: "Engineering, Sciences, Medicine, Economics",
+  logo: luissLogo,
+  students: "20,000+",
+  programs: "65+",
+  color: "from-cyan-600 to-blue-700"
+}, {
+  id: "messina",
+  name: "Università di Messina",
+  description: "Medicine, Law, Economics, Engineering",
+  logo: luissLogo,
+  students: "38,000+",
+  programs: "100+",
+  color: "from-orange-600 to-red-700"
+}, {
+  id: "salento",
+  name: "Università del Salento",
+  description: "Economics, Engineering, Sciences, Humanities",
+  logo: luissLogo,
+  students: "22,000+",
+  programs: "70+",
+  color: "from-teal-600 to-green-700"
+}, {
+  id: "calabria",
+  name: "Università della Calabria",
+  description: "Engineering, Economics, Sciences, Humanities",
+  logo: luissLogo,
+  students: "30,000+",
+  programs: "80+",
+  color: "from-red-600 to-orange-700"
+}, {
+  id: "cagliari",
+  name: "Università di Cagliari",
+  description: "Medicine, Law, Engineering, Sciences",
+  logo: luissLogo,
+  students: "27,000+",
+  programs: "85+",
+  color: "from-blue-700 to-cyan-800"
+}, {
+  id: "sassari",
+  name: "Università di Sassari",
+  description: "Medicine, Law, Agriculture, Economics",
+  logo: luissLogo,
+  students: "18,000+",
+  programs: "60+",
+  color: "from-green-600 to-emerald-700"
+}, {
+  id: "trieste",
+  name: "Università di Trieste",
+  description: "Sciences, Medicine, Engineering, Economics",
+  logo: luissLogo,
+  students: "16,000+",
+  programs: "55+",
+  color: "from-indigo-600 to-purple-700"
+}, {
+  id: "udine",
+  name: "Università di Udine",
+  description: "Agriculture, Engineering, Medicine, Sciences",
+  logo: luissLogo,
+  students: "15,000+",
+  programs: "50+",
+  color: "from-amber-600 to-yellow-700"
+}, {
+  id: "insubria",
+  name: "Università dell'Insubria",
+  description: "Sciences, Medicine, Economics, Law",
+  logo: luissLogo,
+  students: "10,000+",
+  programs: "40+",
+  color: "from-cyan-600 to-teal-700"
+}, {
+  id: "bergamo",
+  name: "Università di Bergamo",
+  description: "Economics, Engineering, Languages, Law",
+  logo: luissLogo,
+  students: "17,000+",
+  programs: "45+",
+  color: "from-blue-600 to-sky-700"
+}, {
+  id: "parthenope",
+  name: "Università Parthenope",
+  description: "Economics, Engineering, Sciences, Maritime",
+  logo: luissLogo,
+  students: "12,000+",
+  programs: "35+",
+  color: "from-blue-700 to-indigo-800"
+}, {
+  id: "tuscia",
+  name: "Università della Tuscia",
+  description: "Agriculture, Economics, Sciences, Humanities",
+  logo: luissLogo,
+  students: "10,000+",
+  programs: "30+",
+  color: "from-green-700 to-teal-800"
+}, {
+  id: "molise",
+  name: "Università del Molise",
+  description: "Agriculture, Economics, Medicine, Sciences",
+  logo: luissLogo,
+  students: "8,000+",
+  programs: "25+",
+  color: "from-orange-600 to-amber-700"
+}, {
+  id: "basilicata",
+  name: "Università della Basilicata",
+  description: "Engineering, Agriculture, Sciences, Humanities",
+  logo: luissLogo,
+  students: "7,000+",
+  programs: "22+",
+  color: "from-red-600 to-rose-700"
+}, {
+  id: "foggia",
+  name: "Università di Foggia",
+  description: "Agriculture, Medicine, Economics, Humanities",
+  logo: luissLogo,
+  students: "12,000+",
+  programs: "35+",
+  color: "from-yellow-600 to-orange-700"
+}, {
+  id: "chieti",
+  name: "Università di Chieti-Pescara",
+  description: "Medicine, Economics, Architecture, Sciences",
+  logo: luissLogo,
+  students: "32,000+",
+  programs: "70+",
+  color: "from-purple-600 to-violet-700"
+}, {
+  id: "camerino",
+  name: "Università di Camerino",
+  description: "Sciences, Pharmacy, Law, Architecture",
+  logo: luissLogo,
+  students: "9,000+",
+  programs: "30+",
+  color: "from-teal-600 to-cyan-700"
+}, {
+  id: "macerata",
+  name: "Università di Macerata",
+  description: "Humanities, Economics, Law, Cultural Heritage",
+  logo: luissLogo,
+  students: "10,000+",
+  programs: "28+",
+  color: "from-indigo-600 to-blue-700"
+}, {
+  id: "iuav",
+  name: "IUAV Venezia",
+  description: "Architecture, Design, Urban Planning",
+  logo: luissLogo,
+  students: "4,500+",
+  programs: "15+",
+  color: "from-cyan-700 to-blue-800"
 }];
 const UniversitySelection = () => {
   const [searchQuery, setSearchQuery] = useState("");
