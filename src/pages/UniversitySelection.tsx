@@ -208,8 +208,7 @@ const UniversitySelection = () => {
               {/* Dropdown Suggestions */}
               {showDropdown && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-card border-2 border-border rounded-2xl shadow-2xl overflow-hidden z-[9999] max-h-96 overflow-y-auto animate-fade-in">
-                  {filteredUniversities.length > 0 ? (
-                    filteredUniversities.map((university) => {
+                  {universities.map((university) => {
                       const UniversityItem = (
                         <div
                           className={`flex items-center gap-4 p-4 transition-all duration-300 border-b border-border last:border-b-0 ${
@@ -266,13 +265,7 @@ const UniversitySelection = () => {
                           {UniversityItem}
                         </div>
                       );
-                    })
-                  ) : (
-                    <div className="p-6 text-center text-muted-foreground">
-                      <p className="text-lg mb-2">🔍 No universities found</p>
-                      <p className="text-sm">Try a different search term</p>
-                    </div>
-                  )}
+                    })}
                 </div>
               )}
             </div>
