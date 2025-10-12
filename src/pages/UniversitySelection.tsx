@@ -65,6 +65,78 @@ const universities = [{
   students: "87,000+",
   programs: "200+",
   color: "from-amber-600 to-orange-700"
+}, {
+  id: "statale",
+  name: "Università Statale di Milano",
+  description: "Sciences, Medicine, Law, Humanities",
+  logo: luissLogo,
+  students: "60,000+",
+  programs: "140+",
+  color: "from-green-600 to-emerald-700"
+}, {
+  id: "padova",
+  name: "Università di Padova",
+  description: "Engineering, Medicine, Sciences, Law",
+  logo: luissLogo,
+  students: "65,000+",
+  programs: "180+",
+  color: "from-red-600 to-rose-700"
+}, {
+  id: "torino",
+  name: "Università di Torino",
+  description: "Law, Economics, Sciences, Humanities",
+  logo: luissLogo,
+  students: "70,000+",
+  programs: "160+",
+  color: "from-blue-600 to-sky-700"
+}, {
+  id: "federico-ii",
+  name: "Università Federico II",
+  description: "Engineering, Medicine, Agriculture, Architecture",
+  logo: luissLogo,
+  students: "80,000+",
+  programs: "150+",
+  color: "from-yellow-600 to-amber-700"
+}, {
+  id: "firenze",
+  name: "Università di Firenze",
+  description: "Architecture, Engineering, Sciences, Arts",
+  logo: luissLogo,
+  students: "50,000+",
+  programs: "120+",
+  color: "from-purple-600 to-violet-700"
+}, {
+  id: "pisa",
+  name: "Università di Pisa",
+  description: "Engineering, Medicine, Sciences, Law",
+  logo: luissLogo,
+  students: "50,000+",
+  programs: "100+",
+  color: "from-indigo-600 to-blue-700"
+}, {
+  id: "roma-tre",
+  name: "Università Roma Tre",
+  description: "Engineering, Economics, Law, Education",
+  logo: luissLogo,
+  students: "35,000+",
+  programs: "90+",
+  color: "from-orange-600 to-red-700"
+}, {
+  id: "bicocca",
+  name: "Università Milano-Bicocca",
+  description: "Sciences, Medicine, Economics, Sociology",
+  logo: luissLogo,
+  students: "33,000+",
+  programs: "80+",
+  color: "from-teal-600 to-cyan-700"
+}, {
+  id: "tor-vergata",
+  name: "Università Tor Vergata",
+  description: "Engineering, Medicine, Economics, Law",
+  logo: luissLogo,
+  students: "40,000+",
+  programs: "110+",
+  color: "from-red-700 to-pink-800"
 }];
 const UniversitySelection = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -89,7 +161,7 @@ const UniversitySelection = () => {
     }
   };
 
-  const filteredUniversities = universities; // Show all universities always
+  const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
   return <div className="min-h-screen bg-background">
       <Navigation />
       
