@@ -134,52 +134,59 @@ const UniversitySelection = () => {
               </div>
               
               {/* Dropdown Suggestions */}
-              {showDropdown && filteredUniversities.length > 0 && (
+              {showDropdown && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-card border-2 border-border rounded-2xl shadow-2xl overflow-hidden z-[9999] max-h-96 overflow-y-auto animate-fade-in">
-                  {filteredUniversities.map((university) => {
-                    const UniversityItem = (
-                      <div
-                        className={`flex items-center gap-4 p-4 transition-all duration-300 border-b border-border last:border-b-0 ${
-                          university.id === 'luiss' 
-                            ? 'hover:bg-primary/10 cursor-pointer' 
-                            : 'hover:bg-muted/50 cursor-pointer'
-                        }`}
-                      >
-                        <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                          <img src={university.logo} alt={university.name} className="w-8 h-8 object-contain filter brightness-0 invert" />
+                  {filteredUniversities.length > 0 ? (
+                    filteredUniversities.map((university) => {
+                      const UniversityItem = (
+                        <div
+                          className={`flex items-center gap-4 p-4 transition-all duration-300 border-b border-border last:border-b-0 ${
+                            university.id === 'luiss' 
+                              ? 'hover:bg-primary/10 cursor-pointer' 
+                              : 'hover:bg-muted/50 cursor-pointer'
+                          }`}
+                        >
+                          <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                            <img src={university.logo} alt={university.name} className="w-8 h-8 object-contain filter brightness-0 invert" />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-foreground flex items-center gap-2">
+                              {university.name}
+                              {university.id !== 'luiss' && (
+                                <span className="text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full">Coming Soon</span>
+                              )}
+                            </h4>
+                            <p className="text-sm text-muted-foreground">{university.description}</p>
+                          </div>
+                          {university.id === 'luiss' && (
+                            <ChevronRight className="w-5 h-5 text-primary" />
+                          )}
                         </div>
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-foreground flex items-center gap-2">
-                            {university.name}
-                            {university.id !== 'luiss' && (
-                              <span className="text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full">Coming Soon</span>
-                            )}
-                          </h4>
-                          <p className="text-sm text-muted-foreground">{university.description}</p>
-                        </div>
-                        {university.id === 'luiss' && (
-                          <ChevronRight className="w-5 h-5 text-primary" />
-                        )}
-                      </div>
-                    );
+                      );
 
-                    return university.id === 'luiss' ? (
-                      <Link
-                        key={university.id}
-                        to="/course-explorer"
-                        onClick={() => setShowDropdown(false)}
-                      >
-                        {UniversityItem}
-                      </Link>
-                    ) : (
-                      <div
-                        key={university.id}
-                        onClick={() => handleUniversityClick(university.id)}
-                      >
-                        {UniversityItem}
-                      </div>
-                    );
-                  })}
+                      return university.id === 'luiss' ? (
+                        <Link
+                          key={university.id}
+                          to="/course-explorer"
+                          onClick={() => setShowDropdown(false)}
+                        >
+                          {UniversityItem}
+                        </Link>
+                      ) : (
+                        <div
+                          key={university.id}
+                          onClick={() => handleUniversityClick(university.id)}
+                        >
+                          {UniversityItem}
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div className="p-6 text-center text-muted-foreground">
+                      <p className="text-lg mb-2">🔍 No universities found</p>
+                      <p className="text-sm">Try a different search term</p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
