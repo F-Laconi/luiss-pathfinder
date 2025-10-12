@@ -1,17 +1,24 @@
 import { useState } from "react";
-import { Search, ArrowRight } from "lucide-react";
+import { Search, ArrowRight, GraduationCap, BookOpen, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
       // This would trigger search functionality
       console.log("Searching for:", searchQuery);
     }
+  };
+
+  const scrollToPrograms = () => {
+    const element = document.getElementById("program-choices");
+    element?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -88,7 +95,7 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="animate-fade-up" style={{ animationDelay: "0.6s" }}>
-            <Button className="btn-hero">
+            <Button onClick={scrollToPrograms} className="btn-hero">
               LUISS Programs
             </Button>
           </div>
@@ -101,6 +108,55 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
+
+      {/* Program Choices Section */}
+      <section id="program-choices" className="absolute bottom-0 left-0 right-0 pb-12">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Undergraduate */}
+            <div 
+              onClick={() => navigate("/undergraduate-school")}
+              className="card-glass p-8 cursor-pointer hover:scale-105 transition-all duration-300 group"
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                  <BookOpen className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Undergraduate</h3>
+                <p className="text-white/70 text-sm">Bachelor's degree programs</p>
+              </div>
+            </div>
+
+            {/* Graduate */}
+            <div 
+              onClick={() => navigate("/graduate-school")}
+              className="card-glass p-8 cursor-pointer hover:scale-105 transition-all duration-300 group"
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                  <GraduationCap className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Graduate</h3>
+                <p className="text-white/70 text-sm">Master's degree programs</p>
+              </div>
+            </div>
+
+            {/* Post-Graduate */}
+            <div 
+              onClick={() => navigate("/postgraduate-school")}
+              className="card-glass p-8 cursor-pointer hover:scale-105 transition-all duration-300 group"
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors">
+                  <Award className="h-8 w-8 text-secondary" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Post-Graduate</h3>
+                <p className="text-white/70 text-sm">PhD & doctoral programs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
