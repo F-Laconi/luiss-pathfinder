@@ -225,7 +225,7 @@ const UniversitySelection = () => {
             </p>
 
             {/* Search Bar with Autocomplete */}
-            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in">
+            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in z-[9999]">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
               <div className="relative" ref={containerRef}>
                 <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6 z-10" />
@@ -242,7 +242,7 @@ const UniversitySelection = () => {
                 
                 {/* Autocomplete Dropdown */}
                 {showSuggestions && suggestions.length > 0 && (
-                  <div className="absolute top-full mt-2 w-full bg-background border-2 border-primary/20 rounded-2xl shadow-2xl z-50 max-h-80 overflow-y-auto">
+                  <div className="absolute top-full mt-2 w-full bg-background border-2 border-primary/20 rounded-2xl shadow-2xl z-[9999] max-h-80 overflow-y-auto">
                     {suggestions.map((suggestion, index) => (
                       <button
                         key={suggestion}
