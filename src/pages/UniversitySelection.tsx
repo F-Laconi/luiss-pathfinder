@@ -218,8 +218,22 @@ const UniversitySelection = () => {
                               : 'hover:bg-muted/50 cursor-pointer'
                           }`}
                         >
-                          <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                            <img src={university.logo} alt={university.name} className="w-8 h-8 object-contain filter brightness-0 invert" />
+                          <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg overflow-hidden`}>
+                            {university.id === 'luiss' ? (
+                              <img src={luissColumn} alt="LUISS Column" className="w-full h-full object-cover" />
+                            ) : university.id === 'bocconi' ? (
+                              <img src={bocconiBrand} alt="Bocconi Brand" className="w-full h-full object-cover" />
+                            ) : university.id === 'cattolica' ? (
+                              <img src={cattolicaEmblem} alt="Cattolica Emblem" className="w-full h-full object-cover" />
+                            ) : university.id === 'sapienza' ? (
+                              <img src={sapienzaEmblem} alt="Sapienza Emblem" className="w-full h-full object-cover" />
+                            ) : university.id === 'polimi' ? (
+                              <img src={polimiEmblem} alt="Polimi Emblem" className="w-full h-full object-cover" />
+                            ) : university.id === 'unibo' ? (
+                              <img src={uniboEmblem} alt="UniBo Emblem" className="w-full h-full object-cover" />
+                            ) : (
+                              <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-cover filter brightness-0 invert" />
+                            )}
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-foreground flex items-center gap-2">
