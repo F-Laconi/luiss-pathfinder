@@ -205,7 +205,7 @@ const GraduateSchool = () => {
       </section>
 
       {/* Filters and Search Section */}
-      <section className="py-12 relative overflow-visible">
+      <section className="py-12 relative">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-6 items-stretch">

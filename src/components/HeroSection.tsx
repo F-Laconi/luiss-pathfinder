@@ -99,7 +99,7 @@ const HeroSection = () => {
       block: "start"
     });
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-visible">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Students studying together" className="w-full h-full object-cover" />
@@ -150,7 +150,7 @@ const HeroSection = () => {
 
             {/* Suggestions Dropdown */}
             {showSuggestions && filteredSuggestions.length > 0 && (
-              <div className="absolute top-full mt-2 w-full bg-card rounded-2xl shadow-[var(--shadow-xl)] border border-border z-[100] overflow-hidden max-h-96 overflow-y-auto">
+              <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-2xl shadow-[var(--shadow-xl)] border border-border z-50 overflow-hidden max-h-96 overflow-y-auto">
                 {filteredSuggestions.map((suggestion) => (
                   <button
                     key={suggestion.id}

@@ -53,7 +53,7 @@ const Navigation = () => {
   }, [lastScrollY]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-lg transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white/5 backdrop-blur-sm border-b border-border/10 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
@@ -263,18 +263,50 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Actions */}
-          <div className="flex md:hidden items-center space-x-2">
-            <Button variant="ghost" size="icon" asChild>
-              <Link to="/profile">
-                <User className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
-              Sign Up
-            </Button>
-          </div>
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-12 left-0 right-0 bg-white border-b border-border shadow-lg">
+            <div className="p-4 space-y-4">
+              <Link
+                to="/masters"
+                className="block py-2 text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Masters Programs
+              </Link>
+              <Link
+                to="/courses"
+                className="block py-2 text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                All Courses
+              </Link>
+              <Link
+                to="/professors"
+                className="block py-2 text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Professors
+              </Link>
+              <div className="pt-4 border-t border-border">
+                <Button variant="default" className="w-full" onClick={() => { setIsAuthOpen(true); setIsMenuOpen(false); }}>
+                  Sign Up
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       
       <AuthDialog open={isAuthOpen} onOpenChange={setIsAuthOpen} />
