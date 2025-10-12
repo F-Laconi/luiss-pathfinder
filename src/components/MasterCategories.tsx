@@ -27,7 +27,7 @@ const schools = [{
   color: "from-orange-500 to-orange-600"
 }];
 const MasterCategories = () => {
-  return <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+  return <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden z-0">
       {/* Decorative blur elements */}
       <div className="absolute top-20 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-20 -right-20 w-72 h-72 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -35,9 +35,7 @@ const MasterCategories = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
-          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
-            <span className="text-primary font-semibold text-sm">Explore by School</span>
-          </div>
+          
           <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent mb-6">
             LUISS Academic Schools
           </h2>

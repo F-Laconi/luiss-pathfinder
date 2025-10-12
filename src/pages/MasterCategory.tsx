@@ -115,7 +115,7 @@ const MasterCategory = () => {
       </section>
 
       {/* Filters and Search */}
-      <section className="py-8 border-b border-border">
+      <section className="py-8 border-b border-border overflow-visible">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row gap-4 justify-between">
             {/* Search */}
