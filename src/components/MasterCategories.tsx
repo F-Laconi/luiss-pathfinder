@@ -27,7 +27,7 @@ const schools = [{
   color: "from-orange-500 to-orange-600"
 }];
 const MasterCategories = () => {
-  return <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+  return <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden z-0">
       {/* Decorative blur elements */}
       <div className="absolute top-20 -left-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-20 -right-20 w-72 h-72 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
