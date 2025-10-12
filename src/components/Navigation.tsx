@@ -257,8 +257,8 @@ const Navigation = () => {
             <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="default" size="sm">
-              Sign Up
+            <Button variant="default" size="sm" asChild>
+              <Link to="/auth">Sign Up</Link>
             </Button>
           </div>
 
@@ -299,8 +299,8 @@ const Navigation = () => {
                 Professors
               </Link>
               <div className="pt-4 border-t border-border">
-                <Button variant="default" className="w-full">
-                  Sign Up
+                <Button variant="default" className="w-full" asChild>
+                  <Link to="/auth">Sign Up</Link>
                 </Button>
               </div>
             </div>
