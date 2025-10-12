@@ -1,16 +1,96 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Search, ArrowRight, GraduationCap, BookOpen, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hero-image.jpg";
+
+// Import program images
+import lawIcon from "@/assets/law-icon.jpg";
+import economicsIcon from "@/assets/economics-icon.jpg";
+import politicsIcon from "@/assets/politics-icon.jpg";
+import managementImage from "@/assets/management-course.png";
+import dataScienceImage from "@/assets/data-science-management.png";
+import policiesGovernanceImage from "@/assets/policies-governance-europe.png";
+import economiaIstituzioniImage from "@/assets/economia-istituzioni.png";
+import financeImage from "@/assets/finance-course.png";
+import globalManagementImage from "@/assets/global-management-politics.png";
+import governmentAffairsImage from "@/assets/government-public-affairs.png";
+import internationalRelationsImage from "@/assets/international-relations.png";
+import marketingImage from "@/assets/marketing-course.png";
+import strategicManagementImage from "@/assets/strategic-management.png";
+import amministrazioneFinanzaImage from "@/assets/amministrazione-finanza.png";
+
+// All searchable programs
+const searchablePrograms = [
+  { id: "undergrad-1", title: "Global Law", type: "Undergraduate", category: "Law", link: "/undergraduate/program/1" },
+  { id: "undergrad-2", title: "Business Administration", type: "Undergraduate", category: "Business", link: "/undergraduate/program/2" },
+  { id: "undergrad-3", title: "Management and Artificial Intelligence", type: "Undergraduate", category: "Technology", link: "/undergraduate/program/3" },
+  { id: "undergrad-4", title: "Economics and Business", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/4" },
+  { id: "undergrad-5", title: "Politics: Philosophy and Economics", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/5" },
+  { id: "undergrad-6", title: "Giurisprudenza", type: "Undergraduate", category: "Law", link: "/undergraduate/program/6" },
+  { id: "undergrad-7", title: "Economics and Management", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/7" },
+  { id: "undergrad-8", title: "Political Science", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/8" },
+  { id: "grad-1", title: "Policies and Governance in Europe", type: "Graduate", category: "Politics & Governance", link: "/graduate/program/1" },
+  { id: "grad-2", title: "Economia, Istituzioni e Mercati Finanziari", type: "Graduate", category: "Economics & Finance", link: "/graduate/program/2" },
+  { id: "grad-3", title: "Finance", type: "Graduate", category: "Finance", link: "/graduate/program/3" },
+  { id: "grad-4", title: "Global Management and Politics", type: "Graduate", category: "Management & Politics", link: "/graduate/program/4" },
+  { id: "grad-5", title: "Government and Public Affairs", type: "Graduate", category: "Government & Public Affairs", link: "/graduate/program/5" },
+  { id: "grad-6", title: "International Relations", type: "Graduate", category: "International Relations", link: "/graduate/program/6" },
+  { id: "grad-7", title: "Management", type: "Graduate", category: "Management", link: "/graduate/program/7" },
+  { id: "grad-8", title: "Marketing", type: "Graduate", category: "Marketing", link: "/graduate/program/8" },
+  { id: "grad-9", title: "Strategic Management", type: "Graduate", category: "Strategic Management", link: "/graduate/program/9" },
+  { id: "grad-10", title: "Amministrazione, Finanza e Controllo", type: "Graduate", category: "Administration & Finance", link: "/graduate/program/10" },
+  { id: "grad-11", title: "Data Science and Management", type: "Graduate", category: "Data Science", link: "/graduate/program/11" },
+  { id: "postgrad-1", title: "PhD in Economics", type: "Post-Graduate", category: "Economics", link: "/course/1" },
+  { id: "postgrad-2", title: "PhD in Management", type: "Post-Graduate", category: "Management", link: "/course/2" },
+  { id: "postgrad-3", title: "PhD in Politics", type: "Post-Graduate", category: "Politics", link: "/course/3" },
+  { id: "postgrad-4", title: "PhD in Law and Business", type: "Post-Graduate", category: "Law & Business", link: "/course/4" },
+];
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [filteredSuggestions, setFilteredSuggestions] = useState(searchablePrograms);
+  const searchRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  // Filter suggestions based on search query
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      const filtered = searchablePrograms.filter(program => 
+        program.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        program.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        program.type.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 5); // Limit to 5 suggestions
+      setFilteredSuggestions(filtered);
+      setShowSuggestions(true);
+    } else {
+      setShowSuggestions(false);
+    }
+  }, [searchQuery]);
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   const handleSearch = () => {
     if (searchQuery.trim()) {
+      setShowSuggestions(false);
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
     }
+  };
+
+  const handleSuggestionClick = (link: string) => {
+    setShowSuggestions(false);
+    setSearchQuery("");
+    navigate(link);
   };
   const scrollToPrograms = () => {
     const element = document.getElementById("program-choices");
@@ -46,19 +126,52 @@ const HeroSection = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto animate-fade-up" style={{
+          <div ref={searchRef} className="max-w-2xl mx-auto animate-fade-up relative" style={{
           animationDelay: "0.2s"
         }}>
             <div className="flex flex-col sm:flex-row gap-3 p-2 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <Input type="text" placeholder="Search masters, courses, or professors..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} onKeyPress={e => e.key === "Enter" && handleSearch()} className="search-input pl-12 border-0" />
+                <Input 
+                  type="text" 
+                  placeholder="Search masters, courses, or professors..." 
+                  value={searchQuery} 
+                  onChange={e => setSearchQuery(e.target.value)} 
+                  onKeyPress={e => e.key === "Enter" && handleSearch()} 
+                  onFocus={() => searchQuery.trim() && setShowSuggestions(true)}
+                  className="search-input pl-12 border-0" 
+                />
               </div>
               <Button onClick={handleSearch} className="btn-search">
                 Search
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
+
+            {/* Suggestions Dropdown */}
+            {showSuggestions && filteredSuggestions.length > 0 && (
+              <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-2xl shadow-[var(--shadow-xl)] border border-border z-50 overflow-hidden">
+                {filteredSuggestions.map((suggestion) => (
+                  <button
+                    key={suggestion.id}
+                    onClick={() => handleSuggestionClick(suggestion.link)}
+                    className="w-full px-6 py-4 text-left hover:bg-primary/10 transition-colors border-b border-border/50 last:border-b-0 flex items-center justify-between group"
+                  >
+                    <div className="flex-1">
+                      <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {suggestion.title}
+                      </div>
+                      <div className="text-sm text-muted-foreground mt-1">
+                        {suggestion.category}
+                      </div>
+                    </div>
+                    <Badge className="bg-primary/10 text-primary border-primary/20 font-medium">
+                      {suggestion.type}
+                    </Badge>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Quick Stats */}

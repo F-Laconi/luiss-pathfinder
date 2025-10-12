@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { Search, Globe, ArrowRight, GraduationCap, Award, BookOpen, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -240,10 +240,14 @@ const allPrograms = [
 
 const SearchResults = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const [sortBy, setSortBy] = useState("default");
   const [filterType, setFilterType] = useState("all");
   const [filterLanguage, setFilterLanguage] = useState("all");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestionResults, setSuggestionResults] = useState(allPrograms);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const query = searchParams.get("q");
@@ -252,8 +256,38 @@ const SearchResults = () => {
     }
   }, [searchParams]);
 
+  // Filter suggestions based on search query
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      const filtered = allPrograms.filter(program => 
+        program.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        program.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        program.type.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 5); // Limit to 5 suggestions
+      setSuggestionResults(filtered);
+    }
+  }, [searchQuery]);
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const handleSearch = () => {
+    setShowSuggestions(false);
     setSearchParams({ q: searchQuery });
+  };
+
+  const handleSuggestionClick = (link: string) => {
+    setShowSuggestions(false);
+    setSearchQuery("");
+    navigate(link);
   };
 
   // Filter programs
@@ -346,15 +380,41 @@ const SearchResults = () => {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col gap-6">
               {/* Search Bar */}
-              <div className="relative">
+              <div ref={searchRef} className="relative">
                 <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-primary/60" />
                 <Input
                   placeholder="Search programs by name, category, or type..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSearch()}
+                  onFocus={() => searchQuery.trim() && setShowSuggestions(true)}
                   className="pl-14 h-14 glass text-base rounded-2xl border-border/50 focus:border-primary/50 transition-all duration-300 shadow-[var(--shadow-md)]"
                 />
+
+                {/* Suggestions Dropdown */}
+                {showSuggestions && suggestionResults.length > 0 && (
+                  <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-2xl shadow-[var(--shadow-xl)] border border-border z-50 overflow-hidden">
+                    {suggestionResults.map((suggestion) => (
+                      <button
+                        key={suggestion.id}
+                        onClick={() => handleSuggestionClick(suggestion.link)}
+                        className="w-full px-6 py-4 text-left hover:bg-primary/10 transition-colors border-b border-border/50 last:border-b-0 flex items-center justify-between group"
+                      >
+                        <div className="flex-1">
+                          <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                            {suggestion.title}
+                          </div>
+                          <div className="text-sm text-muted-foreground mt-1">
+                            {suggestion.category}
+                          </div>
+                        </div>
+                        <Badge className="bg-primary/10 text-primary border-primary/20 font-medium">
+                          {suggestion.type}
+                        </Badge>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
               
               {/* Filters */}
