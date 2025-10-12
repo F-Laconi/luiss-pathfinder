@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Search, GraduationCap, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Navigation from "@/components/Navigation";
 import luissLogo from "@/assets/luiss-logo.png";
 import luissColumn from "@/assets/luiss-column.png";
@@ -17,6 +18,69 @@ import polimiLogo from "@/assets/polimi-logo.png";
 import polimiEmblem from "@/assets/polimi-emblem.png";
 import uniboLogo from "@/assets/unibo-logo.png";
 import uniboEmblem from "@/assets/unibo-emblem-new.png";
+// Comprehensive list of Italian universities for autocomplete
+const allItalianUniversities = [
+  "LUISS Guido Carli",
+  "Università Bocconi",
+  "Università Cattolica del Sacro Cuore",
+  "Sapienza Università di Roma",
+  "Politecnico di Milano",
+  "Università di Bologna",
+  "Università degli Studi di Padova",
+  "Università degli Studi di Firenze",
+  "Università degli Studi di Torino",
+  "Università degli Studi di Pisa",
+  "Università degli Studi di Milano",
+  "Università Ca' Foscari Venezia",
+  "Università degli Studi di Napoli Federico II",
+  "Università degli Studi di Genova",
+  "Università degli Studi di Palermo",
+  "Università degli Studi di Bari Aldo Moro",
+  "Università degli Studi di Catania",
+  "Università degli Studi di Perugia",
+  "Università degli Studi di Siena",
+  "Politecnico di Torino",
+  "Università degli Studi di Trento",
+  "Università degli Studi di Trieste",
+  "Università degli Studi di Verona",
+  "Università degli Studi di Parma",
+  "Università degli Studi di Modena e Reggio Emilia",
+  "Università degli Studi di Ferrara",
+  "Università degli Studi di Pavia",
+  "Università degli Studi di Brescia",
+  "Università degli Studi dell'Aquila",
+  "Università degli Studi di Salerno",
+  "Università degli Studi di Udine",
+  "Università degli Studi della Calabria",
+  "Università degli Studi di Cagliari",
+  "Università degli Studi di Sassari",
+  "Università degli Studi della Basilicata",
+  "Università degli Studi del Molise",
+  "Università degli Studi di Foggia",
+  "Università degli Studi di Messina",
+  "Università degli Studi di Roma Tor Vergata",
+  "Università degli Studi Roma Tre",
+  "Libera Università Internazionale degli Studi Sociali Guido Carli (LUISS)",
+  "Università Commerciale Luigi Bocconi",
+  "Scuola Normale Superiore di Pisa",
+  "Scuola Superiore Sant'Anna",
+  "IMT School for Advanced Studies Lucca",
+  "Università Vita-Salute San Raffaele",
+  "Humanitas University",
+  "Università Campus Bio-Medico di Roma",
+  "Libera Università di Bolzano",
+  "Università degli Studi di Bergamo",
+  "Università degli Studi di Milano-Bicocca",
+  "Università degli Studi dell'Insubria",
+  "Università degli Studi del Piemonte Orientale",
+  "Università degli Studi della Tuscia",
+  "Università degli Studi di Cassino e del Lazio Meridionale",
+  "Università degli Studi del Sannio",
+  "Università degli Studi Magna Græcia di Catanzaro",
+  "Università degli Studi Mediterranea di Reggio Calabria",
+  "Università degli Studi di Enna Kore"
+];
+
 const universities = [{
   id: "luiss",
   name: "LUISS Guido Carli",
@@ -68,7 +132,49 @@ const universities = [{
 }];
 const UniversitySelection = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [focusedIndex, setFocusedIndex] = useState(-1);
+  const inputRef = useRef<HTMLInputElement>(null);
+  
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
+  
+  // Filter Italian universities for autocomplete
+  const suggestions = searchQuery.trim() 
+    ? allItalianUniversities.filter(uni => 
+        uni.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 8) // Show max 8 suggestions
+    : [];
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setSearchQuery(suggestion);
+    setShowSuggestions(false);
+    setFocusedIndex(-1);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setFocusedIndex(prev => prev < suggestions.length - 1 ? prev + 1 : prev);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setFocusedIndex(prev => prev > 0 ? prev - 1 : -1);
+    } else if (e.key === 'Enter' && focusedIndex >= 0) {
+      e.preventDefault();
+      handleSuggestionClick(suggestions[focusedIndex]);
+    } else if (e.key === 'Escape') {
+      setShowSuggestions(false);
+      setFocusedIndex(-1);
+    }
+  };
+
+  useEffect(() => {
+    if (searchQuery.trim() && suggestions.length > 0) {
+      setShowSuggestions(true);
+    } else {
+      setShowSuggestions(false);
+      setFocusedIndex(-1);
+    }
+  }, [searchQuery, suggestions.length]);
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -94,18 +200,42 @@ const UniversitySelection = () => {
               Your future starts with the right choice!
             </p>
 
-            {/* Search Bar */}
+            {/* Search Bar with Autocomplete */}
             <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
               <div className="relative">
-                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6" />
+                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6 z-10" />
                 <Input 
+                  ref={inputRef}
                   type="text" 
                   placeholder="🔍 Search your perfect university..." 
                   value={searchQuery} 
-                  onChange={e => setSearchQuery(e.target.value)} 
+                  onChange={e => setSearchQuery(e.target.value)}
+                  onFocus={() => searchQuery.trim() && suggestions.length > 0 && setShowSuggestions(true)}
+                  onKeyDown={handleKeyDown}
                   className="pl-16 pr-6 py-8 text-lg rounded-3xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-2xl transition-all duration-300 hover:shadow-primary/10" 
                 />
+                
+                {/* Autocomplete Dropdown */}
+                {showSuggestions && suggestions.length > 0 && (
+                  <div className="absolute top-full mt-2 w-full bg-background border-2 border-primary/20 rounded-2xl shadow-2xl z-50 max-h-80 overflow-y-auto">
+                    {suggestions.map((suggestion, index) => (
+                      <button
+                        key={suggestion}
+                        onClick={() => handleSuggestionClick(suggestion)}
+                        onMouseEnter={() => setFocusedIndex(index)}
+                        className={`w-full text-left px-6 py-4 hover:bg-primary/10 transition-colors duration-200 first:rounded-t-2xl last:rounded-b-2xl ${
+                          index === focusedIndex ? 'bg-primary/10' : ''
+                        }`}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <GraduationCap className="w-5 h-5 text-primary flex-shrink-0" />
+                          <span className="text-foreground">{suggestion}</span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
