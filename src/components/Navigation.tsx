@@ -35,12 +35,6 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Keep navigation visible on /universities page
-      if (location.pathname === '/universities') {
-        setIsVisible(true);
-        return;
-      }
-
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -56,7 +50,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, location.pathname]);
+  }, [lastScrollY]);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-lg transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -73,7 +67,7 @@ const Navigation = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="start" 
-              className="w-96 max-h-[80vh] overflow-y-auto bg-card border-2 border-border shadow-2xl rounded-xl p-3"
+              className="w-96 max-h-[80vh] overflow-y-auto bg-background/95 dark:bg-gray-900/95 border border-border shadow-2xl backdrop-blur-md rounded-xl p-3 z-[100]"
             >
               <DropdownMenuItem asChild className={`rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-200 cursor-pointer ${location.pathname === '/' ? 'bg-primary/20 text-primary font-semibold border-l-2 border-primary' : ''}`}>
                 <Link to="/" className="w-full flex items-center space-x-2 p-2">

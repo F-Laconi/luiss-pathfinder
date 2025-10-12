@@ -97,7 +97,7 @@ const PostPosition = () => {
       >
         <div className="absolute inset-0 bg-white/90"></div>
         
-        <div className="relative z-10 min-h-screen px-4 sm:px-6 py-8">
+        <div className="relative z-10 min-h-screen px-6 py-8">
           {/* Header */}
           <div className="mb-8">
             <Link 
@@ -108,18 +108,18 @@ const PostPosition = () => {
               Back to Business Partner
             </Link>
             
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-4">
-              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-2xl w-full lg:w-auto">
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
-                <p className="text-gray-600 text-base sm:text-lg">
+            <div className="flex justify-between items-start">
+              <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-2xl">
+                <h1 className="text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
+                <p className="text-gray-600 text-lg">
                   Discover innovative student projects seeking talented collaborators
                 </p>
               </div>
               
               <Dialog open={showForm} onOpenChange={setShowForm}>
                 <DialogTrigger asChild>
-                  <div className="bg-blue-600 hover:bg-blue-700 transition-colors rounded-xl shadow-lg w-full lg:w-auto">
-                    <Button className="bg-transparent hover:bg-transparent text-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 h-auto w-full">
+                  <div className="bg-blue-600 hover:bg-blue-700 transition-colors rounded-xl shadow-lg">
+                    <Button className="bg-transparent hover:bg-transparent text-white text-lg px-8 py-6 h-auto">
                       <Plus className="w-5 h-5 mr-2" />
                       Post My Project
                     </Button>
