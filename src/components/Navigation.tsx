@@ -68,7 +68,6 @@ const Navigation = () => {
               <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative cursor-pointer">
                 <Menu className="h-6 w-6" />
                 <span>UniCompass</span>
-                <ChevronDown className="h-4 w-4" />
               </Link>
             </DropdownMenuTrigger>
             <DropdownMenuContent 
