@@ -263,7 +263,7 @@ const SearchResults = () => {
         program.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         program.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
         program.type.toLowerCase().includes(searchQuery.toLowerCase())
-      ).slice(0, 5); // Limit to 5 suggestions
+      );
       setSuggestionResults(filtered);
     }
   }, [searchQuery]);
@@ -393,7 +393,7 @@ const SearchResults = () => {
 
                 {/* Suggestions Dropdown */}
                 {showSuggestions && suggestionResults.length > 0 && (
-                  <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-2xl shadow-[var(--shadow-xl)] border border-border z-50 overflow-hidden">
+                  <div className="absolute top-full mt-2 w-full bg-white dark:bg-gray-800 rounded-2xl shadow-[var(--shadow-xl)] border border-border z-50 overflow-hidden max-h-96 overflow-y-auto">
                     {suggestionResults.map((suggestion) => (
                       <button
                         key={suggestion.id}
