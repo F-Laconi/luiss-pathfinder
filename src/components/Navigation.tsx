@@ -63,13 +63,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Link to="/" className="flex items-center space-x-2 font-bold text-xl text-primary z-50 relative cursor-pointer">
-                <Menu className="h-6 w-6" />
-                <span>UniCompass</span>
-              </Link>
-            </DropdownMenuTrigger>
+          <div className="flex items-center space-x-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="text-primary z-50 relative cursor-pointer p-1 hover:bg-primary/10 rounded">
+                  <Menu className="h-6 w-6" />
+                </button>
+              </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="start" 
               className="w-96 max-h-[80vh] overflow-y-auto bg-card border-2 border-border shadow-2xl rounded-xl p-3"
@@ -251,6 +251,10 @@ const Navigation = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+          <Link to="/" className="font-bold text-xl text-primary hover:text-primary/80 transition-colors">
+            UniCompass
+          </Link>
+        </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
