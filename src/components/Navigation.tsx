@@ -263,15 +263,24 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          {/* Mobile Actions */}
+          <div className="flex md:hidden items-center space-x-2">
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/profile">
+                <User className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
+              Sign Up
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
