@@ -10,12 +10,14 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import AuthDialog from "@/pages/Auth";
 
 const Navigation = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   // Check if current route is course-explorer or related pages
   const isCourseExplorerActive = location.pathname === '/course-explorer' || 
@@ -257,8 +259,8 @@ const Navigation = () => {
             <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="default" size="sm" asChild>
-              <Link to="/auth">Sign Up</Link>
+            <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
+              Sign Up
             </Button>
           </div>
 
@@ -299,14 +301,16 @@ const Navigation = () => {
                 Professors
               </Link>
               <div className="pt-4 border-t border-border">
-                <Button variant="default" className="w-full" asChild>
-                  <Link to="/auth">Sign Up</Link>
+                <Button variant="default" className="w-full" onClick={() => { setIsAuthOpen(true); setIsMenuOpen(false); }}>
+                  Sign Up
                 </Button>
               </div>
             </div>
           </div>
         )}
       </div>
+      
+      <AuthDialog open={isAuthOpen} onOpenChange={setIsAuthOpen} />
     </nav>
   );
 };
