@@ -196,7 +196,7 @@ const PostGraduateSchool = () => {
                   </div>
 
                   {/* Action Button */}
-                  <Link to={`/course/${program.id}`}>
+                  <Link to={`/postgraduate/program/${program.id}`}>
                     <Button className="w-full group">
                       View Program Details
                       <Flag className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
