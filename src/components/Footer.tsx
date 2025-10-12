@@ -1,111 +1,110 @@
 import { Link } from "react-router-dom";
-import { Heart, BookOpen, Mail, Instagram, Linkedin, Twitter } from "lucide-react";
+import { BookOpen, Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-card via-card/95 to-primary/5 border-t border-border/50 backdrop-blur-sm relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
+    <footer className="bg-foreground text-background">
+      <div className="container mx-auto px-4 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div className="space-y-4 animate-fade-in">
-            <div className="flex items-center space-x-2 group">
-              <BookOpen className="h-7 w-7 sm:h-8 sm:w-8 text-primary group-hover:scale-110 transition-transform" />
-              <span className="font-bold text-xl sm:text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                UniCompass
-              </span>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <BookOpen className="h-6 w-6 text-accent" />
+              <span className="font-bold text-xl">LUISS Explorer</span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Empowering students to navigate their academic journey with confidence and clarity. 🎓
+            <p className="text-background/80 text-sm leading-relaxed">
+              Empowering LUISS students to make informed decisions about their academic journey. 
+              Discover, compare, and choose the perfect master's program for your future.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125">
-                <Instagram className="h-5 w-5" />
+              <a href="#" className="text-background/60 hover:text-accent transition-colors">
+                <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-all duration-300 hover:scale-125">
+              <a href="#" className="text-background/60 hover:text-accent transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-secondary transition-all duration-300 hover:scale-125">
+              <a href="#" className="text-background/60 hover:text-accent transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <h3 className="font-semibold text-foreground text-lg">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/course-explorer" className="text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Explore Courses
-                </Link>
-              </li>
-              <li>
-                <Link to="/business-partner" className="text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Business Partners
-                </Link>
-              </li>
-              <li>
-                <Link to="/suggestions" className="text-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Feedback
-                </Link>
-              </li>
-            </ul>
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <div className="space-y-2">
+              <Link to="/masters" className="block text-background/80 hover:text-accent transition-colors">
+                Master's Programs
+              </Link>
+              <Link to="/courses" className="block text-background/80 hover:text-accent transition-colors">
+                All Courses
+              </Link>
+              <Link to="/professors" className="block text-background/80 hover:text-accent transition-colors">
+                Professors
+              </Link>
+              <Link to="/reviews" className="block text-background/80 hover:text-accent transition-colors">
+                Student Reviews
+              </Link>
+            </div>
           </div>
 
-          {/* Schools */}
-          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <h3 className="font-semibold text-foreground text-lg">Academic Schools</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/school/undergraduate" className="text-sm text-muted-foreground hover:text-accent transition-all duration-300 hover:translate-x-1 inline-block">
-                  Undergraduate
-                </Link>
-              </li>
-              <li>
-                <Link to="/school/graduate" className="text-sm text-muted-foreground hover:text-accent transition-all duration-300 hover:translate-x-1 inline-block">
-                  Graduate
-                </Link>
-              </li>
-              <li>
-                <Link to="/school/postgraduate" className="text-sm text-muted-foreground hover:text-accent transition-all duration-300 hover:translate-x-1 inline-block">
-                  Post-Graduate
-                </Link>
-              </li>
-            </ul>
+          {/* Support */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Support</h3>
+            <div className="space-y-2">
+              <Link to="/help" className="block text-background/80 hover:text-accent transition-colors">
+                Help Center
+              </Link>
+              <Link to="/contact" className="block text-background/80 hover:text-accent transition-colors">
+                Contact Us
+              </Link>
+              <Link to="/guidelines" className="block text-background/80 hover:text-accent transition-colors">
+                Community Guidelines
+              </Link>
+              <Link to="/privacy" className="block text-background/80 hover:text-accent transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <h3 className="font-semibold text-foreground text-lg">Get in Touch</h3>
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Contact</h3>
             <div className="space-y-3">
-              <a href="mailto:info@unicompass.app" className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 group">
-                <Mail className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                <span>info@unicompass.app</span>
-              </a>
-              <p className="text-sm text-muted-foreground">
-                LUISS Guido Carli<br />
-                Rome, Italy 🇮🇹
-              </p>
+              <div className="flex items-center space-x-3 text-background/80">
+                <MapPin className="h-4 w-4 text-accent" />
+                <span className="text-sm">Viale Romania 32, Rome, Italy</span>
+              </div>
+              <div className="flex items-center space-x-3 text-background/80">
+                <Mail className="h-4 w-4 text-accent" />
+                <span className="text-sm">hello@luissexplorer.com</span>
+              </div>
+              <div className="flex items-center space-x-3 text-background/80">
+                <Phone className="h-4 w-4 text-accent" />
+                <span className="text-sm">+39 06 8522 5111</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border/50 pt-8 text-center">
-          <p className="text-sm text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
-            <span>© 2024 UniCompass. Made with</span>
-            <Heart className="h-4 w-4 text-red-500 animate-pulse inline-block" />
-            <span>by LUISS students</span>
-          </p>
+        {/* Bottom Section */}
+        <div className="border-t border-background/20 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-background/60 text-sm">
+              © 2024 LUISS Course Explorer. All rights reserved.
+            </p>
+            <div className="flex space-x-6 text-sm">
+              <Link to="/terms" className="text-background/60 hover:text-accent transition-colors">
+                Terms of Service
+              </Link>
+              <Link to="/privacy" className="text-background/60 hover:text-accent transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/cookies" className="text-background/60 hover:text-accent transition-colors">
+                Cookie Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

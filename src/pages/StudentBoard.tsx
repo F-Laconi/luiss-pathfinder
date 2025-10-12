@@ -91,23 +91,19 @@ const StudentBoard = () => {
   return (
     <div>
       <Navigation />
-      <div className="min-h-screen relative" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-      {/* Enhanced background overlay with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/60"></div>
-      
-      {/* Header Overlay with better mobile spacing */}
-      <div className="relative z-10 bg-black/40 backdrop-blur-md border-b border-white/10">
+      <div className="min-h-screen relative" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      {/* Full background overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+      {/* Header Overlay */}
+      <div className="relative z-10 bg-black/30 backdrop-blur-sm">
         <header className="text-white">
-          <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-            <Link to="/business-partner" className="inline-flex items-center text-white hover:text-primary transition-all duration-300 mb-4 font-medium group">
-              <span className="transform group-hover:-translate-x-1 transition-transform">←</span> 
-              <span className="ml-2">Back to Business Partner</span>
+          <div className="container mx-auto px-6 py-6">
+            <Link to="/business-partner" className="inline-flex items-center text-white hover:opacity-80 transition-opacity mb-4">
+              ← Back to Business Partner
             </Link>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-white via-primary/90 to-accent bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
-              Student Project Board 📌
-            </h1>
-            <p className="text-base sm:text-lg opacity-90 max-w-3xl leading-relaxed">
-              Connect with fellow students and join exciting projects. Pin your profile to the board! 🚀
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">Student Project Board</h1>
+            <p className="text-lg opacity-90 max-w-3xl">
+              Connect with fellow students and join exciting projects. Pin your profile to the board!
             </p>
           </div>
         </header>
@@ -116,12 +112,12 @@ const StudentBoard = () => {
       {/* Main Content - Cork Board */}
       <main className="container mx-auto px-6 py-8 relative z-10">
         {/* Add Profile Button */}
-        <div className="flex justify-center mb-8 px-4 animate-fade-in">
+        <div className="flex justify-center mb-8">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-              <Button size="lg" className="gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6">
-                <Plus className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
-                <span>Pin Your Profile to the Board</span>
+              <Button size="lg" className="gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold shadow-lg">
+                <Plus className="w-5 h-5" />
+                Pin Your Profile to the Board
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-2xl bg-white">
@@ -211,16 +207,16 @@ const StudentBoard = () => {
           </Dialog>
         </div>
 
-        {/* Sticky Notes Grid - Enhanced responsiveness */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 sm:gap-10 justify-items-center px-4">
+        {/* Sticky Notes Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
           {profiles.map((profile, index) => {
             const colorClass = stickyColors[index % stickyColors.length];
             const rotation = getRandomRotation();
             
             return (
-              <div key={index} className={`relative ${rotation} hover:rotate-0 hover:scale-105 transition-all duration-300 group cursor-pointer animate-fade-in`} style={{ animationDelay: `${index * 0.1}s` }}>
-                {/* Enhanced Pin with shadow */}
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-red-500 to-red-600 rounded-full border-2 border-red-700 shadow-lg z-10 group-hover:scale-125 transition-all duration-300 animate-pulse"></div>
+              <div key={index} className={`relative ${rotation} hover:rotate-0 transition-transform duration-300 group cursor-pointer`}>
+                {/* Pin */}
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-2 border-red-600 shadow-md z-10 group-hover:scale-110 transition-transform"></div>
                 
                 {/* Sticky Note */}
                 <div className={`w-64 h-72 ${colorClass} border-2 rounded-sm shadow-lg p-4 relative overflow-hidden group-hover:shadow-xl transition-all duration-300`}>
