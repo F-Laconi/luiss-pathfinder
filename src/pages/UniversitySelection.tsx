@@ -212,12 +212,15 @@ const UniversitySelection = () => {
                     filteredUniversities.map((university) => {
                       const UniversityItem = (
                         <div
-                          className={`flex items-center p-4 transition-all duration-300 border-b border-border last:border-b-0 ${
+                          className={`flex items-center gap-4 p-4 transition-all duration-300 border-b border-border last:border-b-0 ${
                             university.id === 'luiss' 
                               ? 'hover:bg-primary/10 cursor-pointer' 
                               : 'hover:bg-muted/50 cursor-pointer'
                           }`}
                         >
+                          <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                            <img src={university.logo} alt={university.name} className="w-8 h-8 object-contain filter brightness-0 invert" />
+                          </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-foreground flex items-center gap-2">
                               {university.name}
