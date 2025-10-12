@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, GraduationCap, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { toast } from "sonner";
 import Navigation from "@/components/Navigation";
 import luissLogo from "@/assets/luiss-logo.png";
 import luissColumn from "@/assets/luiss-column.png";
@@ -131,6 +132,7 @@ const universities = [{
   color: "from-amber-600 to-orange-700"
 }];
 const UniversitySelection = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1);
@@ -146,6 +148,14 @@ const UniversitySelection = () => {
     : [];
 
   const handleSuggestionClick = (suggestion: string) => {
+    // Check if it's LUISS
+    if (suggestion.toLowerCase().includes("luiss")) {
+      navigate("/course-explorer");
+    } else {
+      toast.info(`${suggestion} - Coming soon! 🚀`, {
+        description: "We're working on adding more universities to our platform."
+      });
+    }
     setSearchQuery(suggestion);
     setShowSuggestions(false);
     setFocusedIndex(-1);
