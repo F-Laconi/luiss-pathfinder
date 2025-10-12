@@ -16,7 +16,7 @@ const BusinessPartner = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl"></div>
         
-        <div className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28">
+        <div className="relative container mx-auto px-6 py-20 md:py-28">
           <div className="max-w-5xl">
             <div className="inline-block mb-6">
               <span className="text-sm font-semibold text-primary-foreground uppercase tracking-wider px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
@@ -24,14 +24,14 @@ const BusinessPartner = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 text-primary-foreground leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-primary-foreground leading-[1.1]">
               Connect Talent with
               <span className="block mt-2 text-accent">
                 Outstanding Opportunities
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 max-w-3xl leading-relaxed mb-12 sm:mb-16">
+            <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl leading-relaxed mb-16">
               Join a thriving ecosystem where exceptional talent meets innovative companies. 
               Build meaningful connections that drive careers forward.
             </p>
@@ -56,15 +56,15 @@ const BusinessPartner = () => {
       </header>
 
       {/* Main Action Cards */}
-      <section className="py-16 sm:py-20 md:py-32 bg-gradient-to-b from-background via-background to-muted/20 relative">
+      <section className="py-20 md:py-32 bg-gradient-to-b from-background via-background to-muted/20 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.03),transparent_70%)]"></div>
         
-        <div className="container mx-auto px-4 sm:px-6 relative">
+        <div className="container mx-auto px-6 relative">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
               How Can We Help You?
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Choose your path and start building meaningful connections today
             </p>
           </div>
@@ -73,7 +73,7 @@ const BusinessPartner = () => {
             {/* Looking for a Position Card */}
             <div className="group relative animate-fade-in">
               <div className="absolute -inset-1 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-              <div className="relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border rounded-3xl p-8 sm:p-10 md:p-12 hover:border-primary transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-3">
+              <div className="relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border rounded-3xl p-12 hover:border-primary transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-3">
                 <div className="text-center">
                   <div className="relative w-28 h-28 mx-auto mb-8">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-secondary rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
@@ -82,7 +82,7 @@ const BusinessPartner = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-foreground">Looking for Opportunities</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-5 text-foreground">Looking for Opportunities</h3>
                   <p className="text-muted-foreground mb-10 leading-relaxed text-lg">
                     Discover career-defining opportunities tailored to your unique skills and aspirations. 
                     Join a network of top companies actively seeking exceptional talent.
@@ -115,7 +115,7 @@ const BusinessPartner = () => {
             {/* Post a Position Card */}
             <div className="group relative animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <div className="absolute -inset-1 bg-gradient-to-br from-secondary via-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-              <div className="relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border rounded-3xl p-8 sm:p-10 md:p-12 hover:border-secondary transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-3">
+              <div className="relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border rounded-3xl p-12 hover:border-secondary transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-3">
                 <div className="text-center">
                   <div className="relative w-28 h-28 mx-auto mb-8">
                     <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/80 to-accent rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
@@ -124,7 +124,7 @@ const BusinessPartner = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-foreground">Post Opportunities</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-5 text-foreground">Post Opportunities</h3>
                   <p className="text-muted-foreground mb-10 leading-relaxed text-lg">
                     Connect with exceptional talent ready to drive your business forward. 
                     Post positions and find qualified professionals who align with your vision.
