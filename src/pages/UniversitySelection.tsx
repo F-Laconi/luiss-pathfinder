@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Search, GraduationCap, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -68,7 +68,20 @@ const universities = [{
 }];
 const UniversitySelection = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -95,12 +108,52 @@ const UniversitySelection = () => {
             </p>
 
             {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in">
+            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in" ref={dropdownRef}>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
               <div className="relative">
-                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6" />
-                <Input type="text" placeholder="🔍 Search your perfect university..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-16 pr-6 py-8 text-lg rounded-3xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-2xl transition-all duration-300 hover:shadow-primary/10" />
+                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6 z-10" />
+                <Input 
+                  type="text" 
+                  placeholder="🔍 Search your perfect university..." 
+                  value={searchQuery} 
+                  onChange={e => {
+                    setSearchQuery(e.target.value);
+                    setShowDropdown(e.target.value.length > 0);
+                  }}
+                  onFocus={() => searchQuery.length > 0 && setShowDropdown(true)}
+                  className="pl-16 pr-6 py-8 text-lg rounded-3xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-2xl transition-all duration-300 hover:shadow-primary/10" 
+                />
               </div>
+              
+              {/* Dropdown Suggestions */}
+              {showDropdown && filteredUniversities.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-card border-2 border-border rounded-2xl shadow-2xl overflow-hidden z-[100] max-h-96 overflow-y-auto">
+                  {filteredUniversities.map((university) => (
+                    <Link
+                      key={university.id}
+                      to={university.id === 'luiss' ? '/course-explorer' : '#'}
+                      onClick={() => {
+                        setShowDropdown(false);
+                        if (university.id !== 'luiss') {
+                          setSearchQuery(university.name);
+                        }
+                      }}
+                      className={`flex items-center gap-4 p-4 hover:bg-primary/10 transition-colors border-b border-border last:border-b-0 ${university.id !== 'luiss' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0`}>
+                        <img src={university.logo} alt={university.name} className="w-8 h-8 object-contain filter brightness-0 invert" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-foreground">{university.name}</h4>
+                        <p className="text-sm text-muted-foreground">{university.description}</p>
+                      </div>
+                      {university.id === 'luiss' && (
+                        <ChevronRight className="w-5 h-5 text-primary" />
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
