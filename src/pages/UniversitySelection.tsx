@@ -206,7 +206,7 @@ const UniversitySelection = () => {
       <div className="pt-16"></div>
 
       {/* Hero Section */}
-      <section className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
+      <section className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-visible">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
