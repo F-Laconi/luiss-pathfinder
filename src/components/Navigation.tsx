@@ -253,9 +253,6 @@ const Navigation = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
-              <Heart className="h-5 w-5" />
-            </Button>
             <Button variant="ghost" size="icon" asChild>
               <Link to="/profile">
                 <User className="h-5 w-5" />
