@@ -99,7 +99,7 @@ const HeroSection = () => {
       block: "start"
     });
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-visible">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Students studying together" className="w-full h-full object-cover" />
