@@ -273,49 +273,8 @@ const Navigation = () => {
             <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
               Sign Up
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-12 left-0 right-0 bg-white border-b border-border shadow-lg">
-            <div className="p-4 space-y-4">
-              <Link
-                to="/masters"
-                className="block py-2 text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Masters Programs
-              </Link>
-              <Link
-                to="/courses"
-                className="block py-2 text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                All Courses
-              </Link>
-              <Link
-                to="/professors"
-                className="block py-2 text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Professors
-              </Link>
-              <div className="pt-4 border-t border-border">
-                <Button variant="default" className="w-full" onClick={() => { setIsAuthOpen(true); setIsMenuOpen(false); }}>
-                  Sign Up
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
       
       <AuthDialog open={isAuthOpen} onOpenChange={setIsAuthOpen} />
