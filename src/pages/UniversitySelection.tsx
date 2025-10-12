@@ -541,7 +541,7 @@ const UniversitySelection = () => {
                       return university.id === 'luiss' ? (
                         <Link
                           key={university.id}
-                          to="/course-explorer"
+                          to="/luiss-university"
                           onClick={() => setShowDropdown(false)}
                         >
                           {UniversityItem}
@@ -619,7 +619,7 @@ const UniversitySelection = () => {
                       </span>
                     </div>}
                 </>;
-            return university.id === 'luiss' ? <Link key={university.id} to="/course-explorer" className="group flex flex-col items-center text-center transition-all duration-500 hover:scale-110 animate-fade-in" style={{
+            return university.id === 'luiss' ? <Link key={university.id} to="/luiss-university" className="group flex flex-col items-center text-center transition-all duration-500 hover:scale-110 animate-fade-in" style={{
               animationDelay: `${index * 0.1}s`
             }}>
                   {content}

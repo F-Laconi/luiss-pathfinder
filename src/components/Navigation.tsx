@@ -19,8 +19,8 @@ const Navigation = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
-  // Check if current route is course-explorer or related pages
-  const isCourseExplorerActive = location.pathname === '/course-explorer' || 
+  // Check if current route is luiss-university or related pages
+  const isLuissUniversityActive = location.pathname === '/luiss-university' || 
     location.pathname === '/school/undergraduate' || 
     location.pathname === '/school/graduate' || 
     location.pathname === '/school/postgraduate' ||
@@ -99,12 +99,12 @@ const Navigation = () => {
                   <span>Make the right choice</span>
                 </Link>
               </DropdownMenuItem>
-              {isCourseExplorerActive && (
+              {isLuissUniversityActive && (
                 <>
-                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/course-explorer' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
-                    <Link to="/course-explorer" className="w-full flex items-center space-x-2 p-2">
+                  <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/luiss-university' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                    <Link to="/luiss-university" className="w-full flex items-center space-x-2 p-2">
                       <BookOpen className="h-4 w-4" />
-                      <span>Course Explorer</span>
+                      <span>LUISS University</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/undergraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>

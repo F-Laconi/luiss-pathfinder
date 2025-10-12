@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import UniversitySelection from "./pages/UniversitySelection";
-import CourseExplorer from "./pages/CourseExplorer";
+import LuissUniversity from "./pages/LuissUniversity";
 import MasterCategory from "./pages/MasterCategory";
 import GraduateSchool from "./pages/GraduateSchool";
 import GraduateProgramDetail from "./pages/GraduateProgramDetail";
@@ -37,7 +37,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/universities" element={<UniversitySelection />} />
-          <Route path="/course-explorer" element={<CourseExplorer />} />
+          <Route path="/luiss-university" element={<LuissUniversity />} />
           <Route path="/business-partner" element={<BusinessPartner />} />
           <Route path="/post-position" element={<PostPosition />} />
           <Route path="/student-board" element={<StudentBoard />} />

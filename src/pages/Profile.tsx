@@ -67,9 +67,9 @@ const Profile = () => {
             </CardHeader>
             <CardContent className="space-y-2">
               <Button variant="outline" className="w-full justify-start" asChild>
-                <Link to="/course-explorer">
+                <Link to="/luiss-university">
                   <BookOpen className="h-4 w-4 mr-2" />
-                  Explore Courses
+                  LUISS University
                 </Link>
               </Button>
               <Button variant="outline" className="w-full justify-start" asChild>

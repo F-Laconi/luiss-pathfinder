@@ -91,7 +91,7 @@ const Footer = () => {
         <div className="border-t border-background/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-background/60 text-sm">
-              © 2024 LUISS Course Explorer. All rights reserved.
+              © 2024 LUISS University. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/terms" className="text-background/60 hover:text-accent transition-colors">
