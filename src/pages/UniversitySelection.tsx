@@ -89,7 +89,7 @@ const UniversitySelection = () => {
     }
   };
 
-  const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
+  const filteredUniversities = universities; // Show all universities always
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -97,10 +97,10 @@ const UniversitySelection = () => {
       <div className="pt-16"></div>
 
       {/* Hero Section */}
-      <section className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
+      <section className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-visible">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
+        <div className="container mx-auto px-6 text-center relative z-10 overflow-visible">
+          <div className="max-w-4xl mx-auto overflow-visible">
             <div className="flex items-center justify-center mb-8 animate-fade-in">
               <div className="relative">
                 <GraduationCap className="w-20 h-20 text-primary mr-4 animate-pulse" />
@@ -116,7 +116,7 @@ const UniversitySelection = () => {
             </p>
 
             {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in" ref={dropdownRef}>
+            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in overflow-visible" ref={dropdownRef}>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
               <div className="relative">
                 <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6 z-10" />
