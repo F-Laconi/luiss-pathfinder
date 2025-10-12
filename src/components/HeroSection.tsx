@@ -9,8 +9,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
   const handleSearch = () => {
     if (searchQuery.trim()) {
-      // This would trigger search functionality
-      console.log("Searching for:", searchQuery);
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
     }
   };
   const scrollToPrograms = () => {
