@@ -134,7 +134,7 @@ const Navigation = () => {
                               <span className="break-words">Global Law</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '1' && activeCourseId && (
+                          {activeProgram === '1' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-1-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-1-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -161,7 +161,7 @@ const Navigation = () => {
                               <span className="break-words">Business Administration</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '2' && activeCourseId && (
+                          {activeProgram === '2' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-2-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-2-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -181,7 +181,7 @@ const Navigation = () => {
                               <span className="break-words">Management and Artificial Intelligence</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '3' && activeCourseId && (
+                          {activeProgram === '3' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-3-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-3-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -201,7 +201,7 @@ const Navigation = () => {
                               <span className="break-words">Economics and Business</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '4' && activeCourseId && (
+                          {activeProgram === '4' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-4-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-4-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -221,7 +221,7 @@ const Navigation = () => {
                               <span className="break-words">Politics: Philosophy and Economics</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '5' && activeCourseId && (
+                          {activeProgram === '5' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-5-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-5-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -241,7 +241,7 @@ const Navigation = () => {
                               <span className="break-words">Giurisprudenza</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '6' && activeCourseId && (
+                          {activeProgram === '6' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-6-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-6-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -261,7 +261,7 @@ const Navigation = () => {
                               <span className="break-words">Economics and Management</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '7' && activeCourseId && (
+                          {activeProgram === '7' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-7-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-7-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -281,7 +281,7 @@ const Navigation = () => {
                               <span className="break-words">Political Science</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '8' && activeCourseId && (
+                          {activeProgram === '8' && (
                             <>
                               {(!activeCourseId || activeCourseId === 'ug-8-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-8-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -313,7 +313,7 @@ const Navigation = () => {
                               <span className="break-words">Policies and Governance in Europe</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '1' && activeCourseId && (
+                          {activeProgram === '1' && (
                             <>
                               {(!activeCourseId || activeCourseId === '1-0-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/1-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -347,7 +347,7 @@ const Navigation = () => {
                               <span className="break-words">Economia, Istituzioni e Mercati Finanziari</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '2' && activeCourseId && (
+                          {activeProgram === '2' && (
                             <>
                               {(!activeCourseId || activeCourseId === '2-0-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/2-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
@@ -374,7 +374,7 @@ const Navigation = () => {
                               <span className="break-words">Finance (Corporate Finance)</span>
                             </Link>
                           </DropdownMenuItem>
-                          {activeProgram === '3' && activeCourseId && (
+                          {activeProgram === '3' && (
                             <>
                               {(!activeCourseId || activeCourseId === '3-0-0') && (
                                 <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/3-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
