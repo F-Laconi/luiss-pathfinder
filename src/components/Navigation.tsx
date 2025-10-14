@@ -129,7 +129,7 @@ const Navigation = () => {
                     <>
                       {(!activeProgram || activeProgram === '1') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/1' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/1' || (activeProgram === '1' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/1" className="w-full flex items-center p-1.5">
                               <span className="break-words">Global Law</span>
                             </Link>
@@ -156,7 +156,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '2') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/2' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/2' || (activeProgram === '2' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/2" className="w-full flex items-center p-1.5">
                               <span className="break-words">Business Administration</span>
                             </Link>
@@ -176,7 +176,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '3') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/3' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/3' || (activeProgram === '3' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/3" className="w-full flex items-center p-1.5">
                               <span className="break-words">Management and Artificial Intelligence</span>
                             </Link>
@@ -196,7 +196,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '4') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/4' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/4' || (activeProgram === '4' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/4" className="w-full flex items-center p-1.5">
                               <span className="break-words">Economics and Business</span>
                             </Link>
@@ -216,7 +216,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '5') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/5' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/5' || (activeProgram === '5' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/5" className="w-full flex items-center p-1.5">
                               <span className="break-words">Politics: Philosophy and Economics</span>
                             </Link>
@@ -236,7 +236,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '6') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/6' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/6' || (activeProgram === '6' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/6" className="w-full flex items-center p-1.5">
                               <span className="break-words">Giurisprudenza</span>
                             </Link>
@@ -256,7 +256,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '7') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/7' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/7' || (activeProgram === '7' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/7" className="w-full flex items-center p-1.5">
                               <span className="break-words">Economics and Management</span>
                             </Link>
@@ -276,7 +276,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '8') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/8' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/8' || (activeProgram === '8' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/undergraduate/program/8" className="w-full flex items-center p-1.5">
                               <span className="break-words">Political Science</span>
                             </Link>
@@ -308,7 +308,7 @@ const Navigation = () => {
                     <>
                       {(!activeProgram || activeProgram === '1') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/1' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/1' || (activeProgram === '1' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/graduate/program/1" className="w-full flex items-center p-1.5">
                               <span className="break-words">Policies and Governance in Europe</span>
                             </Link>
@@ -342,7 +342,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '2') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/2' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/2' || (activeProgram === '2' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/graduate/program/2" className="w-full flex items-center p-1.5">
                               <span className="break-words">Economia, Istituzioni e Mercati Finanziari</span>
                             </Link>
@@ -369,7 +369,7 @@ const Navigation = () => {
                       )}
                       {(!activeProgram || activeProgram === '3') && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/3' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/3' || (activeProgram === '3' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
                             <Link to="/graduate/program/3" className="w-full flex items-center p-1.5">
                               <span className="break-words">Finance (Corporate Finance)</span>
                             </Link>
