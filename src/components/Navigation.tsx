@@ -127,13 +127,13 @@ const Navigation = () => {
                   )}
                   {isUndergraduateActive && (
                     <>
-                      {(!activeProgram || activeProgram === '1') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/1' || (activeProgram === '1' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/1" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Global Law</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '1' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/1' || (activeProgram === '1' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/1" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Global Law</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-1-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-1-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-1-0" className="w-full flex items-center p-1">
@@ -150,13 +150,13 @@ const Navigation = () => {
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '2') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/2' || (activeProgram === '2' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/2" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Business Administration</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '2' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/2' || (activeProgram === '2' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/2" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Business Administration</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-2-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-2-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-2-0" className="w-full flex items-center p-1">
@@ -166,13 +166,13 @@ const Navigation = () => {
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '3') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/3' || (activeProgram === '3' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/3" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Management and Artificial Intelligence</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '3' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/3' || (activeProgram === '3' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/3" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Management and Artificial Intelligence</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-3-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-3-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-3-0" className="w-full flex items-center p-1">
@@ -182,13 +182,13 @@ const Navigation = () => {
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '4') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/4' || (activeProgram === '4' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/4" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Economics and Business</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '4' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/4' || (activeProgram === '4' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/4" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Economics and Business</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-4-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-4-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-4-0" className="w-full flex items-center p-1">
@@ -198,13 +198,13 @@ const Navigation = () => {
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '5') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/5' || (activeProgram === '5' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/5" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Politics: Philosophy and Economics</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '5' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/5' || (activeProgram === '5' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/5" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Politics: Philosophy and Economics</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-5-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-5-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-5-0" className="w-full flex items-center p-1">
@@ -214,13 +214,13 @@ const Navigation = () => {
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '6') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/6' || (activeProgram === '6' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/6" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Giurisprudenza</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '6' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/6' || (activeProgram === '6' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/6" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Giurisprudenza</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-6-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-6-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-6-0" className="w-full flex items-center p-1">
@@ -230,13 +230,13 @@ const Navigation = () => {
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '7') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/7' || (activeProgram === '7' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/7" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Economics and Management</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '7' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/7' || (activeProgram === '7' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/7" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Economics and Management</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-7-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-7-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-7-0" className="w-full flex items-center p-1">
@@ -246,13 +246,13 @@ const Navigation = () => {
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '8') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/8' || (activeProgram === '8' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/undergraduate/program/8" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Political Science</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '8' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/undergraduate/program/8' || (activeProgram === '8' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/undergraduate/program/8" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Political Science</span>
-                            </Link>
-                          </DropdownMenuItem>
                           {(!activeCourseId || activeCourseId === 'ug-8-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-8-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-8-0" className="w-full flex items-center p-1">
@@ -274,150 +274,122 @@ const Navigation = () => {
                   )}
                   {isGraduateActive && (
                     <>
-                      {(!activeProgram || activeProgram === '1') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/1' || (activeProgram === '1' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/1" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Policies and Governance in Europe</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '1' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/1' || (activeProgram === '1' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/graduate/program/1" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Policies and Governance in Europe</span>
-                            </Link>
-                          </DropdownMenuItem>
-                          {activeProgram === '1' && activeCourseId && (
-                            <>
-                              {(!activeCourseId || activeCourseId === '1-0-0') && (
-                                <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/1-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
-                                  <Link to="/course/1-0-0" className="w-full flex items-center p-1">
-                                    <span className="break-words">European Integration and Institutions</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              )}
-                              {(!activeCourseId || activeCourseId === '1-0-1') && (
-                                <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/1-0-1' ? 'bg-muted/30 font-medium' : ''}`}>
-                                  <Link to="/course/1-0-1" className="w-full flex items-center p-1">
-                                    <span className="break-words">Comparative Political Systems</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              )}
-                              {(!activeCourseId || activeCourseId === '1-0-2') && (
-                                <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/1-0-2' ? 'bg-muted/30 font-medium' : ''}`}>
-                                  <Link to="/course/1-0-2" className="w-full flex items-center p-1">
-                                    <span className="break-words">Policy Analysis and Evaluation</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              )}
-                            </>
+                          {(!activeCourseId || activeCourseId === '1-0-0') && (
+                            <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/1-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
+                              <Link to="/course/1-0-0" className="w-full flex items-center p-1">
+                                <span className="break-words">European Integration and Institutions</span>
+                              </Link>
+                            </DropdownMenuItem>
+                          )}
+                          {(!activeCourseId || activeCourseId === '1-0-1') && (
+                            <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/1-0-1' ? 'bg-muted/30 font-medium' : ''}`}>
+                              <Link to="/course/1-0-1" className="w-full flex items-center p-1">
+                                <span className="break-words">Comparative Political Systems</span>
+                              </Link>
+                            </DropdownMenuItem>
+                          )}
+                          {(!activeCourseId || activeCourseId === '1-0-2') && (
+                            <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/1-0-2' ? 'bg-muted/30 font-medium' : ''}`}>
+                              <Link to="/course/1-0-2" className="w-full flex items-center p-1">
+                                <span className="break-words">Policy Analysis and Evaluation</span>
+                              </Link>
+                            </DropdownMenuItem>
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '2') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/2' || (activeProgram === '2' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/2" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Economia, Istituzioni e Mercati Finanziari</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '2' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/2' || (activeProgram === '2' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/graduate/program/2" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Economia, Istituzioni e Mercati Finanziari</span>
-                            </Link>
-                          </DropdownMenuItem>
-                          {activeProgram === '2' && activeCourseId && (
-                            <>
-                              {(!activeCourseId || activeCourseId === '2-0-0') && (
-                                <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/2-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
-                                  <Link to="/course/2-0-0" className="w-full flex items-center p-1">
-                                    <span className="break-words">Macroeconomics</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              )}
-                              {(!activeCourseId || activeCourseId === '2-0-1') && (
-                                <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/2-0-1' ? 'bg-muted/30 font-medium' : ''}`}>
-                                  <Link to="/course/2-0-1" className="w-full flex items-center p-1">
-                                    <span className="break-words">Microeconomics</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              )}
-                            </>
+                          {(!activeCourseId || activeCourseId === '2-0-0') && (
+                            <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/2-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
+                              <Link to="/course/2-0-0" className="w-full flex items-center p-1">
+                                <span className="break-words">Macroeconomics</span>
+                              </Link>
+                            </DropdownMenuItem>
+                          )}
+                          {(!activeCourseId || activeCourseId === '2-0-1') && (
+                            <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/2-0-1' ? 'bg-muted/30 font-medium' : ''}`}>
+                              <Link to="/course/2-0-1" className="w-full flex items-center p-1">
+                                <span className="break-words">Microeconomics</span>
+                              </Link>
+                            </DropdownMenuItem>
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '3') && (
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/3' || (activeProgram === '3' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/3" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Finance (Corporate Finance)</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      {activeProgram === '3' && activeCourseId && (
                         <>
-                          <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/3' || (activeProgram === '3' && activeCourseId) ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                            <Link to="/graduate/program/3" className="w-full flex items-center p-1.5">
-                              <span className="break-words">Finance (Corporate Finance)</span>
-                            </Link>
-                          </DropdownMenuItem>
-                          {activeProgram === '3' && activeCourseId && (
-                            <>
-                              {(!activeCourseId || activeCourseId === '3-0-0') && (
-                                <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/3-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
-                                  <Link to="/course/3-0-0" className="w-full flex items-center p-1">
-                                    <span className="break-words">Corporate Strategy</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              )}
-                              {(!activeCourseId || activeCourseId === '3-0-1') && (
-                                <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/3-0-1' ? 'bg-muted/30 font-medium' : ''}`}>
-                                  <Link to="/course/3-0-1" className="w-full flex items-center p-1">
-                                    <span className="break-words">Compliance and Risk Management</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              )}
-                            </>
+                          {(!activeCourseId || activeCourseId === '3-0-0') && (
+                            <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/3-0-0' ? 'bg-muted/30 font-medium' : ''}`}>
+                              <Link to="/course/3-0-0" className="w-full flex items-center p-1">
+                                <span className="break-words">Corporate Strategy</span>
+                              </Link>
+                            </DropdownMenuItem>
+                          )}
+                          {(!activeCourseId || activeCourseId === '3-0-1') && (
+                            <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/3-0-1' ? 'bg-muted/30 font-medium' : ''}`}>
+                              <Link to="/course/3-0-1" className="w-full flex items-center p-1">
+                                <span className="break-words">Compliance and Risk Management</span>
+                              </Link>
+                            </DropdownMenuItem>
                           )}
                         </>
                       )}
-                      {(!activeProgram || activeProgram === '4') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/4' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/4" className="w-full flex items-center p-1.5">
-                            <span className="break-words">Global Management and Politics</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
-                      {(!activeProgram || activeProgram === '5') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/5' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/5" className="w-full flex items-center p-1.5">
-                            <span className="break-words">Government and Public Affairs</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
-                      {(!activeProgram || activeProgram === '6') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/6' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/6" className="w-full flex items-center p-1.5">
-                            <span className="break-words">International Relations</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
-                      {(!activeProgram || activeProgram === '7') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/7' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/7" className="w-full flex items-center p-1.5">
-                            <span className="break-words">Management</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
-                      {(!activeProgram || activeProgram === '8') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/8' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/8" className="w-full flex items-center p-1.5">
-                            <span className="break-words">Marketing</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
-                      {(!activeProgram || activeProgram === '9') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/9' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/9" className="w-full flex items-center p-1.5">
-                            <span className="break-words">Strategic Management</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
-                      {(!activeProgram || activeProgram === '10') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/10' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/10" className="w-full flex items-center p-1.5">
-                            <span className="break-words">Amministrazione, Finanza e Controllo</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
-                      {(!activeProgram || activeProgram === '11') && (
-                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/11' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
-                          <Link to="/graduate/program/11" className="w-full flex items-center p-1.5">
-                            <span className="break-words">Data Science and Management</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      )}
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/4' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/4" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Global Management and Politics</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/5' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/5" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Government and Public Affairs</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/6' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/6" className="w-full flex items-center p-1.5">
+                          <span className="break-words">International Relations</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/7' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/7" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Management</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/8' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/8" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Marketing</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/9' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/9" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Strategic Management</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/10' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/10" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Amministrazione, Finanza e Controllo</span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/graduate/program/11' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                        <Link to="/graduate/program/11" className="w-full flex items-center p-1.5">
+                          <span className="break-words">Data Science and Management</span>
+                        </Link>
+                      </DropdownMenuItem>
                     </>
                   )}
                   {!isUndergraduateActive && !isGraduateActive && (
