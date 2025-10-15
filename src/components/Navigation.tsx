@@ -134,14 +134,14 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '1' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-1-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-1-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-1-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-1-0" className="w-full flex items-center p-1">
                                 <span className="break-words">International Law</span>
                               </Link>
                             </DropdownMenuItem>
                           )}
-                          {activeCourseId === 'ug-1-1' && (
+                          {(!activeCourseId || activeCourseId === 'ug-1-1') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-1-1' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-1-1" className="w-full flex items-center p-1">
                                 <span className="break-words">Comparative Law</span>
@@ -157,7 +157,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '2' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-2-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-2-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-2-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-2-0" className="w-full flex items-center p-1">
                                 <span className="break-words">Business Strategy</span>
@@ -173,7 +173,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '3' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-3-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-3-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-3-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-3-0" className="w-full flex items-center p-1">
                                 <span className="break-words">AI Foundations</span>
@@ -189,7 +189,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '4' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-4-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-4-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-4-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-4-0" className="w-full flex items-center p-1">
                                 <span className="break-words">Microeconomics</span>
@@ -205,7 +205,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '5' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-5-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-5-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-5-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-5-0" className="w-full flex items-center p-1">
                                 <span className="break-words">Political Philosophy</span>
@@ -221,7 +221,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '6' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-6-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-6-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-6-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-6-0" className="w-full flex items-center p-1">
                                 <span className="break-words">Diritto Civile</span>
@@ -237,7 +237,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '7' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-7-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-7-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-7-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-7-0" className="w-full flex items-center p-1">
                                 <span className="break-words">Management Principles</span>
@@ -253,7 +253,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                       {activeProgram === '8' && activeCourseId && (
                         <>
-                          {activeCourseId === 'ug-8-0' && (
+                          {(!activeCourseId || activeCourseId === 'ug-8-0') && (
                             <DropdownMenuItem asChild className={`rounded-lg hover:bg-muted/10 transition-all duration-200 cursor-pointer ml-16 text-xs ${location.pathname === '/course/ug-8-0' ? 'bg-muted/30 font-medium' : ''}`}>
                               <Link to="/course/ug-8-0" className="w-full flex items-center p-1">
                                 <span className="break-words">Political Theory</span>
