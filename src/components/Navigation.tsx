@@ -35,7 +35,11 @@ const Navigation = () => {
   
   // Check which specific course/program is active
   const currentCourseId = location.pathname.startsWith('/course/') ? location.pathname.split('/course/')[1] : null;
-  const currentProgramFromCourse = currentCourseId ? currentCourseId.split('-')[0] : null;
+  // For undergraduate courses like 'ug-5-0', extract '5' (second part)
+  // For graduate courses like '1-0-0', extract '1' (first part)
+  const currentProgramFromCourse = currentCourseId 
+    ? (currentCourseId.startsWith('ug-') ? currentCourseId.split('-')[1] : currentCourseId.split('-')[0])
+    : null;
   const currentProgramFromPath = location.pathname.match(/\/(graduate|undergraduate)\/program\/(\d+)/)?.[2];
   
   const activeProgram = currentProgramFromCourse || currentProgramFromPath;
@@ -117,7 +121,7 @@ const Navigation = () => {
                       <span>LUISS University</span>
                     </Link>
                   </DropdownMenuItem>
-                  {!isGraduateActive && !isPostGraduateActive && (
+                  {isUndergraduateActive && (
                     <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/undergraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
                       <Link to="/school/undergraduate" className="w-full flex items-center space-x-2 p-2">
                         <BookOpen className="h-4 w-4" />
