@@ -24,6 +24,7 @@ const Navigation = () => {
     location.pathname === '/school/undergraduate' || 
     location.pathname === '/school/graduate' || 
     location.pathname === '/school/postgraduate' ||
+    location.pathname.startsWith('/undergraduate/program/') ||
     location.pathname.startsWith('/graduate/program/') ||
     location.pathname.startsWith('/course/');
   
