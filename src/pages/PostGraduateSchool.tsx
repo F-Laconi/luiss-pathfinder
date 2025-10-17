@@ -171,18 +171,18 @@ const PostGraduateSchool = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Program Image */}
-                <div className="relative h-48 overflow-hidden">
+                <Link to={`/postgraduate/program/${program.id}`} className="block relative h-48 overflow-hidden">
                   <img
                     src={program.image}
                     alt={program.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
                   />
                   
                   {/* Language flags */}
                   <div className="absolute top-4 right-4 z-20">
                     {renderLanguageFlags(program.languages)}
                   </div>
-                </div>
+                </Link>
 
                 {/* Program Content */}
                 <div className="p-6 space-y-4">
