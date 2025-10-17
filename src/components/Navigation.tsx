@@ -42,7 +42,7 @@ const Navigation = () => {
   const currentProgramFromCourse = currentCourseId 
     ? (currentCourseId.startsWith('ug-') ? currentCourseId.split('-')[1] : currentCourseId.split('-')[0])
     : null;
-  const currentProgramFromPath = location.pathname.match(/\/(graduate|undergraduate)\/program\/(\d+)/)?.[2];
+  const currentProgramFromPath = location.pathname.match(/\/(graduate|undergraduate|postgraduate)\/program\/(\d+)/)?.[2];
   
   const activeProgram = currentProgramFromCourse || currentProgramFromPath;
   
