@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, Globe, GraduationCap, TrendingUp, Award, ArrowRight } from "lucide-react";
+import { Search, Globe, Award, TrendingUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -215,37 +216,35 @@ const PostGraduateSchool = () => {
                   className="group animate-fade-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="h-full card-glass overflow-hidden group-hover:shadow-[var(--shadow-glow)]">
-                    {/* Program Image */}
-                    <div className="relative h-56 overflow-hidden">
-                      <img
-                        src={program.image}
-                        alt={`${program.title} PhD program at LUISS University`}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                      <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500"></div>
-
-                      {/* Language flags */}
-                      <div className="absolute top-6 right-6 z-20">
-                        {renderLanguageFlags(program.languages)}
+                  <Card className="h-full card-glass overflow-hidden group-hover:shadow-[var(--shadow-glow)]">
+                    <CardHeader className="p-0">
+                      <div className="relative h-56 overflow-hidden">
+                        <img
+                          src={program.image}
+                          alt={`${program.title} program at LUISS`}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500"></div>
+                        <Badge className="absolute top-6 right-6 bg-gradient-to-r from-accent to-primary text-white border-0 shadow-xl font-semibold px-4 py-1.5 text-xs">
+                          {program.category}
+                        </Badge>
                       </div>
-                    </div>
-
-                    {/* Program Content */}
-                    <div className="p-7 space-y-5">
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-gradient-primary transition-all duration-300 line-clamp-2 leading-tight">
+                    </CardHeader>
+                    <CardContent className="p-7 space-y-5">
+                      <CardTitle className="text-2xl font-bold leading-tight group-hover:text-gradient-primary transition-all duration-300 line-clamp-2">
                         {program.title}
-                      </h3>
-
-                      {/* Action Button */}
-                      <Button className="w-full group/btn bg-gradient-to-r from-accent to-primary text-white hover:from-accent/90 hover:to-primary/90 shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-all duration-300">
-                        <span>View Program Details</span>
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
-                  </div>
+                      </CardTitle>
+                    </CardContent>
+                    <CardFooter className="p-7 pt-0 flex items-center justify-between">
+                      {renderLanguageFlags(program.languages)}
+                      <div className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                        <span>Explore</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </CardFooter>
+                  </Card>
                 </Link>
               ))}
             </div>
