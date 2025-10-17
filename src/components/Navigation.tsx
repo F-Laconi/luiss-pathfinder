@@ -26,13 +26,14 @@ const Navigation = () => {
     location.pathname === '/school/postgraduate' ||
     location.pathname.startsWith('/undergraduate/program/') ||
     location.pathname.startsWith('/graduate/program/') ||
+    location.pathname.startsWith('/postgraduate/program/') ||
     location.pathname.startsWith('/course/');
   
   const isHomeActive = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/suggestions';
   
   const isUndergraduateActive = location.pathname === '/school/undergraduate' || location.pathname.startsWith('/undergraduate/program/');
   const isGraduateActive = location.pathname === '/school/graduate' || location.pathname.startsWith('/graduate/program/');
-  const isPostGraduateActive = location.pathname === '/school/postgraduate';
+  const isPostGraduateActive = location.pathname === '/school/postgraduate' || location.pathname.startsWith('/postgraduate/program/');
   
   // Check which specific course/program is active
   const currentCourseId = location.pathname.startsWith('/course/') ? location.pathname.split('/course/')[1] : null;
@@ -457,13 +458,52 @@ const Navigation = () => {
                       )}
                     </>
                   )}
-                  {!isUndergraduateActive && !isGraduateActive && (
-                    <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/postgraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                  {isPostGraduateActive && (
+                    <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/postgraduate' || location.pathname.startsWith('/postgraduate/program/') ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
                       <Link to="/school/postgraduate" className="w-full flex items-center space-x-2 p-2">
                         <BookOpen className="h-4 w-4" />
                         <span>Post Graduate</span>
                       </Link>
                     </DropdownMenuItem>
+                  )}
+                  {isPostGraduateActive && (
+                    <>
+                      {(!activeProgram || activeProgram === '1') && (
+                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/postgraduate/program/1' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <Link to="/postgraduate/program/1" className="w-full flex items-center p-1.5">
+                            <span className="break-words">PhD in Economics</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      )}
+                      {(!activeProgram || activeProgram === '2') && (
+                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/postgraduate/program/2' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <Link to="/postgraduate/program/2" className="w-full flex items-center p-1.5">
+                            <span className="break-words">PhD in Management</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      )}
+                      {(!activeProgram || activeProgram === '3') && (
+                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/postgraduate/program/3' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <Link to="/postgraduate/program/3" className="w-full flex items-center p-1.5">
+                            <span className="break-words">PhD in Law</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      )}
+                      {(!activeProgram || activeProgram === '4') && (
+                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/postgraduate/program/4' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <Link to="/postgraduate/program/4" className="w-full flex items-center p-1.5">
+                            <span className="break-words">PhD in Political Science</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      )}
+                      {(!activeProgram || activeProgram === '5') && (
+                        <DropdownMenuItem asChild className={`rounded-lg hover:bg-secondary/10 hover:text-secondary-foreground transition-all duration-200 cursor-pointer ml-12 text-sm whitespace-normal ${location.pathname === '/postgraduate/program/5' ? 'bg-secondary/20 text-secondary-foreground font-medium' : ''}`}>
+                          <Link to="/postgraduate/program/5" className="w-full flex items-center p-1.5">
+                            <span className="break-words">PhD in Government and Public Affairs</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      )}
+                    </>
                   )}
                 </>
               )}
