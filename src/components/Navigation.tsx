@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb } from "lucide-react";
+import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb, PartyPopper } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -100,6 +100,12 @@ const Navigation = () => {
                 <Link to="/about" className="w-full flex items-center space-x-2 p-2">
                   <User className="h-4 w-4" />
                   <span>About</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/student-activities' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                <Link to="/student-activities" className="w-full flex items-center space-x-2 p-2">
+                  <PartyPopper className="h-4 w-4" />
+                  <span>Student Activities</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/suggestions' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
