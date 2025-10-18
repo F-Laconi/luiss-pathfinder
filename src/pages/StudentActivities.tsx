@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, MapPin, Users, PartyPopper, Trophy, Music, Coffee, Camera } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -75,6 +76,7 @@ export default function StudentActivities() {
   const [selectedActivity, setSelectedActivity] = useState<typeof mockActivities[0] | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [activities, setActivities] = useState(mockActivities);
+  const [activeFilter, setActiveFilter] = useState<string>("All");
   const { register, handleSubmit, reset, setValue } = useForm();
 
   const onSubmit = (data: any) => {
@@ -89,6 +91,10 @@ export default function StudentActivities() {
     reset();
     toast.success("Activity posted successfully!");
   };
+
+  const filteredActivities = activeFilter === "All" 
+    ? activities 
+    : activities.filter(activity => activity.type === activeFilter);
 
   return (
     <>
@@ -195,62 +201,100 @@ export default function StudentActivities() {
             </Dialog>
           </div>
 
+          {/* Filter Tabs */}
+          <div className="flex justify-center mb-8">
+            <Tabs value={activeFilter} onValueChange={setActiveFilter} className="w-full max-w-4xl">
+              <TabsList className="grid grid-cols-3 md:grid-cols-6 w-full h-auto gap-2 bg-card/50 p-2">
+                <TabsTrigger value="All" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  All
+                </TabsTrigger>
+                <TabsTrigger value="Sports" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  <Trophy className="h-4 w-4" />
+                  Sports
+                </TabsTrigger>
+                <TabsTrigger value="Social" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  <PartyPopper className="h-4 w-4" />
+                  Party
+                </TabsTrigger>
+                <TabsTrigger value="Study" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  <Coffee className="h-4 w-4" />
+                  Study
+                </TabsTrigger>
+                <TabsTrigger value="Creative" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  <Camera className="h-4 w-4" />
+                  Creative
+                </TabsTrigger>
+                <TabsTrigger value="Music" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  <Music className="h-4 w-4" />
+                  Music
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+
           {/* Activities Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {activities.map((activity) => {
-              const Icon = activityIcons[activity.type as keyof typeof activityIcons] || PartyPopper;
-              const spotsLeft = activity.maxParticipants - activity.participants;
-              
-              return (
-                <Card 
-                  key={activity.id}
-                  className="hover:shadow-lg transition-all cursor-pointer group"
-                  onClick={() => setSelectedActivity(activity)}
-                >
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="p-2 rounded-lg bg-primary/10">
-                        <Icon className="h-6 w-6 text-primary" />
+            {filteredActivities.length === 0 ? (
+              <div className="col-span-full text-center py-12">
+                <p className="text-muted-foreground text-lg">No activities found in this category.</p>
+                <p className="text-muted-foreground text-sm mt-2">Try selecting a different filter or create a new activity!</p>
+              </div>
+            ) : (
+              filteredActivities.map((activity) => {
+                const Icon = activityIcons[activity.type as keyof typeof activityIcons] || PartyPopper;
+                const spotsLeft = activity.maxParticipants - activity.participants;
+                
+                return (
+                  <Card 
+                    key={activity.id}
+                    className="hover:shadow-lg transition-all cursor-pointer group"
+                    onClick={() => setSelectedActivity(activity)}
+                  >
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="p-2 rounded-lg bg-primary/10">
+                          <Icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent-foreground">
+                          {activity.type}
+                        </span>
                       </div>
-                      <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent-foreground">
-                        {activity.type}
-                      </span>
-                    </div>
-                    <CardTitle className="group-hover:text-primary transition-colors">
-                      {activity.title}
-                    </CardTitle>
-                    <CardDescription className="line-clamp-2">
-                      {activity.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm">
-                    <div className="flex items-center text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      {new Date(activity.date).toLocaleDateString()} at {activity.time}
-                    </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      {activity.location}
-                    </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <Users className="h-4 w-4 mr-2" />
-                      {activity.participants} / {activity.maxParticipants} participants
-                      <span className="ml-2 text-xs text-primary">
-                        ({spotsLeft} spots left)
-                      </span>
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <Button variant="outline" className="w-full" onClick={(e) => {
-                      e.stopPropagation();
-                      toast.success("Joined activity!");
-                    }}>
-                      Join Activity
-                    </Button>
-                  </CardFooter>
-                </Card>
-              );
-            })}
+                      <CardTitle className="group-hover:text-primary transition-colors">
+                        {activity.title}
+                      </CardTitle>
+                      <CardDescription className="line-clamp-2">
+                        {activity.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2 text-sm">
+                      <div className="flex items-center text-muted-foreground">
+                        <Calendar className="h-4 w-4 mr-2" />
+                        {new Date(activity.date).toLocaleDateString()} at {activity.time}
+                      </div>
+                      <div className="flex items-center text-muted-foreground">
+                        <MapPin className="h-4 w-4 mr-2" />
+                        {activity.location}
+                      </div>
+                      <div className="flex items-center text-muted-foreground">
+                        <Users className="h-4 w-4 mr-2" />
+                        {activity.participants} / {activity.maxParticipants} participants
+                        <span className="ml-2 text-xs text-primary">
+                          ({spotsLeft} spots left)
+                        </span>
+                      </div>
+                    </CardContent>
+                    <CardFooter>
+                      <Button variant="outline" className="w-full" onClick={(e) => {
+                        e.stopPropagation();
+                        toast.success("Joined activity!");
+                      }}>
+                        Join Activity
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                );
+              })
+            )}
           </div>
         </div>
 
