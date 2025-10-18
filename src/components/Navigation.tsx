@@ -459,7 +459,7 @@ const Navigation = () => {
                     </>
                   )}
                   {(isPostGraduateActive || location.pathname === '/luiss-university') && (
-                    <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/postgraduate' || location.pathname.startsWith('/postgraduate/program/') ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
+                    <DropdownMenuItem asChild className={`rounded-lg hover:bg-accent/10 hover:text-accent-foreground transition-all duration-200 cursor-pointer ml-8 ${location.pathname === '/school/postgraduate' ? 'bg-accent/20 text-accent-foreground font-semibold border-l-2 border-accent' : ''}`}>
                       <Link to="/school/postgraduate" className="w-full flex items-center space-x-2 p-2">
                         <BookOpen className="h-4 w-4" />
                         <span>Post Graduate</span>
