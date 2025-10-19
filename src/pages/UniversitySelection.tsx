@@ -451,7 +451,12 @@ const UniversitySelection = () => {
   };
 
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
-  return <div className="min-h-screen bg-background">
+  return <>
+      <title>Italian Universities | Find Your Perfect University - UniCompass</title>
+      <meta name="description" content="Discover and compare 50+ top Italian universities including LUISS, Bocconi, Politecnico di Milano, and more. Find the perfect university for your academic journey." />
+      <link rel="canonical" href="https://unicompass.lovable.app/universities" />
+      
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Header - simplified to avoid duplication */}
@@ -660,6 +665,25 @@ const UniversitySelection = () => {
 
       {/* Call to Action */}
       
-    </div>;
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Italian Universities",
+          "description": "Comprehensive list of Italian universities",
+          "numberOfItems": universities.length,
+          "itemListElement": universities.slice(0, 10).map((uni, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "item": {
+              "@type": "CollegeOrUniversity",
+              "name": uni.name,
+              "description": uni.description
+            }
+          }))
+        })}
+      </script>
+    </div>
+    </>;
 };
 export default UniversitySelection;

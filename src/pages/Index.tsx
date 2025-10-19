@@ -5,8 +5,11 @@ import compassWallpaper from "@/assets/compass-wallpaper.jpg";
 
 const Index = () => {
   return (
-    <main>
-      <Navigation />
+    <>
+      <title>UniCompass - Navigate Your Academic Journey in Italy</title>
+      <meta name="description" content="Explore Italian universities and find your perfect academic path. Compare undergraduate, graduate and postgraduate programs at top universities including LUISS, Bocconi, and more." />
+      <main>
+        <Navigation />
       <div
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
@@ -109,7 +112,8 @@ const Index = () => {
           }
         })}
       </script>
-    </main>
+      </main>
+    </>
   );
 };
 

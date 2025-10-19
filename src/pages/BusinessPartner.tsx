@@ -5,7 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 const BusinessPartner = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <title>Business Partner Opportunities | UniCompass</title>
+      <meta name="description" content="Connect exceptional talent with innovative companies. Discover career opportunities or post positions to find qualified professionals for your team." />
+      <link rel="canonical" href="https://unicompass.lovable.app/business-partner" />
+      
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Header with Gradient */}
@@ -153,7 +158,26 @@ const BusinessPartner = () => {
           </div>
         </div>
       </section>
+      
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Business Partner Opportunities",
+          "description": "Connect talent with outstanding opportunities",
+          "url": "https://unicompass.lovable.app/business-partner",
+          "about": {
+            "@type": "Service",
+            "name": "Professional Networking",
+            "provider": {
+              "@type": "Organization",
+              "name": "UniCompass"
+            }
+          }
+        })}
+      </script>
     </div>
+    </>
   );
 };
 export default BusinessPartner;
