@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Search, GraduationCap, ChevronRight } from "lucide-react";
+import { Search, GraduationCap, ChevronRight, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -429,6 +429,7 @@ const universities = [{
 const UniversitySelection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [displayCount, setDisplayCount] = useState(6);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -579,7 +580,7 @@ const UniversitySelection = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {filteredUniversities.map((university, index) => {
+            {filteredUniversities.slice(0, displayCount).map((university, index) => {
             const content = <>
                   <div className="relative mb-6">
                     <div className={`w-40 h-40 bg-gradient-to-br ${university.color} rounded-3xl flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2 group-hover:rotate-3 overflow-hidden`}>
@@ -630,6 +631,20 @@ const UniversitySelection = () => {
                 </div>;
           })}
           </div>
+
+          {/* Load More Button */}
+          {filteredUniversities.length > displayCount && (
+            <div className="text-center mt-12 animate-fade-in">
+              <Button
+                onClick={() => setDisplayCount(prev => prev + 6)}
+                size="lg"
+                className="group bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Load More Universities
+                <ChevronDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
+              </Button>
+            </div>
+          )}
 
           {filteredUniversities.length === 0 && <div className="text-center py-20 animate-fade-in">
               <div className="text-6xl mb-4">🔍</div>
