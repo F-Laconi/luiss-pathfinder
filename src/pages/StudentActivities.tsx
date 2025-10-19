@@ -102,23 +102,24 @@ export default function StudentActivities() {
       
       <div className="min-h-screen relative overflow-hidden">
         {/* Background */}
-        <div className="fixed inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
+        <div className="fixed inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/10" />
+        <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
         
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 pt-24 pb-12">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-fade-in">
+          <div className="text-center mb-12 animate-fade-in">
+            <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Student Activities
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Discover and join activities, or create your own! Connect with fellow students through sports, parties, study groups, and more.
             </p>
             
             <Dialog open={showForm} onOpenChange={setShowForm}>
               <DialogTrigger asChild>
-                <Button size="lg" className="shadow-lg hover:shadow-xl transition-all">
-                  <PartyPopper className="mr-2 h-5 w-5" />
+                <Button size="lg" className="shadow-lg hover:shadow-2xl transition-all hover:scale-105 text-lg px-8 py-6">
+                  <PartyPopper className="mr-2 h-6 w-6" />
                   Propose New Activity
                 </Button>
               </DialogTrigger>
@@ -202,29 +203,29 @@ export default function StudentActivities() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex justify-center mb-8">
-            <Tabs value={activeFilter} onValueChange={setActiveFilter} className="w-full max-w-4xl">
-              <TabsList className="grid grid-cols-3 md:grid-cols-6 w-full h-auto gap-2 bg-card/50 p-2">
-                <TabsTrigger value="All" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+          <div className="flex justify-center mb-12">
+            <Tabs value={activeFilter} onValueChange={setActiveFilter} className="w-full max-w-5xl">
+              <TabsList className="grid grid-cols-3 md:grid-cols-6 w-full h-auto gap-2 bg-card/80 backdrop-blur-sm p-3 shadow-lg border border-border/50">
+                <TabsTrigger value="All" className="py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
                   All
                 </TabsTrigger>
-                <TabsTrigger value="Sports" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <TabsTrigger value="Sports" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
                   <Trophy className="h-4 w-4" />
                   Sports
                 </TabsTrigger>
-                <TabsTrigger value="Social" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <TabsTrigger value="Social" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
                   <PartyPopper className="h-4 w-4" />
                   Party
                 </TabsTrigger>
-                <TabsTrigger value="Study" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <TabsTrigger value="Study" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
                   <Coffee className="h-4 w-4" />
                   Study
                 </TabsTrigger>
-                <TabsTrigger value="Creative" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <TabsTrigger value="Creative" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
                   <Camera className="h-4 w-4" />
                   Creative
                 </TabsTrigger>
-                <TabsTrigger value="Music" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <TabsTrigger value="Music" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
                   <Music className="h-4 w-4" />
                   Music
                 </TabsTrigger>
@@ -247,47 +248,53 @@ export default function StudentActivities() {
                 return (
                   <Card 
                     key={activity.id}
-                    className="hover:shadow-lg transition-all cursor-pointer group"
+                    className="hover:shadow-2xl transition-all duration-300 cursor-pointer group border-border/50 bg-card/80 backdrop-blur-sm hover:scale-[1.02] hover:-translate-y-1"
                     onClick={() => setSelectedActivity(activity)}
                   >
                     <CardHeader>
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="p-2 rounded-lg bg-primary/10">
-                          <Icon className="h-6 w-6 text-primary" />
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all">
+                          <Icon className="h-7 w-7 text-primary" />
                         </div>
-                        <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent-foreground">
+                        <span className="text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-accent/30 to-primary/30 text-foreground border border-border/30">
                           {activity.type}
                         </span>
                       </div>
-                      <CardTitle className="group-hover:text-primary transition-colors">
+                      <CardTitle className="text-xl group-hover:text-primary transition-colors">
                         {activity.title}
                       </CardTitle>
-                      <CardDescription className="line-clamp-2">
+                      <CardDescription className="line-clamp-2 text-base">
                         {activity.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-2 text-sm">
-                      <div className="flex items-center text-muted-foreground">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        {new Date(activity.date).toLocaleDateString()} at {activity.time}
+                    <CardContent className="space-y-3 text-sm">
+                      <div className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                        <Calendar className="h-5 w-5 mr-3 text-primary" />
+                        <span className="font-medium">{new Date(activity.date).toLocaleDateString()} at {activity.time}</span>
                       </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <MapPin className="h-4 w-4 mr-2" />
-                        {activity.location}
+                      <div className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                        <MapPin className="h-5 w-5 mr-3 text-primary" />
+                        <span className="font-medium">{activity.location}</span>
                       </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Users className="h-4 w-4 mr-2" />
-                        {activity.participants} / {activity.maxParticipants} participants
-                        <span className="ml-2 text-xs text-primary">
-                          ({spotsLeft} spots left)
+                      <div className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+                        <Users className="h-5 w-5 mr-3 text-primary" />
+                        <span className="font-medium">
+                          {activity.participants} / {activity.maxParticipants} participants
+                        </span>
+                        <span className="ml-auto text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary">
+                          {spotsLeft} spots left
                         </span>
                       </div>
                     </CardContent>
-                    <CardFooter>
-                      <Button variant="outline" className="w-full" onClick={(e) => {
-                        e.stopPropagation();
-                        toast.success("Joined activity!");
-                      }}>
+                    <CardFooter className="pt-2">
+                      <Button 
+                        variant="outline" 
+                        className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all shadow-sm hover:shadow-md" 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toast.success("Joined activity!");
+                        }}
+                      >
                         Join Activity
                       </Button>
                     </CardFooter>
