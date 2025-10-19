@@ -71,7 +71,7 @@ const BusinessPartner = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
             {/* Looking for a Position Card */}
-            <div className="group relative animate-fade-in">
+            <Link to="/student-board" className="group relative animate-fade-in cursor-pointer">
               <div className="absolute -inset-1 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
               <div className="relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border rounded-3xl p-8 sm:p-10 md:p-12 hover:border-primary transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-3">
                 <div className="text-center">
@@ -99,21 +99,19 @@ const BusinessPartner = () => {
                     ))}
                   </div>
                   
-                  <Link to="/student-board">
-                    <Button 
-                      size="lg" 
-                      className="w-full text-lg py-7 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-                    >
-                      Explore Opportunities
-                      <Search className="w-5 h-5 ml-2" />
-                    </Button>
-                  </Link>
+                  <Button 
+                    size="lg" 
+                    className="w-full text-lg py-7 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                  >
+                    Explore Opportunities
+                    <Search className="w-5 h-5 ml-2" />
+                  </Button>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Post a Position Card */}
-            <div className="group relative animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <Link to="/post-position" className="group relative animate-fade-in cursor-pointer" style={{ animationDelay: '0.1s' }}>
               <div className="absolute -inset-1 bg-gradient-to-br from-secondary via-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
               <div className="relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border rounded-3xl p-8 sm:p-10 md:p-12 hover:border-secondary transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-3">
                 <div className="text-center">
@@ -141,19 +139,17 @@ const BusinessPartner = () => {
                     ))}
                   </div>
                   
-                  <Link to="/post-position">
-                    <Button 
-                      variant="secondary" 
-                      size="lg" 
-                      className="w-full text-lg py-7 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-                    >
-                      Post a Position
-                      <Briefcase className="w-5 h-5 ml-2" />
-                    </Button>
-                  </Link>
+                  <Button 
+                    variant="secondary" 
+                    size="lg" 
+                    className="w-full text-lg py-7 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                  >
+                    Post a Position
+                    <Briefcase className="w-5 h-5 ml-2" />
+                  </Button>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
