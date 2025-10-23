@@ -7,62 +7,70 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
+import undergraduate1 from "@/assets/undergraduate-1.png";
+import undergraduate2 from "@/assets/undergraduate-2.png";
+import undergraduate3 from "@/assets/undergraduate-3.png";
+import undergraduate4 from "@/assets/undergraduate-4.png";
+import undergraduate5 from "@/assets/undergraduate-5.png";
+import undergraduate6 from "@/assets/undergraduate-6.png";
+import undergraduate7 from "@/assets/undergraduate-7.png";
+import undergraduate8 from "@/assets/undergraduate-8.png";
 
 // Undergraduate programs data matching the detail page
 const undergraduatePrograms = [
   {
     id: "1",
     title: "Global Law",
-    image: "/src/assets/law-icon.jpg",
+    image: undergraduate1,
     languages: ["English"],
     category: "Law"
   },
   {
     id: "2",
     title: "Business Administration",
-    image: "/src/assets/management-course.png",
+    image: undergraduate2,
     languages: ["English"],
     category: "Business"
   },
   {
     id: "3",
     title: "Management and Artificial Intelligence",
-    image: "/src/assets/data-science-management.png",
+    image: undergraduate3,
     languages: ["English"],
     category: "Technology"
   },
   {
     id: "4",
     title: "Economics and Business",
-    image: "/src/assets/economics-icon.jpg",
+    image: undergraduate4,
     languages: ["English"],
     category: "Economics"
   },
   {
     id: "5",
     title: "Politics: Philosophy and Economics",
-    image: "/src/assets/politics-icon.jpg",
+    image: undergraduate5,
     languages: ["English"],
     category: "Politics"
   },
   {
     id: "6",
     title: "Giurisprudenza",
-    image: "/src/assets/law-icon.jpg",
+    image: undergraduate6,
     languages: ["Italian"],
     category: "Law"
   },
   {
     id: "7",
     title: "Economics and Management",
-    image: "/src/assets/economics-icon.jpg",
+    image: undergraduate7,
     languages: ["Italian"],
     category: "Economics"
   },
   {
     id: "8",
     title: "Political Science",
-    image: "/src/assets/politics-icon.jpg",
+    image: undergraduate8,
     languages: ["Italian"],
     category: "Politics"
   }
