@@ -8,10 +8,10 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import economiaIstituzioniImage from "@/assets/economia-istituzioni.png";
-import globalManagementImage from "@/assets/global-management-politics.png";
-import policiesGovernanceImage from "@/assets/policies-governance-europe.png";
-import financeImage from "@/assets/finance-course.png";
+import postgraduate1 from "@/assets/postgraduate-1.png";
+import postgraduate2 from "@/assets/postgraduate-2.png";
+import postgraduate3 from "@/assets/postgraduate-3.png";
+import postgraduate4 from "@/assets/postgraduate-4.png";
 import governmentAffairsImage from "@/assets/government-public-affairs.png";
 
 // LUISS Post-graduate PhD programs data
@@ -19,28 +19,28 @@ const postGraduatePrograms = [
   {
     id: 1,
     title: "PhD in Economics",
-    image: economiaIstituzioniImage,
+    image: postgraduate1,
     languages: ["English"],
     category: "Economics"
   },
   {
     id: 2,
     title: "PhD in Management",
-    image: globalManagementImage,
+    image: postgraduate2,
     languages: ["English"],
     category: "Management"
   },
   {
     id: 3,
     title: "PhD in Law",
-    image: financeImage,
+    image: postgraduate3,
     languages: ["English"],
     category: "Law"
   },
   {
     id: 4,
     title: "PhD in Political Science",
-    image: policiesGovernanceImage,
+    image: postgraduate4,
     languages: ["English"],
     category: "Political Science"
   },
