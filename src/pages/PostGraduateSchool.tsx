@@ -12,7 +12,7 @@ import postgraduate1 from "@/assets/postgraduate-1.png";
 import postgraduate2 from "@/assets/postgraduate-2.png";
 import postgraduate3 from "@/assets/postgraduate-3.png";
 import postgraduate4 from "@/assets/postgraduate-4.png";
-import governmentAffairsImage from "@/assets/government-public-affairs.png";
+import postgraduate5 from "@/assets/postgraduate-5.png";
 
 // LUISS Post-graduate PhD programs data
 const postGraduatePrograms = [
@@ -47,7 +47,7 @@ const postGraduatePrograms = [
   {
     id: 5,
     title: "PhD in Government and Public Affairs",
-    image: governmentAffairsImage,
+    image: postgraduate5,
     languages: ["English"],
     category: "Government"
   }
