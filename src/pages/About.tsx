@@ -113,24 +113,24 @@ const About = () => {
                 </div>
                 
                 <div className="grid md:grid-cols-3 gap-8">
-                  <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Lightbulb className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="font-playfair text-xl font-semibold text-foreground mb-3">Clear Guidance</h3>
                     <p className="text-muted-foreground">Navigate university choices with confidence through comprehensive insights and expert recommendations</p>
                   </div>
                   
-                  <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20">
+                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Users className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="font-playfair text-xl font-semibold text-foreground mb-3">Connect & Collaborate</h3>
                     <p className="text-muted-foreground">Find your ideal study partners and future business collaborators in our vibrant community</p>
                   </div>
                   
-                  <div className="group text-center p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:scale-105">
-                    <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/20">
+                    <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Rocket className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="font-playfair text-xl font-semibold text-foreground mb-3">Launch Your Future</h3>
