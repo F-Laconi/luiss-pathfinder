@@ -80,6 +80,15 @@ const UndergraduateSchool = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("default");
   const [filterLanguage, setFilterLanguage] = useState("all");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  // Get suggestions based on search query
+  const suggestions = searchQuery.length > 0
+    ? undergraduatePrograms.filter(program => 
+        program.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        program.category.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 5)
+    : [];
 
   // Filter programs based on search query and language filter
   const filteredPrograms = undergraduatePrograms.filter(program => {
@@ -189,13 +198,47 @@ const UndergraduateSchool = () => {
             <div className="flex flex-col lg:flex-row gap-6 items-stretch">
               {/* Search Bar */}
               <div className="relative flex-1">
-                <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-primary/60" />
+                <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-primary/60 z-10" />
                 <Input
                   placeholder="Search programs by name or category..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => setShowSuggestions(true)}
+                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                   className="pl-14 h-14 glass text-base rounded-2xl border-border/50 focus:border-primary/50 transition-all duration-300 shadow-[var(--shadow-md)]"
                 />
+                
+                {/* Suggestions Dropdown */}
+                {showSuggestions && suggestions.length > 0 && (
+                  <div className="absolute top-full mt-2 left-0 right-0 glass rounded-2xl border border-border/50 shadow-[var(--shadow-lg)] overflow-hidden z-50 animate-fade-in">
+                    {suggestions.map((program) => (
+                      <Link
+                        key={program.id}
+                        to={`/undergraduate/program/${program.id}`}
+                        className="flex items-center gap-4 px-5 py-4 hover:bg-primary/5 transition-colors duration-200 border-b border-border/30 last:border-b-0"
+                      >
+                        <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+                          <img 
+                            src={program.image} 
+                            alt={program.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-foreground text-sm truncate">
+                            {program.title}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {program.category}
+                          </p>
+                        </div>
+                        <Badge className="bg-primary/10 text-primary border-primary/20 text-xs">
+                          {program.languages[0] === "English" ? "EN" : "IT"}
+                        </Badge>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
               
               {/* Filters */}
