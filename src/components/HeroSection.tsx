@@ -21,6 +21,10 @@ import internationalRelationsImage from "@/assets/international-relations.png";
 import marketingImage from "@/assets/marketing-course.png";
 import strategicManagementImage from "@/assets/strategic-management.png";
 import amministrazioneFinanzaImage from "@/assets/amministrazione-finanza.png";
+import postgraduate1 from "@/assets/postgraduate-1.png";
+import postgraduate2 from "@/assets/postgraduate-2.png";
+import postgraduate3 from "@/assets/postgraduate-3.png";
+import postgraduate4 from "@/assets/postgraduate-4.png";
 
 // All searchable programs
 const searchablePrograms = [
@@ -43,10 +47,10 @@ const searchablePrograms = [
   { id: "grad-9", title: "Strategic Management", type: "Graduate", category: "Strategic Management", link: "/graduate/program/9", image: strategicManagementImage },
   { id: "grad-10", title: "Amministrazione, Finanza e Controllo", type: "Graduate", category: "Administration & Finance", link: "/graduate/program/10", image: amministrazioneFinanzaImage },
   { id: "grad-11", title: "Data Science and Management", type: "Graduate", category: "Data Science", link: "/graduate/program/11", image: dataScienceImage },
-  { id: "postgrad-1", title: "PhD in Economics", type: "Post-Graduate", category: "Economics", link: "/course/1", image: economicsIcon },
-  { id: "postgrad-2", title: "PhD in Management", type: "Post-Graduate", category: "Management", link: "/course/2", image: managementImage },
-  { id: "postgrad-3", title: "PhD in Politics", type: "Post-Graduate", category: "Politics", link: "/course/3", image: politicsIcon },
-  { id: "postgrad-4", title: "PhD in Law and Business", type: "Post-Graduate", category: "Law & Business", link: "/course/4", image: lawIcon },
+  { id: "postgrad-1", title: "PhD in Economics", type: "Post-Graduate", category: "Economics", link: "/course/1", image: postgraduate1 },
+  { id: "postgrad-2", title: "PhD in Management", type: "Post-Graduate", category: "Management", link: "/course/2", image: postgraduate2 },
+  { id: "postgrad-3", title: "PhD in Politics", type: "Post-Graduate", category: "Politics", link: "/course/3", image: postgraduate3 },
+  { id: "postgrad-4", title: "PhD in Law and Business", type: "Post-Graduate", category: "Law & Business", link: "/course/4", image: postgraduate4 },
 ];
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
