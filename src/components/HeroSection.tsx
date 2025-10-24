@@ -24,29 +24,29 @@ import amministrazioneFinanzaImage from "@/assets/amministrazione-finanza.png";
 
 // All searchable programs
 const searchablePrograms = [
-  { id: "undergrad-1", title: "Global Law", type: "Undergraduate", category: "Law", link: "/undergraduate/program/1" },
-  { id: "undergrad-2", title: "Business Administration", type: "Undergraduate", category: "Business", link: "/undergraduate/program/2" },
-  { id: "undergrad-3", title: "Management and Artificial Intelligence", type: "Undergraduate", category: "Technology", link: "/undergraduate/program/3" },
-  { id: "undergrad-4", title: "Economics and Business", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/4" },
-  { id: "undergrad-5", title: "Politics: Philosophy and Economics", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/5" },
-  { id: "undergrad-6", title: "Giurisprudenza", type: "Undergraduate", category: "Law", link: "/undergraduate/program/6" },
-  { id: "undergrad-7", title: "Economics and Management", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/7" },
-  { id: "undergrad-8", title: "Political Science", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/8" },
-  { id: "grad-1", title: "Policies and Governance in Europe", type: "Graduate", category: "Politics & Governance", link: "/graduate/program/1" },
-  { id: "grad-2", title: "Economia, Istituzioni e Mercati Finanziari", type: "Graduate", category: "Economics & Finance", link: "/graduate/program/2" },
-  { id: "grad-3", title: "Finance", type: "Graduate", category: "Finance", link: "/graduate/program/3" },
-  { id: "grad-4", title: "Global Management and Politics", type: "Graduate", category: "Management & Politics", link: "/graduate/program/4" },
-  { id: "grad-5", title: "Government and Public Affairs", type: "Graduate", category: "Government & Public Affairs", link: "/graduate/program/5" },
-  { id: "grad-6", title: "International Relations", type: "Graduate", category: "International Relations", link: "/graduate/program/6" },
-  { id: "grad-7", title: "Management", type: "Graduate", category: "Management", link: "/graduate/program/7" },
-  { id: "grad-8", title: "Marketing", type: "Graduate", category: "Marketing", link: "/graduate/program/8" },
-  { id: "grad-9", title: "Strategic Management", type: "Graduate", category: "Strategic Management", link: "/graduate/program/9" },
-  { id: "grad-10", title: "Amministrazione, Finanza e Controllo", type: "Graduate", category: "Administration & Finance", link: "/graduate/program/10" },
-  { id: "grad-11", title: "Data Science and Management", type: "Graduate", category: "Data Science", link: "/graduate/program/11" },
-  { id: "postgrad-1", title: "PhD in Economics", type: "Post-Graduate", category: "Economics", link: "/course/1" },
-  { id: "postgrad-2", title: "PhD in Management", type: "Post-Graduate", category: "Management", link: "/course/2" },
-  { id: "postgrad-3", title: "PhD in Politics", type: "Post-Graduate", category: "Politics", link: "/course/3" },
-  { id: "postgrad-4", title: "PhD in Law and Business", type: "Post-Graduate", category: "Law & Business", link: "/course/4" },
+  { id: "undergrad-1", title: "Global Law", type: "Undergraduate", category: "Law", link: "/undergraduate/program/1", image: lawIcon },
+  { id: "undergrad-2", title: "Business Administration", type: "Undergraduate", category: "Business", link: "/undergraduate/program/2", image: economicsIcon },
+  { id: "undergrad-3", title: "Management and Artificial Intelligence", type: "Undergraduate", category: "Technology", link: "/undergraduate/program/3", image: managementImage },
+  { id: "undergrad-4", title: "Economics and Business", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/4", image: economicsIcon },
+  { id: "undergrad-5", title: "Politics: Philosophy and Economics", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/5", image: politicsIcon },
+  { id: "undergrad-6", title: "Giurisprudenza", type: "Undergraduate", category: "Law", link: "/undergraduate/program/6", image: lawIcon },
+  { id: "undergrad-7", title: "Economics and Management", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/7", image: economicsIcon },
+  { id: "undergrad-8", title: "Political Science", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/8", image: politicsIcon },
+  { id: "grad-1", title: "Policies and Governance in Europe", type: "Graduate", category: "Politics & Governance", link: "/graduate/program/1", image: policiesGovernanceImage },
+  { id: "grad-2", title: "Economia, Istituzioni e Mercati Finanziari", type: "Graduate", category: "Economics & Finance", link: "/graduate/program/2", image: economiaIstituzioniImage },
+  { id: "grad-3", title: "Finance", type: "Graduate", category: "Finance", link: "/graduate/program/3", image: financeImage },
+  { id: "grad-4", title: "Global Management and Politics", type: "Graduate", category: "Management & Politics", link: "/graduate/program/4", image: globalManagementImage },
+  { id: "grad-5", title: "Government and Public Affairs", type: "Graduate", category: "Government & Public Affairs", link: "/graduate/program/5", image: governmentAffairsImage },
+  { id: "grad-6", title: "International Relations", type: "Graduate", category: "International Relations", link: "/graduate/program/6", image: internationalRelationsImage },
+  { id: "grad-7", title: "Management", type: "Graduate", category: "Management", link: "/graduate/program/7", image: managementImage },
+  { id: "grad-8", title: "Marketing", type: "Graduate", category: "Marketing", link: "/graduate/program/8", image: marketingImage },
+  { id: "grad-9", title: "Strategic Management", type: "Graduate", category: "Strategic Management", link: "/graduate/program/9", image: strategicManagementImage },
+  { id: "grad-10", title: "Amministrazione, Finanza e Controllo", type: "Graduate", category: "Administration & Finance", link: "/graduate/program/10", image: amministrazioneFinanzaImage },
+  { id: "grad-11", title: "Data Science and Management", type: "Graduate", category: "Data Science", link: "/graduate/program/11", image: dataScienceImage },
+  { id: "postgrad-1", title: "PhD in Economics", type: "Post-Graduate", category: "Economics", link: "/course/1", image: economicsIcon },
+  { id: "postgrad-2", title: "PhD in Management", type: "Post-Graduate", category: "Management", link: "/course/2", image: managementImage },
+  { id: "postgrad-3", title: "PhD in Politics", type: "Post-Graduate", category: "Politics", link: "/course/3", image: politicsIcon },
+  { id: "postgrad-4", title: "PhD in Law and Business", type: "Post-Graduate", category: "Law & Business", link: "/course/4", image: lawIcon },
 ];
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -155,17 +155,24 @@ const HeroSection = () => {
                   <button
                     key={suggestion.id}
                     onClick={() => handleSuggestionClick(suggestion.link)}
-                    className="w-full px-6 py-4 text-left hover:bg-primary/10 transition-colors border-b border-border/50 last:border-b-0 flex items-center justify-between group"
+                    className="w-full px-5 py-4 text-left hover:bg-primary/10 transition-colors border-b border-border/50 last:border-b-0 flex items-center gap-4 group"
                   >
-                    <div className="flex-1">
-                      <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                    <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+                      <img 
+                        src={suggestion.image} 
+                        alt={suggestion.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
                         {suggestion.title}
                       </div>
                       <div className="text-sm text-muted-foreground mt-1">
                         {suggestion.category}
                       </div>
                     </div>
-                    <Badge className="bg-primary/10 text-primary border-primary/20 font-medium">
+                    <Badge className="bg-primary/10 text-primary border-primary/20 font-medium text-xs flex-shrink-0">
                       {suggestion.type}
                     </Badge>
                   </button>
