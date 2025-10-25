@@ -15,33 +15,73 @@ import pageFrame from "@/assets/page-frame.png";
 const mockProjects = [
   {
     id: 1,
-    title: "EcoTrack App",
-    briefDescription: "Mobile app to track personal carbon footprint",
-    skillsNeeded: ["React Native", "Backend Development", "UI/UX Design"],
-    author: "Marco R.",
-    fullDescription: "A comprehensive mobile application that helps users track their daily carbon footprint through various activities. We're looking to add more features and improve the user experience.",
-    stage: "MVP Ready",
-    goals: "Scale to 10k users and add social features"
+    title: "Project 1",
+    briefDescription: "Innovative project seeking talented collaborators",
+    skillsNeeded: ["Skill 1", "Skill 2", "Skill 3"],
+    author: "Student A.",
+    fullDescription: "Detailed description of project 1. This project aims to solve real-world problems through innovative solutions.",
+    stage: "Concept",
+    goals: "Define specific goals and milestones"
   },
   {
     id: 2,
-    title: "StudyBuddy Platform",
-    briefDescription: "Peer-to-peer study matching platform for university students",
-    skillsNeeded: ["Frontend Development", "Marketing", "Data Analysis"],
-    author: "Sofia M.",
-    fullDescription: "A platform that connects university students based on their study subjects and schedules. We've validated the concept and need help scaling.",
-    stage: "Beta Testing",
-    goals: "Launch in 5 universities across Italy"
+    title: "Project 2",
+    briefDescription: "Exciting initiative looking for team members",
+    skillsNeeded: ["Skill A", "Skill B", "Skill C"],
+    author: "Student B.",
+    fullDescription: "Detailed description of project 2. We're building something amazing and need your expertise.",
+    stage: "MVP Ready",
+    goals: "Launch and gather user feedback"
   },
   {
     id: 3,
-    title: "LocalArt Marketplace",
-    briefDescription: "Digital marketplace for local artists to sell their work",
-    skillsNeeded: ["E-commerce Development", "Digital Marketing", "Photography"],
-    author: "Luca T.",
-    fullDescription: "An online marketplace specifically designed for local artists to showcase and sell their artwork. We need help with the technical implementation and marketing strategy.",
+    title: "Project 3",
+    briefDescription: "Revolutionary idea ready to be developed",
+    skillsNeeded: ["Development", "Design", "Marketing"],
+    author: "Student C.",
+    fullDescription: "Detailed description of project 3. Join us in creating the next big thing.",
+    stage: "Beta Testing",
+    goals: "Scale and optimize for growth"
+  },
+  {
+    id: 4,
+    title: "Project 4",
+    briefDescription: "Innovative solution for modern challenges",
+    skillsNeeded: ["Frontend", "Backend", "UI/UX"],
+    author: "Student D.",
+    fullDescription: "Detailed description of project 4. We're addressing important market needs.",
     stage: "Concept",
-    goals: "Onboard 100 artists in first 6 months"
+    goals: "Validate market fit and expand"
+  },
+  {
+    id: 5,
+    title: "Project 5",
+    briefDescription: "Creative project with high impact potential",
+    skillsNeeded: ["Data Science", "Analytics", "Strategy"],
+    author: "Student E.",
+    fullDescription: "Detailed description of project 5. Help us make a difference through data-driven solutions.",
+    stage: "MVP Ready",
+    goals: "Achieve product-market fit"
+  },
+  {
+    id: 6,
+    title: "Project 6",
+    briefDescription: "Groundbreaking platform for future growth",
+    skillsNeeded: ["Product Management", "Engineering", "Growth"],
+    author: "Student F.",
+    fullDescription: "Detailed description of project 6. Building the future, one feature at a time.",
+    stage: "Beta Testing",
+    goals: "User acquisition and retention"
+  },
+  {
+    id: 7,
+    title: "Project 7",
+    briefDescription: "Transformative project seeking passionate collaborators",
+    skillsNeeded: ["Business Development", "Sales", "Operations"],
+    author: "Student G.",
+    fullDescription: "Detailed description of project 7. Join our mission to transform the industry.",
+    stage: "Concept",
+    goals: "Build team and secure funding"
   }
 ];
 
