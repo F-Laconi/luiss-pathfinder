@@ -149,9 +149,13 @@ const PostPosition = () => {
             </Link>
             
             <div className="flex flex-col lg:flex-row justify-between items-start gap-4">
-              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border-2 border-gray-200 max-w-2xl w-full lg:w-auto">
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Student Project Board</h1>
-                <p className="text-gray-600 text-base sm:text-lg">
+              <div className="glass p-8 sm:p-10 rounded-2xl shadow-[var(--shadow-glow)] border border-primary/20 max-w-2xl w-full lg:w-auto bg-gradient-to-br from-primary/5 to-accent/5">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass shadow-[var(--shadow-sm)] text-primary text-sm font-semibold mb-4">
+                  <Pin className="h-4 w-4" />
+                  <span>Project Board</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl font-bold text-gradient-primary mb-4 leading-tight">Student Project Board</h1>
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                   Discover innovative student projects seeking talented collaborators
                 </p>
               </div>
