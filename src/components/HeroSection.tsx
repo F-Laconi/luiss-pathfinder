@@ -36,14 +36,14 @@ import undergraduate8 from "@/assets/undergraduate-8.png";
 
 // All searchable programs
 const searchablePrograms = [
-  { id: "undergrad-1", title: "Global Law", type: "Undergraduate", category: "Law", link: "/undergraduate/program/1", image: lawIcon },
-  { id: "undergrad-2", title: "Business Administration", type: "Undergraduate", category: "Business", link: "/undergraduate/program/2", image: economicsIcon },
-  { id: "undergrad-3", title: "Management and Artificial Intelligence", type: "Undergraduate", category: "Technology", link: "/undergraduate/program/3", image: managementImage },
-  { id: "undergrad-4", title: "Economics and Business", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/4", image: economicsIcon },
-  { id: "undergrad-5", title: "Politics: Philosophy and Economics", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/5", image: politicsIcon },
-  { id: "undergrad-6", title: "Giurisprudenza", type: "Undergraduate", category: "Law", link: "/undergraduate/program/6", image: lawIcon },
-  { id: "undergrad-7", title: "Economics and Management", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/7", image: economicsIcon },
-  { id: "undergrad-8", title: "Political Science", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/8", image: politicsIcon },
+  { id: "undergrad-1", title: "Global Law", type: "Undergraduate", category: "Law", link: "/undergraduate/program/1", image: undergraduate1 },
+  { id: "undergrad-2", title: "Business Administration", type: "Undergraduate", category: "Business", link: "/undergraduate/program/2", image: undergraduate2 },
+  { id: "undergrad-3", title: "Management and Artificial Intelligence", type: "Undergraduate", category: "Technology", link: "/undergraduate/program/3", image: undergraduate3 },
+  { id: "undergrad-4", title: "Economics and Business", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/4", image: undergraduate4 },
+  { id: "undergrad-5", title: "Politics: Philosophy and Economics", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/5", image: undergraduate5 },
+  { id: "undergrad-6", title: "Giurisprudenza", type: "Undergraduate", category: "Law", link: "/undergraduate/program/6", image: undergraduate6 },
+  { id: "undergrad-7", title: "Economics and Management", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/7", image: undergraduate7 },
+  { id: "undergrad-8", title: "Political Science", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/8", image: undergraduate8 },
   { id: "grad-1", title: "Policies and Governance in Europe", type: "Graduate", category: "Politics & Governance", link: "/graduate/program/1", image: policiesGovernanceImage },
   { id: "grad-2", title: "Economia, Istituzioni e Mercati Finanziari", type: "Graduate", category: "Economics & Finance", link: "/graduate/program/2", image: economiaIstituzioniImage },
   { id: "grad-3", title: "Finance", type: "Graduate", category: "Finance", link: "/graduate/program/3", image: financeImage },
@@ -59,14 +59,6 @@ const searchablePrograms = [
   { id: "postgrad-2", title: "PhD in Management", type: "Post-Graduate", category: "Management", link: "/course/2", image: postgraduate2 },
   { id: "postgrad-3", title: "PhD in Politics", type: "Post-Graduate", category: "Politics", link: "/course/3", image: postgraduate3 },
   { id: "postgrad-4", title: "PhD in Law and Business", type: "Post-Graduate", category: "Law & Business", link: "/course/4", image: postgraduate4 },
-  { id: "undergrad-1", title: "Global Law", type: "Undergraduate", category: "Law", link: "/undergraduate/program/1", image: undergraduate1 },
-  { id: "undergrad-2", title: "Business Administration", type: "Undergraduate", category: "Business", link: "/undergraduate/program/2", image: undergraduate2 },
-  { id: "undergrad-3", title: "Management and Artificial Intelligence", type: "Undergraduate", category: "Technology", link: "/undergraduate/program/3", image: undergraduate3 },
-  { id: "undergrad-4", title: "Economics and Business", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/4", image: undergraduate4 },
-  { id: "undergrad-5", title: "Politics: Philosophy and Economics", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/5", image: undergraduate5 },
-  { id: "undergrad-6", title: "Giurisprudenza", type: "Undergraduate", category: "Law", link: "/undergraduate/program/6", image: undergraduate6 },
-  { id: "undergrad-7", title: "Economics and Management", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/7", image: undergraduate7 },
-  { id: "undergrad-8", title: "Political Science", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/8", image: undergraduate8 },
 ];
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
