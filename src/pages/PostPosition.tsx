@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Pin, Plus, Users, Lightbulb, Target, Eye } from "lucide-react";
+import { ArrowLeft, Pin, Plus, Users, Lightbulb, Target, Eye, Search, Filter, X, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
 import { useForm } from "react-hook-form";
 import Navigation from "@/components/Navigation";
 import cleanBackground from "@/assets/clean-background.png";
@@ -89,6 +91,10 @@ const PostPosition = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [projects, setProjects] = useState(mockProjects);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedStage, setSelectedStage] = useState<string>("all");
+  const [selectedSkill, setSelectedSkill] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<string>("recent");
   
   const form = useForm({
     defaultValues: {
@@ -101,6 +107,48 @@ const PostPosition = () => {
     }
   });
 
+  // Get unique stages and skills for filters
+  const allStages = useMemo(() => {
+    return Array.from(new Set(projects.map(p => p.stage)));
+  }, [projects]);
+
+  const allSkills = useMemo(() => {
+    const skills = new Set<string>();
+    projects.forEach(p => p.skillsNeeded.forEach(skill => skills.add(skill)));
+    return Array.from(skills);
+  }, [projects]);
+
+  // Filter and sort projects
+  const filteredAndSortedProjects = useMemo(() => {
+    let filtered = projects.filter(project => {
+      const matchesSearch = 
+        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.briefDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.skillsNeeded.some(skill => skill.toLowerCase().includes(searchQuery.toLowerCase()));
+      
+      const matchesStage = selectedStage === "all" || project.stage === selectedStage;
+      const matchesSkill = selectedSkill === "all" || project.skillsNeeded.includes(selectedSkill);
+      
+      return matchesSearch && matchesStage && matchesSkill;
+    });
+
+    // Sort projects
+    switch (sortBy) {
+      case "title":
+        filtered.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      case "stage":
+        filtered.sort((a, b) => a.stage.localeCompare(b.stage));
+        break;
+      case "recent":
+      default:
+        // Keep original order (most recent first)
+        break;
+    }
+
+    return filtered;
+  }, [projects, searchQuery, selectedStage, selectedSkill, sortBy]);
+
   const onSubmit = (data: any) => {
     const newProject = {
       id: projects.length + 1,
@@ -112,10 +160,22 @@ const PostPosition = () => {
       stage: data.stage,
       goals: data.goals
     };
-    setProjects([...projects, newProject]);
+    setProjects([newProject, ...projects]); // Add to beginning for "recent" sort
     setShowForm(false);
     form.reset();
   };
+
+  const clearFilters = () => {
+    setSearchQuery("");
+    setSelectedStage("all");
+    setSelectedSkill("all");
+    setSortBy("recent");
+  };
+
+  const activeFiltersCount = 
+    (searchQuery ? 1 : 0) + 
+    (selectedStage !== "all" ? 1 : 0) + 
+    (selectedSkill !== "all" ? 1 : 0);
 
   return (
     <div>
@@ -287,9 +347,102 @@ const PostPosition = () => {
             </div>
           </div>
 
+          {/* Search and Filters Section */}
+          <div className="max-w-7xl mx-auto mb-8">
+            <div className="glass p-6 rounded-xl border border-primary/10">
+              {/* Search Bar */}
+              <div className="relative mb-4">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  placeholder="Search projects by title, description, or skills..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 pr-10 h-12 text-base"
+                />
+                {searchQuery && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8"
+                    onClick={() => setSearchQuery("")}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+
+              {/* Filters Row */}
+              <div className="flex flex-wrap gap-3 items-center">
+                <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                  <SlidersHorizontal className="h-4 w-4" />
+                  <span>Filter by:</span>
+                </div>
+                
+                <Select value={selectedStage} onValueChange={setSelectedStage}>
+                  <SelectTrigger className="w-[160px] h-9">
+                    <SelectValue placeholder="All Stages" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Stages</SelectItem>
+                    {allStages.map(stage => (
+                      <SelectItem key={stage} value={stage}>{stage}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <Select value={selectedSkill} onValueChange={setSelectedSkill}>
+                  <SelectTrigger className="w-[180px] h-9">
+                    <SelectValue placeholder="All Skills" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Skills</SelectItem>
+                    {allSkills.map(skill => (
+                      <SelectItem key={skill} value={skill}>{skill}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground ml-auto">
+                  <span>Sort by:</span>
+                </div>
+
+                <Select value={sortBy} onValueChange={setSortBy}>
+                  <SelectTrigger className="w-[140px] h-9">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="recent">Most Recent</SelectItem>
+                    <SelectItem value="title">Title A-Z</SelectItem>
+                    <SelectItem value="stage">Stage</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                {activeFiltersCount > 0 && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={clearFilters}
+                    className="h-9"
+                  >
+                    <X className="h-4 w-4 mr-1" />
+                    Clear {activeFiltersCount} filter{activeFiltersCount > 1 ? 's' : ''}
+                  </Button>
+                )}
+              </div>
+
+              {/* Results Count */}
+              <div className="mt-4 pt-4 border-t border-primary/10">
+                <p className="text-sm text-muted-foreground">
+                  Showing <span className="font-semibold text-foreground">{filteredAndSortedProjects.length}</span> of <span className="font-semibold text-foreground">{projects.length}</span> projects
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {projects.map((project, index) => {
+          {filteredAndSortedProjects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {filteredAndSortedProjects.map((project, index) => {
               const gradients = [
                 "from-blue-50 to-blue-100 border-blue-200",
                 "from-purple-50 to-purple-100 border-purple-200", 
@@ -386,6 +539,27 @@ const PostPosition = () => {
               );
             })}
           </div>
+          ) : (
+            <div className="max-w-2xl mx-auto">
+              <div className="glass p-12 rounded-2xl border border-primary/10 text-center">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Search className="h-10 w-10 text-primary/40" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">No projects found</h3>
+                <p className="text-muted-foreground mb-6">
+                  {searchQuery || selectedStage !== "all" || selectedSkill !== "all"
+                    ? "Try adjusting your filters or search query to find more projects."
+                    : "Be the first to post a project!"}
+                </p>
+                {activeFiltersCount > 0 && (
+                  <Button onClick={clearFilters} variant="outline">
+                    <X className="h-4 w-4 mr-2" />
+                    Clear all filters
+                  </Button>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
      </div>
