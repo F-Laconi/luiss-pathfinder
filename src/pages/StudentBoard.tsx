@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Plus, User, Mail, Briefcase, GraduationCap } from "lucide-react";
+import { Plus, User, Mail, Briefcase, GraduationCap, Search, X, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -65,6 +67,8 @@ const StudentBoard = () => {
     }
   ]);
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedUniversity, setSelectedUniversity] = useState<string>("all");
 
   const form = useForm<Profile>({
     resolver: zodResolver(profileSchema),
@@ -78,7 +82,7 @@ const StudentBoard = () => {
   });
 
   const onSubmit = (data: Profile) => {
-    setProfiles([...profiles, data]);
+    setProfiles([data, ...profiles]);
     form.reset();
     setIsOpen(false);
   };
@@ -87,6 +91,34 @@ const StudentBoard = () => {
     const rotations = ['rotate-1', '-rotate-1', 'rotate-2', '-rotate-2', 'rotate-0'];
     return rotations[Math.floor(Math.random() * rotations.length)];
   };
+
+  // Get unique universities for filter
+  const allUniversities = useMemo(() => {
+    const universities = new Set(profiles.map(p => p.university));
+    return Array.from(universities).sort();
+  }, [profiles]);
+
+  // Filter and search profiles
+  const filteredProfiles = useMemo(() => {
+    return profiles.filter(profile => {
+      const matchesSearch = searchQuery === "" || 
+        profile.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        profile.skills.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        profile.bio.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        profile.university.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesUniversity = selectedUniversity === "all" || profile.university === selectedUniversity;
+      
+      return matchesSearch && matchesUniversity;
+    });
+  }, [profiles, searchQuery, selectedUniversity]);
+
+  const clearFilters = () => {
+    setSearchQuery("");
+    setSelectedUniversity("all");
+  };
+
+  const activeFiltersCount = (searchQuery ? 1 : 0) + (selectedUniversity !== "all" ? 1 : 0);
 
   return (
     <div>
@@ -111,6 +143,66 @@ const StudentBoard = () => {
 
       {/* Main Content - Cork Board */}
       <main className="container mx-auto px-6 py-8 relative z-10">
+        {/* Search and Filters Section */}
+        <div className="mb-8 space-y-4">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+            {/* Search Bar */}
+            <div className="relative flex-1 w-full md:max-w-md">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Input
+                placeholder="Search by name, skills, bio, or university..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 pr-10"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* University Filter */}
+            <div className="flex items-center gap-3 w-full md:w-auto">
+              <Filter className="w-4 h-4 text-muted-foreground" />
+              <Select value={selectedUniversity} onValueChange={setSelectedUniversity}>
+                <SelectTrigger className="w-full md:w-[200px]">
+                  <SelectValue placeholder="All Universities" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Universities</SelectItem>
+                  {allUniversities.map(uni => (
+                    <SelectItem key={uni} value={uni}>{uni}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Clear Filters */}
+            {activeFiltersCount > 0 && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={clearFilters}
+                className="gap-2"
+              >
+                <X className="w-4 h-4" />
+                Clear {activeFiltersCount} filter{activeFiltersCount > 1 ? 's' : ''}
+              </Button>
+            )}
+          </div>
+
+          {/* Results Count */}
+          <div className="flex items-center justify-between px-2">
+            <p className="text-sm text-white font-medium">
+              Showing {filteredProfiles.length} of {profiles.length} profile{profiles.length !== 1 ? 's' : ''}
+            </p>
+          </div>
+        </div>
+
         {/* Add Profile Button */}
         <div className="flex justify-center mb-8">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -209,7 +301,7 @@ const StudentBoard = () => {
 
         {/* Sticky Notes Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
-          {profiles.map((profile, index) => {
+          {filteredProfiles.map((profile, index) => {
             const colorClass = stickyColors[index % stickyColors.length];
             const rotation = getRandomRotation();
             
@@ -261,6 +353,20 @@ const StudentBoard = () => {
             );
           })}
         </div>
+
+        {filteredProfiles.length === 0 && profiles.length > 0 && (
+          <div className="text-center py-12">
+            <div className="bg-yellow-200 border-2 border-yellow-300 rounded-sm p-8 mx-auto max-w-md shadow-lg relative rotate-2">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-2 border-red-600"></div>
+              <Search className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+              <h3 className="text-lg font-bold text-gray-800 mb-2">No profiles found</h3>
+              <p className="text-gray-600 text-sm mb-4">Try adjusting your search or filters</p>
+              <Button variant="outline" size="sm" onClick={clearFilters}>
+                Clear Filters
+              </Button>
+            </div>
+          </div>
+        )}
 
         {profiles.length === 0 && (
           <div className="text-center py-12">
