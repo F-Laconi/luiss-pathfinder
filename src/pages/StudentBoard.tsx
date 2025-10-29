@@ -125,16 +125,16 @@ const StudentBoard = () => {
       <Navigation />
       <div className="min-h-screen relative" style={{ backgroundImage: `url(${corkBoardBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Full background overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/40"></div>
       {/* Header Overlay */}
-      <div className="relative z-10 bg-black/30 backdrop-blur-sm">
+      <div className="relative z-10 bg-white/10 backdrop-blur-md border-b border-white/20">
         <header className="text-white">
           <div className="container mx-auto px-6 py-6">
-            <Link to="/business-partner" className="inline-flex items-center text-white hover:opacity-80 transition-opacity mb-4">
+            <Link to="/business-partner" className="inline-flex items-center text-white hover:text-white/80 transition-all mb-4 hover:translate-x-1">
               ← Back to Business Partner
             </Link>
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Student Project Board</h1>
-            <p className="text-lg opacity-90 max-w-3xl">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">Student Project Board</h1>
+            <p className="text-lg text-white/90 max-w-3xl drop-shadow">
               Connect with fellow students and join exciting projects. Pin your profile to the board!
             </p>
           </div>
@@ -144,21 +144,21 @@ const StudentBoard = () => {
       {/* Main Content - Cork Board */}
       <main className="container mx-auto px-6 py-8 relative z-10">
         {/* Search and Filters Section */}
-        <div className="mb-8 space-y-4">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+        <div className="mb-8 space-y-4 animate-fade-in">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-white/20 backdrop-blur-xl p-5 rounded-2xl shadow-2xl border border-white/30 hover:bg-white/25 transition-all duration-300">
             {/* Search Bar */}
             <div className="relative flex-1 w-full md:max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-700" />
               <Input
                 placeholder="Search by name, skills, bio, or university..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-10"
+                className="pl-10 pr-10 bg-white/90 backdrop-blur border-white/50 focus:bg-white transition-all shadow-md"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -167,12 +167,12 @@ const StudentBoard = () => {
 
             {/* University Filter */}
             <div className="flex items-center gap-3 w-full md:w-auto">
-              <Filter className="w-4 h-4 text-muted-foreground" />
+              <Filter className="w-4 h-4 text-white drop-shadow" />
               <Select value={selectedUniversity} onValueChange={setSelectedUniversity}>
-                <SelectTrigger className="w-full md:w-[200px]">
+                <SelectTrigger className="w-full md:w-[200px] bg-white/90 backdrop-blur border-white/50 shadow-md">
                   <SelectValue placeholder="All Universities" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white/95 backdrop-blur-lg border-white/50">
                   <SelectItem value="all">All Universities</SelectItem>
                   {allUniversities.map(uni => (
                     <SelectItem key={uni} value={uni}>{uni}</SelectItem>
@@ -187,7 +187,7 @@ const StudentBoard = () => {
                 variant="outline"
                 size="sm"
                 onClick={clearFilters}
-                className="gap-2"
+                className="gap-2 bg-white/90 backdrop-blur hover:bg-white border-white/50 shadow-md"
               >
                 <X className="w-4 h-4" />
                 Clear {activeFiltersCount} filter{activeFiltersCount > 1 ? 's' : ''}
@@ -197,7 +197,7 @@ const StudentBoard = () => {
 
           {/* Results Count */}
           <div className="flex items-center justify-between px-2">
-            <p className="text-sm text-white font-medium">
+            <p className="text-sm text-white font-medium drop-shadow-lg bg-black/20 backdrop-blur px-4 py-2 rounded-full inline-block">
               Showing {filteredProfiles.length} of {profiles.length} profile{profiles.length !== 1 ? 's' : ''}
             </p>
           </div>
@@ -207,14 +207,14 @@ const StudentBoard = () => {
         <div className="flex justify-center mb-8">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-              <Button size="lg" className="gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold shadow-lg">
+              <Button size="lg" className="gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-500 hover:to-orange-500 text-black font-semibold shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-105 border-2 border-yellow-500/50">
                 <Plus className="w-5 h-5" />
                 Pin Your Profile to the Board
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-2xl bg-white">
+            <DialogContent className="max-w-2xl bg-white/95 backdrop-blur-xl border-2 border-white/50 shadow-2xl">
               <DialogHeader>
-                <DialogTitle className="text-xl">Pin Your Profile to the Board</DialogTitle>
+                <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Pin Your Profile to the Board</DialogTitle>
               </DialogHeader>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -305,15 +305,15 @@ const StudentBoard = () => {
             const colorClass = stickyColors[index % stickyColors.length];
             const rotation = getRandomRotation();
             
-            return (
-              <div key={index} className={`relative ${rotation} hover:rotate-0 transition-transform duration-300 group cursor-pointer`}>
+              return (
+              <div key={index} className={`relative ${rotation} hover:rotate-0 hover:scale-105 transition-all duration-300 group cursor-pointer`}>
                 {/* Pin */}
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-2 border-red-600 shadow-md z-10 group-hover:scale-110 transition-transform"></div>
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-red-400 to-red-600 rounded-full border-2 border-red-700 shadow-lg z-10 group-hover:scale-125 transition-all duration-300"></div>
                 
                 {/* Sticky Note */}
-                <div className={`w-64 h-72 ${colorClass} border-2 rounded-sm shadow-lg p-4 relative overflow-hidden group-hover:shadow-xl transition-all duration-300`}>
+                <div className={`w-64 h-72 ${colorClass} border-2 rounded-sm shadow-2xl p-4 relative overflow-hidden group-hover:shadow-3xl transition-all duration-300 backdrop-blur-sm bg-opacity-95`}>
                   {/* Slight fold effect */}
-                  <div className="absolute top-0 right-0 w-6 h-6 bg-black/5 transform rotate-45 translate-x-3 -translate-y-3"></div>
+                  <div className="absolute top-0 right-0 w-8 h-8 bg-black/10 transform rotate-45 translate-x-4 -translate-y-4 group-hover:bg-black/15 transition-colors"></div>
                   
                   <div className="space-y-3 h-full flex flex-col">
                     <div className="text-center border-b border-black/20 pb-2">
@@ -341,7 +341,7 @@ const StudentBoard = () => {
                     <div className="mt-auto pt-2 border-t border-black/20">
                       <a 
                         href={`mailto:${profile.email}`} 
-                        className="flex items-center justify-center gap-2 text-xs bg-black/10 hover:bg-black/20 rounded px-2 py-1.5 transition-colors font-medium text-gray-700"
+                        className="flex items-center justify-center gap-2 text-xs bg-black/15 hover:bg-black/25 rounded-md px-3 py-2 transition-all duration-200 font-semibold text-gray-800 shadow-sm hover:shadow-md group-hover:scale-105"
                       >
                         <Mail className="w-3 h-3" />
                         Contact Me
@@ -355,13 +355,13 @@ const StudentBoard = () => {
         </div>
 
         {filteredProfiles.length === 0 && profiles.length > 0 && (
-          <div className="text-center py-12">
-            <div className="bg-yellow-200 border-2 border-yellow-300 rounded-sm p-8 mx-auto max-w-md shadow-lg relative rotate-2">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-2 border-red-600"></div>
-              <Search className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+          <div className="text-center py-12 animate-fade-in">
+            <div className="bg-gradient-to-br from-yellow-200 to-yellow-300 border-2 border-yellow-400 rounded-lg p-8 mx-auto max-w-md shadow-2xl relative rotate-2 hover:rotate-0 transition-transform duration-300 backdrop-blur-sm">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-red-400 to-red-600 rounded-full border-2 border-red-700 shadow-lg"></div>
+              <Search className="w-16 h-16 text-gray-700 mx-auto mb-4 drop-shadow-lg" />
               <h3 className="text-lg font-bold text-gray-800 mb-2">No profiles found</h3>
-              <p className="text-gray-600 text-sm mb-4">Try adjusting your search or filters</p>
-              <Button variant="outline" size="sm" onClick={clearFilters}>
+              <p className="text-gray-700 text-sm mb-4">Try adjusting your search or filters</p>
+              <Button variant="outline" size="sm" onClick={clearFilters} className="bg-white/80 hover:bg-white shadow-md">
                 Clear Filters
               </Button>
             </div>
@@ -369,12 +369,12 @@ const StudentBoard = () => {
         )}
 
         {profiles.length === 0 && (
-          <div className="text-center py-12">
-            <div className="bg-yellow-200 border-2 border-yellow-300 rounded-sm p-8 mx-auto max-w-md shadow-lg relative rotate-2">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-2 border-red-600"></div>
-              <User className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+          <div className="text-center py-12 animate-fade-in">
+            <div className="bg-gradient-to-br from-yellow-200 to-yellow-300 border-2 border-yellow-400 rounded-lg p-8 mx-auto max-w-md shadow-2xl relative rotate-2 hover:rotate-0 transition-transform duration-300 backdrop-blur-sm">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-red-400 to-red-600 rounded-full border-2 border-red-700 shadow-lg"></div>
+              <User className="w-16 h-16 text-gray-700 mx-auto mb-4 drop-shadow-lg" />
               <h3 className="text-lg font-bold text-gray-800 mb-2">No profiles yet</h3>
-              <p className="text-gray-600 text-sm">Be the first to pin your profile to the board!</p>
+              <p className="text-gray-700 text-sm">Be the first to pin your profile to the board!</p>
             </div>
           </div>
         )}
