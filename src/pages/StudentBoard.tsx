@@ -18,6 +18,8 @@ const profileSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email"),
   university: z.string().min(2, "University is required"),
+  city: z.string().min(2, "City is required"),
+  course: z.string().min(2, "Course is required"),
   skills: z.string().min(5, "Please describe your skills"),
   bio: z.string().min(10, "Please provide a brief bio"),
 });
@@ -41,13 +43,17 @@ const StudentBoard = () => {
       name: "Marco Rossi",
       email: "marco.rossi@example.com",
       university: "Bocconi University",
+      city: "Milan",
+      course: "Computer Science",
       skills: "React, TypeScript, UI/UX Design",
       bio: "Computer Science student passionate about web development and user experience. Looking for innovative startup projects."
     },
     {
       name: "Sofia Bianchi",
       email: "sofia.bianchi@example.com",
-      university: "Politecnico di Milano", 
+      university: "Politecnico di Milano",
+      city: "Milan",
+      course: "Data Science & Engineering",
       skills: "Data Analysis, Python, Machine Learning",
       bio: "Engineering student specialized in data science. Interested in AI-driven projects and sustainable technology solutions."
     },
@@ -55,6 +61,8 @@ const StudentBoard = () => {
       name: "Luca Verdi",
       email: "luca.verdi@example.com",
       university: "Università Cattolica",
+      city: "Milan",
+      course: "Marketing & Digital Communication",
       skills: "Marketing, Social Media, Content Creation",
       bio: "Business student with a passion for digital marketing and brand development."
     },
@@ -62,6 +70,8 @@ const StudentBoard = () => {
       name: "Elena Neri",
       email: "elena.neri@example.com", 
       university: "LUISS University",
+      city: "Rome",
+      course: "Economics & Finance",
       skills: "Finance, Excel, Financial Modeling",
       bio: "Economics student interested in fintech and investment analysis projects."
     }
@@ -69,6 +79,8 @@ const StudentBoard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedUniversity, setSelectedUniversity] = useState<string>("all");
+  const [selectedCity, setSelectedCity] = useState<string>("all");
+  const [selectedCourse, setSelectedCourse] = useState<string>("all");
 
   const form = useForm<Profile>({
     resolver: zodResolver(profileSchema),
@@ -76,6 +88,8 @@ const StudentBoard = () => {
       name: "",
       email: "",
       university: "",
+      city: "",
+      course: "",
       skills: "",
       bio: "",
     },
@@ -92,10 +106,20 @@ const StudentBoard = () => {
     return rotations[Math.floor(Math.random() * rotations.length)];
   };
 
-  // Get unique universities for filter
+  // Get unique values for filters
   const allUniversities = useMemo(() => {
     const universities = new Set(profiles.map(p => p.university));
     return Array.from(universities).sort();
+  }, [profiles]);
+
+  const allCities = useMemo(() => {
+    const cities = new Set(profiles.map(p => p.city));
+    return Array.from(cities).sort();
+  }, [profiles]);
+
+  const allCourses = useMemo(() => {
+    const courses = new Set(profiles.map(p => p.course));
+    return Array.from(courses).sort();
   }, [profiles]);
 
   // Filter and search profiles
@@ -105,20 +129,29 @@ const StudentBoard = () => {
         profile.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         profile.skills.toLowerCase().includes(searchQuery.toLowerCase()) ||
         profile.bio.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        profile.university.toLowerCase().includes(searchQuery.toLowerCase());
+        profile.university.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        profile.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        profile.course.toLowerCase().includes(searchQuery.toLowerCase());
       
       const matchesUniversity = selectedUniversity === "all" || profile.university === selectedUniversity;
+      const matchesCity = selectedCity === "all" || profile.city === selectedCity;
+      const matchesCourse = selectedCourse === "all" || profile.course === selectedCourse;
       
-      return matchesSearch && matchesUniversity;
+      return matchesSearch && matchesUniversity && matchesCity && matchesCourse;
     });
-  }, [profiles, searchQuery, selectedUniversity]);
+  }, [profiles, searchQuery, selectedUniversity, selectedCity, selectedCourse]);
 
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedUniversity("all");
+    setSelectedCity("all");
+    setSelectedCourse("all");
   };
 
-  const activeFiltersCount = (searchQuery ? 1 : 0) + (selectedUniversity !== "all" ? 1 : 0);
+  const activeFiltersCount = (searchQuery ? 1 : 0) + 
+    (selectedUniversity !== "all" ? 1 : 0) + 
+    (selectedCity !== "all" ? 1 : 0) + 
+    (selectedCourse !== "all" ? 1 : 0);
 
   return (
     <div>
@@ -165,17 +198,45 @@ const StudentBoard = () => {
               )}
             </div>
 
-            {/* University Filter */}
-            <div className="flex items-center gap-3 w-full md:w-auto">
-              <Filter className="w-4 h-4 text-white drop-shadow" />
+            {/* Filters */}
+            <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
+              <Filter className="w-4 h-4 text-white drop-shadow hidden md:block" />
+              
+              {/* University Filter */}
               <Select value={selectedUniversity} onValueChange={setSelectedUniversity}>
-                <SelectTrigger className="w-full md:w-[200px] bg-white/90 backdrop-blur border-white/50 shadow-md">
+                <SelectTrigger className="w-full md:w-[180px] bg-white/90 backdrop-blur border-white/50 shadow-md">
                   <SelectValue placeholder="All Universities" />
                 </SelectTrigger>
                 <SelectContent className="bg-white/95 backdrop-blur-lg border-white/50">
                   <SelectItem value="all">All Universities</SelectItem>
                   {allUniversities.map(uni => (
                     <SelectItem key={uni} value={uni}>{uni}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {/* City Filter */}
+              <Select value={selectedCity} onValueChange={setSelectedCity}>
+                <SelectTrigger className="w-full md:w-[140px] bg-white/90 backdrop-blur border-white/50 shadow-md">
+                  <SelectValue placeholder="All Cities" />
+                </SelectTrigger>
+                <SelectContent className="bg-white/95 backdrop-blur-lg border-white/50">
+                  <SelectItem value="all">All Cities</SelectItem>
+                  {allCities.map(city => (
+                    <SelectItem key={city} value={city}>{city}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {/* Course Filter */}
+              <Select value={selectedCourse} onValueChange={setSelectedCourse}>
+                <SelectTrigger className="w-full md:w-[200px] bg-white/90 backdrop-blur border-white/50 shadow-md">
+                  <SelectValue placeholder="All Courses" />
+                </SelectTrigger>
+                <SelectContent className="bg-white/95 backdrop-blur-lg border-white/50">
+                  <SelectItem value="all">All Courses</SelectItem>
+                  {allCourses.map(course => (
+                    <SelectItem key={course} value={course}>{course}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -246,14 +307,42 @@ const StudentBoard = () => {
                       )}
                     />
                   </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="university"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>University</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your university name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="city"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>City</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your city" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                   <FormField
                     control={form.control}
-                    name="university"
+                    name="course"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>University</FormLabel>
+                        <FormLabel>Course/Program</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your university name" {...field} />
+                          <Input placeholder="Your course or program of study" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -318,9 +407,12 @@ const StudentBoard = () => {
                   <div className="space-y-3 h-full flex flex-col">
                     <div className="text-center border-b border-black/20 pb-2">
                       <h3 className="font-bold text-lg text-gray-800 leading-tight">{profile.name}</h3>
-                      <div className="flex items-center justify-center gap-1 text-xs text-gray-600 mt-1">
-                        <GraduationCap className="w-3 h-3" />
-                        <span className="font-medium">{profile.university}</span>
+                      <div className="flex flex-col items-center gap-0.5 text-xs text-gray-600 mt-1">
+                        <div className="flex items-center gap-1">
+                          <GraduationCap className="w-3 h-3" />
+                          <span className="font-medium">{profile.university}</span>
+                        </div>
+                        <span className="text-gray-500">{profile.city} • {profile.course}</span>
                       </div>
                     </div>
                     
