@@ -40,13 +40,13 @@ const stickyColors = [
 const StudentBoard = () => {
   const [profiles, setProfiles] = useState<Profile[]>([
     {
-      name: "Marco Rossi",
-      email: "marco.rossi@example.com",
-      university: "Bocconi University",
-      city: "Milan",
-      course: "Computer Science",
-      skills: "React, TypeScript, UI/UX Design",
-      bio: "Computer Science student passionate about web development and user experience. Looking for innovative startup projects."
+      name: "Francesco Laconi",
+      email: "francesco.laconi@luiss.it",
+      university: "LUISS University",
+      city: "Rome",
+      course: "Strategic Management",
+      skills: "Marketing and Business Planning",
+      bio: "Expert in digital marketing and using AI for it. Passionate about leveraging artificial intelligence to optimize marketing strategies and drive business growth."
     },
     {
       name: "Sofia Bianchi",
