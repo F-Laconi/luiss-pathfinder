@@ -400,7 +400,7 @@ const StudentBoard = () => {
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-red-400 to-red-600 rounded-full border-2 border-red-700 shadow-lg z-10 group-hover:scale-125 transition-all duration-300"></div>
                 
                 {/* Sticky Note */}
-                <div className={`w-64 h-72 ${colorClass} border-2 rounded-sm shadow-2xl p-4 relative overflow-hidden group-hover:shadow-3xl transition-all duration-300 backdrop-blur-sm bg-opacity-95`}>
+                <div className={`w-64 min-h-80 ${colorClass} border-2 rounded-sm shadow-2xl p-4 relative overflow-visible group-hover:shadow-3xl transition-all duration-300 backdrop-blur-sm bg-opacity-95`}>
                   {/* Slight fold effect */}
                   <div className="absolute top-0 right-0 w-8 h-8 bg-black/10 transform rotate-45 translate-x-4 -translate-y-4 group-hover:bg-black/15 transition-colors"></div>
                   
