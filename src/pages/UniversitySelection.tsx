@@ -451,19 +451,14 @@ const UniversitySelection = () => {
   };
 
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
-  return <>
-      <title>Italian Universities | Find Your Perfect University - UniCompass</title>
-      <meta name="description" content="Discover and compare 50+ top Italian universities including LUISS, Bocconi, Politecnico di Milano, and more. Find the perfect university for your academic journey." />
-      <link rel="canonical" href="https://unicompass.lovable.app/universities" />
-      
-      <div className="min-h-screen bg-background">
+  return <main className="min-h-screen bg-background">
       <Navigation />
       
       {/* Header - simplified to avoid duplication */}
       <div className="pt-16"></div>
 
       {/* Hero Section */}
-      <section className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-visible">
+      <header className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-visible">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
         <div className="container mx-auto px-6 text-center relative z-10 overflow-visible">
           <div className="max-w-4xl mx-auto overflow-visible">
@@ -572,7 +567,7 @@ const UniversitySelection = () => {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Universities Grid */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/20">
@@ -663,8 +658,6 @@ const UniversitySelection = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -683,7 +676,6 @@ const UniversitySelection = () => {
           }))
         })}
       </script>
-    </div>
-    </>;
+    </main>;
 };
 export default UniversitySelection;

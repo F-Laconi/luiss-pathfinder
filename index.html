@@ -3,35 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
-    <title>UniCompass - Navigate Your Academic Journey at LUISS University</title>
-    <meta name="description" content="Find your perfect academic path with course reviews, program comparisons, and expert guidance.">
+    <title>UniCompass - Italian University Guide | Navigate Your Academic Journey</title>
+    <meta name="description" content="Explore top Italian universities including LUISS, Bocconi, Politecnico. Compare programs, connect with students, find business partners. Your complete university guide.">
     <meta name="author" content="UniCompass" />
-    <meta name="keywords" content="LUISS University, Italian universities, master's programs, undergraduate degrees, graduate programs, business school, law school, economics, management, Rome universities">
+    <meta name="keywords" content="Italian universities, LUISS University, Bocconi, Politecnico Milano, master programs Italy, undergraduate degrees Italy, business school, law school, economics, management, university comparison, student networking">
     <link rel="canonical" href="https://unicompass.lovable.app/" />
+    <meta name="theme-color" content="#3b82f6" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    
-    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://unicompass.lovable.app/" />
+    <meta property="og:title" content="UniCompass - Italian University Guide | Navigate Your Academic Journey" />
+    <meta property="og:description" content="Explore top Italian universities including LUISS, Bocconi, Politecnico. Compare programs, connect with students, find business partners." />
     <meta property="og:image" content="https://unicompass.lovable.app/og-image.jpg" />
+    <meta property="og:site_name" content="UniCompass" />
+    <meta property="og:locale" content="en_US" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    
-    
+    <meta name="twitter:url" content="https://unicompass.lovable.app/" />
+    <meta name="twitter:title" content="UniCompass - Italian University Guide | Navigate Your Academic Journey" />
+    <meta name="twitter:description" content="Explore top Italian universities including LUISS, Bocconi, Politecnico. Compare programs, connect with students, find business partners." />
     <meta name="twitter:image" content="https://unicompass.lovable.app/og-image.jpg" />
-    <meta property="og:title" content="UniCompass - Navigate Your Academic Journey at LUISS University">
-  <meta name="twitter:title" content="UniCompass - Navigate Your Academic Journey at LUISS University">
-  <meta property="og:description" content="Find your perfect academic path with course reviews, program comparisons, and expert guidance.">
-  <meta name="twitter:description" content="Find your perfect academic path with course reviews, program comparisons, and expert guidance.">
+    
+    <!-- Additional SEO -->
+    <meta name="application-name" content="UniCompass" />
+    <meta name="apple-mobile-web-app-title" content="UniCompass" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Global Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "UniCompass",
+      "url": "https://unicompass.lovable.app",
+      "description": "Italian university guide and student networking platform",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://unicompass.lovable.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "UniCompass",
+      "url": "https://unicompass.lovable.app",
+      "logo": "https://unicompass.lovable.app/favicon.ico",
+      "description": "Navigate your academic journey through Italy's top universities",
+      "sameAs": []
+    }
+    </script>
   </body>
 </html>

@@ -5,12 +5,9 @@ import compassWallpaper from "@/assets/compass-wallpaper.jpg";
 
 const Index = () => {
   return (
-    <>
-      <title>UniCompass - Navigate Your Academic Journey in Italy</title>
-      <meta name="description" content="Explore Italian universities and find your perfect academic path. Compare undergraduate, graduate and postgraduate programs at top universities including LUISS, Bocconi, and more." />
-      <main>
-        <Navigation />
-      <div
+    <main>
+      <Navigation />
+      <section
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(${compassWallpaper})`,
@@ -18,33 +15,35 @@ const Index = () => {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}
+      aria-label="UniCompass homepage hero section"
     >
       {/* Floating Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-violet-200/60 rounded-full blur-3xl animate-float"></div>
         <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-blue-200/50 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-cyan-200/60 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-40">
+      <article className="container max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-40">
         {/* Brand Title with Enhanced Styling */}
-        <div className="mb-12 sm:mb-20 animate-fade-up">
+        <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 bg-clip-text text-transparent mb-4 sm:mb-6 relative mt-16 sm:mt-20 px-2">
               UniCompass
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium opacity-80 px-4">
-              Navigate Your Academic Journey
+              Navigate Your Academic Journey Through Italy's Top Universities
             </p>
           </div>
-        </div>
+        </header>
 
         {/* Enhanced Icon Options */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-3xl mx-auto px-4 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+        <nav className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-3xl mx-auto px-4 animate-fade-up" style={{ animationDelay: '0.3s' }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
           <Link 
             to="/universities"
             className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(59,130,246,0.15)] hover:border-primary/30"
+            aria-label="Explore Italian universities and programs"
           >
             <div className="flex flex-col items-center space-y-6">
               <div className="relative">
@@ -68,6 +67,7 @@ const Index = () => {
           <Link 
             to="/business-partner"
             className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30"
+            aria-label="Connect with business partners and opportunities"
           >
             <div className="flex flex-col items-center space-y-6">
               <div className="relative">
@@ -86,34 +86,40 @@ const Index = () => {
               </div>
             </div>
           </Link>
-        </div>
+        </nav>
 
         {/* Subtle Call to Action */}
-        <div className="mt-16 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+        <footer className="mt-16 animate-fade-up" style={{ animationDelay: '0.6s' }}>
           <p className="text-sm text-muted-foreground/60 font-medium">
             Choose your journey and unlock your potential
           </p>
-        </div>
-      </div>
-      </div>
+        </footer>
+      </article>
+      </section>
 
       {/* Structured Data for SEO */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "EducationalOrganization",
-          "name": "UniCompass - LUISS University Navigator",
-          "description": "Academic program explorer for LUISS University students",
+          "@type": "WebApplication",
+          "name": "UniCompass",
+          "description": "Navigate your academic journey through Italy's top universities. Compare programs, connect with students, and find business partners.",
           "url": "https://unicompass.lovable.app",
-          "logo": "https://unicompass.lovable.app/logo.png",
+          "applicationCategory": "EducationalApplication",
           "offers": {
             "@type": "Offer",
-            "category": "Educational Services"
-          }
+            "price": "0",
+            "priceCurrency": "EUR"
+          },
+          "featureList": [
+            "University comparison",
+            "Program explorer",
+            "Student networking",
+            "Business partner matching"
+          ]
         })}
       </script>
-      </main>
-    </>
+    </main>
   );
 };
 
