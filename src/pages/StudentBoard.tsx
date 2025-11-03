@@ -24,7 +24,7 @@ const profileSchema = z.object({
   bio: z.string().min(10, "Please provide a brief bio"),
 });
 
-type Profile = z.infer<typeof profileSchema>;
+type Profile = z.infer<typeof profileSchema> & { id: string };
 
 const stickyColors = [
   'bg-yellow-300 border-yellow-400',
@@ -40,6 +40,7 @@ const stickyColors = [
 const StudentBoard = () => {
   const [profiles, setProfiles] = useState<Profile[]>([
     {
+      id: "1",
       name: "Francesco Laconi",
       email: "francesco.laconi@luiss.it",
       university: "LUISS University",
@@ -49,6 +50,7 @@ const StudentBoard = () => {
       bio: "Expert in digital marketing and using AI for it. Passionate about leveraging artificial intelligence to optimize marketing strategies and drive business growth."
     },
     {
+      id: "2",
       name: "Sofia Bianchi",
       email: "sofia.bianchi@example.com",
       university: "Politecnico di Milano",
@@ -58,6 +60,7 @@ const StudentBoard = () => {
       bio: "Engineering student specialized in data science. Interested in AI-driven projects and sustainable technology solutions."
     },
     {
+      id: "3",
       name: "Luca Verdi",
       email: "luca.verdi@example.com",
       university: "Università Cattolica",
@@ -67,6 +70,7 @@ const StudentBoard = () => {
       bio: "Business student with a passion for digital marketing and brand development."
     },
     {
+      id: "4",
       name: "Elena Neri",
       email: "elena.neri@example.com", 
       university: "LUISS University",
@@ -96,7 +100,8 @@ const StudentBoard = () => {
   });
 
   const onSubmit = (data: Profile) => {
-    setProfiles([data, ...profiles]);
+    const newProfile = { ...data, id: Date.now().toString() };
+    setProfiles([newProfile, ...profiles]);
     form.reset();
     setIsOpen(false);
   };
@@ -395,53 +400,52 @@ const StudentBoard = () => {
             const rotation = getRandomRotation();
             
               return (
-              <div key={index} className={`relative ${rotation} hover:rotate-0 hover:scale-105 transition-all duration-300 group cursor-pointer`}>
-                {/* Pin */}
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-red-400 to-red-600 rounded-full border-2 border-red-700 shadow-lg z-10 group-hover:scale-125 transition-all duration-300"></div>
-                
-                {/* Sticky Note */}
-                <div className={`w-64 min-h-80 ${colorClass} border-2 rounded-sm shadow-2xl p-4 relative overflow-visible group-hover:shadow-3xl transition-all duration-300 backdrop-blur-sm bg-opacity-95`}>
-                  {/* Slight fold effect */}
-                  <div className="absolute top-0 right-0 w-8 h-8 bg-black/10 transform rotate-45 translate-x-4 -translate-y-4 group-hover:bg-black/15 transition-colors"></div>
+              <Link to={`/student-board/${profile.id}`} key={profile.id}>
+                <div className={`relative ${rotation} hover:rotate-0 hover:scale-105 transition-all duration-300 group cursor-pointer`}>
+                  {/* Pin */}
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-br from-red-400 to-red-600 rounded-full border-2 border-red-700 shadow-lg z-10 group-hover:scale-125 transition-all duration-300"></div>
                   
-                  <div className="space-y-3 h-full flex flex-col">
-                    <div className="text-center border-b border-black/20 pb-2">
-                      <h3 className="font-bold text-lg text-gray-800 leading-tight">{profile.name}</h3>
-                      <div className="flex flex-col items-center gap-0.5 text-xs text-gray-600 mt-1">
-                        <div className="flex items-center gap-1">
-                          <GraduationCap className="w-3 h-3" />
-                          <span className="font-medium">{profile.university}</span>
-                        </div>
-                        <span className="text-gray-500">{profile.city} • {profile.course}</span>
-                      </div>
-                    </div>
+                  {/* Sticky Note */}
+                  <div className={`w-64 min-h-80 ${colorClass} border-2 rounded-sm shadow-2xl p-4 relative overflow-visible group-hover:shadow-3xl transition-all duration-300 backdrop-blur-sm bg-opacity-95`}>
+                    {/* Slight fold effect */}
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-black/10 transform rotate-45 translate-x-4 -translate-y-4 group-hover:bg-black/15 transition-colors"></div>
                     
-                    <div className="flex-1 space-y-3">
-                      <div>
-                        <div className="flex items-center gap-1 mb-1">
-                          <Briefcase className="w-3 h-3 text-gray-600" />
-                          <span className="text-xs font-semibold text-gray-700">Skills:</span>
+                    <div className="space-y-3 h-full flex flex-col">
+                      <div className="text-center border-b border-black/20 pb-2">
+                        <h3 className="font-bold text-lg text-gray-800 leading-tight">{profile.name}</h3>
+                        <div className="flex flex-col items-center gap-0.5 text-xs text-gray-600 mt-1">
+                          <div className="flex items-center gap-1">
+                            <GraduationCap className="w-3 h-3" />
+                            <span className="font-medium">{profile.university}</span>
+                          </div>
+                          <span className="text-gray-500">{profile.city} • {profile.course}</span>
                         </div>
-                        <p className="text-xs text-gray-700 leading-relaxed font-medium">{profile.skills}</p>
                       </div>
                       
-                      <div className="flex-1">
-                        <p className="text-xs text-gray-600 leading-relaxed">{profile.bio}</p>
+                      <div className="flex-1 space-y-3">
+                        <div>
+                          <div className="flex items-center gap-1 mb-1">
+                            <Briefcase className="w-3 h-3 text-gray-600" />
+                            <span className="text-xs font-semibold text-gray-700">Skills:</span>
+                          </div>
+                          <p className="text-xs text-gray-700 leading-relaxed font-medium">{profile.skills}</p>
+                        </div>
+                        
+                        <div className="flex-1">
+                          <p className="text-xs text-gray-600 leading-relaxed">{profile.bio}</p>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div className="mt-auto pt-2 border-t border-black/20">
-                      <a 
-                        href={`mailto:${profile.email}`} 
-                        className="flex items-center justify-center gap-2 text-xs bg-black/15 hover:bg-black/25 rounded-md px-3 py-2 transition-all duration-200 font-semibold text-gray-800 shadow-sm hover:shadow-md group-hover:scale-105"
-                      >
-                        <Mail className="w-3 h-3" />
-                        Contact Me
-                      </a>
+                      
+                      <div className="mt-auto pt-2 border-t border-black/20">
+                        <div className="flex items-center justify-center gap-2 text-xs bg-black/15 hover:bg-black/25 rounded-md px-3 py-2 transition-all duration-200 font-semibold text-gray-800 shadow-sm hover:shadow-md group-hover:scale-105">
+                          <User className="w-3 h-3" />
+                          View Profile
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

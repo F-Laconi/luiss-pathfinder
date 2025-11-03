@@ -18,6 +18,7 @@ import CourseDetail from "./pages/CourseDetail";
 import BusinessPartner from "./pages/BusinessPartner";
 import PostPosition from "./pages/PostPosition";
 import StudentBoard from "./pages/StudentBoard";
+import StudentProfileDetail from "./pages/StudentProfileDetail";
 import StudentActivities from "./pages/StudentActivities";
 import About from "./pages/About";
 import Suggestions from "./pages/Suggestions";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/business-partner" element={<BusinessPartner />} />
           <Route path="/post-position" element={<PostPosition />} />
           <Route path="/student-board" element={<StudentBoard />} />
+          <Route path="/student-board/:id" element={<StudentProfileDetail />} />
           <Route path="/student-activities" element={<StudentActivities />} />
           <Route path="/about" element={<About />} />
           <Route path="/suggestions" element={<Suggestions />} />
