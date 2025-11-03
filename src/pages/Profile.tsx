@@ -67,7 +67,7 @@ const Profile = () => {
             </CardHeader>
             <CardContent className="space-y-2">
               <Button variant="outline" className="w-full justify-start" asChild>
-                <Link to="/graduate/program/strategic-management">
+                <Link to="/graduate/program/9">
                   <BookOpen className="h-4 w-4 mr-2" />
                   LUISS University
                 </Link>
