@@ -3,10 +3,8 @@ import { User, GraduationCap, Building2, Calendar, ArrowLeft, BookOpen } from "l
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
-
 const Profile = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+  return <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
       <Navigation />
       
       <div className="container mx-auto px-4 py-24">
@@ -63,11 +61,11 @@ const Profile = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>Quick Links</CardTitle>
+              <CardTitle>More About</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <Button variant="outline" className="w-full justify-start" asChild>
-                <Link to="/graduate/program/9">
+                <Link to="/luiss-university">
                   <BookOpen className="h-4 w-4 mr-2" />
                   LUISS University
                 </Link>
@@ -82,8 +80,6 @@ const Profile = () => {
           </Card>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Profile;
