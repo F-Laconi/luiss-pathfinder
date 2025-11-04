@@ -92,39 +92,40 @@ const StudentProfileDetail = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
       <Navigation />
       
-      <div className="container mx-auto px-4 py-24">
-        <Button variant="ghost" asChild className="mb-6 hover:bg-accent/50">
+      <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-24">
+        <Button variant="ghost" asChild className="mb-4 sm:mb-6 hover:bg-accent/50">
           <Link to="/student-board">
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Student Board
+            <span className="hidden sm:inline">Back to Student Board</span>
+            <span className="sm:hidden">Back</span>
           </Link>
         </Button>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
           {/* Profile Header */}
           <Card className="border-2 shadow-lg">
-            <CardHeader className="pb-4">
-              <div className="flex items-start space-x-6">
-                <Avatar className="h-24 w-24 border-4 border-primary/20">
-                  <AvatarFallback className="bg-gradient-to-br from-primary to-primary/60 text-primary-foreground text-2xl font-bold">
+            <CardHeader className="pb-4 px-4 sm:px-6">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <Avatar className="h-20 w-20 sm:h-24 sm:w-24 border-4 border-primary/20 mx-auto sm:mx-0">
+                  <AvatarFallback className="bg-gradient-to-br from-primary to-primary/60 text-primary-foreground text-xl sm:text-2xl font-bold">
                     {profile.name.split(' ').map(n => n[0]).join('')}
                   </AvatarFallback>
                 </Avatar>
-                <div className="flex-1">
-                  <CardTitle className="text-4xl mb-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                <div className="flex-1 text-center sm:text-left w-full">
+                  <CardTitle className="text-2xl sm:text-4xl mb-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                     {profile.name}
                   </CardTitle>
-                  <div className="space-y-3 mt-4">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <GraduationCap className="h-4 w-4 text-primary" />
+                  <div className="space-y-2 sm:space-y-3 mt-3 sm:mt-4">
+                    <div className="flex items-center justify-center sm:justify-start gap-2 text-muted-foreground">
+                      <GraduationCap className="h-4 w-4 text-primary flex-shrink-0" />
                       <span className="text-sm">{profile.course}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Building2 className="h-4 w-4 text-primary" />
+                    <div className="flex items-center justify-center sm:justify-start gap-2 text-muted-foreground">
+                      <Building2 className="h-4 w-4 text-primary flex-shrink-0" />
                       <span className="text-sm">{profile.university}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <MapPin className="h-4 w-4 text-primary" />
+                    <div className="flex items-center justify-center sm:justify-start gap-2 text-muted-foreground">
+                      <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
                       <span className="text-sm">{profile.city}</span>
                     </div>
                   </div>
@@ -135,29 +136,29 @@ const StudentProfileDetail = () => {
 
           {/* About */}
           <Card className="border-2 shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
-                <BookOpen className="h-6 w-6 text-primary" />
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-xl sm:text-2xl">
+                <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 About
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground leading-relaxed text-base">{profile.bio}</p>
+            <CardContent className="px-4 sm:px-6">
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">{profile.bio}</p>
             </CardContent>
           </Card>
 
           {/* Skills & Expertise */}
           <Card className="border-2 shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
-                <Briefcase className="h-6 w-6 text-primary" />
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-xl sm:text-2xl">
+                <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 Skills & Expertise
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-3">
+            <CardContent className="px-4 sm:px-6">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {skillsList.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="text-sm px-4 py-2 font-medium">
+                  <Badge key={index} variant="secondary" className="text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 font-medium">
                     {skill}
                   </Badge>
                 ))}
@@ -167,61 +168,63 @@ const StudentProfileDetail = () => {
 
           {/* Q&A Section */}
           <Card className="border-2 shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
-                <MessageCircle className="h-6 w-6 text-primary" />
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-xl sm:text-2xl">
+                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 Questions & Answers
               </CardTitle>
-              <CardDescription>Ask questions to {profile.name.split(' ')[0]} - visible to everyone</CardDescription>
+              <CardDescription className="text-sm">Ask questions to {profile.name.split(' ')[0]} - visible to everyone</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6">
               {/* Ask a Question Form */}
-              <form onSubmit={handleSubmitQuestion} className="space-y-4 p-4 rounded-lg bg-accent/30 border">
+              <form onSubmit={handleSubmitQuestion} className="space-y-3 sm:space-y-4 p-3 sm:p-4 rounded-lg bg-accent/30 border">
                 <div className="space-y-2">
-                  <Label htmlFor="question">Ask a Question</Label>
+                  <Label htmlFor="question" className="text-sm sm:text-base">Ask a Question</Label>
                   <Textarea
                     id="question"
                     placeholder="What would you like to know?"
                     value={newQuestion}
                     onChange={(e) => setNewQuestion(e.target.value)}
-                    className="min-h-[80px]"
+                    className="min-h-[80px] text-sm sm:text-base"
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full h-10 sm:h-11 text-sm sm:text-base">
                   <Send className="h-4 w-4 mr-2" />
                   Submit Question
                 </Button>
               </form>
 
               {/* Questions List */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {questions.map((q) => (
-                  <div key={q.id} className="p-4 rounded-lg border bg-card space-y-3">
+                  <div key={q.id} className="p-3 sm:p-4 rounded-lg border bg-card space-y-3">
                     <div>
-                      <p className="font-semibold text-foreground mb-1">Question:</p>
-                      <p className="text-muted-foreground">{q.question}</p>
+                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Question:</p>
+                      <p className="text-muted-foreground text-sm sm:text-base break-words">{q.question}</p>
                     </div>
                     
                     {q.answer ? (
-                      <div className="pl-4 border-l-2 border-primary/50">
-                        <p className="font-semibold text-primary mb-1">{profile.name.split(' ')[0]}'s Answer:</p>
-                        <p className="text-muted-foreground">{q.answer}</p>
+                      <div className="pl-3 sm:pl-4 border-l-2 border-primary/50">
+                        <p className="font-semibold text-primary mb-1 text-sm sm:text-base">{profile.name.split(' ')[0]}'s Answer:</p>
+                        <p className="text-muted-foreground text-sm sm:text-base break-words">{q.answer}</p>
                       </div>
                     ) : (
-                      <div className="space-y-2 pl-4 border-l-2 border-muted">
-                        <Label htmlFor={`answer-${q.id}`} className="text-sm text-muted-foreground">
+                      <div className="space-y-2 pl-3 sm:pl-4 border-l-2 border-muted">
+                        <Label htmlFor={`answer-${q.id}`} className="text-xs sm:text-sm text-muted-foreground">
                           Answer this question (profile owner only)
                         </Label>
-                        <div className="flex gap-2">
+                        <div className="flex flex-col sm:flex-row gap-2">
                           <Input
                             id={`answer-${q.id}`}
                             placeholder="Type your answer..."
                             value={answerText[q.id] || ""}
                             onChange={(e) => setAnswerText({ ...answerText, [q.id]: e.target.value })}
+                            className="text-sm sm:text-base"
                           />
                           <Button 
                             onClick={() => handleSubmitAnswer(q.id)}
                             size="sm"
+                            className="w-full sm:w-auto h-9 sm:h-8 text-sm"
                           >
                             Reply
                           </Button>
