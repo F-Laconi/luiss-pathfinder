@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, MapPin, Users, PartyPopper, Trophy, Music, Coffee, Camera } from "lucide-react";
+import { Calendar, MapPin, Users, PartyPopper, Trophy, Coffee, MoreHorizontal } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -68,8 +68,7 @@ const activityIcons = {
   Sports: Trophy,
   Social: PartyPopper,
   Study: Coffee,
-  Creative: Camera,
-  Music: Music,
+  Other: MoreHorizontal,
 };
 
 export default function StudentActivities() {
@@ -146,8 +145,7 @@ export default function StudentActivities() {
                         <SelectItem value="Sports">Sports</SelectItem>
                         <SelectItem value="Social">Social</SelectItem>
                         <SelectItem value="Study">Study</SelectItem>
-                        <SelectItem value="Creative">Creative</SelectItem>
-                        <SelectItem value="Music">Music</SelectItem>
+                        <SelectItem value="Other">Other</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -205,7 +203,7 @@ export default function StudentActivities() {
           {/* Filter Tabs */}
           <div className="flex justify-center mb-12">
             <Tabs value={activeFilter} onValueChange={setActiveFilter} className="w-full max-w-5xl">
-              <TabsList className="grid grid-cols-3 md:grid-cols-6 w-full h-auto gap-2 bg-card/80 backdrop-blur-sm p-3 shadow-lg border border-border/50">
+              <TabsList className="grid grid-cols-3 md:grid-cols-5 w-full h-auto gap-2 bg-card/80 backdrop-blur-sm p-3 shadow-lg border border-border/50">
                 <TabsTrigger value="All" className="py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
                   All
                 </TabsTrigger>
@@ -221,13 +219,9 @@ export default function StudentActivities() {
                   <Coffee className="h-4 w-4" />
                   Study
                 </TabsTrigger>
-                <TabsTrigger value="Creative" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
-                  <Camera className="h-4 w-4" />
-                  Creative
-                </TabsTrigger>
-                <TabsTrigger value="Music" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
-                  <Music className="h-4 w-4" />
-                  Music
+                <TabsTrigger value="Other" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
+                  <MoreHorizontal className="h-4 w-4" />
+                  Other
                 </TabsTrigger>
               </TabsList>
             </Tabs>
