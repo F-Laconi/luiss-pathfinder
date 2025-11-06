@@ -203,25 +203,40 @@ export default function StudentActivities() {
           {/* Filter Tabs */}
           <div className="flex justify-center mb-12">
             <Tabs value={activeFilter} onValueChange={setActiveFilter} className="w-full max-w-5xl">
-              <TabsList className="grid grid-cols-3 md:grid-cols-5 w-full h-auto gap-2 bg-card/80 backdrop-blur-sm p-3 shadow-lg border border-border/50">
-                <TabsTrigger value="All" className="py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
-                  All
+              <TabsList className="flex flex-wrap justify-center gap-4 bg-transparent p-0">
+                <TabsTrigger 
+                  value="All" 
+                  className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-1 bg-card/80 backdrop-blur-sm border-2 border-border/50 shadow-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:scale-110 transition-all hover:scale-105"
+                >
+                  <span className="text-xs font-semibold">All</span>
                 </TabsTrigger>
-                <TabsTrigger value="Sports" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
-                  <Trophy className="h-4 w-4" />
-                  Sports
+                <TabsTrigger 
+                  value="Sports" 
+                  className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-1 bg-card/80 backdrop-blur-sm border-2 border-border/50 shadow-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:scale-110 transition-all hover:scale-105"
+                >
+                  <Trophy className="h-6 w-6" />
+                  <span className="text-xs font-semibold">Sports</span>
                 </TabsTrigger>
-                <TabsTrigger value="Social" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
-                  <PartyPopper className="h-4 w-4" />
-                  Party
+                <TabsTrigger 
+                  value="Social" 
+                  className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-1 bg-card/80 backdrop-blur-sm border-2 border-border/50 shadow-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:scale-110 transition-all hover:scale-105"
+                >
+                  <PartyPopper className="h-6 w-6" />
+                  <span className="text-xs font-semibold">Party</span>
                 </TabsTrigger>
-                <TabsTrigger value="Study" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
-                  <Coffee className="h-4 w-4" />
-                  Study
+                <TabsTrigger 
+                  value="Study" 
+                  className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-1 bg-card/80 backdrop-blur-sm border-2 border-border/50 shadow-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:scale-110 transition-all hover:scale-105"
+                >
+                  <Coffee className="h-6 w-6" />
+                  <span className="text-xs font-semibold">Study</span>
                 </TabsTrigger>
-                <TabsTrigger value="Other" className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all">
-                  <MoreHorizontal className="h-4 w-4" />
-                  Other
+                <TabsTrigger 
+                  value="Other" 
+                  className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-1 bg-card/80 backdrop-blur-sm border-2 border-border/50 shadow-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:scale-110 transition-all hover:scale-105"
+                >
+                  <MoreHorizontal className="h-6 w-6" />
+                  <span className="text-xs font-semibold">Other</span>
                 </TabsTrigger>
               </TabsList>
             </Tabs>
