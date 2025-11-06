@@ -201,7 +201,7 @@ export default function StudentActivities() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-20">
             <Tabs value={activeFilter} onValueChange={setActiveFilter} className="w-full max-w-5xl">
               <TabsList className="flex flex-wrap justify-center gap-6 md:gap-8 bg-transparent p-0">
                 <TabsTrigger 
@@ -252,7 +252,7 @@ export default function StudentActivities() {
           </div>
 
           {/* Activities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
             {filteredActivities.length === 0 ? (
               <div className="col-span-full text-center py-12">
                 <p className="text-muted-foreground text-lg">No activities found in this category.</p>
