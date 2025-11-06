@@ -71,7 +71,7 @@ const Profile = () => {
                 </Link>
               </Button>
               <Button variant="outline" className="w-full justify-start" asChild>
-                <Link to="/student-board">
+                <Link to="/student-board/1">
                   <User className="h-4 w-4 mr-2" />
                   Student Board
                 </Link>
