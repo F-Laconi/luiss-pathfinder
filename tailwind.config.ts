@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         bebas: ['Bebas Neue', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -131,10 +133,6 @@ export default {
         "fade-in": "fade-in 0.3s ease-out",
         "float": "float 3s ease-in-out infinite",
         "scale-in": "scale-in 0.3s ease-out",
-      },
-      fontFamily: {
-        'playfair': ['Playfair Display', 'serif'],
-        'inter': ['Inter', 'sans-serif'],
       },
     },
   },
