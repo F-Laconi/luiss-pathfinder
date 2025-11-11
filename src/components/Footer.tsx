@@ -31,7 +31,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <h3 className="font-bebas font-semibold text-lg">Quick Links</h3>
             <div className="space-y-2">
               <Link to="/masters" className="block text-background/80 hover:text-accent transition-colors">
                 Master's Programs
@@ -50,7 +50,7 @@ const Footer = () => {
 
           {/* Support */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Support</h3>
+            <h3 className="font-bebas font-semibold text-lg">Support</h3>
             <div className="space-y-2">
               <Link to="/help" className="block text-background/80 hover:text-accent transition-colors">
                 Help Center
@@ -69,7 +69,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact</h3>
+            <h3 className="font-bebas font-semibold text-lg">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-background/80">
                 <MapPin className="h-4 w-4 text-accent" />

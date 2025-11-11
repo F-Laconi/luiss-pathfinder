@@ -238,7 +238,7 @@ const PostPosition = () => {
                   <Sparkles className="h-4 w-4 animate-pulse" />
                   <span>Project Board</span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent mb-4 leading-tight">Student Project Board</h1>
+                <h1 className="font-bebas text-4xl sm:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent mb-4 leading-tight">Student Project Board</h1>
                 <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                   Discover innovative student projects seeking talented collaborators
                 </p>
