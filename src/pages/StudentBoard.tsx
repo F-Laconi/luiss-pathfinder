@@ -171,7 +171,7 @@ const StudentBoard = () => {
             <Link to="/business-partner" className="inline-flex items-center text-white hover:text-white/80 transition-all mb-4 hover:translate-x-1">
               ← Back to Business Partner
             </Link>
-            <h1 className="font-nunito uppercase text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">Student Project Board</h1>
+            <h1 className="font-nunito text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">Student Project Board</h1>
             <p className="text-lg text-white/90 max-w-3xl drop-shadow">
               Connect with fellow students and join exciting projects. Pin your profile to the board!
             </p>

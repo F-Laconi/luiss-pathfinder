@@ -388,7 +388,7 @@ const UndergraduateProgramDetail = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="font-nunito uppercase text-4xl font-bold mb-4">Program Not Found</h1>
+          <h1 className="font-nunito text-4xl font-bold mb-4">Program Not Found</h1>
           <Link to="/school/undergraduate">
             <Button>Back to Undergraduate Programs</Button>
           </Link>
@@ -550,7 +550,7 @@ const UndergraduateProgramDetail = () => {
           {/* CTA Section */}
           <Card className="mt-8 bg-gradient-to-br from-primary/10 to-accent/10 border-primary/20">
             <CardContent className="p-8 text-center">
-              <h3 className="font-nunito uppercase text-2xl font-bold mb-4">Ready to Apply?</h3>
+              <h3 className="font-nunito text-2xl font-bold mb-4">Ready to Apply?</h3>
               <p className="text-muted-foreground mb-6">
                 Start your journey with LUISS University's {program.title} program
               </p>

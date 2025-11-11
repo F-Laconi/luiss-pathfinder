@@ -108,7 +108,7 @@ export default function StudentActivities() {
         <div className="relative z-10 container mx-auto px-4 pt-24 pb-12">
           {/* Header */}
           <div className="text-center mb-12 animate-fade-in">
-            <h1 className="font-nunito uppercase text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+            <h1 className="font-nunito text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Student Activities
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

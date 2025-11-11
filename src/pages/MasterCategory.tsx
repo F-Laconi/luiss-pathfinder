@@ -90,7 +90,7 @@ const MasterCategory = () => {
       <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-nunito uppercase text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-nunito text-4xl md:text-5xl font-bold text-foreground mb-6">
               {category.title}
             </h1>
             <p className="text-subtitle mb-8">

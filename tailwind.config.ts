@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        nunito: ['Helvetica', 'Arial', 'sans-serif'],
+        nunito: ['Nunito Sans', 'sans-serif'],
         playfair: ['Playfair Display', 'serif'],
         inter: ['Inter', 'sans-serif'],
       },

@@ -36,7 +36,7 @@ const MasterCategories = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
           
-          <h2 className="font-nunito uppercase text-3xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent mb-6">
+          <h2 className="font-nunito text-3xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent mb-6">
             LUISS Academic Schools
           </h2>
           <p className="text-subtitle text-lg">
@@ -63,7 +63,7 @@ const MasterCategories = () => {
 
               {/* Content */}
               <div className="relative text-center space-y-4">
-                <h3 className="font-nunito uppercase text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-nunito text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                   {school.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed min-h-[48px]">

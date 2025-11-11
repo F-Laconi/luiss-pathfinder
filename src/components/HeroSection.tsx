@@ -123,7 +123,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Main Headline */}
           <div className="space-y-4 animate-fade-up">
-            <h1 className="font-nunito uppercase hero-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-nunito hero-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Find the right LUISS
               <br />
               <span className="text-accent">master and course</span>

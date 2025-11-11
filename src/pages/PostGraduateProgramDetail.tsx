@@ -334,7 +334,7 @@ const PostGraduateProgramDetail = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <div className="container mx-auto px-4 py-24 text-center">
-          <h1 className="font-nunito uppercase text-4xl font-bold mb-4">Program Not Found</h1>
+          <h1 className="font-nunito text-4xl font-bold mb-4">Program Not Found</h1>
           <p className="text-muted-foreground mb-8">The PhD program you're looking for doesn't exist.</p>
           <Link to="/school/postgraduate">
             <Button>
@@ -396,7 +396,7 @@ const PostGraduateProgramDetail = () => {
               </Badge>
             </div>
 
-            <h1 className="font-nunito uppercase text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient-primary leading-tight">
+            <h1 className="font-nunito text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient-primary leading-tight">
               {program.title}
             </h1>
             
