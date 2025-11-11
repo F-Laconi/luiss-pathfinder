@@ -431,25 +431,21 @@ const UniversitySelection = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [displayCount, setDisplayCount] = useState(6);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setShowDropdown(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
   const handleUniversityClick = (universityId: string) => {
     if (universityId !== 'luiss') {
       alert('🎓 Coming Soon! This university will be available shortly.');
       return;
     }
   };
-
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
   return <main className="min-h-screen bg-background">
       <Navigation />
@@ -465,15 +461,23 @@ const UniversitySelection = () => {
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/40 via-transparent to-accent/40 animate-[scale-in_8s_ease-in-out_infinite]"></div>
-          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-accent/40 via-transparent to-primary/40 animate-[scale-in_10s_ease-in-out_infinite]" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-accent/40 via-transparent to-primary/40 animate-[scale-in_10s_ease-in-out_infinite]" style={{
+          animationDelay: '2s'
+        }}></div>
         </div>
 
         {/* Floating Orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-[10%] w-72 h-72 bg-gradient-to-br from-violet-500/30 to-purple-500/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute top-40 right-[15%] w-96 h-96 bg-gradient-to-br from-cyan-500/25 to-blue-500/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-20 left-[20%] w-64 h-64 bg-gradient-to-br from-pink-500/20 to-orange-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
-          <div className="absolute top-1/2 right-[25%] w-80 h-80 bg-gradient-to-br from-blue-500/25 to-indigo-500/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-40 right-[15%] w-96 h-96 bg-gradient-to-br from-cyan-500/25 to-blue-500/25 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '2s'
+        }}></div>
+          <div className="absolute bottom-20 left-[20%] w-64 h-64 bg-gradient-to-br from-pink-500/20 to-orange-500/20 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '4s'
+        }}></div>
+          <div className="absolute top-1/2 right-[25%] w-80 h-80 bg-gradient-to-br from-blue-500/25 to-indigo-500/25 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '1s'
+        }}></div>
         </div>
 
         {/* Grid Pattern Overlay */}
@@ -485,9 +489,7 @@ const UniversitySelection = () => {
             <div className="flex items-center justify-center mb-10 animate-fade-in">
               <div className="relative group">
                 <div className="absolute -inset-8 bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 rounded-full opacity-50 blur-3xl group-hover:opacity-75 transition-opacity duration-700"></div>
-                <div className="relative w-28 h-28 bg-gradient-to-br from-violet-600 to-blue-600 rounded-3xl flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-2xl">
-                  <GraduationCap className="w-16 h-16 text-white animate-float" />
-                </div>
+                
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
                   <span className="text-white text-lg">✨</span>
                 </div>
@@ -505,101 +507,54 @@ const UniversitySelection = () => {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-foreground/80 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in font-medium" style={{ animationDelay: '0.1s' }}>
+            <p className="text-xl md:text-2xl text-foreground/80 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in font-medium" style={{
+            animationDelay: '0.1s'
+          }}>
               Discover Italy's most prestigious universities and unlock your academic potential ✨
             </p>
 
             {/* Search Bar with Glassmorphism */}
-            <div className="relative max-w-2xl mx-auto mb-8 animate-scale-in" style={{ animationDelay: '0.2s' }} ref={dropdownRef}>
+            <div className="relative max-w-2xl mx-auto mb-8 animate-scale-in" style={{
+            animationDelay: '0.2s'
+          }} ref={dropdownRef}>
               {/* Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 rounded-[2rem] opacity-50 blur-xl"></div>
               
               <div className="relative bg-white/10 backdrop-blur-xl rounded-[2rem] border border-white/20 shadow-2xl overflow-hidden group hover:bg-white/15 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-blue-500/10 to-cyan-500/10"></div>
                 <Search className="absolute left-7 top-1/2 transform -translate-y-1/2 text-white/90 w-6 h-6 z-10 group-hover:scale-110 transition-transform duration-300" />
-                <Input 
-                  type="text" 
-                  placeholder="Search your perfect university..." 
-                  value={searchQuery} 
-                  onChange={e => {
-                    setSearchQuery(e.target.value);
-                    setShowDropdown(true);
-                  }}
-                  onFocus={() => setShowDropdown(true)}
-                  className="pl-16 pr-6 py-8 text-lg rounded-[2rem] border-0 bg-transparent text-foreground placeholder:text-white/60 focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-0 relative z-10 font-medium" 
-                />
+                <Input type="text" placeholder="Search your perfect university..." value={searchQuery} onChange={e => {
+                setSearchQuery(e.target.value);
+                setShowDropdown(true);
+              }} onFocus={() => setShowDropdown(true)} className="pl-16 pr-6 py-8 text-lg rounded-[2rem] border-0 bg-transparent text-foreground placeholder:text-white/60 focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-0 relative z-10 font-medium" />
               </div>
               
               {/* Dropdown Suggestions - Glassmorphism */}
-              {showDropdown && (
-                <div className="absolute top-full left-0 right-0 mt-4 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden z-[9999] max-h-96 overflow-y-auto animate-fade-in">
-                  {filteredUniversities.length > 0 ? (
-                    filteredUniversities.map((university) => {
-                      const UniversityItem = (
-                        <div
-                          className={`flex items-center gap-4 p-5 transition-all duration-300 border-b border-white/10 last:border-b-0 ${
-                            university.id === 'luiss' 
-                              ? 'hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-blue-500/20 cursor-pointer' 
-                              : 'hover:bg-white/10 cursor-pointer'
-                          }`}
-                        >
+              {showDropdown && <div className="absolute top-full left-0 right-0 mt-4 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden z-[9999] max-h-96 overflow-y-auto animate-fade-in">
+                  {filteredUniversities.length > 0 ? filteredUniversities.map(university => {
+                const UniversityItem = <div className={`flex items-center gap-4 p-5 transition-all duration-300 border-b border-white/10 last:border-b-0 ${university.id === 'luiss' ? 'hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-blue-500/20 cursor-pointer' : 'hover:bg-white/10 cursor-pointer'}`}>
                           <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg overflow-hidden`}>
-                            {university.id === 'luiss' ? (
-                              <img src={luissColumn} alt="LUISS Column" className="w-full h-full object-cover" />
-                            ) : university.id === 'bocconi' ? (
-                              <img src={bocconiBrand} alt="Bocconi Brand" className="w-full h-full object-cover" />
-                            ) : university.id === 'cattolica' ? (
-                              <img src={cattolicaEmblem} alt="Cattolica Emblem" className="w-full h-full object-cover" />
-                            ) : university.id === 'sapienza' ? (
-                              <img src={sapienzaEmblem} alt="Sapienza Emblem" className="w-full h-full object-cover" />
-                            ) : university.id === 'polimi' ? (
-                              <img src={polimiEmblem} alt="Polimi Emblem" className="w-full h-full object-cover" />
-                            ) : university.id === 'unibo' ? (
-                              <img src={uniboEmblem} alt="UniBo Emblem" className="w-full h-full object-cover" />
-                            ) : (
-                              <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-cover filter brightness-0 invert" />
-                            )}
+                            {university.id === 'luiss' ? <img src={luissColumn} alt="LUISS Column" className="w-full h-full object-cover" /> : university.id === 'bocconi' ? <img src={bocconiBrand} alt="Bocconi Brand" className="w-full h-full object-cover" /> : university.id === 'cattolica' ? <img src={cattolicaEmblem} alt="Cattolica Emblem" className="w-full h-full object-cover" /> : university.id === 'sapienza' ? <img src={sapienzaEmblem} alt="Sapienza Emblem" className="w-full h-full object-cover" /> : university.id === 'polimi' ? <img src={polimiEmblem} alt="Polimi Emblem" className="w-full h-full object-cover" /> : university.id === 'unibo' ? <img src={uniboEmblem} alt="UniBo Emblem" className="w-full h-full object-cover" /> : <img src={university.logo} alt={`${university.name} logo`} className="w-full h-full object-cover filter brightness-0 invert" />}
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-foreground flex items-center gap-2">
                               {university.name}
-                              {university.id !== 'luiss' && (
-                                <span className="text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full">Coming Soon</span>
-                              )}
+                              {university.id !== 'luiss' && <span className="text-xs bg-accent/20 text-accent-foreground px-2 py-1 rounded-full">Coming Soon</span>}
                             </h4>
                             <p className="text-sm text-muted-foreground">{university.description}</p>
                           </div>
-                          {university.id === 'luiss' && (
-                            <ChevronRight className="w-5 h-5 text-primary" />
-                          )}
-                        </div>
-                      );
-
-                      return university.id === 'luiss' ? (
-                        <Link
-                          key={university.id}
-                          to="/luiss-university"
-                          onClick={() => setShowDropdown(false)}
-                        >
+                          {university.id === 'luiss' && <ChevronRight className="w-5 h-5 text-primary" />}
+                        </div>;
+                return university.id === 'luiss' ? <Link key={university.id} to="/luiss-university" onClick={() => setShowDropdown(false)}>
                           {UniversityItem}
-                        </Link>
-                      ) : (
-                        <div
-                          key={university.id}
-                          onClick={() => handleUniversityClick(university.id)}
-                        >
+                        </Link> : <div key={university.id} onClick={() => handleUniversityClick(university.id)}>
                           {UniversityItem}
-                        </div>
-                      );
-                    })
-                  ) : (
-                     <div className="p-8 text-center text-white/70">
+                        </div>;
+              }) : <div className="p-8 text-center text-white/70">
                       <p className="text-lg mb-2 font-medium">🔍 No universities found</p>
                       <p className="text-sm text-white/50">Try a different search term</p>
-                    </div>
-                  )}
-                </div>
-              )}
+                    </div>}
+                </div>}
             </div>
           </div>
         </div>
@@ -669,18 +624,12 @@ const UniversitySelection = () => {
           </div>
 
           {/* Load More Button */}
-          {filteredUniversities.length > displayCount && (
-            <div className="text-center mt-12 animate-fade-in">
-              <Button
-                onClick={() => setDisplayCount(prev => prev + 6)}
-                size="lg"
-                className="group bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300"
-              >
+          {filteredUniversities.length > displayCount && <div className="text-center mt-12 animate-fade-in">
+              <Button onClick={() => setDisplayCount(prev => prev + 6)} size="lg" className="group bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300">
                 Load More Universities
                 <ChevronDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
               </Button>
-            </div>
-          )}
+            </div>}
 
           {filteredUniversities.length === 0 && <div className="text-center py-20 animate-fade-in">
               <div className="text-6xl mb-4">🔍</div>
@@ -696,21 +645,21 @@ const UniversitySelection = () => {
 
       <script type="application/ld+json">
         {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "name": "Italian Universities",
-          "description": "Comprehensive list of Italian universities",
-          "numberOfItems": universities.length,
-          "itemListElement": universities.slice(0, 10).map((uni, idx) => ({
-            "@type": "ListItem",
-            "position": idx + 1,
-            "item": {
-              "@type": "CollegeOrUniversity",
-              "name": uni.name,
-              "description": uni.description
-            }
-          }))
-        })}
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Italian Universities",
+        "description": "Comprehensive list of Italian universities",
+        "numberOfItems": universities.length,
+        "itemListElement": universities.slice(0, 10).map((uni, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "item": {
+            "@type": "CollegeOrUniversity",
+            "name": uni.name,
+            "description": uni.description
+          }
+        }))
+      })}
       </script>
     </main>;
 };
