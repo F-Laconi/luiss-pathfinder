@@ -125,7 +125,7 @@ const CourseDetail = () => {
         {/* Course header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
-            <h1 className="font-bebas text-4xl font-bold text-foreground">{course.name}</h1>
+            <h1 className="font-nunito text-4xl font-bold text-foreground">{course.name}</h1>
             <Badge variant="secondary">LUISS Graduate</Badge>
           </div>
           <div className="flex items-center gap-6 text-muted-foreground">
