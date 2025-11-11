@@ -21,7 +21,7 @@ const About = () => {
                 Made with passion by LUISS students
               </Link>
               
-              <h1 className="font-bebas font-playfair text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
+              <h1 className="font-bebas text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
                 About
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> UniCompass</span>
               </h1>
@@ -43,7 +43,7 @@ const About = () => {
                   Our Story
                 </div>
                 
-                <h2 className="font-bebas font-playfair text-4xl font-bold text-foreground leading-tight">
+                <h2 className="font-bebas text-4xl font-bold text-foreground leading-tight">
                   Seven dreamers,
                   <span className="text-primary"> one vision</span>
                 </h2>
@@ -101,7 +101,7 @@ const About = () => {
                     Our Mission
                   </div>
                   
-                  <h2 className="font-bebas font-playfair text-4xl font-bold text-foreground mb-6">
+                  <h2 className="font-bebas text-4xl font-bold text-foreground mb-6">
                     Simplifying the path to
                     <span className="text-primary"> academic success</span>
                   </h2>
@@ -117,7 +117,7 @@ const About = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Lightbulb className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="font-bebas font-playfair text-xl font-semibold text-foreground mb-3">Clear Guidance</h3>
+                    <h3 className="font-bebas text-xl font-semibold text-foreground mb-3">Clear Guidance</h3>
                     <p className="text-muted-foreground">Navigate university choices with confidence through comprehensive insights and expert recommendations</p>
                   </div>
                   
@@ -125,7 +125,7 @@ const About = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Users className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="font-bebas font-playfair text-xl font-semibold text-foreground mb-3">Connect & Collaborate</h3>
+                    <h3 className="font-bebas text-xl font-semibold text-foreground mb-3">Connect & Collaborate</h3>
                     <p className="text-muted-foreground">Find your ideal study partners and future business collaborators in our vibrant community</p>
                   </div>
                   
@@ -133,7 +133,7 @@ const About = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mx-auto mb-6">
                       <Rocket className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="font-bebas font-playfair text-xl font-semibold text-foreground mb-3">Launch Your Future</h3>
+                    <h3 className="font-bebas text-xl font-semibold text-foreground mb-3">Launch Your Future</h3>
                     <p className="text-muted-foreground">Build a strong foundation for your academic and professional journey with our comprehensive platform</p>
                   </div>
                 </div>

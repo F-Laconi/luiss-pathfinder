@@ -467,7 +467,7 @@ const UniversitySelection = () => {
                 <GraduationCap className="w-20 h-20 text-primary mr-4 animate-pulse" />
                 <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+              <h1 className="font-bebas text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 Find Your Dream University
               </h1>
             </div>
