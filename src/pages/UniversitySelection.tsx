@@ -458,11 +458,7 @@ const UniversitySelection = () => {
       <header className="py-12 relative overflow-hidden min-h-[80vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src={universityBackground} 
-            alt="University Background" 
-            className="w-full h-full object-cover"
-          />
+          <img src={universityBackground} alt="University Background" className="w-full h-full object-cover" />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
         </div>
@@ -493,9 +489,7 @@ const UniversitySelection = () => {
               <div className="relative group">
                 <div className="absolute -inset-8 bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 rounded-full opacity-50 blur-3xl group-hover:opacity-75 transition-opacity duration-700"></div>
                 
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                  <span className="text-white text-lg">✨</span>
-                </div>
+                
               </div>
             </div>
 
