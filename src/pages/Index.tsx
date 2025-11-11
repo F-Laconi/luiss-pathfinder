@@ -28,7 +28,7 @@ const Index = () => {
         {/* Brand Title with Enhanced Styling */}
         <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
-            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 bg-clip-text text-transparent mb-4 sm:mb-6 relative mt-16 sm:mt-20 px-2">
+            <h1 className="font-nunito uppercase text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 bg-clip-text text-transparent mb-4 sm:mb-6 relative mt-16 sm:mt-20 px-2">
               UniCompass
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium opacity-80 px-4">
@@ -53,7 +53,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <h2 className="font-nunito uppercase text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                   Make the Right Choice
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground group-hover:text-foreground/80 transition-colors">
@@ -77,7 +77,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                <h2 className="font-nunito uppercase text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
                   Find Your Business Partner
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground group-hover:text-foreground/80 transition-colors">

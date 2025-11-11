@@ -387,7 +387,7 @@ const GraduateProgramDetail = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <div className="container mx-auto px-4 py-24 text-center">
-          <h1 className="font-nunito text-3xl font-bold mb-4">Program Not Found</h1>
+          <h1 className="font-nunito uppercase text-3xl font-bold mb-4">Program Not Found</h1>
           <Link to="/graduate">
             <Button>Back to Graduate Programs</Button>
           </Link>
@@ -421,7 +421,7 @@ const GraduateProgramDetail = () => {
               <Badge variant="outline" className="text-sm">{program.category}</Badge>
             </div>
             
-            <h1 className="font-nunito text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-up">
+            <h1 className="font-nunito uppercase text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-up">
               {program.title}
             </h1>
             
@@ -478,7 +478,7 @@ const GraduateProgramDetail = () => {
 
             <TabsContent value="curriculum" className="space-y-6">
               <div className="text-center mb-8">
-                <h2 className="font-nunito text-3xl font-bold mb-4">Complete Curriculum</h2>
+                <h2 className="font-nunito uppercase text-3xl font-bold mb-4">Complete Curriculum</h2>
                 <p className="text-muted-foreground">Explore all courses across {program.semesters.length} semesters</p>
               </div>
 
@@ -547,7 +547,7 @@ const GraduateProgramDetail = () => {
 
             <TabsContent value="structure" className="space-y-6">
               <div className="max-w-4xl mx-auto">
-                <h2 className="font-nunito text-3xl font-bold mb-8 text-center">Program Structure</h2>
+                <h2 className="font-nunito uppercase text-3xl font-bold mb-8 text-center">Program Structure</h2>
                 
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   <Card>

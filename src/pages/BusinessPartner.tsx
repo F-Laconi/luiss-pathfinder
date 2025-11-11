@@ -29,7 +29,7 @@ const BusinessPartner = () => {
               </span>
             </div>
             
-            <h1 className="font-nunito text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 text-primary-foreground leading-[1.1]">
+            <h1 className="font-nunito uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 text-primary-foreground leading-[1.1]">
               Connect Talent with
               <span className="block mt-2 text-accent">
                 Outstanding Opportunities
@@ -66,7 +66,7 @@ const BusinessPartner = () => {
         
         <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center mb-12">
-            <h2 className="font-nunito text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
+            <h2 className="font-nunito uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
               How Can We Help You?
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
@@ -87,7 +87,7 @@ const BusinessPartner = () => {
                     </div>
                   </div>
                   
-                  <h3 className="font-nunito text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-foreground">Looking for Opportunities</h3>
+                  <h3 className="font-nunito uppercase text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-foreground">Looking for Opportunities</h3>
                   <p className="text-muted-foreground mb-10 leading-relaxed text-lg">
                     Discover career-defining opportunities tailored to your unique skills and aspirations. 
                     Join a network of top companies actively seeking exceptional talent.
@@ -127,7 +127,7 @@ const BusinessPartner = () => {
                     </div>
                   </div>
                   
-                  <h3 className="font-nunito text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-foreground">Post Opportunities</h3>
+                  <h3 className="font-nunito uppercase text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-foreground">Post Opportunities</h3>
                   <p className="text-muted-foreground mb-10 leading-relaxed text-lg">
                     Connect with exceptional talent ready to drive your business forward. 
                     Post positions and find qualified professionals who align with your vision.

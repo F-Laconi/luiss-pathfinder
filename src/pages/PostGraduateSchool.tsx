@@ -135,7 +135,7 @@ const PostGraduateSchool = () => {
               <Award className="h-5 w-5" />
               <span>Post-Graduate Programs</span>
             </div>
-            <h1 className="font-nunito text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            <h1 className="font-nunito uppercase text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
               <span className="text-gradient-primary">PhD Programs</span>
               <br />
               <span className="text-foreground">for Researchers</span>

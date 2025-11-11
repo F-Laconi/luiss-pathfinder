@@ -20,7 +20,7 @@ const EasterEgg = () => {
             <Sparkles className="h-4 w-4 animate-pulse" />
           </div>
           
-          <h1 className="font-nunito text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-fade-in">
+          <h1 className="font-nunito uppercase text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-fade-in">
             The Real Deal
           </h1>
           
@@ -97,7 +97,7 @@ const EasterEgg = () => {
                 <Heart className="h-5 w-5" />
                 Our Promise
               </div>
-              <h2 className="font-nunito text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="font-nunito uppercase text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Built by students,
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> for students</span>
               </h2>
