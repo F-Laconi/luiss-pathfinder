@@ -17,6 +17,7 @@ import polimiLogo from "@/assets/polimi-logo.png";
 import polimiEmblem from "@/assets/polimi-emblem.png";
 import uniboLogo from "@/assets/unibo-logo.png";
 import uniboEmblem from "@/assets/unibo-emblem-new.png";
+import universityBackground from "@/assets/university-background.png";
 const universities = [{
   id: "luiss",
   name: "LUISS Guido Carli",
@@ -455,33 +456,35 @@ const UniversitySelection = () => {
 
       {/* Hero Section - Modern Gamified Design */}
       <header className="py-12 relative overflow-hidden min-h-[80vh] flex items-center">
-        {/* Dynamic Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-blue-600/20 to-cyan-500/20"></div>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={universityBackground} 
+            alt="University Background" 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+        </div>
         
-        {/* Animated Mesh Gradient */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/40 via-transparent to-accent/40 animate-[scale-in_8s_ease-in-out_infinite]"></div>
-          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-accent/40 via-transparent to-primary/40 animate-[scale-in_10s_ease-in-out_infinite]" style={{
+        {/* Animated Mesh Gradient Overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet-600/40 via-transparent to-cyan-500/40 animate-[scale-in_8s_ease-in-out_infinite]"></div>
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-cyan-500/40 via-transparent to-violet-600/40 animate-[scale-in_10s_ease-in-out_infinite]" style={{
           animationDelay: '2s'
         }}></div>
         </div>
 
         {/* Floating Orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-[10%] w-72 h-72 bg-gradient-to-br from-violet-500/30 to-purple-500/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute top-40 right-[15%] w-96 h-96 bg-gradient-to-br from-cyan-500/25 to-blue-500/25 rounded-full blur-3xl animate-float" style={{
+          <div className="absolute top-20 left-[10%] w-72 h-72 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-[15%] w-96 h-96 bg-gradient-to-br from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-float" style={{
           animationDelay: '2s'
         }}></div>
-          <div className="absolute bottom-20 left-[20%] w-64 h-64 bg-gradient-to-br from-pink-500/20 to-orange-500/20 rounded-full blur-3xl animate-float" style={{
+          <div className="absolute bottom-20 left-[20%] w-64 h-64 bg-gradient-to-br from-pink-500/15 to-orange-500/15 rounded-full blur-3xl animate-float" style={{
           animationDelay: '4s'
         }}></div>
-          <div className="absolute top-1/2 right-[25%] w-80 h-80 bg-gradient-to-br from-blue-500/25 to-indigo-500/25 rounded-full blur-3xl animate-float" style={{
-          animationDelay: '1s'
-        }}></div>
         </div>
-
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_80%)]"></div>
 
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-5xl mx-auto">
@@ -498,16 +501,16 @@ const UniversitySelection = () => {
 
             {/* Title with Dynamic Gradient */}
             <h1 className="font-nunito text-6xl md:text-8xl lg:text-9xl font-bold uppercase mb-6 animate-fade-in relative">
-              <span className="bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(139,92,246,0.3)]">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
                 Find Your Dream
               </span>
               <br />
-              <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(59,130,246,0.3)]">
+              <span className="bg-gradient-to-r from-blue-200 via-cyan-200 to-white bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
                 University
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-foreground/80 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in font-medium" style={{
+            <p className="text-xl md:text-2xl text-white/90 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in font-medium drop-shadow-lg" style={{
             animationDelay: '0.1s'
           }}>
               Discover Italy's most prestigious universities and unlock your academic potential ✨
