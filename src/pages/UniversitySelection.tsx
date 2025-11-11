@@ -457,54 +457,90 @@ const UniversitySelection = () => {
       {/* Header - simplified to avoid duplication */}
       <div className="pt-16"></div>
 
-      {/* Hero Section */}
-      <header className="py-6 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-visible">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-6 text-center relative z-10 overflow-visible">
-          <div className="max-w-4xl mx-auto overflow-visible">
-            <div className="flex items-center justify-center mb-8 animate-fade-in">
-              <div className="relative">
-                <GraduationCap className="w-20 h-20 text-primary mr-4 animate-pulse" />
-                <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
+      {/* Hero Section - Modern Gamified Design */}
+      <header className="py-12 relative overflow-hidden min-h-[80vh] flex items-center">
+        {/* Dynamic Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-blue-600/20 to-cyan-500/20"></div>
+        
+        {/* Animated Mesh Gradient */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/40 via-transparent to-accent/40 animate-[scale-in_8s_ease-in-out_infinite]"></div>
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-accent/40 via-transparent to-primary/40 animate-[scale-in_10s_ease-in-out_infinite]" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        {/* Floating Orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-[10%] w-72 h-72 bg-gradient-to-br from-violet-500/30 to-purple-500/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-[15%] w-96 h-96 bg-gradient-to-br from-cyan-500/25 to-blue-500/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 left-[20%] w-64 h-64 bg-gradient-to-br from-pink-500/20 to-orange-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/2 right-[25%] w-80 h-80 bg-gradient-to-br from-blue-500/25 to-indigo-500/25 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_80%)]"></div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="max-w-5xl mx-auto">
+            {/* Icon with Enhanced Effects */}
+            <div className="flex items-center justify-center mb-10 animate-fade-in">
+              <div className="relative group">
+                <div className="absolute -inset-8 bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 rounded-full opacity-50 blur-3xl group-hover:opacity-75 transition-opacity duration-700"></div>
+                <div className="relative w-28 h-28 bg-gradient-to-br from-violet-600 to-blue-600 rounded-3xl flex items-center justify-center transform rotate-12 group-hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                  <GraduationCap className="w-16 h-16 text-white animate-float" />
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                  <span className="text-white text-lg">✨</span>
+                </div>
               </div>
-              <h1 className="font-nunito text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Find Your Dream University
-              </h1>
             </div>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              🎓 Discover Italy's most prestigious universities and unlock your academic potential. 
-              Your future starts with the right choice!
+
+            {/* Title with Dynamic Gradient */}
+            <h1 className="font-nunito text-6xl md:text-8xl lg:text-9xl font-bold uppercase mb-6 animate-fade-in relative">
+              <span className="bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(139,92,246,0.3)]">
+                Find Your Dream
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(59,130,246,0.3)]">
+                University
+              </span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-foreground/80 mb-14 max-w-3xl mx-auto leading-relaxed animate-fade-in font-medium" style={{ animationDelay: '0.1s' }}>
+              Discover Italy's most prestigious universities and unlock your academic potential ✨
             </p>
 
-            {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto mb-16 animate-scale-in overflow-visible" ref={dropdownRef}>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl animate-pulse"></div>
-              <div className="relative">
-                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-primary w-6 h-6 z-10" />
+            {/* Search Bar with Glassmorphism */}
+            <div className="relative max-w-2xl mx-auto mb-8 animate-scale-in" style={{ animationDelay: '0.2s' }} ref={dropdownRef}>
+              {/* Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 rounded-[2rem] opacity-50 blur-xl"></div>
+              
+              <div className="relative bg-white/10 backdrop-blur-xl rounded-[2rem] border border-white/20 shadow-2xl overflow-hidden group hover:bg-white/15 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-blue-500/10 to-cyan-500/10"></div>
+                <Search className="absolute left-7 top-1/2 transform -translate-y-1/2 text-white/90 w-6 h-6 z-10 group-hover:scale-110 transition-transform duration-300" />
                 <Input 
                   type="text" 
-                  placeholder="🔍 Search your perfect university..." 
+                  placeholder="Search your perfect university..." 
                   value={searchQuery} 
                   onChange={e => {
                     setSearchQuery(e.target.value);
                     setShowDropdown(true);
                   }}
                   onFocus={() => setShowDropdown(true)}
-                  className="pl-16 pr-6 py-8 text-lg rounded-3xl border-2 border-primary/20 focus:border-primary bg-card/80 backdrop-blur-sm shadow-2xl transition-all duration-300 hover:shadow-primary/10" 
+                  className="pl-16 pr-6 py-8 text-lg rounded-[2rem] border-0 bg-transparent text-foreground placeholder:text-white/60 focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-0 relative z-10 font-medium" 
                 />
               </div>
               
-              {/* Dropdown Suggestions */}
+              {/* Dropdown Suggestions - Glassmorphism */}
               {showDropdown && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-card border-2 border-border rounded-2xl shadow-2xl overflow-hidden z-[9999] max-h-96 overflow-y-auto animate-fade-in">
+                <div className="absolute top-full left-0 right-0 mt-4 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden z-[9999] max-h-96 overflow-y-auto animate-fade-in">
                   {filteredUniversities.length > 0 ? (
                     filteredUniversities.map((university) => {
                       const UniversityItem = (
                         <div
-                          className={`flex items-center gap-4 p-4 transition-all duration-300 border-b border-border last:border-b-0 ${
+                          className={`flex items-center gap-4 p-5 transition-all duration-300 border-b border-white/10 last:border-b-0 ${
                             university.id === 'luiss' 
-                              ? 'hover:bg-primary/10 cursor-pointer' 
-                              : 'hover:bg-muted/50 cursor-pointer'
+                              ? 'hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-blue-500/20 cursor-pointer' 
+                              : 'hover:bg-white/10 cursor-pointer'
                           }`}
                         >
                           <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg overflow-hidden`}>
@@ -557,9 +593,9 @@ const UniversitySelection = () => {
                       );
                     })
                   ) : (
-                    <div className="p-6 text-center text-muted-foreground">
-                      <p className="text-lg mb-2">🔍 No universities found</p>
-                      <p className="text-sm">Try a different search term</p>
+                     <div className="p-8 text-center text-white/70">
+                      <p className="text-lg mb-2 font-medium">🔍 No universities found</p>
+                      <p className="text-sm text-white/50">Try a different search term</p>
                     </div>
                   )}
                 </div>
