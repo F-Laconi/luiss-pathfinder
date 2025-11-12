@@ -452,7 +452,7 @@ const UniversitySelection = () => {
       <Navigation />
 
       {/* Hero Section - Modern Gamified Design */}
-      <header className="pt-24 pb-12 relative min-h-[80vh] flex items-center">
+      <header className="pt-24 pb-0 relative min-h-[85vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img src={universityBackground} alt="University Background" className="w-full h-full object-cover" />
@@ -541,7 +541,7 @@ const UniversitySelection = () => {
       </header>
 
       {/* Universities Grid */}
-      <section className="pb-20 bg-gradient-to-b from-background to-muted/20">
+      <section className="py-20 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
