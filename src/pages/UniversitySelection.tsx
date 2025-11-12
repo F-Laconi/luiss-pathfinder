@@ -463,6 +463,13 @@ const UniversitySelection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
         </div>
         
+        {/* Animated Mesh Gradient Overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet-600/40 via-transparent to-cyan-500/40 animate-[scale-in_8s_ease-in-out_infinite]"></div>
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-cyan-500/40 via-transparent to-violet-600/40 animate-[scale-in_10s_ease-in-out_infinite]" style={{
+          animationDelay: '2s'
+        }}></div>
+        </div>
 
 
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -470,10 +477,9 @@ const UniversitySelection = () => {
             {/* Icon with Enhanced Effects */}
             <div className="flex items-center justify-center mb-10 animate-fade-in">
               <div className="relative group">
-                <div className="relative bg-gradient-to-br from-violet-600 to-cyan-500 p-8 rounded-3xl shadow-2xl">
-                  <GraduationCap className="w-20 h-20 text-white" strokeWidth={1.5} />
-                  <div className="absolute -top-2 -right-2 text-4xl animate-bounce">✨</div>
-                </div>
+                <div className="absolute -inset-8 bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 rounded-full opacity-50 blur-3xl group-hover:opacity-75 transition-opacity duration-700"></div>
+                
+                
               </div>
             </div>
 
