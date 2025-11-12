@@ -27,12 +27,12 @@ const Index = () => {
         <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
             <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold uppercase mb-4 sm:mb-6 relative mt-20 sm:mt-24 px-2">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
+              <span className="text-white drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
                 UniCompass
               </span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium opacity-80 px-4">
-              Navigate Your Academic Journey Through Italy's Top Universities
+            <p className="text-base sm:text-lg md:text-xl text-white font-medium opacity-80 px-4">
+              Navigate Your Academic Journey Through Italy&apos;s Top Universities
             </p>
           </div>
         </header>
@@ -51,7 +51,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <h2 className="font-nunito text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors duration-300">
                   Make the Right Choice
                 </h2>
                 
@@ -69,7 +69,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                <h2 className="font-nunito text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors duration-300">
                   Find Your Business Partner
                 </h2>
                 
@@ -82,7 +82,7 @@ const Index = () => {
         <footer className="mt-16 animate-fade-up" style={{
           animationDelay: '0.6s'
         }}>
-          <p className="text-sm text-muted-foreground/60 font-medium">
+          <p className="text-sm text-white/80 font-medium">
             Choose your journey and unlock your potential
           </p>
         </footer>
