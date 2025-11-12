@@ -455,7 +455,7 @@ const UniversitySelection = () => {
       <div className="pt-16"></div>
 
       {/* Hero Section - Modern Gamified Design */}
-      <header className="py-12 relative overflow-hidden min-h-[80vh] flex items-center">
+      <header className="py-12 relative min-h-[80vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img src={universityBackground} alt="University Background" className="w-full h-full object-cover" />
