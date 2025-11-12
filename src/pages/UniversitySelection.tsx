@@ -500,15 +500,11 @@ const UniversitySelection = () => {
               Discover Italy's most prestigious universities and unlock your academic potential ✨
             </p>
 
-            {/* Search Bar with Glassmorphism */}
+            {/* Search Bar */}
             <div className="relative max-w-2xl mx-auto mb-8 animate-scale-in" style={{
             animationDelay: '0.2s'
           }} ref={dropdownRef}>
-              {/* Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 rounded-[2rem] opacity-50 blur-xl"></div>
-              
               <div className="relative bg-white/10 backdrop-blur-xl rounded-[2rem] border border-white/20 shadow-2xl overflow-hidden group hover:bg-white/15 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-blue-500/10 to-cyan-500/10"></div>
                 <Search className="absolute left-7 top-1/2 transform -translate-y-1/2 text-white/90 w-6 h-6 z-10 group-hover:scale-110 transition-transform duration-300" />
                 <Input type="text" placeholder="Search your perfect university..." value={searchQuery} onChange={e => {
                 setSearchQuery(e.target.value);
