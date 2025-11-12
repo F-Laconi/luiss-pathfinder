@@ -483,8 +483,8 @@ const UniversitySelection = () => {
               </div>
             </div>
 
-            {/* Title with Dynamic Gradient */}
-            <h1 className="font-nunito text-6xl md:text-8xl lg:text-9xl font-bold uppercase mb-6 animate-fade-in relative text-white drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
+            {/* Title */}
+            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 animate-fade-in relative px-2 text-white drop-shadow-2xl">
               UniCompass
             </h1>
 
