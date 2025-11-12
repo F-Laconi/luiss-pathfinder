@@ -454,7 +454,7 @@ const UniversitySelection = () => {
       {/* Hero Section - Modern Gamified Design */}
       <header className="pt-24 pb-32 relative min-h-[110vh] flex items-center">
         {/* Background Image */}
-        <div className="absolute inset-0">
+        <div className="absolute top-12 bottom-0 left-0 right-0">
           <img src={universityBackground} alt="University Background" className="w-full h-full object-cover" />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
