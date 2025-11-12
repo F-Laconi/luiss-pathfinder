@@ -44,7 +44,7 @@ const Index = () => {
           {/* Make the Right Choice */}
           <Link 
             to="/universities"
-            className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(59,130,246,0.15)] hover:border-primary/30"
+            className="group relative bg-card/20 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(59,130,246,0.15)] hover:border-primary/30"
             aria-label="Explore Italian universities and programs"
           >
             <div className="flex flex-col items-center space-y-6">
@@ -68,7 +68,7 @@ const Index = () => {
           {/* Find Your Business Partner */}
           <Link 
             to="/business-partner"
-            className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30"
+            className="group relative bg-card/20 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30"
             aria-label="Connect with business partners and opportunities"
           >
             <div className="flex flex-col items-center space-y-6">
