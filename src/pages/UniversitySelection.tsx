@@ -450,12 +450,9 @@ const UniversitySelection = () => {
   const filteredUniversities = universities.filter(uni => uni.name.toLowerCase().includes(searchQuery.toLowerCase()) || uni.description.toLowerCase().includes(searchQuery.toLowerCase()));
   return <main className="min-h-screen bg-background">
       <Navigation />
-      
-      {/* Header - simplified to avoid duplication */}
-      <div className="pt-16"></div>
 
       {/* Hero Section - Modern Gamified Design */}
-      <header className="py-12 relative min-h-[80vh] flex items-center">
+      <header className="pt-12 pb-12 relative min-h-[80vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img src={universityBackground} alt="University Background" className="w-full h-full object-cover" />
