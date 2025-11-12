@@ -38,7 +38,7 @@ const Index = () => {
         </header>
 
         {/* Enhanced Icon Options */}
-        <nav className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-20 max-w-3xl mx-auto px-4 animate-fade-up" style={{
+        <nav className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-32 max-w-4xl mx-auto px-4 animate-fade-up" style={{
           animationDelay: '0.3s'
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
