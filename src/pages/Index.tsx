@@ -28,8 +28,10 @@ const Index = () => {
         {/* Brand Title with Enhanced Styling */}
         <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
-            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 bg-clip-text text-transparent mb-4 sm:mb-6 relative mt-16 sm:mt-20 px-2">
-              UniCompass
+            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold uppercase mb-4 sm:mb-6 relative mt-16 sm:mt-20 px-2">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
+                UniCompass
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium opacity-80 px-4">
               Navigate Your Academic Journey Through Italy's Top Universities
