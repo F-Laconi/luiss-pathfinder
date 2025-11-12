@@ -28,7 +28,7 @@ const Index = () => {
         {/* Brand Title with Enhanced Styling */}
         <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
-            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold uppercase mb-4 sm:mb-6 relative mt-18 sm:mt-26 px-2">
+            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold uppercase mb-4 sm:mb-6 relative mt-20 sm:mt-24 px-2">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
                 UniCompass
               </span>
