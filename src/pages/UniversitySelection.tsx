@@ -484,7 +484,7 @@ const UniversitySelection = () => {
             </div>
 
             {/* Title */}
-            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 animate-fade-in relative px-2 text-white drop-shadow-2xl">
+            <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 bg-clip-text text-transparent mb-4 sm:mb-6 animate-fade-in relative px-2">
               UniCompass
             </h1>
 
