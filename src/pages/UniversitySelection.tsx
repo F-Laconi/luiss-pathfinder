@@ -452,7 +452,7 @@ const UniversitySelection = () => {
       <Navigation />
 
       {/* Hero Section - Modern Gamified Design */}
-      <header className="pt-12 pb-12 relative min-h-[80vh] flex items-center">
+      <header className="pt-24 pb-12 relative min-h-[80vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img src={universityBackground} alt="University Background" className="w-full h-full object-cover" />
