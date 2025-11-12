@@ -501,7 +501,7 @@ const UniversitySelection = () => {
             </p>
 
             {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto mb-8 animate-scale-in" style={{
+            <div className="relative max-w-2xl mx-auto mb-8 animate-scale-in z-[10000]" style={{
             animationDelay: '0.2s'
           }} ref={dropdownRef}>
               <div className="relative bg-white/10 backdrop-blur-xl rounded-[2rem] border border-white/20 shadow-2xl overflow-hidden group hover:bg-white/15 transition-all duration-300">
@@ -513,7 +513,7 @@ const UniversitySelection = () => {
               </div>
               
               {/* Dropdown Suggestions - Glassmorphism */}
-              {showDropdown && <div className="absolute top-full left-0 right-0 mt-4 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden z-[9999] max-h-96 overflow-y-auto animate-fade-in">
+              {showDropdown && <div className="absolute top-full left-0 right-0 mt-4 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden z-[10001] max-h-96 overflow-y-auto animate-fade-in">
                   {filteredUniversities.length > 0 ? filteredUniversities.map(university => {
                 const UniversityItem = <div className={`flex items-center gap-4 p-5 transition-all duration-300 border-b border-white/10 last:border-b-0 ${university.id === 'luiss' ? 'hover:bg-gradient-to-r hover:from-violet-500/20 hover:to-blue-500/20 cursor-pointer' : 'hover:bg-white/10 cursor-pointer'}`}>
                           <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${university.color} flex items-center justify-center flex-shrink-0 shadow-lg overflow-hidden`}>
