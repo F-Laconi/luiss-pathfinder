@@ -27,7 +27,7 @@ const Index = () => {
         <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
             <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 relative mt-20 sm:mt-24 px-2">
-              <span className="text-[#4A90E2] drop-shadow-2xl [text-shadow:0_0_30px_rgba(74,144,226,0.5)]">
+              <span className="text-white drop-shadow-2xl [text-shadow:0_0_30px_rgba(255,255,255,0.5)]">
                 UniCompass
               </span>
             </h1>
