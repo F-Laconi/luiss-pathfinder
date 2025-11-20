@@ -90,7 +90,7 @@ const Index = () => {
         <footer className="mt-8 animate-fade-up" style={{
           animationDelay: '0.6s'
         }}>
-          <p className="text-xl md:text-2xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <p className="text-lg md:text-xl text-white/70 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Choose Your Journey and Unlock Your Potential
           </p>
         </footer>
