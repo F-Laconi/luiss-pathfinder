@@ -42,7 +42,7 @@ const Index = () => {
           animationDelay: '0.3s'
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
-          <Link to="/universities" className="group relative bg-card/20 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(59,130,246,0.15)] hover:border-primary/30" aria-label="Explore Italian universities and programs">
+          <Link to="/universities" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 md:p-14 rotate-[-2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] hover:border-primary/40 shadow-lg" aria-label="Explore Italian universities and programs">
             <div className="flex flex-col items-center space-y-6">
               <div className="relative">
                 <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
@@ -60,7 +60,7 @@ const Index = () => {
           </Link>
 
           {/* Find Your Business Partner */}
-          <Link to="/business-partner" className="group relative bg-card/20 backdrop-blur-sm border border-border/50 rounded-3xl p-8 sm:p-10 md:p-14 hover:scale-105 transition-all duration-500 hover:shadow-[0_20px_70px_rgba(251,146,60,0.15)] hover:border-accent/30" aria-label="Connect with business partners and opportunities">
+          <Link to="/business-partner" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 md:p-14 rotate-[2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(251,146,60,0.2)] hover:border-accent/40 shadow-lg" aria-label="Connect with business partners and opportunities">
             <div className="flex flex-col items-center space-y-6">
               <div className="relative">
                 <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-accent via-orange-400 to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-accent/20">
