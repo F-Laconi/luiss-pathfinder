@@ -27,7 +27,7 @@ const Index = () => {
         <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
             <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 relative mt-20 sm:mt-24 px-2">
-              <span className="text-primary drop-shadow-2xl [text-shadow:0_0_30px_rgba(59,130,246,0.5)]">
+              <span className="bg-gradient-to-br from-primary via-primary-hover to-secondary bg-clip-text text-transparent drop-shadow-2xl">
                 UniCompass
               </span>
             </h1>
