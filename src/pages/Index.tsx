@@ -87,11 +87,11 @@ const Index = () => {
         </nav>
 
         {/* Subtle Call to Action */}
-        <footer className="mt-16 animate-fade-up" style={{
+        <footer className="mt-8 animate-fade-up" style={{
           animationDelay: '0.6s'
         }}>
-          <p className="text-sm text-white/80 font-medium">
-            Choose your journey and unlock your potential
+          <p className="text-xl md:text-2xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            Choose Your Journey and Unlock Your Potential
           </p>
         </footer>
       </article>
