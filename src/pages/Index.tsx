@@ -90,7 +90,7 @@ const Index = () => {
               </div>
               <div className="space-y-2">
                 <h2 className="font-nunito text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors duration-300">
-                  Find Your Next Project Partner
+                  Find Your Future Project Partner
                 </h2>
                 
               </div>
