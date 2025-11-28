@@ -31,25 +31,7 @@ const Index = () => {
                 UniCompass
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-white font-semibold px-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-              Navigate Your Academic Journey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <p className="text-xl sm:text-2xl md:text-3xl text-white font-semibold px-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Navigate Your Academic Journey
               <br />Through Italy&apos;s Top Universities
             </p>
           </div>
