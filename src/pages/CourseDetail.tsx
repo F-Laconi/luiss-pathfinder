@@ -267,7 +267,7 @@ const CourseDetail = () => {
             {/* Professor card */}
             <Card>
               <CardHeader>
-                <CardTitle>Professor Maximo Ibarra</CardTitle>
+                <CardTitle>Prof. Maximo Ibarra</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Professor image */}
