@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 // Mock professor data - in a real app this would come from an API
 const professorData = {
-  name: "Prof. Alessandro Rossi",
+  name: "Prof. Maximo Ibarra",
   image: "/placeholder.svg",
   // Placeholder for professor image
   rating: 8.5,
