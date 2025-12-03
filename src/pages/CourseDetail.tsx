@@ -343,21 +343,30 @@ const CourseDetail = () => {
               <CardContent>
                 <p className="text-muted-foreground mb-6">{course.description}</p>
                 
-                <h4 className="font-semibold mb-3">Learning Objectives</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Build an AI-powered marketing plan: Learn how to design effective digital strategies using today's most important AI tools.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Understand tech's impact on marketing: Discover how AI is shaping the evolution of marketing — from current practices to future trends.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Work on real cases as a team: Strengthen teamwork and problem-solving skills by applying AI tools to real-world marketing challenges.</span>
-                  </li>
-                </ul>
+                <h4 className="font-semibold mb-4 text-lg">What You'll Actually Learn 🎯</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
+                    <span className="text-2xl">🤖</span>
+                    <div>
+                      <span className="font-medium text-foreground">Build an AI-powered marketing plan</span>
+                      <p className="text-sm text-muted-foreground mt-1">Learn how to design killer digital strategies using today's most important AI tools.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
+                    <span className="text-2xl">📈</span>
+                    <div>
+                      <span className="font-medium text-foreground">Understand tech's impact on marketing</span>
+                      <p className="text-sm text-muted-foreground mt-1">Discover how AI is shaping the evolution of marketing — from current practices to future trends.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
+                    <span className="text-2xl">👥</span>
+                    <div>
+                      <span className="font-medium text-foreground">Work on real cases as a team</span>
+                      <p className="text-sm text-muted-foreground mt-1">Strengthen teamwork and problem-solving skills by applying AI tools to real-world marketing challenges.</p>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="mt-6 pt-6 border-t">
                   <h4 className="font-semibold mb-2">Prerequisites</h4>
