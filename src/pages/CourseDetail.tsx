@@ -189,7 +189,7 @@ const graduateCoursesData: Record<string, any> = {
 // Mock student notes data
 const studentNotes = [{
   id: 1,
-  studentName: "Marco B.",
+  studentName: "Francesco L.",
   year: "2024",
   grade: "28/30",
   price: "€15",
