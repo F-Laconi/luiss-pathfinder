@@ -347,19 +347,15 @@ const CourseDetail = () => {
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Master theoretical frameworks and concepts</span>
+                    <span className="text-muted-foreground">Build an AI-powered marketing plan: Learn how to design effective digital strategies using today's most important AI tools.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Apply knowledge to real-world scenarios and case studies</span>
+                    <span className="text-muted-foreground">Understand tech's impact on marketing: Discover how AI is shaping the evolution of marketing — from current practices to future trends.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Develop critical thinking and analytical skills</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Prepare for professional practice in the field</span>
+                    <span className="text-muted-foreground">Work on real cases as a team: Strengthen teamwork and problem-solving skills by applying AI tools to real-world marketing challenges.</span>
                   </li>
                 </ul>
 
