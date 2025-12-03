@@ -404,62 +404,76 @@ const GraduateProgramDetail = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-primary/10 via-purple-500/5 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,transparent,black)]" />
+      <section className="pt-24 pb-16 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 mesh-gradient" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
+        
         <div className="container mx-auto px-4 lg:px-8 relative">
-          <Link to="/school/graduate" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-6 transition-colors">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Graduate Programs
+          <Link to="/school/graduate" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-all duration-300 group">
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-sm font-medium">Back to Graduate Programs</span>
           </Link>
           
           <div className="max-w-4xl">
-            <div className="flex flex-wrap gap-2 mb-4">
-              <Badge variant="secondary" className="text-sm">
-                <Globe className="h-3 w-3 mr-1" />
-                {program.languages.join(", ")}
+            <div className="flex flex-wrap gap-3 mb-6 animate-fade-up">
+              <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
+                <Globe className="h-3.5 w-3.5 mr-2" />
+                {program.languages.join(" • ")}
               </Badge>
-              <Badge variant="outline" className="text-sm">{program.category}</Badge>
+              <Badge variant="outline" className="px-4 py-1.5 text-sm font-medium border-border/50 backdrop-blur-sm">
+                {program.category}
+              </Badge>
             </div>
             
-            <h1 className="font-nunito text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-up">
+            <h1 className="font-helvetica text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-up uppercase tracking-tight">
               {program.title}
             </h1>
             
-            <p className="text-lg text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-up leading-relaxed max-w-3xl" style={{ animationDelay: "0.1s" }}>
               {program.description}
             </p>
 
             {/* Key Info Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              <Card className="bg-card/50 backdrop-blur border-border/50">
-                <CardContent className="p-4 text-center">
-                  <Clock className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold">{program.duration}</div>
-                  <div className="text-xs text-muted-foreground">Duration</div>
+              <Card className="group glass hover:bg-card/80 transition-all duration-500 hover:scale-105 hover:shadow-[var(--shadow-glow)]">
+                <CardContent className="p-5 text-center">
+                  <div className="h-12 w-12 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Clock className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="text-2xl font-bold text-foreground">{program.duration}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Duration</div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-card/50 backdrop-blur border-border/50">
-                <CardContent className="p-4 text-center">
-                  <Award className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold">{program.credits}</div>
-                  <div className="text-xs text-muted-foreground">ECTS Credits</div>
+              <Card className="group glass hover:bg-card/80 transition-all duration-500 hover:scale-105 hover:shadow-[var(--shadow-glow)]">
+                <CardContent className="p-5 text-center">
+                  <div className="h-12 w-12 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Award className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div className="text-2xl font-bold text-foreground">{program.credits}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">CFU Credits</div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-card/50 backdrop-blur border-border/50">
-                <CardContent className="p-4 text-center">
-                  <BookOpen className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold">{totalCourses}</div>
-                  <div className="text-xs text-muted-foreground">Courses</div>
+              <Card className="group glass hover:bg-card/80 transition-all duration-500 hover:scale-105 hover:shadow-[var(--shadow-glow)]">
+                <CardContent className="p-5 text-center">
+                  <div className="h-12 w-12 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <BookOpen className="h-6 w-6 text-accent" />
+                  </div>
+                  <div className="text-2xl font-bold text-foreground">{totalCourses}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Courses</div>
                 </CardContent>
               </Card>
               
-              <Card className="bg-card/50 backdrop-blur border-border/50">
-                <CardContent className="p-4 text-center">
-                  <Calendar className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold">{program.intake}</div>
-                  <div className="text-xs text-muted-foreground">Intake</div>
+              <Card className="group glass hover:bg-card/80 transition-all duration-500 hover:scale-105 hover:shadow-[var(--shadow-glow)]">
+                <CardContent className="p-5 text-center">
+                  <div className="h-12 w-12 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Calendar className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="text-2xl font-bold text-foreground">{program.intake}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Intake</div>
                 </CardContent>
               </Card>
             </div>
@@ -468,18 +482,22 @@ const GraduateProgramDetail = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-12">
+      <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <Tabs defaultValue="curriculum" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-              <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
-              <TabsTrigger value="structure">Program Structure</TabsTrigger>
+            <TabsList className="grid w-full max-w-lg mx-auto grid-cols-2 mb-12 p-1.5 bg-muted/50 backdrop-blur-sm rounded-2xl h-14">
+              <TabsTrigger value="curriculum" className="rounded-xl text-sm font-semibold data-[state=active]:bg-background data-[state=active]:shadow-md transition-all duration-300">
+                Curriculum
+              </TabsTrigger>
+              <TabsTrigger value="structure" className="rounded-xl text-sm font-semibold data-[state=active]:bg-background data-[state=active]:shadow-md transition-all duration-300">
+                Program Structure
+              </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="curriculum" className="space-y-6">
-              <div className="text-center mb-8">
-                <h2 className="font-nunito text-3xl font-bold mb-4">Complete Curriculum</h2>
-                <p className="text-muted-foreground">Explore all courses across {program.semesters.length} semesters</p>
+            <TabsContent value="curriculum" className="space-y-8 animate-fade-in">
+              <div className="text-center mb-10">
+                <h2 className="font-helvetica text-3xl md:text-4xl font-bold mb-4 uppercase tracking-tight">Complete Curriculum</h2>
+                <p className="text-muted-foreground text-lg">Explore all courses across {program.semesters.length} terms</p>
               </div>
 
               <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto space-y-4">
@@ -487,20 +505,20 @@ const GraduateProgramDetail = () => {
                   <AccordionItem 
                     key={semIndex} 
                     value={`semester-${semIndex}`}
-                    className="border rounded-lg px-6 bg-card/30 backdrop-blur"
+                    className="border border-border/50 rounded-2xl px-6 glass overflow-hidden"
                   >
-                    <AccordionTrigger className="hover:no-underline">
-                      <div className="flex items-center gap-4">
-                        <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-lg font-bold text-primary">{semIndex + 1}</span>
+                    <AccordionTrigger className="hover:no-underline py-5">
+                      <div className="flex items-center gap-5">
+                        <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
+                          <span className="text-xl font-bold text-white">{semIndex + 1}</span>
                         </div>
                         <div className="text-left">
-                          <h3 className="text-lg font-semibold">{semester.name}</h3>
+                          <h3 className="text-lg font-bold text-foreground">{semester.name}</h3>
                           <p className="text-sm text-muted-foreground">{semester.courses.length} courses</p>
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="pt-4">
+                    <AccordionContent className="pt-2 pb-6">
                       <div className="space-y-3">
                         {semester.courses.map((course: any, courseIndex: number) => {
                           const courseId = `${id}-${semIndex}-${courseIndex}`;
@@ -510,19 +528,19 @@ const GraduateProgramDetail = () => {
                               to={`/course/${courseId}`}
                               className="block"
                             >
-                              <Card className="group hover:shadow-md transition-all duration-300 border-border/50 cursor-pointer hover:border-primary/50">
-                                <CardHeader className="pb-3">
-                                  <div className="flex items-start justify-between gap-4">
-                                    <div className="flex-1">
-                                      <CardTitle className="text-base group-hover:text-primary transition-colors flex items-center gap-2">
-                                        {course.name}
-                                        <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              <Card className="group hover:shadow-lg transition-all duration-300 border-border/30 cursor-pointer hover:border-primary/40 bg-background/50 hover:bg-background/80">
+                                <CardHeader className="p-4">
+                                  <div className="flex items-center justify-between gap-4">
+                                    <div className="flex-1 min-w-0">
+                                      <CardTitle className="text-base font-semibold group-hover:text-primary transition-colors flex items-center gap-2">
+                                        <span className="truncate">{course.name}</span>
+                                        <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all shrink-0" />
                                       </CardTitle>
-                                      <CardDescription className="mt-2">
+                                      <CardDescription className="mt-1.5 line-clamp-1">
                                         {course.description}
                                       </CardDescription>
                                     </div>
-                                    <Badge variant="secondary" className="shrink-0">
+                                    <Badge className="shrink-0 bg-primary/10 text-primary border-0 font-semibold px-3 py-1">
                                       {course.credits} CFU
                                     </Badge>
                                   </div>
@@ -537,71 +555,91 @@ const GraduateProgramDetail = () => {
                 ))}
               </Accordion>
 
-              <div className="text-center mt-8">
-                <Button size="lg" className="gap-2">
+              <div className="text-center mt-12">
+                <Button size="lg" className="gap-2 px-8 py-6 text-base font-semibold rounded-xl bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
                   Apply Now
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="h-5 w-5" />
                 </Button>
               </div>
             </TabsContent>
 
-            <TabsContent value="structure" className="space-y-6">
+            <TabsContent value="structure" className="space-y-8 animate-fade-in">
               <div className="max-w-4xl mx-auto">
-                <h2 className="font-nunito text-3xl font-bold mb-8 text-center">Program Structure</h2>
+                <h2 className="font-helvetica text-3xl md:text-4xl font-bold mb-10 text-center uppercase tracking-tight">Program Structure</h2>
                 
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Users className="h-5 w-5 text-primary" />
+                <div className="grid md:grid-cols-2 gap-6 mb-10">
+                  <Card className="glass border-border/30 hover:shadow-lg transition-all duration-300 group">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="flex items-center gap-3 text-lg">
+                        <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Users className="h-5 w-5 text-primary" />
+                        </div>
                         Learning Approach
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                      <ul className="space-y-3 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-primary" />
+                          </div>
                           <span>Interactive lectures and seminars</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-primary" />
+                          </div>
                           <span>Hands-on projects and case studies</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-primary" />
+                          </div>
                           <span>Group work and presentations</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-primary" />
+                          </div>
                           <span>Research and independent study</span>
                         </li>
                       </ul>
                     </CardContent>
                   </Card>
 
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Award className="h-5 w-5 text-primary" />
+                  <Card className="glass border-border/30 hover:shadow-lg transition-all duration-300 group">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="flex items-center gap-3 text-lg">
+                        <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Award className="h-5 w-5 text-secondary" />
+                        </div>
                         Assessment Methods
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                      <ul className="space-y-3 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-secondary" />
+                          </div>
                           <span>Written and oral examinations</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-secondary" />
+                          </div>
                           <span>Individual and group projects</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-secondary" />
+                          </div>
                           <span>Presentations and reports</span>
                         </li>
-                        <li className="flex items-start gap-2">
-                          <ChevronRight className="h-4 w-4 mt-0.5 text-primary" />
+                        <li className="flex items-start gap-3">
+                          <div className="h-5 w-5 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <ChevronRight className="h-3 w-3 text-secondary" />
+                          </div>
                           <span>Master's thesis defense</span>
                         </li>
                       </ul>
@@ -609,19 +647,20 @@ const GraduateProgramDetail = () => {
                   </Card>
                 </div>
 
-                <Card className="bg-gradient-to-br from-primary/5 to-purple-500/5 border-primary/20">
-                  <CardHeader>
-                    <CardTitle>Career Opportunities</CardTitle>
-                    <CardDescription>
+                <Card className="glass border-primary/20 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+                  <CardHeader className="relative">
+                    <CardTitle className="font-helvetica text-xl uppercase tracking-tight">Career Opportunities</CardTitle>
+                    <CardDescription className="text-base">
                       Graduates are well-prepared for various career paths
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="grid md:grid-cols-2 gap-3">
+                  <CardContent className="relative">
+                    <div className="grid md:grid-cols-2 gap-4">
                       {getCareerPaths(id || "1").map((career, index) => (
-                        <div key={index} className="flex items-center gap-2 text-sm">
-                          <div className="h-2 w-2 rounded-full bg-primary" />
-                          <span>{career}</span>
+                        <div key={index} className="flex items-center gap-3 text-sm group/career">
+                          <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-primary to-secondary group-hover/career:scale-125 transition-transform" />
+                          <span className="group-hover/career:text-primary transition-colors">{career}</span>
                         </div>
                       ))}
                     </div>
