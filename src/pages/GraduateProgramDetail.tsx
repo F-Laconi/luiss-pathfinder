@@ -22,19 +22,19 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "European Integration and Institutions", credits: 9, description: "Study of EU institutional framework" },
-          { name: "Comparative Political Systems", credits: 9, description: "Analysis of political systems across Europe" },
+          { name: "European Integration and Institutions", credits: 6, description: "Study of EU institutional framework" },
+          { name: "Comparative Political Systems", credits: 6, description: "Analysis of political systems across Europe" },
           { name: "Policy Analysis and Evaluation", credits: 6, description: "Methods for policy assessment" },
           { name: "Research Methods in Political Science", credits: 6, description: "Research methodologies" },
-          { name: "European Law and Governance", credits: 9, description: "Legal frameworks governing EU" },
-          { name: "Public Administration", credits: 9, description: "Public sector management" },
+          { name: "European Law and Governance", credits: 6, description: "Legal frameworks governing EU" },
+          { name: "Public Administration", credits: 6, description: "Public sector management" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "Digital Governance", credits: 9, description: "Technology in modern governance" },
-          { name: "Environmental Policy", credits: 9, description: "EU sustainability goals" },
+          { name: "Digital Governance", credits: 6, description: "Technology in modern governance" },
+          { name: "Environmental Policy", credits: 6, description: "EU sustainability goals" },
           { name: "Migration Policies", credits: 6, description: "Migration frameworks" },
           { name: "Master's Thesis", credits: 24, description: "Independent research project" },
           { name: "Internship", credits: 6, description: "Practical experience" },
@@ -54,18 +54,18 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "Macroeconomics", credits: 9, description: "Advanced macroeconomic theory" },
-          { name: "Microeconomics", credits: 9, description: "Consumer and producer theory" },
+          { name: "Macroeconomics", credits: 6, description: "Advanced macroeconomic theory" },
+          { name: "Microeconomics", credits: 6, description: "Consumer and producer theory" },
           { name: "Mathematics for Economics", credits: 6, description: "Mathematical tools for analysis" },
-          { name: "Financial Markets and Institutions", credits: 9, description: "Financial systems structure" },
-          { name: "Monetary Economics", credits: 9, description: "Central banking and policy" },
+          { name: "Financial Markets and Institutions", credits: 6, description: "Financial systems structure" },
+          { name: "Monetary Economics", credits: 6, description: "Central banking and policy" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "Financial Regulation", credits: 9, description: "Regulatory frameworks" },
-          { name: "European Economic Policy", credits: 9, description: "EU economic governance" },
+          { name: "Financial Regulation", credits: 6, description: "Regulatory frameworks" },
+          { name: "European Economic Policy", credits: 6, description: "EU economic governance" },
           { name: "Applied Economic Analysis", credits: 6, description: "Problem solving" },
           { name: "Master's Thesis", credits: 24, description: "Research in economics" },
         ]
@@ -136,18 +136,18 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "Global Business Strategy", credits: 9, description: "Strategic management in international contexts" },
-          { name: "International Political Economy", credits: 9, description: "Politics and economics in global markets" },
+          { name: "Global Business Strategy", credits: 6, description: "Strategic management in international contexts" },
+          { name: "International Political Economy", credits: 6, description: "Politics and economics in global markets" },
           { name: "Comparative Politics", credits: 6, description: "Political systems analysis" },
-          { name: "Global Governance and Institutions", credits: 9, description: "International organizations" },
-          { name: "Corporate Diplomacy", credits: 9, description: "Business-government relations" },
+          { name: "Global Governance and Institutions", credits: 6, description: "International organizations" },
+          { name: "Corporate Diplomacy", credits: 6, description: "Business-government relations" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "Sustainability and Global Challenges", credits: 9, description: "Environmental governance" },
-          { name: "Emerging Markets Management", credits: 9, description: "Business in developing economies" },
+          { name: "Sustainability and Global Challenges", credits: 6, description: "Environmental governance" },
+          { name: "Emerging Markets Management", credits: 6, description: "Business in developing economies" },
           { name: "Master's Thesis", credits: 24, description: "Research on global management or politics" },
           { name: "Global Leadership Workshop", credits: 6, description: "Leadership skills" },
         ]
@@ -203,18 +203,18 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "International Relations Theory", credits: 9, description: "Theoretical frameworks" },
-          { name: "Global Governance", credits: 9, description: "International organizations" },
+          { name: "International Relations Theory", credits: 6, description: "Theoretical frameworks" },
+          { name: "Global Governance", credits: 6, description: "International organizations" },
           { name: "Foreign Policy Analysis", credits: 6, description: "Policy-making processes" },
-          { name: "International Law", credits: 9, description: "Legal frameworks" },
-          { name: "Security Studies", credits: 9, description: "Global security issues" },
+          { name: "International Law", credits: 6, description: "Legal frameworks" },
+          { name: "Security Studies", credits: 6, description: "Global security issues" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "Regional Studies", credits: 9, description: "Area-specific analysis" },
-          { name: "International Political Economy", credits: 9, description: "Global economic relations" },
+          { name: "Regional Studies", credits: 6, description: "Area-specific analysis" },
+          { name: "International Political Economy", credits: 6, description: "Global economic relations" },
           { name: "Master's Thesis", credits: 24, description: "Research project" },
           { name: "Internship", credits: 6, description: "International organization experience" },
         ]
@@ -233,18 +233,18 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "Strategic Management", credits: 9, description: "Strategy formulation" },
-          { name: "Organizational Behavior", credits: 9, description: "Leadership and team dynamics" },
+          { name: "Strategic Management", credits: 6, description: "Strategy formulation" },
+          { name: "Organizational Behavior", credits: 6, description: "Leadership and team dynamics" },
           { name: "Managerial Economics", credits: 6, description: "Economic principles" },
-          { name: "Marketing Management", credits: 9, description: "Marketing strategy" },
-          { name: "Operations Management", credits: 9, description: "Process optimization" },
+          { name: "Marketing Management", credits: 6, description: "Marketing strategy" },
+          { name: "Operations Management", credits: 6, description: "Process optimization" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "Innovation and Entrepreneurship", credits: 9, description: "New ventures" },
-          { name: "International Business", credits: 9, description: "Global strategy" },
+          { name: "Innovation and Entrepreneurship", credits: 6, description: "New ventures" },
+          { name: "International Business", credits: 6, description: "Global strategy" },
           { name: "Master's Thesis", credits: 24, description: "Research project" },
           { name: "Business Project", credits: 6, description: "Consulting experience" },
         ]
@@ -300,17 +300,17 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "Corporate Strategy", credits: 9, description: "Strategic analysis and planning" },
-          { name: "Competitive Strategy", credits: 9, description: "Competitive advantage" },
-          { name: "Business Model Innovation", credits: 9, description: "Business model transformation" },
-          { name: "Strategic Leadership", credits: 9, description: "Leading change" },
+          { name: "Corporate Strategy", credits: 6, description: "Strategic analysis and planning" },
+          { name: "Competitive Strategy", credits: 6, description: "Competitive advantage" },
+          { name: "Business Model Innovation", credits: 6, description: "Business model transformation" },
+          { name: "Strategic Leadership", credits: 6, description: "Leading change" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "AI & Digital Marketing", credits: 9, description: "AI-driven marketing strategies and digital transformation" },
-          { name: "Digital Transformation Strategy", credits: 9, description: "Technology-driven change" },
+          { name: "AI & Digital Marketing", credits: 6, description: "AI-driven marketing strategies and digital transformation" },
+          { name: "Digital Transformation Strategy", credits: 6, description: "Technology-driven change" },
           { name: "Master's Thesis", credits: 21, description: "Strategic research" },
           { name: "Strategy Project", credits: 6, description: "Consulting engagement" },
         ]
@@ -329,17 +329,17 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "Advanced Financial Accounting", credits: 9, description: "Complex accounting transactions" },
-          { name: "Management Accounting", credits: 9, description: "Cost accounting" },
-          { name: "Internal Auditing", credits: 9, description: "Audit procedures" },
-          { name: "Management Control Systems", credits: 9, description: "Performance measurement" },
+          { name: "Advanced Financial Accounting", credits: 6, description: "Complex accounting transactions" },
+          { name: "Management Accounting", credits: 6, description: "Cost accounting" },
+          { name: "Internal Auditing", credits: 6, description: "Audit procedures" },
+          { name: "Management Control Systems", credits: 6, description: "Performance measurement" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "Risk Management", credits: 9, description: "Enterprise risk frameworks" },
-          { name: "Treasury Management", credits: 9, description: "Liquidity operations" },
+          { name: "Risk Management", credits: 6, description: "Enterprise risk frameworks" },
+          { name: "Treasury Management", credits: 6, description: "Liquidity operations" },
           { name: "Master's Thesis", credits: 21, description: "Research in accounting" },
           { name: "Professional Practicum", credits: 6, description: "Hands-on experience" },
         ]
@@ -358,18 +358,18 @@ const programsData: Record<string, any> = {
       {
         name: "First Year",
         courses: [
-          { name: "Foundations of Data Science", credits: 9, description: "Data science concepts" },
-          { name: "Programming for Data Analysis", credits: 9, description: "Python and R programming" },
+          { name: "Foundations of Data Science", credits: 6, description: "Data science concepts" },
+          { name: "Programming for Data Analysis", credits: 6, description: "Python and R programming" },
           { name: "Statistics and Probability", credits: 6, description: "Statistical foundations" },
-          { name: "Machine Learning", credits: 9, description: "ML algorithms" },
-          { name: "Business Intelligence", credits: 9, description: "Data visualization" },
+          { name: "Machine Learning", credits: 6, description: "ML algorithms" },
+          { name: "Business Intelligence", credits: 6, description: "Data visualization" },
         ]
       },
       {
         name: "Second Year",
         courses: [
-          { name: "Deep Learning and AI", credits: 9, description: "Advanced AI techniques" },
-          { name: "Data Strategy and Management", credits: 9, description: "Data-driven transformation" },
+          { name: "Deep Learning and AI", credits: 6, description: "Advanced AI techniques" },
+          { name: "Data Strategy and Management", credits: 6, description: "Data-driven transformation" },
           { name: "Master's Thesis", credits: 21, description: "Data science research" },
           { name: "Capstone Project", credits: 6, description: "Industry project" },
         ]
