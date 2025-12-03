@@ -309,7 +309,7 @@ const programsData: Record<string, any> = {
       {
         name: "Second Year",
         courses: [
-          { name: "Global Strategy", credits: 9, description: "International expansion" },
+          { name: "AI & Digital Marketing", credits: 9, description: "AI-driven marketing strategies and digital transformation" },
           { name: "Digital Transformation Strategy", credits: 9, description: "Technology-driven change" },
           { name: "Master's Thesis", credits: 21, description: "Strategic research" },
           { name: "Strategy Project", credits: 6, description: "Consulting engagement" },
