@@ -401,7 +401,7 @@ const CourseDetail = () => {
                         <div className="text-right">
                           <div className="font-bold text-lg text-primary">{note.price}</div>
                           <Button size="sm" className="mt-1">
-                            Buy Notes
+                            Buy Notes Now!
                           </Button>
                         </div>
                       </div>
