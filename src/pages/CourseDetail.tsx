@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import professorImage from "@/assets/professor-maximo-ibarra.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -269,11 +270,12 @@ const CourseDetail = () => {
                 <CardTitle>Professor Maximo Ibarra</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {/* Professor image placeholder */}
-                <div className="w-24 h-24 bg-muted rounded-full mx-auto flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">
-                </span>
-                </div>
+                {/* Professor image */}
+                <img 
+                  src={professorImage} 
+                  alt="Professor Maximo Ibarra" 
+                  className="w-24 h-24 rounded-full mx-auto object-cover"
+                />
                 
                 <div className="text-center">
                   <h3 className="font-semibold text-lg">{professorData.name}</h3>
