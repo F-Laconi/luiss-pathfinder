@@ -194,7 +194,7 @@ const studentNotes = [{
   grade: "28/30",
   price: "€15",
   rating: 4.5,
-  description: "Complete notes covering all lectures with detailed case studies and frameworks. Includes my personal insights and exam preparation tips that helped me get an A.",
+  description: "Complete notes covering all lectures with detailed case studies and frameworks. Includes my personal insights and exam preparation tips that helped me get a grade between 28 and 30.",
   pageCount: 45
 }, {
   id: 2,
