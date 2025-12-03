@@ -379,6 +379,7 @@ const CourseDetail = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Student Notes Available</CardTitle>
+                <p className="text-sm text-muted-foreground italic">made by students, for students</p>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
