@@ -198,7 +198,7 @@ const studentNotes = [{
   pageCount: 45
 }, {
   id: 2,
-  studentName: "Sofia L.",
+  studentName: "Alice L.",
   year: "2023",
   grade: "30/30",
   price: "€12",
