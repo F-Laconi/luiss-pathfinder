@@ -343,7 +343,7 @@ const CourseDetail = () => {
               <CardContent>
                 <p className="text-muted-foreground mb-6">{course.description}</p>
                 
-                <h4 className="font-semibold mb-4 text-lg">What You'll Actually Learn 🎯</h4>
+                <h4 className="font-semibold mb-4 text-lg">What You'll Actually Learn</h4>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
                     <span className="text-2xl">🤖</span>
