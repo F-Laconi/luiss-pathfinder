@@ -16,7 +16,7 @@ const professorData = {
   description: "Professor Rossi is a distinguished expert in strategic management with over 15 years of experience in both academia and consulting. He holds a PhD from Bocconi University and has published extensively in top-tier journals.",
   levelOfEnglish: "Native",
   classPercentage: "85%",
-  examType: "Written exam + Case study presentation",
+  examType: "Written final exam 50%, Oral presentation 50%",
   attendanceMandatory: true
 };
 
