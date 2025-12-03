@@ -177,6 +177,12 @@ const graduateCoursesData: Record<string, any> = {
     credits: 4,
     description: "Analysis of financial statements using ratio analysis and profitability metrics",
     programId: "3"
+  },
+  "9-1-0": {
+    name: "AI & Digital Marketing Course",
+    credits: 6,
+    description: "Comprehensive exploration of artificial intelligence applications in digital marketing, including machine learning for customer insights, automated content creation, and data-driven marketing strategies",
+    programId: "9"
   }
 };
 
