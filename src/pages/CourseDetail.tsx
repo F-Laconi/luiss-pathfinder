@@ -181,7 +181,7 @@ const graduateCoursesData: Record<string, any> = {
   "9-1-0": {
     name: "AI & Digital Marketing Course",
     credits: 6,
-    description: "Comprehensive exploration of artificial intelligence applications in digital marketing, including machine learning for customer insights, automated content creation, and data-driven marketing strategies",
+    description: "If you're curious about how artificial intelligence is transforming the way companies communicate, sell, and grow… then this course is definitely for you. You'll discover how smart tools like chatbots, predictive analytics, and AI-powered content generators can make marketing not only more effective, but also way more fun. You'll explore how brands use data to understand customers, how algorithms decide what you see online, and how you can use AI to design campaigns that actually work. This course is perfect if you love things like AI trends, digital strategy, social media, creativity, or just figuring out how tech shapes the world. And don't worry, you don't need to be a coding expert!",
     programId: "9"
   }
 };
