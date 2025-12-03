@@ -523,7 +523,7 @@ const GraduateProgramDetail = () => {
                                       </CardDescription>
                                     </div>
                                     <Badge variant="secondary" className="shrink-0">
-                                      {course.credits} ECTS
+                                      {course.credits} CFU
                                     </Badge>
                                   </div>
                                 </CardHeader>
