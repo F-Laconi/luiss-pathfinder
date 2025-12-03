@@ -13,7 +13,7 @@ const professorData = {
   image: "/placeholder.svg",
   // Placeholder for professor image
   rating: 8.5,
-  description: "Professor Rossi is a distinguished expert in strategic management with over 15 years of experience in both academia and consulting. He holds a PhD from Bocconi University and has published extensively in top-tier journals.",
+  description: "Prof. Maximo Ibarra is a global tech and telecom leader with years of experience guiding major companies through digital transformation. Born in Colombia and educated in Italy and abroad, he has worked as CEO in top international firms and built a strong reputation in marketing, innovation, and business strategy. Here in LUISS he brings real-world insights straight into the classroom. If you want a teacher who combines industry expertise with a passion for the future of tech, he's exactly that.",
   levelOfEnglish: "Native",
   classPercentage: "85%",
   examType: "Written final exam 50%, Oral presentation 50%",
