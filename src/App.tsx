@@ -15,6 +15,7 @@ import UndergraduateProgramDetail from "./pages/UndergraduateProgramDetail";
 import PostGraduateSchool from "./pages/PostGraduateSchool";
 import PostGraduateProgramDetail from "./pages/PostGraduateProgramDetail";
 import CourseDetail from "./pages/CourseDetail";
+import Checkout from "./pages/Checkout";
 import BusinessPartner from "./pages/BusinessPartner";
 import PostPosition from "./pages/PostPosition";
 import StudentBoard from "./pages/StudentBoard";
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/school/postgraduate" element={<PostGraduateSchool />} />
           <Route path="/postgraduate/program/:id" element={<PostGraduateProgramDetail />} />
           <Route path="/course/:courseId" element={<CourseDetail />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/school/:schoolId" element={<MasterCategory />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

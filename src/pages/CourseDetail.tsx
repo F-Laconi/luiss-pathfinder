@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import professorImage from "@/assets/professor-maximo-ibarra.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -238,6 +238,7 @@ const CourseDetail = () => {
   const {
     courseId
   } = useParams();
+  const navigate = useNavigate();
   const course = graduateCoursesData[courseId || ""] || {
     name: "Course Not Found",
     credits: 0,
@@ -400,7 +401,11 @@ const CourseDetail = () => {
                         </div>
                         <div className="text-right">
                           <div className="font-bold text-lg text-primary">{note.price}</div>
-                          <Button size="sm" className="mt-1">
+                          <Button 
+                            size="sm" 
+                            className="mt-1"
+                            onClick={() => navigate('/checkout', { state: { note } })}
+                          >
                             Buy Notes Now!
                           </Button>
                         </div>
