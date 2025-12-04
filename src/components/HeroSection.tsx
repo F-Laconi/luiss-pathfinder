@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/luiss-campus-background.png";
 
 // Import program images
 import lawIcon from "@/assets/law-icon.jpg";
