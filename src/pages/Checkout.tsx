@@ -19,10 +19,10 @@ const Checkout = () => {
   };
 
   const paymentMethods = [
-    { id: "card", name: "Credit Card", icon: CreditCard, color: "bg-blue-500" },
-    { id: "apple", name: "Apple Pay", icon: Apple, color: "bg-black" },
-    { id: "klarna", name: "Klarna", icon: Wallet, color: "bg-pink-500" },
-    { id: "satispay", name: "Satispay", icon: Wallet, color: "bg-red-500" },
+    { id: "card", name: "Credit Card", icon: CreditCard, color: "bg-blue-500", description: "Pay securely with Visa, Mastercard or Amex" },
+    { id: "apple", name: "Apple Pay", icon: Apple, color: "bg-black", description: "Fast and safe with Face ID" },
+    { id: "klarna", name: "Klarna", icon: Wallet, color: "bg-pink-500", description: "Divide your payments without stress" },
+    { id: "satispay", name: "Satispay", icon: Wallet, color: "bg-red-500", description: "Quick checkout with your phone" },
   ];
 
   const handleCheckout = () => {
@@ -73,30 +73,36 @@ const Checkout = () => {
               <button
                 key={method.id}
                 onClick={() => setSelectedPayment(method.id)}
-                className={`flex items-center gap-3 p-4 rounded-lg border-2 transition-all ${
+                className={`flex flex-col items-start gap-2 p-4 rounded-xl border-2 transition-all ${
                   selectedPayment === method.id 
-                    ? "border-primary bg-primary/10" 
-                    : "border-border hover:border-primary/50"
+                    ? "border-primary bg-primary/10 shadow-md" 
+                    : "border-border hover:border-primary/50 hover:bg-muted/50"
                 }`}
               >
-                <div className={`p-2 rounded-full ${method.color} text-white`}>
-                  <method.icon className="w-5 h-5" />
+                <div className="flex items-center gap-3">
+                  <div className={`p-2 rounded-full ${method.color} text-white`}>
+                    <method.icon className="w-5 h-5" />
+                  </div>
+                  <span className="font-semibold">{method.name}</span>
                 </div>
-                <span className="font-medium">{method.name}</span>
+                <span className="text-xs text-muted-foreground text-left">{method.description}</span>
               </button>
             ))}
           </CardContent>
         </Card>
 
         {/* Checkout Button */}
-        <Button 
-          onClick={handleCheckout}
-          disabled={!selectedPayment}
-          className="w-full py-6 text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transition-all"
-          size="lg"
-        >
-          Complete Purchase
-        </Button>
+        <div className="text-center space-y-3">
+          <Button 
+            onClick={handleCheckout}
+            disabled={!selectedPayment}
+            className="w-full py-7 text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all rounded-xl"
+            size="lg"
+          >
+            Complete Purchase
+          </Button>
+          <p className="text-base font-medium text-foreground/80">Just a click and notes are yours ✨</p>
+        </div>
         
         <p className="text-center text-sm text-muted-foreground mt-4">
           Secure payment powered by our trusted partners
