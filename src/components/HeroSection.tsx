@@ -35,31 +35,168 @@ import undergraduate7 from "@/assets/undergraduate-7.png";
 import undergraduate8 from "@/assets/undergraduate-8.png";
 
 // All searchable programs
-const searchablePrograms = [
-  { id: "undergrad-1", title: "Global Law", type: "Undergraduate", category: "Law", link: "/undergraduate/program/1", image: undergraduate1 },
-  { id: "undergrad-2", title: "Business Administration", type: "Undergraduate", category: "Business", link: "/undergraduate/program/2", image: undergraduate2 },
-  { id: "undergrad-3", title: "Management and Artificial Intelligence", type: "Undergraduate", category: "Technology", link: "/undergraduate/program/3", image: undergraduate3 },
-  { id: "undergrad-4", title: "Economics and Business", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/4", image: undergraduate4 },
-  { id: "undergrad-5", title: "Politics: Philosophy and Economics", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/5", image: undergraduate5 },
-  { id: "undergrad-6", title: "Giurisprudenza", type: "Undergraduate", category: "Law", link: "/undergraduate/program/6", image: undergraduate6 },
-  { id: "undergrad-7", title: "Economics and Management", type: "Undergraduate", category: "Economics", link: "/undergraduate/program/7", image: undergraduate7 },
-  { id: "undergrad-8", title: "Political Science", type: "Undergraduate", category: "Politics", link: "/undergraduate/program/8", image: undergraduate8 },
-  { id: "grad-1", title: "Policies and Governance in Europe", type: "Graduate", category: "Politics & Governance", link: "/graduate/program/1", image: policiesGovernanceImage },
-  { id: "grad-2", title: "Economia, Istituzioni e Mercati Finanziari", type: "Graduate", category: "Economics & Finance", link: "/graduate/program/2", image: economiaIstituzioniImage },
-  { id: "grad-3", title: "Finance", type: "Graduate", category: "Finance", link: "/graduate/program/3", image: financeImage },
-  { id: "grad-4", title: "Global Management and Politics", type: "Graduate", category: "Management & Politics", link: "/graduate/program/4", image: globalManagementImage },
-  { id: "grad-5", title: "Government and Public Affairs", type: "Graduate", category: "Government & Public Affairs", link: "/graduate/program/5", image: governmentAffairsImage },
-  { id: "grad-6", title: "International Relations", type: "Graduate", category: "International Relations", link: "/graduate/program/6", image: internationalRelationsImage },
-  { id: "grad-7", title: "Management", type: "Graduate", category: "Management", link: "/graduate/program/7", image: managementImage },
-  { id: "grad-8", title: "Marketing", type: "Graduate", category: "Marketing", link: "/graduate/program/8", image: marketingImage },
-  { id: "grad-9", title: "Strategic Management", type: "Graduate", category: "Strategic Management", link: "/graduate/program/9", image: strategicManagementImage },
-  { id: "grad-10", title: "Amministrazione, Finanza e Controllo", type: "Graduate", category: "Administration & Finance", link: "/graduate/program/10", image: amministrazioneFinanzaImage },
-  { id: "grad-11", title: "Data Science and Management", type: "Graduate", category: "Data Science", link: "/graduate/program/11", image: dataScienceImage },
-  { id: "postgrad-1", title: "PhD in Economics", type: "Post-Graduate", category: "Economics", link: "/course/1", image: postgraduate1 },
-  { id: "postgrad-2", title: "PhD in Management", type: "Post-Graduate", category: "Management", link: "/course/2", image: postgraduate2 },
-  { id: "postgrad-3", title: "PhD in Politics", type: "Post-Graduate", category: "Politics", link: "/course/3", image: postgraduate3 },
-  { id: "postgrad-4", title: "PhD in Law and Business", type: "Post-Graduate", category: "Law & Business", link: "/course/4", image: postgraduate4 },
-];
+const searchablePrograms = [{
+  id: "undergrad-1",
+  title: "Global Law",
+  type: "Undergraduate",
+  category: "Law",
+  link: "/undergraduate/program/1",
+  image: undergraduate1
+}, {
+  id: "undergrad-2",
+  title: "Business Administration",
+  type: "Undergraduate",
+  category: "Business",
+  link: "/undergraduate/program/2",
+  image: undergraduate2
+}, {
+  id: "undergrad-3",
+  title: "Management and Artificial Intelligence",
+  type: "Undergraduate",
+  category: "Technology",
+  link: "/undergraduate/program/3",
+  image: undergraduate3
+}, {
+  id: "undergrad-4",
+  title: "Economics and Business",
+  type: "Undergraduate",
+  category: "Economics",
+  link: "/undergraduate/program/4",
+  image: undergraduate4
+}, {
+  id: "undergrad-5",
+  title: "Politics: Philosophy and Economics",
+  type: "Undergraduate",
+  category: "Politics",
+  link: "/undergraduate/program/5",
+  image: undergraduate5
+}, {
+  id: "undergrad-6",
+  title: "Giurisprudenza",
+  type: "Undergraduate",
+  category: "Law",
+  link: "/undergraduate/program/6",
+  image: undergraduate6
+}, {
+  id: "undergrad-7",
+  title: "Economics and Management",
+  type: "Undergraduate",
+  category: "Economics",
+  link: "/undergraduate/program/7",
+  image: undergraduate7
+}, {
+  id: "undergrad-8",
+  title: "Political Science",
+  type: "Undergraduate",
+  category: "Politics",
+  link: "/undergraduate/program/8",
+  image: undergraduate8
+}, {
+  id: "grad-1",
+  title: "Policies and Governance in Europe",
+  type: "Graduate",
+  category: "Politics & Governance",
+  link: "/graduate/program/1",
+  image: policiesGovernanceImage
+}, {
+  id: "grad-2",
+  title: "Economia, Istituzioni e Mercati Finanziari",
+  type: "Graduate",
+  category: "Economics & Finance",
+  link: "/graduate/program/2",
+  image: economiaIstituzioniImage
+}, {
+  id: "grad-3",
+  title: "Finance",
+  type: "Graduate",
+  category: "Finance",
+  link: "/graduate/program/3",
+  image: financeImage
+}, {
+  id: "grad-4",
+  title: "Global Management and Politics",
+  type: "Graduate",
+  category: "Management & Politics",
+  link: "/graduate/program/4",
+  image: globalManagementImage
+}, {
+  id: "grad-5",
+  title: "Government and Public Affairs",
+  type: "Graduate",
+  category: "Government & Public Affairs",
+  link: "/graduate/program/5",
+  image: governmentAffairsImage
+}, {
+  id: "grad-6",
+  title: "International Relations",
+  type: "Graduate",
+  category: "International Relations",
+  link: "/graduate/program/6",
+  image: internationalRelationsImage
+}, {
+  id: "grad-7",
+  title: "Management",
+  type: "Graduate",
+  category: "Management",
+  link: "/graduate/program/7",
+  image: managementImage
+}, {
+  id: "grad-8",
+  title: "Marketing",
+  type: "Graduate",
+  category: "Marketing",
+  link: "/graduate/program/8",
+  image: marketingImage
+}, {
+  id: "grad-9",
+  title: "Strategic Management",
+  type: "Graduate",
+  category: "Strategic Management",
+  link: "/graduate/program/9",
+  image: strategicManagementImage
+}, {
+  id: "grad-10",
+  title: "Amministrazione, Finanza e Controllo",
+  type: "Graduate",
+  category: "Administration & Finance",
+  link: "/graduate/program/10",
+  image: amministrazioneFinanzaImage
+}, {
+  id: "grad-11",
+  title: "Data Science and Management",
+  type: "Graduate",
+  category: "Data Science",
+  link: "/graduate/program/11",
+  image: dataScienceImage
+}, {
+  id: "postgrad-1",
+  title: "PhD in Economics",
+  type: "Post-Graduate",
+  category: "Economics",
+  link: "/course/1",
+  image: postgraduate1
+}, {
+  id: "postgrad-2",
+  title: "PhD in Management",
+  type: "Post-Graduate",
+  category: "Management",
+  link: "/course/2",
+  image: postgraduate2
+}, {
+  id: "postgrad-3",
+  title: "PhD in Politics",
+  type: "Post-Graduate",
+  category: "Politics",
+  link: "/course/3",
+  image: postgraduate3
+}, {
+  id: "postgrad-4",
+  title: "PhD in Law and Business",
+  type: "Post-Graduate",
+  category: "Law & Business",
+  link: "/course/4",
+  image: postgraduate4
+}];
 const HeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -70,11 +207,7 @@ const HeroSection = () => {
   // Filter suggestions based on search query
   useEffect(() => {
     if (searchQuery.trim()) {
-      const filtered = searchablePrograms.filter(program => 
-        program.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        program.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        program.type.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      const filtered = searchablePrograms.filter(program => program.title.toLowerCase().includes(searchQuery.toLowerCase()) || program.category.toLowerCase().includes(searchQuery.toLowerCase()) || program.type.toLowerCase().includes(searchQuery.toLowerCase()));
       setFilteredSuggestions(filtered);
       setShowSuggestions(true);
     } else {
@@ -98,7 +231,6 @@ const HeroSection = () => {
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
     }
   };
-
   const handleSuggestionClick = (link: string) => {
     setShowSuggestions(false);
     setSearchQuery("");
@@ -130,11 +262,7 @@ const HeroSection = () => {
               <br />
               for you
             </h1>
-            <p className="hero-subtitle max-w-2xl mx-auto text-base sm:text-lg md:text-xl px-4">
-              Explore master's programs, discover courses, read student reviews, 
-              and connect with professors before you enroll. Make informed decisions 
-              about your academic future.
-            </p>
+            <p className="hero-subtitle max-w-2xl mx-auto text-base sm:text-lg md:text-xl px-4">Explore Luiss programs, discover courses and read student reviews. Make informed decisions about your academic future.</p>
           </div>
 
           {/* Search Bar */}
@@ -144,15 +272,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3 p-2 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <Input 
-                  type="text" 
-                  placeholder="Search masters, courses, or professors..." 
-                  value={searchQuery} 
-                  onChange={e => setSearchQuery(e.target.value)} 
-                  onKeyPress={e => e.key === "Enter" && handleSearch()} 
-                  onFocus={() => searchQuery.trim() && setShowSuggestions(true)}
-                  className="search-input pl-12 border-0" 
-                />
+                <Input type="text" placeholder="Search masters, courses, or professors..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} onKeyPress={e => e.key === "Enter" && handleSearch()} onFocus={() => searchQuery.trim() && setShowSuggestions(true)} className="search-input pl-12 border-0" />
               </div>
               <Button onClick={handleSearch} className="btn-search">
                 Search
@@ -161,20 +281,10 @@ const HeroSection = () => {
             </div>
 
             {/* Suggestions Dropdown */}
-            {showSuggestions && filteredSuggestions.length > 0 && (
-              <div className="absolute top-full mt-2 w-full bg-card rounded-2xl shadow-[var(--shadow-xl)] border border-border z-[100] overflow-hidden max-h-96 overflow-y-auto">
-                {filteredSuggestions.map((suggestion) => (
-                  <button
-                    key={suggestion.id}
-                    onClick={() => handleSuggestionClick(suggestion.link)}
-                    className="w-full px-5 py-4 text-left hover:bg-primary/10 transition-colors border-b border-border/50 last:border-b-0 flex items-center gap-4 group"
-                  >
+            {showSuggestions && filteredSuggestions.length > 0 && <div className="absolute top-full mt-2 w-full bg-card rounded-2xl shadow-[var(--shadow-xl)] border border-border z-[100] overflow-hidden max-h-96 overflow-y-auto">
+                {filteredSuggestions.map(suggestion => <button key={suggestion.id} onClick={() => handleSuggestionClick(suggestion.link)} className="w-full px-5 py-4 text-left hover:bg-primary/10 transition-colors border-b border-border/50 last:border-b-0 flex items-center gap-4 group">
                     <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
-                      <img 
-                        src={suggestion.image} 
-                        alt={suggestion.title}
-                        className="w-full h-full object-cover"
-                      />
+                      <img src={suggestion.image} alt={suggestion.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
@@ -187,10 +297,8 @@ const HeroSection = () => {
                     <Badge className="bg-primary/10 text-primary border-primary/20 font-medium text-xs flex-shrink-0">
                       {suggestion.type}
                     </Badge>
-                  </button>
-                ))}
-              </div>
-            )}
+                  </button>)}
+              </div>}
           </div>
 
           {/* Quick Stats */}
