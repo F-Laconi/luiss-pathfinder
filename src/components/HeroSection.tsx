@@ -115,7 +115,7 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Students studying together" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 hero-gradient opacity-85"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
       </div>
 
       {/* Content */}
