@@ -13,90 +13,82 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 // Mock activities data
-const mockActivities = [
-  {
-    id: 1,
-    title: "Football Match at Campo Marte",
-    description: "Looking for players for a friendly football match this Saturday afternoon. All skill levels welcome!",
-    type: "Sports",
-    location: "Campo Marte, Florence",
-    date: "2025-10-20",
-    time: "15:00",
-    participants: 8,
-    maxParticipants: 22,
-    organizer: "Marco Rossi",
-  },
-  {
-    id: 2,
-    title: "Aperitivo & Networking",
-    description: "Join us for drinks and networking at a cozy bar in Santo Spirito. Great opportunity to meet new people!",
-    type: "Social",
-    location: "Bar Santo Spirito",
-    date: "2025-10-22",
-    time: "19:00",
-    participants: 15,
-    maxParticipants: 30,
-    organizer: "Sofia Bianchi",
-  },
-  {
-    id: 3,
-    title: "Study Group - Economics",
-    description: "Weekly study group for Economics students. Let's help each other prepare for exams!",
-    type: "Study",
-    location: "University Library",
-    date: "2025-10-21",
-    time: "14:00",
-    participants: 6,
-    maxParticipants: 10,
-    organizer: "Luca Verdi",
-  },
-  {
-    id: 4,
-    title: "Photography Walk",
-    description: "Exploring Florence with our cameras. Bring your camera or smartphone and let's capture the beauty of the city!",
-    type: "Creative",
-    location: "Piazzale Michelangelo",
-    date: "2025-10-23",
-    time: "10:00",
-    participants: 4,
-    maxParticipants: 12,
-    organizer: "Emma Ferrari",
-  },
-];
-
+const mockActivities = [{
+  id: 1,
+  title: "Football Match at Campo Marte",
+  description: "Looking for players for a friendly football match this Saturday afternoon. All skill levels welcome!",
+  type: "Sports",
+  location: "Campo Marte, Florence",
+  date: "2025-10-20",
+  time: "15:00",
+  participants: 8,
+  maxParticipants: 22,
+  organizer: "Marco Rossi"
+}, {
+  id: 2,
+  title: "Aperitivo & Networking",
+  description: "Join us for drinks and networking at a cozy bar in Santo Spirito. Great opportunity to meet new people!",
+  type: "Social",
+  location: "Bar Santo Spirito",
+  date: "2025-10-22",
+  time: "19:00",
+  participants: 15,
+  maxParticipants: 30,
+  organizer: "Sofia Bianchi"
+}, {
+  id: 3,
+  title: "Study Group - Economics",
+  description: "Weekly study group for Economics students. Let's help each other prepare for exams!",
+  type: "Study",
+  location: "University Library",
+  date: "2025-10-21",
+  time: "14:00",
+  participants: 6,
+  maxParticipants: 10,
+  organizer: "Luca Verdi"
+}, {
+  id: 4,
+  title: "Photography Walk",
+  description: "Exploring Florence with our cameras. Bring your camera or smartphone and let's capture the beauty of the city!",
+  type: "Creative",
+  location: "Piazzale Michelangelo",
+  date: "2025-10-23",
+  time: "10:00",
+  participants: 4,
+  maxParticipants: 12,
+  organizer: "Emma Ferrari"
+}];
 const activityIcons = {
   Sports: Trophy,
   Social: PartyPopper,
   Study: Coffee,
-  Other: MoreHorizontal,
+  Other: MoreHorizontal
 };
-
 export default function StudentActivities() {
   const [selectedActivity, setSelectedActivity] = useState<typeof mockActivities[0] | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [activities, setActivities] = useState(mockActivities);
   const [activeFilter, setActiveFilter] = useState<string>("All");
-  const { register, handleSubmit, reset, setValue } = useForm();
-
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setValue
+  } = useForm();
   const onSubmit = (data: any) => {
     const newActivity = {
       id: activities.length + 1,
       ...data,
       participants: 1,
-      organizer: "You",
+      organizer: "You"
     };
     setActivities([newActivity, ...activities]);
     setShowForm(false);
     reset();
     toast.success("Activity posted successfully!");
   };
-
-  const filteredActivities = activeFilter === "All" 
-    ? activities 
-    : activities.filter(activity => activity.type === activeFilter);
-
-  return (
-    <>
+  const filteredActivities = activeFilter === "All" ? activities : activities.filter(activity => activity.type === activeFilter);
+  return <>
       <Navigation />
       
       <div className="min-h-screen relative overflow-hidden">
@@ -111,9 +103,7 @@ export default function StudentActivities() {
             <h1 className="font-nunito text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Student Activities
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Discover and join activities, or create your own! Connect with fellow students through sports, parties, study groups, and more.
-            </p>
+            
             
             <Dialog open={showForm} onOpenChange={setShowForm}>
               <DialogTrigger asChild>
@@ -137,7 +127,7 @@ export default function StudentActivities() {
                   
                   <div>
                     <Label htmlFor="type">Activity Type</Label>
-                    <Select onValueChange={(value) => setValue("type", value)} required>
+                    <Select onValueChange={value => setValue("type", value)} required>
                       <SelectTrigger>
                         <SelectValue placeholder="Select activity type" />
                       </SelectTrigger>
@@ -152,13 +142,7 @@ export default function StudentActivities() {
                   
                   <div>
                     <Label htmlFor="description">Description</Label>
-                    <Textarea 
-                      id="description" 
-                      {...register("description")} 
-                      placeholder="Describe your activity..."
-                      rows={4}
-                      required
-                    />
+                    <Textarea id="description" {...register("description")} placeholder="Describe your activity..." rows={4} required />
                   </div>
                   
                   <div className="grid grid-cols-2 gap-4">
@@ -179,14 +163,7 @@ export default function StudentActivities() {
                   
                   <div>
                     <Label htmlFor="maxParticipants">Maximum Participants</Label>
-                    <Input 
-                      id="maxParticipants" 
-                      type="number" 
-                      {...register("maxParticipants")} 
-                      placeholder="e.g., 20"
-                      min="2"
-                      required 
-                    />
+                    <Input id="maxParticipants" type="number" {...register("maxParticipants")} placeholder="e.g., 20" min="2" required />
                   </div>
                   
                   <DialogFooter>
@@ -204,45 +181,30 @@ export default function StudentActivities() {
           <div className="flex justify-center mb-32">
             <Tabs value={activeFilter} onValueChange={setActiveFilter} className="w-full max-w-5xl">
               <TabsList className="flex flex-wrap justify-center gap-6 md:gap-8 bg-transparent p-0">
-                <TabsTrigger 
-                  value="All" 
-                  className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-purple-500/20 to-blue-500/20 backdrop-blur-sm border-3 border-purple-400/30 shadow-xl hover:shadow-2xl hover:shadow-purple-500/30 data-[state=active]:from-purple-500 data-[state=active]:to-blue-500 data-[state=active]:border-purple-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-                >
+                <TabsTrigger value="All" className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-purple-500/20 to-blue-500/20 backdrop-blur-sm border-3 border-purple-400/30 shadow-xl hover:shadow-2xl hover:shadow-purple-500/30 data-[state=active]:from-purple-500 data-[state=active]:to-blue-500 data-[state=active]:border-purple-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-purple-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
                   <span className="text-sm md:text-base font-bold group-data-[state=active]:text-white">All</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400 to-blue-400 opacity-0 group-data-[state=active]:opacity-20 blur-xl transition-opacity" />
                 </TabsTrigger>
                 
-                <TabsTrigger 
-                  value="Sports" 
-                  className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm border-3 border-orange-400/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/30 data-[state=active]:from-orange-500 data-[state=active]:to-red-500 data-[state=active]:border-orange-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-orange-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-                >
+                <TabsTrigger value="Sports" className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm border-3 border-orange-400/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/30 data-[state=active]:from-orange-500 data-[state=active]:to-red-500 data-[state=active]:border-orange-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-orange-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
                   <Trophy className="h-7 w-7 md:h-8 md:w-8 group-data-[state=active]:text-white group-data-[state=active]:animate-pulse" />
                   <span className="text-xs md:text-sm font-bold group-data-[state=active]:text-white">Sports</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-400 to-red-400 opacity-0 group-data-[state=active]:opacity-20 blur-xl transition-opacity" />
                 </TabsTrigger>
                 
-                <TabsTrigger 
-                  value="Social" 
-                  className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-pink-500/20 to-purple-500/20 backdrop-blur-sm border-3 border-pink-400/30 shadow-xl hover:shadow-2xl hover:shadow-pink-500/30 data-[state=active]:from-pink-500 data-[state=active]:to-purple-500 data-[state=active]:border-pink-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-pink-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-                >
+                <TabsTrigger value="Social" className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-pink-500/20 to-purple-500/20 backdrop-blur-sm border-3 border-pink-400/30 shadow-xl hover:shadow-2xl hover:shadow-pink-500/30 data-[state=active]:from-pink-500 data-[state=active]:to-purple-500 data-[state=active]:border-pink-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-pink-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
                   <PartyPopper className="h-7 w-7 md:h-8 md:w-8 group-data-[state=active]:text-white group-data-[state=active]:animate-pulse" />
                   <span className="text-xs md:text-sm font-bold group-data-[state=active]:text-white">Party</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 opacity-0 group-data-[state=active]:opacity-20 blur-xl transition-opacity" />
                 </TabsTrigger>
                 
-                <TabsTrigger 
-                  value="Study" 
-                  className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border-3 border-green-400/30 shadow-xl hover:shadow-2xl hover:shadow-green-500/30 data-[state=active]:from-green-500 data-[state=active]:to-emerald-500 data-[state=active]:border-green-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-green-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-                >
+                <TabsTrigger value="Study" className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border-3 border-green-400/30 shadow-xl hover:shadow-2xl hover:shadow-green-500/30 data-[state=active]:from-green-500 data-[state=active]:to-emerald-500 data-[state=active]:border-green-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-green-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
                   <Coffee className="h-7 w-7 md:h-8 md:w-8 group-data-[state=active]:text-white group-data-[state=active]:animate-pulse" />
                   <span className="text-xs md:text-sm font-bold group-data-[state=active]:text-white">Study</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 opacity-0 group-data-[state=active]:opacity-20 blur-xl transition-opacity" />
                 </TabsTrigger>
                 
-                <TabsTrigger 
-                  value="Other" 
-                  className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border-3 border-cyan-400/30 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/30 data-[state=active]:from-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:border-cyan-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-cyan-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer"
-                >
+                <TabsTrigger value="Other" className="group relative w-28 h-28 md:w-32 md:h-32 rounded-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border-3 border-cyan-400/30 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/30 data-[state=active]:from-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:border-cyan-300 data-[state=active]:shadow-2xl data-[state=active]:shadow-cyan-500/50 data-[state=active]:scale-110 transition-all duration-300 hover:scale-105 hover:-translate-y-1 cursor-pointer">
                   <MoreHorizontal className="h-7 w-7 md:h-8 md:w-8 group-data-[state=active]:text-white group-data-[state=active]:animate-pulse" />
                   <span className="text-xs md:text-sm font-bold group-data-[state=active]:text-white">Other</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400 to-blue-400 opacity-0 group-data-[state=active]:opacity-20 blur-xl transition-opacity" />
@@ -253,22 +215,13 @@ export default function StudentActivities() {
 
           {/* Activities Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-24">
-            {filteredActivities.length === 0 ? (
-              <div className="col-span-full text-center py-12">
+            {filteredActivities.length === 0 ? <div className="col-span-full text-center py-12">
                 <p className="text-muted-foreground text-lg">No activities found in this category.</p>
                 <p className="text-muted-foreground text-sm mt-2">Try selecting a different filter or create a new activity!</p>
-              </div>
-            ) : (
-              filteredActivities.map((activity) => {
-                const Icon = activityIcons[activity.type as keyof typeof activityIcons] || PartyPopper;
-                const spotsLeft = activity.maxParticipants - activity.participants;
-                
-                return (
-                  <Card 
-                    key={activity.id}
-                    className="hover:shadow-2xl transition-all duration-300 cursor-pointer group border-border/50 bg-card/80 backdrop-blur-sm hover:scale-[1.02] hover:-translate-y-1"
-                    onClick={() => setSelectedActivity(activity)}
-                  >
+              </div> : filteredActivities.map(activity => {
+            const Icon = activityIcons[activity.type as keyof typeof activityIcons] || PartyPopper;
+            const spotsLeft = activity.maxParticipants - activity.participants;
+            return <Card key={activity.id} className="hover:shadow-2xl transition-all duration-300 cursor-pointer group border-border/50 bg-card/80 backdrop-blur-sm hover:scale-[1.02] hover:-translate-y-1" onClick={() => setSelectedActivity(activity)}>
                     <CardHeader>
                       <div className="flex items-start justify-between mb-3">
                         <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all">
@@ -305,35 +258,28 @@ export default function StudentActivities() {
                       </div>
                     </CardContent>
                     <CardFooter className="pt-2">
-                      <Button 
-                        variant="outline" 
-                        className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all shadow-sm hover:shadow-md" 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toast.success("Joined activity!");
-                        }}
-                      >
+                      <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all shadow-sm hover:shadow-md" onClick={e => {
+                  e.stopPropagation();
+                  toast.success("Joined activity!");
+                }}>
                         Join Activity
                       </Button>
                     </CardFooter>
-                  </Card>
-                );
-              })
-            )}
+                  </Card>;
+          })}
           </div>
         </div>
 
         {/* Activity Detail Dialog */}
         <Dialog open={!!selectedActivity} onOpenChange={() => setSelectedActivity(null)}>
           <DialogContent className="max-w-2xl">
-            {selectedActivity && (
-              <>
+            {selectedActivity && <>
                 <DialogHeader>
                   <div className="flex items-center gap-3 mb-2">
                     {(() => {
-                      const Icon = activityIcons[selectedActivity.type as keyof typeof activityIcons] || PartyPopper;
-                      return <Icon className="h-8 w-8 text-primary" />;
-                    })()}
+                  const Icon = activityIcons[selectedActivity.type as keyof typeof activityIcons] || PartyPopper;
+                  return <Icon className="h-8 w-8 text-primary" />;
+                })()}
                     <span className="text-sm px-3 py-1 rounded-full bg-accent/20 text-accent-foreground">
                       {selectedActivity.type}
                     </span>
@@ -391,17 +337,15 @@ export default function StudentActivities() {
                     Close
                   </Button>
                   <Button onClick={() => {
-                    toast.success(`You've joined: ${selectedActivity.title}`);
-                    setSelectedActivity(null);
-                  }}>
+                toast.success(`You've joined: ${selectedActivity.title}`);
+                setSelectedActivity(null);
+              }}>
                     Join This Activity
                   </Button>
                 </DialogFooter>
-              </>
-            )}
+              </>}
           </DialogContent>
         </Dialog>
       </div>
-    </>
-  );
+    </>;
 }
