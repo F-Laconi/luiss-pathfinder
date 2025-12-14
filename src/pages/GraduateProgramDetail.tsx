@@ -18,29 +18,57 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "This program provides comprehensive knowledge of European policies, governance structures, and institutional frameworks based on official LUISS curriculum.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "European Integration and Institutions", credits: 6, description: "Study of EU institutional framework" },
-          { name: "Comparative Political Systems", credits: 6, description: "Analysis of political systems across Europe" },
-          { name: "Policy Analysis and Evaluation", credits: 6, description: "Methods for policy assessment" },
-          { name: "Research Methods in Political Science", credits: 6, description: "Research methodologies" },
-          { name: "European Law and Governance", credits: 6, description: "Legal frameworks governing EU" },
-          { name: "Public Administration", credits: 6, description: "Public sector management" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "Digital Governance", credits: 6, description: "Technology in modern governance" },
-          { name: "Environmental Policy", credits: 6, description: "EU sustainability goals" },
-          { name: "Migration Policies", credits: 6, description: "Migration frameworks" },
-          { name: "Master's Thesis", credits: 24, description: "Independent research project" },
-          { name: "Internship", credits: 6, description: "Practical experience" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "European Integration and Institutions",
+        credits: 6,
+        description: "Study of EU institutional framework"
+      }, {
+        name: "Comparative Political Systems",
+        credits: 6,
+        description: "Analysis of political systems across Europe"
+      }, {
+        name: "Policy Analysis and Evaluation",
+        credits: 6,
+        description: "Methods for policy assessment"
+      }, {
+        name: "Research Methods in Political Science",
+        credits: 6,
+        description: "Research methodologies"
+      }, {
+        name: "European Law and Governance",
+        credits: 6,
+        description: "Legal frameworks governing EU"
+      }, {
+        name: "Public Administration",
+        credits: 6,
+        description: "Public sector management"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "Digital Governance",
+        credits: 6,
+        description: "Technology in modern governance"
+      }, {
+        name: "Environmental Policy",
+        credits: 6,
+        description: "EU sustainability goals"
+      }, {
+        name: "Migration Policies",
+        credits: 6,
+        description: "Migration frameworks"
+      }, {
+        name: "Master's Thesis",
+        credits: 24,
+        description: "Independent research project"
+      }, {
+        name: "Internship",
+        credits: 6,
+        description: "Practical experience"
+      }]
+    }]
   },
   "2": {
     title: "Economia, Istituzioni e Mercati Finanziari",
@@ -50,27 +78,49 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Deep understanding of economic theory, financial markets, and institutional frameworks based on LUISS curriculum.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "Macroeconomics", credits: 6, description: "Advanced macroeconomic theory" },
-          { name: "Microeconomics", credits: 6, description: "Consumer and producer theory" },
-          { name: "Mathematics for Economics", credits: 6, description: "Mathematical tools for analysis" },
-          { name: "Financial Markets and Institutions", credits: 6, description: "Financial systems structure" },
-          { name: "Monetary Economics", credits: 6, description: "Central banking and policy" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "Financial Regulation", credits: 6, description: "Regulatory frameworks" },
-          { name: "European Economic Policy", credits: 6, description: "EU economic governance" },
-          { name: "Applied Economic Analysis", credits: 6, description: "Problem solving" },
-          { name: "Master's Thesis", credits: 24, description: "Research in economics" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "Macroeconomics",
+        credits: 6,
+        description: "Advanced macroeconomic theory"
+      }, {
+        name: "Microeconomics",
+        credits: 6,
+        description: "Consumer and producer theory"
+      }, {
+        name: "Mathematics for Economics",
+        credits: 6,
+        description: "Mathematical tools for analysis"
+      }, {
+        name: "Financial Markets and Institutions",
+        credits: 6,
+        description: "Financial systems structure"
+      }, {
+        name: "Monetary Economics",
+        credits: 6,
+        description: "Central banking and policy"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "Financial Regulation",
+        credits: 6,
+        description: "Regulatory frameworks"
+      }, {
+        name: "European Economic Policy",
+        credits: 6,
+        description: "EU economic governance"
+      }, {
+        name: "Applied Economic Analysis",
+        credits: 6,
+        description: "Problem solving"
+      }, {
+        name: "Master's Thesis",
+        credits: 24,
+        description: "Research in economics"
+      }]
+    }]
   },
   "3": {
     title: "Finance (Corporate Finance)",
@@ -80,49 +130,103 @@ const programsData: Record<string, any> = {
     credits: 65,
     intake: "September",
     description: "Official LUISS Business School Master in Financial Management – Major in Corporate Finance. Prepares students for corporate finance divisions, investment banking, and financial consulting.",
-    semesters: [
-      {
-        name: "Term 1 - General Management",
-        courses: [
-          { name: "Corporate Strategy", credits: 5, description: "Strategic planning and business strategy" },
-          { name: "Compliance and Risk Management", credits: 5, description: "Regulatory compliance" },
-          { name: "Accounting", credits: 5, description: "Financial accounting principles" },
-          { name: "Financial Management", credits: 5, description: "Corporate financial decisions" },
-          { name: "Quantitative Methods for Finance", credits: 5, description: "Mathematical tools" },
-        ]
-      },
-      {
-        name: "Term 2 - Core Courses",
-        courses: [
-          { name: "Corporate Finance", credits: 6, description: "Advanced financial management" },
-          { name: "Statistics", credits: 4, description: "Statistical analysis for finance" },
-          { name: "Advanced Accounting for Finance", credits: 5, description: "Complex accounting" },
-          { name: "Financial Ratio Analysis", credits: 4, description: "Statement analysis" },
-          { name: "Planning and Control", credits: 4, description: "Financial planning systems" },
-          { name: "Capital Markets", credits: 5, description: "Market operations" },
-          { name: "Trade Finance", credits: 4, description: "International trade financing" },
-        ]
-      },
-      {
-        name: "Term 3 - Advanced Courses",
-        courses: [
-          { name: "Derivatives", credits: 4, description: "Options and futures" },
-          { name: "Business Valuation Methods", credits: 5, description: "Valuation techniques" },
-          { name: "Mergers and Acquisitions", credits: 5, description: "M&A execution" },
-          { name: "Corporate Banking", credits: 4, description: "Banking operations" },
-          { name: "Private Equity and Venture Capital", credits: 5, description: "PE/VC strategies" },
-          { name: "Business Restructuring", credits: 4, description: "Corporate turnaround" },
-          { name: "Financial Risk Management", credits: 4, description: "Risk mitigation" },
-          { name: "Bloomberg Financial Lab", credits: 2, description: "Terminal training" },
-        ]
-      },
-      {
-        name: "Term 4 - Internship",
-        courses: [
-          { name: "Curricular Internship", credits: 12, description: "Professional experience in corporate finance or investment banking" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "Term 1 - General Management",
+      courses: [{
+        name: "Corporate Strategy",
+        credits: 5,
+        description: "Strategic planning and business strategy"
+      }, {
+        name: "Compliance and Risk Management",
+        credits: 5,
+        description: "Regulatory compliance"
+      }, {
+        name: "Accounting",
+        credits: 5,
+        description: "Financial accounting principles"
+      }, {
+        name: "Financial Management",
+        credits: 5,
+        description: "Corporate financial decisions"
+      }, {
+        name: "Quantitative Methods for Finance",
+        credits: 5,
+        description: "Mathematical tools"
+      }]
+    }, {
+      name: "Term 2 - Core Courses",
+      courses: [{
+        name: "Corporate Finance",
+        credits: 6,
+        description: "Advanced financial management"
+      }, {
+        name: "Statistics",
+        credits: 4,
+        description: "Statistical analysis for finance"
+      }, {
+        name: "Advanced Accounting for Finance",
+        credits: 5,
+        description: "Complex accounting"
+      }, {
+        name: "Financial Ratio Analysis",
+        credits: 4,
+        description: "Statement analysis"
+      }, {
+        name: "Planning and Control",
+        credits: 4,
+        description: "Financial planning systems"
+      }, {
+        name: "Capital Markets",
+        credits: 5,
+        description: "Market operations"
+      }, {
+        name: "Trade Finance",
+        credits: 4,
+        description: "International trade financing"
+      }]
+    }, {
+      name: "Term 3 - Advanced Courses",
+      courses: [{
+        name: "Derivatives",
+        credits: 4,
+        description: "Options and futures"
+      }, {
+        name: "Business Valuation Methods",
+        credits: 5,
+        description: "Valuation techniques"
+      }, {
+        name: "Mergers and Acquisitions",
+        credits: 5,
+        description: "M&A execution"
+      }, {
+        name: "Corporate Banking",
+        credits: 4,
+        description: "Banking operations"
+      }, {
+        name: "Private Equity and Venture Capital",
+        credits: 5,
+        description: "PE/VC strategies"
+      }, {
+        name: "Business Restructuring",
+        credits: 4,
+        description: "Corporate turnaround"
+      }, {
+        name: "Financial Risk Management",
+        credits: 4,
+        description: "Risk mitigation"
+      }, {
+        name: "Bloomberg Financial Lab",
+        credits: 2,
+        description: "Terminal training"
+      }]
+    }, {
+      name: "Term 4 - Internship",
+      courses: [{
+        name: "Curricular Internship",
+        credits: 12,
+        description: "Professional experience in corporate finance or investment banking"
+      }]
+    }]
   },
   "4": {
     title: "Global Management and Politics",
@@ -132,27 +236,49 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Official LUISS program combining managerial and political science skills for management and advisory roles in a globalised world. Interdisciplinary approach combining economics, management, political science, law and history.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "Global Business Strategy", credits: 6, description: "Strategic management in international contexts" },
-          { name: "International Political Economy", credits: 6, description: "Politics and economics in global markets" },
-          { name: "Comparative Politics", credits: 6, description: "Political systems analysis" },
-          { name: "Global Governance and Institutions", credits: 6, description: "International organizations" },
-          { name: "Corporate Diplomacy", credits: 6, description: "Business-government relations" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "Sustainability and Global Challenges", credits: 6, description: "Environmental governance" },
-          { name: "Emerging Markets Management", credits: 6, description: "Business in developing economies" },
-          { name: "Master's Thesis", credits: 24, description: "Research on global management or politics" },
-          { name: "Global Leadership Workshop", credits: 6, description: "Leadership skills" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "Global Business Strategy",
+        credits: 6,
+        description: "Strategic management in international contexts"
+      }, {
+        name: "International Political Economy",
+        credits: 6,
+        description: "Politics and economics in global markets"
+      }, {
+        name: "Comparative Politics",
+        credits: 6,
+        description: "Political systems analysis"
+      }, {
+        name: "Global Governance and Institutions",
+        credits: 6,
+        description: "International organizations"
+      }, {
+        name: "Corporate Diplomacy",
+        credits: 6,
+        description: "Business-government relations"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "Sustainability and Global Challenges",
+        credits: 6,
+        description: "Environmental governance"
+      }, {
+        name: "Emerging Markets Management",
+        credits: 6,
+        description: "Business in developing economies"
+      }, {
+        name: "Master's Thesis",
+        credits: 24,
+        description: "Research on global management or politics"
+      }, {
+        name: "Global Leadership Workshop",
+        credits: 6,
+        description: "Leadership skills"
+      }]
+    }]
   },
   "5": {
     title: "Government and Public Affairs",
@@ -162,34 +288,77 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Official LUISS program offering solid education in politics, administration, public policy and governance. Combines theoretical foundations with practical approach to public-private sector relations.",
-    semesters: [
-      {
-        name: "First Year - Core Courses",
-        courses: [
-          { name: "History of Institutions and Administration", credits: 6, description: "Evolution of institutional systems" },
-          { name: "Social Research Methods", credits: 6, description: "Research design methodology" },
-          { name: "Italian Political System", credits: 6, description: "Political changes and prospects" },
-          { name: "Law of Elective Assemblies", credits: 6, description: "Parliamentary procedures" },
-          { name: "Public Economics", credits: 6, description: "Economic analysis of public intervention" },
-          { name: "Demography and Italian Society", credits: 6, description: "Demographic trends" },
-          { name: "Public Ethics", credits: 6, description: "Applied public ethics" },
-          { name: "Administrative Law", credits: 2, description: "Public administration law" },
-          { name: "Public Policy Analysis", credits: 6, description: "Policy evaluation" },
-          { name: "Institutions, Media and Technologies", credits: 6, description: "Digital governance" },
-        ]
-      },
-      {
-        name: "Second Year - Specialization",
-        courses: [
-          { name: "Organisation and Public Management", credits: 6, description: "Public sector management" },
-          { name: "Elective Courses", credits: 18, description: "Specialized topics" },
-          { name: "Writing a Master's Thesis", credits: 18, description: "Thesis preparation" },
-          { name: "Internship", credits: 6, description: "Public sector experience" },
-          { name: "Final Thesis", credits: 16, description: "Research project" },
-          { name: "Other Activities", credits: 12, description: "Practical certificates" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year - Core Courses",
+      courses: [{
+        name: "History of Institutions and Administration",
+        credits: 6,
+        description: "Evolution of institutional systems"
+      }, {
+        name: "Social Research Methods",
+        credits: 6,
+        description: "Research design methodology"
+      }, {
+        name: "Italian Political System",
+        credits: 6,
+        description: "Political changes and prospects"
+      }, {
+        name: "Law of Elective Assemblies",
+        credits: 6,
+        description: "Parliamentary procedures"
+      }, {
+        name: "Public Economics",
+        credits: 6,
+        description: "Economic analysis of public intervention"
+      }, {
+        name: "Demography and Italian Society",
+        credits: 6,
+        description: "Demographic trends"
+      }, {
+        name: "Public Ethics",
+        credits: 6,
+        description: "Applied public ethics"
+      }, {
+        name: "Administrative Law",
+        credits: 2,
+        description: "Public administration law"
+      }, {
+        name: "Public Policy Analysis",
+        credits: 6,
+        description: "Policy evaluation"
+      }, {
+        name: "Institutions, Media and Technologies",
+        credits: 6,
+        description: "Digital governance"
+      }]
+    }, {
+      name: "Second Year - Specialization",
+      courses: [{
+        name: "Organisation and Public Management",
+        credits: 6,
+        description: "Public sector management"
+      }, {
+        name: "Elective Courses",
+        credits: 18,
+        description: "Specialized topics"
+      }, {
+        name: "Writing a Master's Thesis",
+        credits: 18,
+        description: "Thesis preparation"
+      }, {
+        name: "Internship",
+        credits: 6,
+        description: "Public sector experience"
+      }, {
+        name: "Final Thesis",
+        credits: 16,
+        description: "Research project"
+      }, {
+        name: "Other Activities",
+        credits: 12,
+        description: "Practical certificates"
+      }]
+    }]
   },
   "6": {
     title: "International Relations",
@@ -199,27 +368,49 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Program focusing on international affairs, diplomacy, and global governance based on LUISS curriculum.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "International Relations Theory", credits: 6, description: "Theoretical frameworks" },
-          { name: "Global Governance", credits: 6, description: "International organizations" },
-          { name: "Foreign Policy Analysis", credits: 6, description: "Policy-making processes" },
-          { name: "International Law", credits: 6, description: "Legal frameworks" },
-          { name: "Security Studies", credits: 6, description: "Global security issues" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "Regional Studies", credits: 6, description: "Area-specific analysis" },
-          { name: "International Political Economy", credits: 6, description: "Global economic relations" },
-          { name: "Master's Thesis", credits: 24, description: "Research project" },
-          { name: "Internship", credits: 6, description: "International organization experience" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "International Relations Theory",
+        credits: 6,
+        description: "Theoretical frameworks"
+      }, {
+        name: "Global Governance",
+        credits: 6,
+        description: "International organizations"
+      }, {
+        name: "Foreign Policy Analysis",
+        credits: 6,
+        description: "Policy-making processes"
+      }, {
+        name: "International Law",
+        credits: 6,
+        description: "Legal frameworks"
+      }, {
+        name: "Security Studies",
+        credits: 6,
+        description: "Global security issues"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "Regional Studies",
+        credits: 6,
+        description: "Area-specific analysis"
+      }, {
+        name: "International Political Economy",
+        credits: 6,
+        description: "Global economic relations"
+      }, {
+        name: "Master's Thesis",
+        credits: 24,
+        description: "Research project"
+      }, {
+        name: "Internship",
+        credits: 6,
+        description: "International organization experience"
+      }]
+    }]
   },
   "7": {
     title: "Management",
@@ -229,27 +420,49 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "General management program developing strategic thinking and managerial competencies based on LUISS curriculum.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "Strategic Management", credits: 6, description: "Strategy formulation" },
-          { name: "Organizational Behavior", credits: 6, description: "Leadership and team dynamics" },
-          { name: "Managerial Economics", credits: 6, description: "Economic principles" },
-          { name: "Marketing Management", credits: 6, description: "Marketing strategy" },
-          { name: "Operations Management", credits: 6, description: "Process optimization" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "Innovation and Entrepreneurship", credits: 6, description: "New ventures" },
-          { name: "International Business", credits: 6, description: "Global strategy" },
-          { name: "Master's Thesis", credits: 24, description: "Research project" },
-          { name: "Business Project", credits: 6, description: "Consulting experience" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "Strategic Management",
+        credits: 6,
+        description: "Strategy formulation"
+      }, {
+        name: "Organizational Behavior",
+        credits: 6,
+        description: "Leadership and team dynamics"
+      }, {
+        name: "Managerial Economics",
+        credits: 6,
+        description: "Economic principles"
+      }, {
+        name: "Marketing Management",
+        credits: 6,
+        description: "Marketing strategy"
+      }, {
+        name: "Operations Management",
+        credits: 6,
+        description: "Process optimization"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "Innovation and Entrepreneurship",
+        credits: 6,
+        description: "New ventures"
+      }, {
+        name: "International Business",
+        credits: 6,
+        description: "Global strategy"
+      }, {
+        name: "Master's Thesis",
+        credits: 24,
+        description: "Research project"
+      }, {
+        name: "Business Project",
+        credits: 6,
+        description: "Consulting experience"
+      }]
+    }]
   },
   "8": {
     title: "Marketing",
@@ -259,34 +472,77 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Official LUISS program combining marketing fundamentals with latest trends. Focus on brand management, consumer behaviour, marketing analytics, and digital marketing in dynamic markets.",
-    semesters: [
-      {
-        name: "First Year - Core Marketing",
-        courses: [
-          { name: "Key Topics in Marketing", credits: 6, description: "Markstrat simulation" },
-          { name: "Qualitative & Quantitative Research Methods", credits: 8, description: "Research methodologies" },
-          { name: "Consumer Behaviour Analysis", credits: 6, description: "Behavioural economics foundations" },
-          { name: "Marketing and Law", credits: 6, description: "Legal issues in marketing" },
-          { name: "Consumer Behaviour", credits: 6, description: "Marketing contexts" },
-          { name: "Behavioural Economics Applications", credits: 6, description: "Practical insights" },
-          { name: "Marketing Data Analysis", credits: 6, description: "Statistical techniques" },
-          { name: "Communication Languages", credits: 6, description: "Semiotics and narrative" },
-          { name: "Digital, Social Media and Performance Marketing", credits: 6, description: "Digital optimization" },
-          { name: "Product & Brand Management", credits: 6, description: "Brand management" },
-        ]
-      },
-      {
-        name: "Second Year - Advanced Marketing",
-        courses: [
-          { name: "Integrated Marketing Communication", credits: 6, description: "Holistic campaigns" },
-          { name: "Brand Content and Storytelling", credits: 6, description: "Content marketing" },
-          { name: "Cross Elective Courses", credits: 12, description: "Specialized topics" },
-          { name: "Internship", credits: 6, description: "Professional experience" },
-          { name: "Final Thesis", credits: 16, description: "Marketing research" },
-          { name: "Other Activities", credits: 12, description: "Practical skills" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year - Core Marketing",
+      courses: [{
+        name: "Key Topics in Marketing",
+        credits: 6,
+        description: "Markstrat simulation"
+      }, {
+        name: "Qualitative & Quantitative Research Methods",
+        credits: 8,
+        description: "Research methodologies"
+      }, {
+        name: "Consumer Behaviour Analysis",
+        credits: 6,
+        description: "Behavioural economics foundations"
+      }, {
+        name: "Marketing and Law",
+        credits: 6,
+        description: "Legal issues in marketing"
+      }, {
+        name: "Consumer Behaviour",
+        credits: 6,
+        description: "Marketing contexts"
+      }, {
+        name: "Behavioural Economics Applications",
+        credits: 6,
+        description: "Practical insights"
+      }, {
+        name: "Marketing Data Analysis",
+        credits: 6,
+        description: "Statistical techniques"
+      }, {
+        name: "Communication Languages",
+        credits: 6,
+        description: "Semiotics and narrative"
+      }, {
+        name: "Digital, Social Media and Performance Marketing",
+        credits: 6,
+        description: "Digital optimization"
+      }, {
+        name: "Product & Brand Management",
+        credits: 6,
+        description: "Brand management"
+      }]
+    }, {
+      name: "Second Year - Advanced Marketing",
+      courses: [{
+        name: "Integrated Marketing Communication",
+        credits: 6,
+        description: "Holistic campaigns"
+      }, {
+        name: "Brand Content and Storytelling",
+        credits: 6,
+        description: "Content marketing"
+      }, {
+        name: "Cross Elective Courses",
+        credits: 12,
+        description: "Specialized topics"
+      }, {
+        name: "Internship",
+        credits: 6,
+        description: "Professional experience"
+      }, {
+        name: "Final Thesis",
+        credits: 16,
+        description: "Marketing research"
+      }, {
+        name: "Other Activities",
+        credits: 12,
+        description: "Practical skills"
+      }]
+    }]
   },
   "9": {
     title: "Strategic Management",
@@ -296,26 +552,45 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Program focusing on strategic thinking and decision-making for senior management roles based on LUISS curriculum.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "Corporate Strategy", credits: 6, description: "Strategic analysis and planning" },
-          { name: "Competitive Strategy", credits: 6, description: "Competitive advantage" },
-          { name: "Business Model Innovation", credits: 6, description: "Business model transformation" },
-          { name: "Strategic Leadership", credits: 6, description: "Leading change" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "AI & Digital Marketing", credits: 6, description: "AI-driven marketing strategies and digital transformation" },
-          { name: "Digital Transformation Strategy", credits: 6, description: "Technology-driven change" },
-          { name: "Master's Thesis", credits: 21, description: "Strategic research" },
-          { name: "Strategy Project", credits: 6, description: "Consulting engagement" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "Corporate Strategy",
+        credits: 6,
+        description: "Strategic analysis and planning"
+      }, {
+        name: "Competitive Strategy",
+        credits: 6,
+        description: "Competitive advantage"
+      }, {
+        name: "Business Model Innovation",
+        credits: 6,
+        description: "Business model transformation"
+      }, {
+        name: "Strategic Leadership",
+        credits: 6,
+        description: "Leading change"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "AI & Digital Marketing",
+        credits: 6,
+        description: "AI-driven marketing strategies and digital transformation"
+      }, {
+        name: "Digital Transformation Strategy",
+        credits: 6,
+        description: "Technology-driven change"
+      }, {
+        name: "Master's Thesis",
+        credits: 21,
+        description: "Strategic research"
+      }, {
+        name: "Strategy Project",
+        credits: 6,
+        description: "Consulting engagement"
+      }]
+    }]
   },
   "10": {
     title: "Amministrazione, Finanza e Controllo",
@@ -325,26 +600,45 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Program for financial management, administration, and control based on LUISS Business School curriculum.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "Advanced Financial Accounting", credits: 6, description: "Complex accounting transactions" },
-          { name: "Management Accounting", credits: 6, description: "Cost accounting" },
-          { name: "Internal Auditing", credits: 6, description: "Audit procedures" },
-          { name: "Management Control Systems", credits: 6, description: "Performance measurement" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "Risk Management", credits: 6, description: "Enterprise risk frameworks" },
-          { name: "Treasury Management", credits: 6, description: "Liquidity operations" },
-          { name: "Master's Thesis", credits: 21, description: "Research in accounting" },
-          { name: "Professional Practicum", credits: 6, description: "Hands-on experience" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "Advanced Financial Accounting",
+        credits: 6,
+        description: "Complex accounting transactions"
+      }, {
+        name: "Management Accounting",
+        credits: 6,
+        description: "Cost accounting"
+      }, {
+        name: "Internal Auditing",
+        credits: 6,
+        description: "Audit procedures"
+      }, {
+        name: "Management Control Systems",
+        credits: 6,
+        description: "Performance measurement"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "Risk Management",
+        credits: 6,
+        description: "Enterprise risk frameworks"
+      }, {
+        name: "Treasury Management",
+        credits: 6,
+        description: "Liquidity operations"
+      }, {
+        name: "Master's Thesis",
+        credits: 21,
+        description: "Research in accounting"
+      }, {
+        name: "Professional Practicum",
+        credits: 6,
+        description: "Hands-on experience"
+      }]
+    }]
   },
   "11": {
     title: "Data Science and Management",
@@ -354,37 +648,58 @@ const programsData: Record<string, any> = {
     credits: 120,
     intake: "September",
     description: "Official LUISS program designed to develop future leaders with skills in artificial intelligence, data science and management through a practical and applied approach.",
-    semesters: [
-      {
-        name: "First Year",
-        courses: [
-          { name: "Foundations of Data Science", credits: 6, description: "Data science concepts" },
-          { name: "Programming for Data Analysis", credits: 6, description: "Python and R programming" },
-          { name: "Statistics and Probability", credits: 6, description: "Statistical foundations" },
-          { name: "Machine Learning", credits: 6, description: "ML algorithms" },
-          { name: "Business Intelligence", credits: 6, description: "Data visualization" },
-        ]
-      },
-      {
-        name: "Second Year",
-        courses: [
-          { name: "Deep Learning and AI", credits: 6, description: "Advanced AI techniques" },
-          { name: "Data Strategy and Management", credits: 6, description: "Data-driven transformation" },
-          { name: "Master's Thesis", credits: 21, description: "Data science research" },
-          { name: "Capstone Project", credits: 6, description: "Industry project" },
-        ]
-      }
-    ]
+    semesters: [{
+      name: "First Year",
+      courses: [{
+        name: "Foundations of Data Science",
+        credits: 6,
+        description: "Data science concepts"
+      }, {
+        name: "Programming for Data Analysis",
+        credits: 6,
+        description: "Python and R programming"
+      }, {
+        name: "Statistics and Probability",
+        credits: 6,
+        description: "Statistical foundations"
+      }, {
+        name: "Machine Learning",
+        credits: 6,
+        description: "ML algorithms"
+      }, {
+        name: "Business Intelligence",
+        credits: 6,
+        description: "Data visualization"
+      }]
+    }, {
+      name: "Second Year",
+      courses: [{
+        name: "Deep Learning and AI",
+        credits: 6,
+        description: "Advanced AI techniques"
+      }, {
+        name: "Data Strategy and Management",
+        credits: 6,
+        description: "Data-driven transformation"
+      }, {
+        name: "Master's Thesis",
+        credits: 21,
+        description: "Data science research"
+      }, {
+        name: "Capstone Project",
+        credits: 6,
+        description: "Industry project"
+      }]
+    }]
   }
 };
-
 const GraduateProgramDetail = () => {
-  const { id } = useParams();
+  const {
+    id
+  } = useParams();
   const program = programsData[id || "1"];
-
   if (!program) {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <Navigation />
         <div className="container mx-auto px-4 py-24 text-center">
           <h1 className="font-nunito text-3xl font-bold mb-4">Program Not Found</h1>
@@ -393,14 +708,10 @@ const GraduateProgramDetail = () => {
           </Link>
         </div>
         <Footer />
-      </div>
-    );
+      </div>;
   }
-
   const totalCourses = program.semesters.reduce((acc: number, sem: any) => acc + sem.courses.length, 0);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -431,12 +742,16 @@ const GraduateProgramDetail = () => {
               {program.title}
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-up leading-relaxed max-w-3xl" style={{ animationDelay: "0.1s" }}>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-up leading-relaxed max-w-3xl" style={{
+            animationDelay: "0.1s"
+          }}>
               {program.description}
             </p>
 
             {/* Key Info Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up" style={{
+            animationDelay: "0.2s"
+          }}>
               <Card className="group glass hover:bg-card/80 transition-all duration-500 hover:scale-105 hover:shadow-[var(--shadow-glow)]">
                 <CardContent className="p-5 text-center">
                   <div className="h-12 w-12 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -501,12 +816,7 @@ const GraduateProgramDetail = () => {
               </div>
 
               <Accordion type="single" collapsible className="w-full max-w-4xl mx-auto space-y-4">
-                {program.semesters.map((semester: any, semIndex: number) => (
-                  <AccordionItem 
-                    key={semIndex} 
-                    value={`semester-${semIndex}`}
-                    className="border border-border/50 rounded-2xl px-6 glass overflow-hidden"
-                  >
+                {program.semesters.map((semester: any, semIndex: number) => <AccordionItem key={semIndex} value={`semester-${semIndex}`} className="border border-border/50 rounded-2xl px-6 glass overflow-hidden">
                     <AccordionTrigger className="hover:no-underline py-5">
                       <div className="flex items-center gap-5">
                         <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
@@ -521,13 +831,8 @@ const GraduateProgramDetail = () => {
                     <AccordionContent className="pt-2 pb-6">
                       <div className="space-y-3">
                         {semester.courses.map((course: any, courseIndex: number) => {
-                          const courseId = `${id}-${semIndex}-${courseIndex}`;
-                          return (
-                            <Link 
-                              key={courseIndex} 
-                              to={`/course/${courseId}`}
-                              className="block"
-                            >
+                      const courseId = `${id}-${semIndex}-${courseIndex}`;
+                      return <Link key={courseIndex} to={`/course/${courseId}`} className="block">
                               <Card className="group hover:shadow-lg transition-all duration-300 border-border/30 cursor-pointer hover:border-primary/40 bg-background/50 hover:bg-background/80">
                                 <CardHeader className="p-4">
                                   <div className="flex items-center justify-between gap-4">
@@ -546,20 +851,15 @@ const GraduateProgramDetail = () => {
                                   </div>
                                 </CardHeader>
                               </Card>
-                            </Link>
-                          );
-                        })}
+                            </Link>;
+                    })}
                       </div>
                     </AccordionContent>
-                  </AccordionItem>
-                ))}
+                  </AccordionItem>)}
               </Accordion>
 
               <div className="text-center mt-12">
-                <Button size="lg" className="gap-2 px-8 py-6 text-base font-semibold rounded-xl bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                  Apply Now
-                  <ChevronRight className="h-5 w-5" />
-                </Button>
+                
               </div>
             </TabsContent>
 
@@ -657,12 +957,10 @@ const GraduateProgramDetail = () => {
                   </CardHeader>
                   <CardContent className="relative">
                     <div className="grid md:grid-cols-2 gap-4">
-                      {getCareerPaths(id || "1").map((career, index) => (
-                        <div key={index} className="flex items-center gap-3 text-sm group/career">
+                      {getCareerPaths(id || "1").map((career, index) => <div key={index} className="flex items-center gap-3 text-sm group/career">
                           <div className="h-2.5 w-2.5 rounded-full bg-gradient-to-r from-primary to-secondary group-hover/career:scale-125 transition-transform" />
                           <span className="group-hover/career:text-primary transition-colors">{career}</span>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </CardContent>
                 </Card>
@@ -673,10 +971,8 @@ const GraduateProgramDetail = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 function getCareerPaths(id: string): string[] {
   const careers: Record<string, string[]> = {
     "1": ["EU Policy Advisor", "Political Analyst", "Diplomat", "Government Relations Manager", "Public Affairs Consultant", "NGO Program Director"],
@@ -693,5 +989,4 @@ function getCareerPaths(id: string): string[] {
   };
   return careers[id] || careers["3"];
 }
-
 export default GraduateProgramDetail;
