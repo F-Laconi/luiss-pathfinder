@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb, PartyPopper } from "lucide-react";
+import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb, PartyPopper, Wallet } from "lucide-react";
+import { toast } from "sonner";
+
+declare global {
+  interface Window {
+    ethereum?: {
+      request: (args: { method: string }) => Promise<string[]>;
+      on?: (event: string, callback: (accounts: string[]) => void) => void;
+    };
+  }
+}
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -18,6 +28,42 @@ const Navigation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+  const [isConnecting, setIsConnecting] = useState(false);
+
+  const connectMetaMask = async () => {
+    if (typeof window.ethereum === 'undefined') {
+      toast.error("MetaMask not installed! Please install MetaMask extension.");
+      window.open('https://metamask.io/download/', '_blank');
+      return;
+    }
+
+    setIsConnecting(true);
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      if (accounts.length > 0) {
+        setWalletAddress(accounts[0]);
+        toast.success("Wallet connected successfully!");
+      }
+    } catch (error: any) {
+      if (error.code === 4001) {
+        toast.error("Connection rejected by user");
+      } else {
+        toast.error("Failed to connect wallet");
+      }
+    } finally {
+      setIsConnecting(false);
+    }
+  };
+
+  const disconnectWallet = () => {
+    setWalletAddress(null);
+    toast.info("Wallet disconnected");
+  };
+
+  const formatAddress = (address: string) => {
+    return `${address.slice(0, 6)}...${address.slice(-4)}`;
+  };
 
   // Check if current route is luiss-university or related pages
   const isLuissUniversityActive = location.pathname === '/luiss-university' || 
@@ -544,12 +590,34 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <Button variant="ghost" size="icon" asChild>
               <Link to="/profile">
                 <User className="h-5 w-5" />
               </Link>
             </Button>
+            {walletAddress ? (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={disconnectWallet}
+                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20 hover:text-orange-700 flex items-center gap-2"
+              >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
+                {formatAddress(walletAddress)}
+              </Button>
+            ) : (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={connectMetaMask}
+                disabled={isConnecting}
+                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20 hover:text-orange-700 flex items-center gap-2"
+              >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
+                {isConnecting ? "Connecting..." : "MetaMask"}
+              </Button>
+            )}
             <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
               Sign Up
             </Button>
@@ -562,6 +630,27 @@ const Navigation = () => {
                 <User className="h-5 w-5" />
               </Link>
             </Button>
+            {walletAddress ? (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={disconnectWallet}
+                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20 flex items-center gap-1 px-2"
+              >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
+                <span className="text-xs">{formatAddress(walletAddress)}</span>
+              </Button>
+            ) : (
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={connectMetaMask}
+                disabled={isConnecting}
+                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20"
+              >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
+              </Button>
+            )}
             <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
               Sign Up
             </Button>
