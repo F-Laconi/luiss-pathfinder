@@ -73,6 +73,10 @@ interface BlockchainContextType {
   joinDAO: (daoId: string) => Promise<boolean>;
   createProposal: (daoId: string, proposal: Omit<DAOProposal, "id" | "status" | "votes" | "createdAt">) => Promise<boolean>;
   vote: (daoId: string, proposalId: string, vote: "for" | "against" | "abstain") => Promise<boolean>;
+  
+  // Demo
+  loadDemoData: () => void;
+  isDemoMode: boolean;
 }
 
 const BlockchainContext = createContext<BlockchainContextType | undefined>(undefined);
@@ -83,12 +87,136 @@ const simulateBlockchainDelay = () => new Promise(resolve => setTimeout(resolve,
 // Generate fake transaction hash
 const generateTxHash = () => "0x" + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join("");
 
+// Generate fake wallet address
+const generateDemoWallet = () => "0x" + Array.from({ length: 40 }, () => Math.floor(Math.random() * 16).toString(16)).join("");
+
+// Demo data
+const createDemoDAOs = (walletAddress: string): DAOProject[] => [
+  {
+    id: "demo-dao-1",
+    name: "AI Startup Team Alpha",
+    description: "Building the next generation of AI-powered educational tools for university students.",
+    members: [
+      { address: walletAddress, name: "You", role: "founder", votingPower: 40, joinedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
+      { address: generateDemoWallet(), name: "Marco R.", role: "member", votingPower: 25, joinedAt: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000) },
+      { address: generateDemoWallet(), name: "Sofia L.", role: "member", votingPower: 25, joinedAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000) },
+      { address: generateDemoWallet(), name: "Prof. Bianchi", role: "advisor", votingPower: 10, joinedAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000) }
+    ],
+    proposals: [
+      {
+        id: "demo-prop-1",
+        title: "Pivot to B2B Enterprise Market",
+        description: "Shift our focus from B2C to B2B enterprise clients for better revenue potential.",
+        type: "direction",
+        status: "active",
+        votes: { for: 2, against: 1, abstain: 0 },
+        deadline: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+        createdBy: walletAddress,
+        createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000)
+      },
+      {
+        id: "demo-prop-2",
+        title: "Hire Part-time UX Designer",
+        description: "Allocate 0.1 ETH from treasury to hire a UX design student for 3 months.",
+        type: "funding",
+        status: "active",
+        votes: { for: 3, against: 0, abstain: 1 },
+        deadline: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+        createdBy: generateDemoWallet(),
+        createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000)
+      },
+      {
+        id: "demo-prop-3",
+        title: "MVP Launch Milestone Complete",
+        description: "Approve release of milestone 1 funds after successful MVP deployment.",
+        type: "milestone",
+        status: "passed",
+        votes: { for: 4, against: 0, abstain: 0 },
+        deadline: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+        createdBy: walletAddress,
+        createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000)
+      }
+    ],
+    treasury: {
+      balance: 0.85,
+      currency: "ETH",
+      transactions: [
+        { id: "tx-1", type: "deposit", amount: 1.0, description: "University Innovation Grant", approvedBy: [walletAddress], txHash: generateTxHash(), createdAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000) },
+        { id: "tx-2", type: "milestone_release", amount: 0.15, description: "MVP Development Complete", approvedBy: [walletAddress, generateDemoWallet()], txHash: generateTxHash(), createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000) }
+      ]
+    },
+    createdAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
+  },
+  {
+    id: "demo-dao-2",
+    name: "Green Campus Initiative",
+    description: "Student-led sustainability project to reduce campus carbon footprint by 30%.",
+    members: [
+      { address: walletAddress, name: "You", role: "member", votingPower: 20, joinedAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000) },
+      { address: generateDemoWallet(), name: "Elena V.", role: "founder", votingPower: 35, joinedAt: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000) },
+      { address: generateDemoWallet(), name: "Luca M.", role: "member", votingPower: 25, joinedAt: new Date(Date.now() - 40 * 24 * 60 * 60 * 1000) },
+      { address: generateDemoWallet(), name: "Giulia P.", role: "member", votingPower: 20, joinedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) }
+    ],
+    proposals: [
+      {
+        id: "demo-prop-4",
+        title: "Partner with Local Recycling Company",
+        description: "Establish partnership with EcoRecycle SRL for campus waste management.",
+        type: "direction",
+        status: "active",
+        votes: { for: 1, against: 0, abstain: 0 },
+        deadline: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        createdBy: generateDemoWallet(),
+        createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000)
+      }
+    ],
+    treasury: {
+      balance: 0.25,
+      currency: "ETH",
+      transactions: [
+        { id: "tx-3", type: "deposit", amount: 0.25, description: "Sustainability Fund Allocation", approvedBy: [generateDemoWallet()], txHash: generateTxHash(), createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000) }
+      ]
+    },
+    createdAt: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000)
+  }
+];
+
 export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
   const [isConnecting, setIsConnecting] = useState(false);
   const [verificationTokens, setVerificationTokens] = useState<VerificationToken[]>([]);
   const [isVerifying, setIsVerifying] = useState(false);
   const [userDAOs, setUserDAOs] = useState<DAOProject[]>([]);
+  const [isDemoMode, setIsDemoMode] = useState(false);
+
+  const loadDemoData = () => {
+    const demoWallet = generateDemoWallet();
+    setWalletAddress(demoWallet);
+    setUserDAOs(createDemoDAOs(demoWallet));
+    setVerificationTokens([
+      {
+        id: "demo-token-1",
+        courseId: "ug-5-0",
+        courseName: "Political Philosophy",
+        grade: "28/30",
+        verifiedAt: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000),
+        txHash: generateTxHash()
+      },
+      {
+        id: "demo-token-2",
+        courseId: "1-0-0",
+        courseName: "Corporate Finance",
+        grade: "30L/30",
+        verifiedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+        txHash: generateTxHash()
+      }
+    ]);
+    setIsDemoMode(true);
+    toast.success("🎮 Demo Mode Activated!", {
+      description: "Sample DAOs, proposals, and verified courses loaded. Explore all features!",
+      duration: 5000
+    });
+  };
 
   // Check for existing wallet connection
   useEffect(() => {
@@ -371,7 +499,9 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       createDAO,
       joinDAO,
       createProposal,
-      vote
+      vote,
+      loadDemoData,
+      isDemoMode
     }}>
       {children}
     </BlockchainContext.Provider>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
   Vote, Users, Coins, ArrowLeft, Plus, Crown, Shield, 
-  Wallet, ChevronRight, Activity, TrendingUp, Calendar
+  Wallet, ChevronRight, Activity, TrendingUp, Calendar, Sparkles
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,7 @@ import TreasuryPanel from "@/components/blockchain/TreasuryPanel";
 import { useBlockchain } from "@/contexts/BlockchainContext";
 
 const DAOManagement = () => {
-  const { walletAddress, connectWallet, userDAOs, createDAO } = useBlockchain();
+  const { walletAddress, connectWallet, userDAOs, createDAO, loadDemoData, isDemoMode } = useBlockchain();
   const [selectedDAOId, setSelectedDAOId] = useState<string | null>(null);
   const [isCreating, setIsCreating] = useState(false);
   const [newDAOName, setNewDAOName] = useState("");
@@ -68,7 +68,15 @@ const DAOManagement = () => {
             </Button>
           </Link>
           <div className="flex-1">
-            <h1 className="text-3xl font-bold uppercase tracking-tight">DAO MANAGEMENT</h1>
+            <div className="flex items-center gap-3">
+              <h1 className="text-3xl font-bold uppercase tracking-tight">DAO MANAGEMENT</h1>
+              {isDemoMode && (
+                <Badge className="bg-amber-500/20 text-amber-600 border-amber-500/30 animate-pulse">
+                  <Sparkles className="w-3 h-3 mr-1" />
+                  Demo Mode
+                </Badge>
+              )}
+            </div>
             <p className="text-muted-foreground">Manage your decentralized project teams</p>
           </div>
         </div>
@@ -84,14 +92,33 @@ const DAOManagement = () => {
               <p className="text-muted-foreground mb-6">
                 Connect your Web3 wallet to access DAO management features, vote on proposals, and manage treasury funds.
               </p>
-              <Button 
-                onClick={connectWallet} 
-                size="lg"
-                className="bg-gradient-to-r from-violet-500 to-purple-600"
-              >
-                <Wallet className="w-5 h-5 mr-2" />
-                Connect Wallet
-              </Button>
+              <div className="flex flex-col gap-3">
+                <Button 
+                  onClick={connectWallet} 
+                  size="lg"
+                  className="bg-gradient-to-r from-violet-500 to-purple-600"
+                >
+                  <Wallet className="w-5 h-5 mr-2" />
+                  Connect Wallet
+                </Button>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex-1 h-px bg-border" />
+                  <span>or</span>
+                  <div className="flex-1 h-px bg-border" />
+                </div>
+                <Button 
+                  onClick={loadDemoData} 
+                  variant="outline"
+                  size="lg"
+                  className="border-amber-500/30 text-amber-600 hover:bg-amber-500/10"
+                >
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Try Demo Mode
+                </Button>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Explore with sample DAOs, proposals, and treasury data
+                </p>
+              </div>
             </CardContent>
           </Card>
         ) : (
