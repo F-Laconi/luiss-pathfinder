@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Wallet, ChevronDown, LogOut, Shield, Vote, Coins, Bell, ArrowRight } from "lucide-react";
+import { Wallet, ChevronDown, LogOut, Shield, Vote, Bell, ArrowRight, User, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +13,17 @@ import {
 import { useBlockchain } from "@/contexts/BlockchainContext";
 
 const WalletButton = () => {
-  const { walletAddress, isConnecting, connectWallet, disconnectWallet, verificationTokens, userDAOs } = useBlockchain();
+  const { 
+    walletAddress, 
+    isConnecting, 
+    connectWallet, 
+    disconnectWallet, 
+    verificationTokens, 
+    userDAOs,
+    isDemoMode,
+    demoUser,
+    demoLogout
+  } = useBlockchain();
 
   const formatAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
@@ -48,6 +59,87 @@ const WalletButton = () => {
 
   return (
     <div className="flex items-center gap-2">
+      {/* Demo Mode User Profile */}
+      {isDemoMode && demoUser && (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="gap-2 px-2">
+              <Avatar className="w-8 h-8">
+                <AvatarImage src={demoUser.avatar} alt={demoUser.name} />
+                <AvatarFallback>{demoUser.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+              </Avatar>
+              <span className="hidden md:inline text-sm font-medium">{demoUser.name.split(' ')[0]}</span>
+              <ChevronDown className="w-4 h-4 text-muted-foreground" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-72 bg-card border-border">
+            <div className="px-3 py-3 border-b border-border">
+              <div className="flex items-center gap-3">
+                <Avatar className="w-12 h-12">
+                  <AvatarImage src={demoUser.avatar} alt={demoUser.name} />
+                  <AvatarFallback>{demoUser.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                </Avatar>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <p className="font-semibold">{demoUser.name}</p>
+                    <Badge className="bg-amber-500/20 text-amber-600 border-amber-500/30 text-xs">
+                      <Sparkles className="w-3 h-3 mr-1" />
+                      Demo
+                    </Badge>
+                  </div>
+                  <p className="text-xs text-muted-foreground">{demoUser.email}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="px-3 py-3 space-y-2 border-b border-border">
+              <div className="flex items-center gap-2 text-sm">
+                <GraduationCap className="w-4 h-4 text-primary" />
+                <span className="text-muted-foreground">{demoUser.university}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <User className="w-4 h-4 text-primary" />
+                <span className="text-muted-foreground">{demoUser.program} • Year {demoUser.year}</span>
+              </div>
+            </div>
+
+            <div className="px-3 py-2 space-y-2">
+              <div className="flex items-center justify-between text-sm">
+                <span className="flex items-center gap-2 text-muted-foreground">
+                  <Shield className="w-4 h-4 text-emerald-500" />
+                  Verified Courses
+                </span>
+                <span className="font-bold text-emerald-500">{verificationTokens.length}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="flex items-center gap-2 text-muted-foreground">
+                  <Vote className="w-4 h-4 text-violet-500" />
+                  Active DAOs
+                </span>
+                <span className="font-bold text-violet-500">{userDAOs.length}</span>
+              </div>
+            </div>
+
+            <DropdownMenuSeparator />
+            
+            <Link to="/profile">
+              <DropdownMenuItem className="cursor-pointer">
+                <User className="w-4 h-4 mr-2" />
+                View Profile
+              </DropdownMenuItem>
+            </Link>
+            
+            <DropdownMenuItem 
+              onClick={demoLogout}
+              className="text-destructive focus:text-destructive cursor-pointer"
+            >
+              <LogOut className="w-4 h-4 mr-2" />
+              Exit Demo Mode
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      )}
+
       {/* Notification Bell */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -135,7 +227,12 @@ const WalletButton = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-64 bg-card border-border">
           <div className="px-3 py-2 border-b border-border">
-            <p className="text-xs text-muted-foreground">Connected Wallet</p>
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-muted-foreground">Connected Wallet</p>
+              {isDemoMode && (
+                <Badge className="bg-amber-500/20 text-amber-600 border-amber-500/30 text-xs">Demo</Badge>
+              )}
+            </div>
             <p className="font-mono text-sm truncate">{walletAddress}</p>
           </div>
           
@@ -175,11 +272,11 @@ const WalletButton = () => {
           <DropdownMenuSeparator />
           
           <DropdownMenuItem 
-            onClick={disconnectWallet}
+            onClick={isDemoMode ? demoLogout : disconnectWallet}
             className="text-destructive focus:text-destructive cursor-pointer"
           >
             <LogOut className="w-4 h-4 mr-2" />
-            Disconnect Wallet
+            {isDemoMode ? "Exit Demo Mode" : "Disconnect Wallet"}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

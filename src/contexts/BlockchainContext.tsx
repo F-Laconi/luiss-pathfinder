@@ -54,6 +54,17 @@ interface TreasuryTransaction {
   createdAt: Date;
 }
 
+interface DemoUser {
+  id: string;
+  email: string;
+  name: string;
+  avatar: string;
+  university: string;
+  program: string;
+  year: number;
+  joinedAt: Date;
+}
+
 interface BlockchainContextType {
   // Wallet
   walletAddress: string | null;
@@ -77,6 +88,8 @@ interface BlockchainContextType {
   // Demo
   loadDemoData: () => void;
   isDemoMode: boolean;
+  demoUser: DemoUser | null;
+  demoLogout: () => void;
 }
 
 const BlockchainContext = createContext<BlockchainContextType | undefined>(undefined);
@@ -188,6 +201,7 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
   const [isVerifying, setIsVerifying] = useState(false);
   const [userDAOs, setUserDAOs] = useState<DAOProject[]>([]);
   const [isDemoMode, setIsDemoMode] = useState(false);
+  const [demoUser, setDemoUser] = useState<DemoUser | null>(null);
 
   const loadDemoData = () => {
     const demoWallet = generateDemoWallet();
@@ -211,10 +225,31 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
         txHash: generateTxHash()
       }
     ]);
+    setDemoUser({
+      id: "demo-user-001",
+      email: "marco.rossi@studenti.luiss.it",
+      name: "Marco Rossi",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marco",
+      university: "LUISS Guido Carli",
+      program: "Economics and Business",
+      year: 3,
+      joinedAt: new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
+    });
     setIsDemoMode(true);
     toast.success("🎮 Demo Mode Activated!", {
-      description: "Sample DAOs, proposals, and verified courses loaded. Explore all features!",
+      description: "Logged in as Marco Rossi with sample DAOs, proposals, and verified courses.",
       duration: 5000
+    });
+  };
+
+  const demoLogout = () => {
+    setWalletAddress(null);
+    setUserDAOs([]);
+    setVerificationTokens([]);
+    setDemoUser(null);
+    setIsDemoMode(false);
+    toast.info("Demo session ended", {
+      description: "All demo data has been cleared."
     });
   };
 
@@ -501,7 +536,9 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       createProposal,
       vote,
       loadDemoData,
-      isDemoMode
+      isDemoMode,
+      demoUser,
+      demoLogout
     }}>
       {children}
     </BlockchainContext.Provider>
