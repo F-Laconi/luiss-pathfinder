@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import { Search, Briefcase, Users, TrendingUp, Award, Shield } from "lucide-react";
+import { Search, Briefcase, Users, TrendingUp, Award, Shield, Vote, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import DAOPanel from "@/components/blockchain/DAOPanel";
 import businessPartnerBg from "@/assets/business-partner-background.jpg";
+
 const BusinessPartner = () => {
   return (
     <>
@@ -160,6 +163,72 @@ const BusinessPartner = () => {
           </div>
         </div>
       </section>
+
+      {/* DAO Section for Project Teams */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-muted/20 to-background relative">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
+              <Vote className="w-4 h-4 text-violet-500" />
+              <span className="text-sm font-semibold text-violet-600">Blockchain-Powered</span>
+            </div>
+            <h2 className="font-nunito text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Project Team DAOs
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Create decentralized autonomous organizations for your student projects. 
+              Transparent governance, multi-sig treasury, and on-chain voting.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <DAOPanel />
+            
+            {/* DAO Benefits Card */}
+            <Card className="border-2 border-violet-500/20 bg-gradient-to-br from-violet-500/5 to-purple-500/5">
+              <CardContent className="p-8">
+                <h3 className="font-bold text-2xl mb-6 text-foreground">Why Use DAO Governance?</h3>
+                <div className="space-y-4">
+                  {[
+                    {
+                      icon: Vote,
+                      title: "Democratic Decision Making",
+                      description: "Key decisions are voted on and recorded on an immutable ledger, preventing disputes."
+                    },
+                    {
+                      icon: Coins,
+                      title: "Transparent Treasury",
+                      description: "Multi-signature wallets ensure funds are only released when milestones are approved."
+                    },
+                    {
+                      icon: Shield,
+                      title: "Accountability",
+                      description: "All governance actions are recorded on-chain, creating a verified track record."
+                    },
+                    {
+                      icon: Users,
+                      title: "Attract Sponsors",
+                      description: "Structural transparency makes your project attractive to institutional investors."
+                    }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-background/50 border border-border">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                        <item.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
       
       <script type="application/ld+json">
         {JSON.stringify({

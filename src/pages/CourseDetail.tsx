@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Star, StarHalf } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import OracleVerificationPanel from "@/components/blockchain/OracleVerificationPanel";
+import VerificationBadge from "@/components/blockchain/VerificationBadge";
 
 // Mock professor data - in a real app this would come from an API
 const professorData = {
@@ -323,6 +325,12 @@ const CourseDetail = () => {
               </CardContent>
             </Card>
 
+            {/* Oracle Verification Panel */}
+            <OracleVerificationPanel 
+              courseId={courseId || ""} 
+              courseName={course.name} 
+            />
+
             {/* Action buttons */}
             <div className="space-y-3">
               <Button className="w-full" size="lg">
@@ -379,15 +387,23 @@ const CourseDetail = () => {
             {/* Student Notes Section */}
             <Card>
               <CardHeader>
-                <CardTitle>Student Notes Available</CardTitle>
-                <p className="text-sm text-muted-foreground italic">made by students, for students</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle>Student Notes Available</CardTitle>
+                    <p className="text-sm text-muted-foreground italic">made by students, for students</p>
+                  </div>
+                  <VerificationBadge courseId={courseId || ""} courseName={course.name} />
+                </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {studentNotes.map(note => <div key={note.id} className="border rounded-lg p-4 hover:bg-muted/50 transition-colors">
                       <div className="flex justify-between items-start mb-3">
                         <div>
-                          <h4 className="font-semibold">{note.studentName} - {note.year} (Grade: {note.grade})</h4>
+                          <div className="flex items-center gap-2">
+                            <h4 className="font-semibold">{note.studentName} - {note.year} (Grade: {note.grade})</h4>
+                            <VerificationBadge courseId={courseId || ""} courseName={course.name} compact />
+                          </div>
                           <div className="flex items-center gap-2 mt-1">
                             <div className="flex items-center">
                               {Array.from({
