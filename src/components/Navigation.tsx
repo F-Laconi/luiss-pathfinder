@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb, PartyPopper } from "lucide-react";
+import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb, PartyPopper, Vote } from "lucide-react";
 import WalletButton from "@/components/blockchain/WalletButton";
 
 declare global {
@@ -540,6 +540,12 @@ const Navigation = () => {
                 <Link to="/post-position" className="w-full flex items-center space-x-2 p-2">
                   <Menu className="h-4 w-4" />
                   <span>Post a position</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className={`rounded-lg hover:bg-violet-500/10 hover:text-violet-600 transition-all duration-200 cursor-pointer ml-4 ${location.pathname === '/dao-management' ? 'bg-violet-500/20 text-violet-600 font-semibold border-l-2 border-violet-500' : ''}`}>
+                <Link to="/dao-management" className="w-full flex items-center space-x-2 p-2">
+                  <Vote className="h-4 w-4" />
+                  <span>DAO Management</span>
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
