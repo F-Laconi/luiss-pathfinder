@@ -231,8 +231,8 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       name: "Francesco Laconi",
       avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Francesco",
       university: "LUISS Guido Carli",
-      program: "Economics and Business",
-      year: 3,
+      program: "Strategic Management",
+      year: 2,
       joinedAt: new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
     });
     setIsDemoMode(true);
