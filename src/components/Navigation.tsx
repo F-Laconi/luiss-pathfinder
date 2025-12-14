@@ -28,42 +28,6 @@ const Navigation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
-  const [isConnecting, setIsConnecting] = useState(false);
-
-  const connectMetaMask = async () => {
-    if (typeof window.ethereum === 'undefined') {
-      toast.error("MetaMask not installed! Please install MetaMask extension.");
-      window.open('https://metamask.io/download/', '_blank');
-      return;
-    }
-
-    setIsConnecting(true);
-    try {
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      if (accounts.length > 0) {
-        setWalletAddress(accounts[0]);
-        toast.success("Wallet connected successfully!");
-      }
-    } catch (error: any) {
-      if (error.code === 4001) {
-        toast.error("Connection rejected by user");
-      } else {
-        toast.error("Failed to connect wallet");
-      }
-    } finally {
-      setIsConnecting(false);
-    }
-  };
-
-  const disconnectWallet = () => {
-    setWalletAddress(null);
-    toast.info("Wallet disconnected");
-  };
-
-  const formatAddress = (address: string) => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  };
 
   // Check if current route is luiss-university or related pages
   const isLuissUniversityActive = location.pathname === '/luiss-university' || 
