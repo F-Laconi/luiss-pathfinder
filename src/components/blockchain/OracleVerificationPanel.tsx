@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Shield, Database, FileCheck, Wallet, ArrowRight, CheckCircle2, XCircle, Loader2 } from "lucide-react";
+import { Shield, Database, FileCheck, Wallet, ArrowRight, CheckCircle2, XCircle, Loader2, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useBlockchain } from "@/contexts/BlockchainContext";
@@ -13,7 +13,7 @@ interface OracleVerificationPanelProps {
 type VerificationStep = "idle" | "connecting" | "querying" | "validating" | "issuing" | "complete" | "failed";
 
 const OracleVerificationPanel = ({ courseId, courseName, onVerified }: OracleVerificationPanelProps) => {
-  const { walletAddress, connectWallet, requestVerification, hasVerifiedCourse } = useBlockchain();
+  const { walletAddress, connectWallet, requestVerification, hasVerifiedCourse, loadDemoData, isDemoMode } = useBlockchain();
   const [currentStep, setCurrentStep] = useState<VerificationStep>("idle");
   
   const isVerified = hasVerifiedCourse(courseId);
@@ -173,30 +173,50 @@ const OracleVerificationPanel = ({ courseId, courseName, onVerified }: OracleVer
           )}
         </div>
 
-        {/* Action Button */}
+        {/* Action Buttons */}
         {currentStep !== "complete" && (
-          <Button
-            onClick={handleVerify}
-            disabled={currentStep !== "idle" && currentStep !== "failed"}
-            className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
-          >
-            {!walletAddress ? (
+          <div className="space-y-3">
+            <Button
+              onClick={handleVerify}
+              disabled={currentStep !== "idle" && currentStep !== "failed"}
+              className="w-full bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+            >
+              {!walletAddress ? (
+                <>
+                  <Wallet className="w-4 h-4 mr-2" />
+                  Connect Wallet to Verify
+                </>
+              ) : currentStep === "idle" || currentStep === "failed" ? (
+                <>
+                  <Shield className="w-4 h-4 mr-2" />
+                  Start Verification
+                </>
+              ) : (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Processing...
+                </>
+              )}
+            </Button>
+            
+            {!walletAddress && !isDemoMode && (
               <>
-                <Wallet className="w-4 h-4 mr-2" />
-                Connect Wallet to Verify
-              </>
-            ) : currentStep === "idle" || currentStep === "failed" ? (
-              <>
-                <Shield className="w-4 h-4 mr-2" />
-                Start Verification
-              </>
-            ) : (
-              <>
-                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                Processing...
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div className="flex-1 h-px bg-border" />
+                  <span>or</span>
+                  <div className="flex-1 h-px bg-border" />
+                </div>
+                <Button
+                  onClick={loadDemoData}
+                  variant="outline"
+                  className="w-full border-amber-500/30 text-amber-600 hover:bg-amber-500/10"
+                >
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Try Demo Mode
+                </Button>
               </>
             )}
-          </Button>
+          </div>
         )}
 
         {/* Privacy Notice */}
