@@ -10,88 +10,79 @@ import OracleVerificationPanel from "@/components/blockchain/OracleVerificationP
 import ReviewVerificationBadge from "@/components/blockchain/ReviewVerificationBadge";
 
 // Professor pool - different professors for different courses
-const professorPool = [
-  {
-    name: "Prof. Maximo Ibarra",
-    rating: 8.5,
-    description: "Prof. Maximo Ibarra is a global tech and telecom leader with years of experience guiding major companies through digital transformation. Born in Colombia and educated in Italy and abroad, he has worked as CEO in top international firms and built a strong reputation in marketing, innovation, and business strategy. Here in LUISS he brings real-world insights straight into the classroom.",
-    levelOfEnglish: "Native",
-    classPercentage: "85%",
-    examType: "Written final exam 50%, Oral presentation 50%",
-    attendanceMandatory: true,
-    useImage: true
-  },
-  {
-    name: "Prof. Elena Ferrante",
-    rating: 9.2,
-    description: "Prof. Ferrante is an expert in European governance with over 15 years of experience in policy analysis. She previously worked at the European Commission and brings deep institutional knowledge to her teaching. Known for her engaging lectures and real-world case studies.",
-    levelOfEnglish: "Fluent",
-    classPercentage: "90%",
-    examType: "Written exam 60%, Group project 40%",
-    attendanceMandatory: true,
-    useImage: false
-  },
-  {
-    name: "Prof. Alessandro Moretti",
-    rating: 7.8,
-    description: "Prof. Moretti specializes in quantitative economics and financial modeling. With a PhD from MIT and experience at major investment banks, he bridges academic theory with practical financial applications. His courses are rigorous but highly rewarding.",
-    levelOfEnglish: "Fluent",
-    classPercentage: "75%",
-    examType: "Written final exam 70%, Problem sets 30%",
-    attendanceMandatory: false,
-    useImage: false
-  },
-  {
-    name: "Prof. Chiara Romano",
-    rating: 8.9,
-    description: "Prof. Romano is a renowned expert in corporate strategy and organizational behavior. She has consulted for Fortune 500 companies and authored several influential papers on strategic management. Her interactive teaching style makes complex concepts accessible.",
-    levelOfEnglish: "Native",
-    classPercentage: "80%",
-    examType: "Case study analysis 50%, Final presentation 50%",
-    attendanceMandatory: true,
-    useImage: false
-  },
-  {
-    name: "Prof. Marco Bellini",
-    rating: 8.1,
-    description: "Prof. Bellini brings two decades of experience in public administration and regulatory affairs. He has served as an advisor to multiple Italian ministries and is passionate about preparing students for careers in public service and governance.",
-    levelOfEnglish: "Fluent",
-    classPercentage: "70%",
-    examType: "Written exam 40%, Policy brief 30%, Oral 30%",
-    attendanceMandatory: false,
-    useImage: false
-  },
-  {
-    name: "Prof. Giulia Santini",
-    rating: 9.0,
-    description: "Prof. Santini is a leading researcher in environmental policy and sustainable development. Her work on EU climate regulations has been cited by policymakers across Europe. She combines academic excellence with a commitment to real-world impact.",
-    levelOfEnglish: "Fluent",
-    classPercentage: "85%",
-    examType: "Research paper 60%, Presentation 40%",
-    attendanceMandatory: true,
-    useImage: false
-  },
-  {
-    name: "Prof. Roberto Conti",
-    rating: 7.5,
-    description: "Prof. Conti is a veteran economist with extensive experience in monetary policy and central banking. Previously with the Bank of Italy, he offers unique insights into the workings of financial institutions and macroeconomic policy.",
-    levelOfEnglish: "Good",
-    classPercentage: "65%",
-    examType: "Written final exam 100%",
-    attendanceMandatory: false,
-    useImage: false
-  },
-  {
-    name: "Prof. Valentina De Luca",
-    rating: 8.7,
-    description: "Prof. De Luca is an expert in international law and human rights. She has worked with the United Nations and various NGOs, bringing a global perspective to her teaching. Her courses are known for stimulating debates and critical thinking.",
-    levelOfEnglish: "Native",
-    classPercentage: "95%",
-    examType: "Essay 40%, Oral exam 40%, Participation 20%",
-    attendanceMandatory: true,
-    useImage: false
-  }
-];
+const professorPool = [{
+  name: "Prof. Maximo Ibarra",
+  rating: 8.5,
+  description: "Prof. Maximo Ibarra is a global tech and telecom leader with years of experience guiding major companies through digital transformation. Born in Colombia and educated in Italy and abroad, he has worked as CEO in top international firms and built a strong reputation in marketing, innovation, and business strategy. Here in LUISS he brings real-world insights straight into the classroom.",
+  levelOfEnglish: "Native",
+  classPercentage: "85%",
+  examType: "Written final exam 50%, Oral presentation 50%",
+  attendanceMandatory: true,
+  useImage: true
+}, {
+  name: "Prof. Elena Ferrante",
+  rating: 9.2,
+  description: "Prof. Ferrante is an expert in European governance with over 15 years of experience in policy analysis. She previously worked at the European Commission and brings deep institutional knowledge to her teaching. Known for her engaging lectures and real-world case studies.",
+  levelOfEnglish: "Fluent",
+  classPercentage: "90%",
+  examType: "Written exam 60%, Group project 40%",
+  attendanceMandatory: true,
+  useImage: false
+}, {
+  name: "Prof. Alessandro Moretti",
+  rating: 7.8,
+  description: "Prof. Moretti specializes in quantitative economics and financial modeling. With a PhD from MIT and experience at major investment banks, he bridges academic theory with practical financial applications. His courses are rigorous but highly rewarding.",
+  levelOfEnglish: "Fluent",
+  classPercentage: "75%",
+  examType: "Written final exam 70%, Problem sets 30%",
+  attendanceMandatory: false,
+  useImage: false
+}, {
+  name: "Prof. Chiara Romano",
+  rating: 8.9,
+  description: "Prof. Romano is a renowned expert in corporate strategy and organizational behavior. She has consulted for Fortune 500 companies and authored several influential papers on strategic management. Her interactive teaching style makes complex concepts accessible.",
+  levelOfEnglish: "Native",
+  classPercentage: "80%",
+  examType: "Case study analysis 50%, Final presentation 50%",
+  attendanceMandatory: true,
+  useImage: false
+}, {
+  name: "Prof. Marco Bellini",
+  rating: 8.1,
+  description: "Prof. Bellini brings two decades of experience in public administration and regulatory affairs. He has served as an advisor to multiple Italian ministries and is passionate about preparing students for careers in public service and governance.",
+  levelOfEnglish: "Fluent",
+  classPercentage: "70%",
+  examType: "Written exam 40%, Policy brief 30%, Oral 30%",
+  attendanceMandatory: false,
+  useImage: false
+}, {
+  name: "Prof. Giulia Santini",
+  rating: 9.0,
+  description: "Prof. Santini is a leading researcher in environmental policy and sustainable development. Her work on EU climate regulations has been cited by policymakers across Europe. She combines academic excellence with a commitment to real-world impact.",
+  levelOfEnglish: "Fluent",
+  classPercentage: "85%",
+  examType: "Research paper 60%, Presentation 40%",
+  attendanceMandatory: true,
+  useImage: false
+}, {
+  name: "Prof. Roberto Conti",
+  rating: 7.5,
+  description: "Prof. Conti is a veteran economist with extensive experience in monetary policy and central banking. Previously with the Bank of Italy, he offers unique insights into the workings of financial institutions and macroeconomic policy.",
+  levelOfEnglish: "Good",
+  classPercentage: "65%",
+  examType: "Written final exam 100%",
+  attendanceMandatory: false,
+  useImage: false
+}, {
+  name: "Prof. Valentina De Luca",
+  rating: 8.7,
+  description: "Prof. De Luca is an expert in international law and human rights. She has worked with the United Nations and various NGOs, bringing a global perspective to her teaching. Her courses are known for stimulating debates and critical thinking.",
+  levelOfEnglish: "Native",
+  classPercentage: "95%",
+  examType: "Essay 40%, Oral exam 40%, Participation 20%",
+  attendanceMandatory: true,
+  useImage: false
+}];
 
 // Function to get professor based on course ID (deterministic but varied)
 const getProfessorForCourse = (courseId: string) => {
@@ -101,7 +92,7 @@ const getProfessorForCourse = (courseId: string) => {
   }
   // Use course ID to deterministically select a professor (not random each render)
   const hash = courseId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const index = (hash % (professorPool.length - 1)) + 1; // Skip index 0 (Maximo Ibarra)
+  const index = hash % (professorPool.length - 1) + 1; // Skip index 0 (Maximo Ibarra)
   return professorPool[index];
 };
 
@@ -272,34 +263,52 @@ const graduateCoursesData: Record<string, any> = {
 };
 
 // Student note authors pool
-const studentAuthors = [
-  { name: "Francesco L.", initial: "FL" },
-  { name: "Alice M.", initial: "AM" },
-  { name: "Marco R.", initial: "MR" },
-  { name: "Sofia B.", initial: "SB" },
-  { name: "Luca T.", initial: "LT" },
-  { name: "Giulia P.", initial: "GP" },
-  { name: "Andrea C.", initial: "AC" },
-  { name: "Elena V.", initial: "EV" },
-  { name: "Matteo S.", initial: "MS" },
-  { name: "Chiara D.", initial: "CD" }
-];
+const studentAuthors = [{
+  name: "Francesco L.",
+  initial: "FL"
+}, {
+  name: "Alice M.",
+  initial: "AM"
+}, {
+  name: "Marco R.",
+  initial: "MR"
+}, {
+  name: "Sofia B.",
+  initial: "SB"
+}, {
+  name: "Luca T.",
+  initial: "LT"
+}, {
+  name: "Giulia P.",
+  initial: "GP"
+}, {
+  name: "Andrea C.",
+  initial: "AC"
+}, {
+  name: "Elena V.",
+  initial: "EV"
+}, {
+  name: "Matteo S.",
+  initial: "MS"
+}, {
+  name: "Chiara D.",
+  initial: "CD"
+}];
 
 // Generate student notes based on course ID (deterministic)
 const getStudentNotesForCourse = (courseId: string, courseName: string) => {
   const hash = courseId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const noteCount = 2 + (hash % 3); // 2-4 notes per course
-  
+  const noteCount = 2 + hash % 3; // 2-4 notes per course
+
   const notes = [];
   for (let i = 0; i < noteCount; i++) {
     const authorIndex = (hash + i * 7) % studentAuthors.length;
-    const year = 2023 + ((hash + i) % 2);
-    const grade = 24 + ((hash + i * 3) % 7);
-    const pages = 25 + ((hash + i * 5) % 40);
-    const price = 10 + ((hash + i * 2) % 12);
-    const rating = 4.0 + ((hash + i) % 10) / 10;
+    const year = 2023 + (hash + i) % 2;
+    const grade = 24 + (hash + i * 3) % 7;
+    const pages = 25 + (hash + i * 5) % 40;
+    const price = 10 + (hash + i * 2) % 12;
+    const rating = 4.0 + (hash + i) % 10 / 10;
     const isVerified = (hash + i) % 3 !== 0;
-    
     notes.push({
       id: i + 1,
       studentName: studentAuthors[authorIndex].name,
@@ -311,69 +320,130 @@ const getStudentNotesForCourse = (courseId: string, courseName: string) => {
       pageCount: pages,
       isVerified,
       txHash: isVerified ? `0x${hash.toString(16)}${i}a3f8e2b1c9d4a5e6f8b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2` : undefined,
-      verifiedAt: isVerified ? new Date(year, 10 + (i % 2), 10 + (hash % 20)) : undefined
+      verifiedAt: isVerified ? new Date(year, 10 + i % 2, 10 + hash % 20) : undefined
     });
   }
   return notes;
 };
-
 const getNoteDescription = (courseName: string, index: number) => {
-  const descriptions = [
-    `Complete lecture notes covering all ${courseName.toLowerCase()} topics with detailed explanations and practical examples. Includes exam preparation tips and key concepts highlighted.`,
-    `Well-organized summary with visual diagrams and frameworks. Perfect for quick revision before the exam. All major theories and models explained clearly.`,
-    `Comprehensive notes including guest lecture content and real-world case studies discussed in class. Great for understanding practical applications of ${courseName.toLowerCase()}.`,
-    `Detailed notes with personal annotations and professor's key points highlighted. Includes practice questions and sample exam answers that helped me succeed.`
-  ];
+  const descriptions = [`Complete lecture notes covering all ${courseName.toLowerCase()} topics with detailed explanations and practical examples. Includes exam preparation tips and key concepts highlighted.`, `Well-organized summary with visual diagrams and frameworks. Perfect for quick revision before the exam. All major theories and models explained clearly.`, `Comprehensive notes including guest lecture content and real-world case studies discussed in class. Great for understanding practical applications of ${courseName.toLowerCase()}.`, `Detailed notes with personal annotations and professor's key points highlighted. Includes practice questions and sample exam answers that helped me succeed.`];
   return descriptions[index % descriptions.length];
 };
 
 // Course-specific learning outcomes
 const getLearningOutcomes = (courseId: string, courseName: string) => {
-  const outcomes: Record<string, { emoji: string; title: string; description: string }[]> = {
-    "1-0-0": [
-      { emoji: "🏛️", title: "Master EU institutional frameworks", description: "Understand how EU institutions work together in decision-making and policy implementation." },
-      { emoji: "📜", title: "Analyze integration processes", description: "Trace the historical evolution of European integration and its impact on member states." },
-      { emoji: "🌍", title: "Evaluate governance structures", description: "Compare different governance models across European institutions." }
-    ],
-    "1-0-1": [
-      { emoji: "⚖️", title: "Compare political systems", description: "Analyze different constitutional frameworks and governance structures across Europe." },
-      { emoji: "🗳️", title: "Understand electoral dynamics", description: "Study voting systems, party politics, and democratic representation." },
-      { emoji: "📊", title: "Apply comparative methods", description: "Use rigorous analytical tools to compare political institutions and outcomes." }
-    ],
-    "2-0-0": [
-      { emoji: "📈", title: "Master macroeconomic models", description: "Build and analyze models of economic growth, business cycles, and aggregate demand." },
-      { emoji: "💹", title: "Understand fiscal policy", description: "Evaluate government spending, taxation, and their effects on the economy." },
-      { emoji: "🌐", title: "Analyze global economics", description: "Study international trade, exchange rates, and cross-border economic flows." }
-    ],
-    "2-0-1": [
-      { emoji: "🎯", title: "Master consumer theory", description: "Analyze consumer behavior, preferences, and optimal decision-making." },
-      { emoji: "🏭", title: "Understand producer decisions", description: "Study firm behavior, production functions, and cost optimization." },
-      { emoji: "⚖️", title: "Evaluate market structures", description: "Compare perfect competition, monopoly, oligopoly, and monopolistic competition." }
-    ],
-    "3-0-0": [
-      { emoji: "🎯", title: "Develop strategic thinking", description: "Learn frameworks for competitive analysis and strategic positioning." },
-      { emoji: "📊", title: "Analyze market dynamics", description: "Understand industry forces and how to create sustainable competitive advantages." },
-      { emoji: "🚀", title: "Plan corporate growth", description: "Master techniques for organic growth, M&A, and strategic partnerships." }
-    ],
-    "3-0-3": [
-      { emoji: "💰", title: "Master capital budgeting", description: "Evaluate investment decisions using NPV, IRR, and payback analysis." },
-      { emoji: "📈", title: "Optimize capital structure", description: "Balance debt and equity to minimize cost of capital and maximize firm value." },
-      { emoji: "💵", title: "Manage working capital", description: "Optimize cash, inventory, and receivables for operational efficiency." }
-    ],
-    "9-1-0": [
-      { emoji: "🤖", title: "Build an AI-powered marketing plan", description: "Learn how to design killer digital strategies using today's most important AI tools." },
-      { emoji: "📈", title: "Understand tech's impact on marketing", description: "Discover how AI is shaping the evolution of marketing — from current practices to future trends." },
-      { emoji: "👥", title: "Work on real cases as a team", description: "Strengthen teamwork and problem-solving skills by applying AI tools to real-world marketing challenges." }
-    ]
+  const outcomes: Record<string, {
+    emoji: string;
+    title: string;
+    description: string;
+  }[]> = {
+    "1-0-0": [{
+      emoji: "🏛️",
+      title: "Master EU institutional frameworks",
+      description: "Understand how EU institutions work together in decision-making and policy implementation."
+    }, {
+      emoji: "📜",
+      title: "Analyze integration processes",
+      description: "Trace the historical evolution of European integration and its impact on member states."
+    }, {
+      emoji: "🌍",
+      title: "Evaluate governance structures",
+      description: "Compare different governance models across European institutions."
+    }],
+    "1-0-1": [{
+      emoji: "⚖️",
+      title: "Compare political systems",
+      description: "Analyze different constitutional frameworks and governance structures across Europe."
+    }, {
+      emoji: "🗳️",
+      title: "Understand electoral dynamics",
+      description: "Study voting systems, party politics, and democratic representation."
+    }, {
+      emoji: "📊",
+      title: "Apply comparative methods",
+      description: "Use rigorous analytical tools to compare political institutions and outcomes."
+    }],
+    "2-0-0": [{
+      emoji: "📈",
+      title: "Master macroeconomic models",
+      description: "Build and analyze models of economic growth, business cycles, and aggregate demand."
+    }, {
+      emoji: "💹",
+      title: "Understand fiscal policy",
+      description: "Evaluate government spending, taxation, and their effects on the economy."
+    }, {
+      emoji: "🌐",
+      title: "Analyze global economics",
+      description: "Study international trade, exchange rates, and cross-border economic flows."
+    }],
+    "2-0-1": [{
+      emoji: "🎯",
+      title: "Master consumer theory",
+      description: "Analyze consumer behavior, preferences, and optimal decision-making."
+    }, {
+      emoji: "🏭",
+      title: "Understand producer decisions",
+      description: "Study firm behavior, production functions, and cost optimization."
+    }, {
+      emoji: "⚖️",
+      title: "Evaluate market structures",
+      description: "Compare perfect competition, monopoly, oligopoly, and monopolistic competition."
+    }],
+    "3-0-0": [{
+      emoji: "🎯",
+      title: "Develop strategic thinking",
+      description: "Learn frameworks for competitive analysis and strategic positioning."
+    }, {
+      emoji: "📊",
+      title: "Analyze market dynamics",
+      description: "Understand industry forces and how to create sustainable competitive advantages."
+    }, {
+      emoji: "🚀",
+      title: "Plan corporate growth",
+      description: "Master techniques for organic growth, M&A, and strategic partnerships."
+    }],
+    "3-0-3": [{
+      emoji: "💰",
+      title: "Master capital budgeting",
+      description: "Evaluate investment decisions using NPV, IRR, and payback analysis."
+    }, {
+      emoji: "📈",
+      title: "Optimize capital structure",
+      description: "Balance debt and equity to minimize cost of capital and maximize firm value."
+    }, {
+      emoji: "💵",
+      title: "Manage working capital",
+      description: "Optimize cash, inventory, and receivables for operational efficiency."
+    }],
+    "9-1-0": [{
+      emoji: "🤖",
+      title: "Build an AI-powered marketing plan",
+      description: "Learn how to design killer digital strategies using today's most important AI tools."
+    }, {
+      emoji: "📈",
+      title: "Understand tech's impact on marketing",
+      description: "Discover how AI is shaping the evolution of marketing — from current practices to future trends."
+    }, {
+      emoji: "👥",
+      title: "Work on real cases as a team",
+      description: "Strengthen teamwork and problem-solving skills by applying AI tools to real-world marketing challenges."
+    }]
   };
-  
+
   // Default outcomes for courses not explicitly defined
-  const defaultOutcomes = [
-    { emoji: "📚", title: `Master core ${courseName} concepts`, description: `Build a solid foundation in the fundamental principles and theories of ${courseName.toLowerCase()}.` },
-    { emoji: "🔍", title: "Apply analytical frameworks", description: "Learn to use professional tools and methodologies used by practitioners in the field." },
-    { emoji: "💼", title: "Develop practical skills", description: "Work on real-world case studies and projects to prepare for your future career." }
-  ];
-  
+  const defaultOutcomes = [{
+    emoji: "📚",
+    title: `Master core ${courseName} concepts`,
+    description: `Build a solid foundation in the fundamental principles and theories of ${courseName.toLowerCase()}.`
+  }, {
+    emoji: "🔍",
+    title: "Apply analytical frameworks",
+    description: "Learn to use professional tools and methodologies used by practitioners in the field."
+  }, {
+    emoji: "💼",
+    title: "Develop practical skills",
+    description: "Work on real-world case studies and projects to prepare for your future career."
+  }];
   return outcomes[courseId] || defaultOutcomes;
 };
 const StarRating = ({
@@ -406,7 +476,6 @@ const CourseDetail = () => {
     description: "This course could not be found.",
     programId: "1"
   };
-  
   const professorData = getProfessorForCourse(courseId || "");
   const studentNotes = getStudentNotesForCourse(courseId || "", course.name);
   const learningOutcomes = getLearningOutcomes(courseId || "", course.name);
@@ -443,19 +512,11 @@ const CourseDetail = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Professor image */}
-                {professorData.useImage ? (
-                  <img 
-                    src={professorImage} 
-                    alt={professorData.name} 
-                    className="w-24 h-24 rounded-full mx-auto object-cover"
-                  />
-                ) : (
-                  <div className="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                {professorData.useImage ? <img src={professorImage} alt={professorData.name} className="w-24 h-24 rounded-full mx-auto object-cover" /> : <div className="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
                     <span className="text-3xl font-bold text-primary">
                       {professorData.name.split(' ').slice(1).map(n => n[0]).join('')}
                     </span>
-                  </div>
-                )}
+                  </div>}
                 
                 <div className="text-center">
                   <h3 className="font-semibold text-lg">{professorData.name}</h3>
@@ -497,20 +558,10 @@ const CourseDetail = () => {
             </Card>
 
             {/* Oracle Verification Panel */}
-            <OracleVerificationPanel 
-              courseId={courseId || ""} 
-              courseName={course.name} 
-            />
+            <OracleVerificationPanel courseId={courseId || ""} courseName={course.name} />
 
             {/* Action buttons */}
-            <div className="space-y-3">
-              <Button className="w-full" size="lg">
-                Enroll in Course
-              </Button>
-              <Button variant="outline" className="w-full">
-                Add to Wishlist
-              </Button>
-            </div>
+            
           </div>
 
           {/* Main content */}
@@ -525,15 +576,13 @@ const CourseDetail = () => {
                 
                 <h4 className="font-semibold mb-4 text-lg">What You'll Actually Learn</h4>
                 <div className="space-y-4">
-                  {learningOutcomes.map((outcome, index) => (
-                    <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
+                  {learningOutcomes.map((outcome, index) => <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
                       <span className="text-2xl">{outcome.emoji}</span>
                       <div>
                         <span className="font-medium text-foreground">{outcome.title}</span>
                         <p className="text-sm text-muted-foreground mt-1">{outcome.description}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 <div className="mt-6 pt-6 border-t">
@@ -561,31 +610,18 @@ const CourseDetail = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {studentNotes.map(note => (
-                    <div 
-                      key={note.id} 
-                      className={`border rounded-lg p-4 transition-all ${
-                        note.isVerified 
-                          ? 'hover:bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/40' 
-                          : 'hover:bg-muted/50'
-                      }`}
-                    >
+                  {studentNotes.map(note => <div key={note.id} className={`border rounded-lg p-4 transition-all ${note.isVerified ? 'hover:bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/40' : 'hover:bg-muted/50'}`}>
                       <div className="flex justify-between items-start mb-3">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 flex-wrap">
                             <h4 className="font-semibold">{note.studentName} - {note.year}</h4>
-                            <ReviewVerificationBadge 
-                              isVerified={note.isVerified} 
-                              grade={note.isVerified ? note.grade : undefined}
-                              txHash={note.txHash}
-                              verifiedAt={note.verifiedAt}
-                            />
+                            <ReviewVerificationBadge isVerified={note.isVerified} grade={note.isVerified ? note.grade : undefined} txHash={note.txHash} verifiedAt={note.verifiedAt} />
                           </div>
                           <div className="flex items-center gap-2 mt-1 flex-wrap">
                             <div className="flex items-center">
-                              {Array.from({ length: Math.floor(note.rating) }, (_, i) => (
-                                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                              ))}
+                              {Array.from({
+                            length: Math.floor(note.rating)
+                          }, (_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                               {note.rating % 1 >= 0.5 && <StarHalf className="w-4 h-4 fill-yellow-400 text-yellow-400" />}
                               <span className="ml-1 text-sm text-muted-foreground">({note.rating})</span>
                             </div>
@@ -595,25 +631,22 @@ const CourseDetail = () => {
                         </div>
                         <div className="text-right ml-4">
                           <div className="font-bold text-lg text-primary">{note.price}</div>
-                          <Button 
-                            size="sm" 
-                            className="mt-1"
-                            onClick={() => navigate('/checkout', { state: { note } })}
-                          >
+                          <Button size="sm" className="mt-1" onClick={() => navigate('/checkout', {
+                        state: {
+                          note
+                        }
+                      })}>
                             Buy Notes Now!
                           </Button>
                         </div>
                       </div>
                       <p className="text-sm text-muted-foreground">{note.description}</p>
                       
-                      {note.isVerified && (
-                        <div className="mt-3 pt-3 border-t border-emerald-500/20 flex items-center gap-2 text-xs text-emerald-600">
+                      {note.isVerified && <div className="mt-3 pt-3 border-t border-emerald-500/20 flex items-center gap-2 text-xs text-emerald-600">
                           <ShieldCheck className="w-3.5 h-3.5" />
                           <span>Oracle verified attendance & grade on {note.verifiedAt?.toLocaleDateString()}</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                        </div>}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
