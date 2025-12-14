@@ -182,9 +182,15 @@ const BusinessPartner = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <DAOPanel />
-            
-            {/* DAO Benefits Card */}
+            <div className="space-y-4">
+              <DAOPanel />
+              <Link to="/dao-management">
+                <Button variant="outline" className="w-full border-violet-500/30 text-violet-600 hover:bg-violet-500/10">
+                  <Vote className="w-4 h-4 mr-2" />
+                  Open Full DAO Dashboard
+                </Button>
+              </Link>
+            </div>
             <Card className="border-2 border-violet-500/20 bg-gradient-to-br from-violet-500/5 to-purple-500/5">
               <CardContent className="p-8">
                 <h3 className="font-bold text-2xl mb-6 text-foreground">Why Use DAO Governance?</h3>

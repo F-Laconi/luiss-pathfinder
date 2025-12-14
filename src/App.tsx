@@ -28,6 +28,7 @@ import Suggestions from "./pages/Suggestions";
 import EasterEgg from "./pages/EasterEgg";
 import SearchResults from "./pages/SearchResults";
 import Profile from "./pages/Profile";
+import DAOManagement from "./pages/DAOManagement";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -63,6 +64,7 @@ const App = () => (
             <Route path="/course/:courseId" element={<CourseDetail />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/school/:schoolId" element={<MasterCategory />} />
+            <Route path="/dao-management" element={<DAOManagement />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
