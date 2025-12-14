@@ -227,9 +227,9 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
     ]);
     setDemoUser({
       id: "demo-user-001",
-      email: "marco.rossi@studenti.luiss.it",
-      name: "Marco Rossi",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marco",
+      email: "francesco.laconi@studenti.luiss.it",
+      name: "Francesco Laconi",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Francesco",
       university: "LUISS Guido Carli",
       program: "Economics and Business",
       year: 3,
@@ -237,7 +237,7 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
     });
     setIsDemoMode(true);
     toast.success("🎮 Demo Mode Activated!", {
-      description: "Logged in as Marco Rossi with sample DAOs, proposals, and verified courses.",
+      description: "Logged in as Francesco Laconi with sample DAOs, proposals, and verified courses.",
       duration: 5000
     });
   };
