@@ -3,11 +3,11 @@ import professorImage from "@/assets/professor-maximo-ibarra.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Star, StarHalf } from "lucide-react";
+import { ArrowLeft, Star, StarHalf, Shield, ShieldCheck } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import OracleVerificationPanel from "@/components/blockchain/OracleVerificationPanel";
-import VerificationBadge from "@/components/blockchain/VerificationBadge";
+import ReviewVerificationBadge from "@/components/blockchain/ReviewVerificationBadge";
 
 // Mock professor data - in a real app this would come from an API
 const professorData = {
@@ -188,7 +188,7 @@ const graduateCoursesData: Record<string, any> = {
   }
 };
 
-// Mock student notes data
+// Mock student notes data with verification status
 const studentNotes = [{
   id: 1,
   studentName: "Francesco L.",
@@ -197,7 +197,10 @@ const studentNotes = [{
   price: "€15",
   rating: 4.5,
   description: "Complete notes covering all lectures with detailed case studies and frameworks. Includes my personal insights and exam preparation tips that helped me get a grade between 28 and 30.",
-  pageCount: 45
+  pageCount: 45,
+  isVerified: true,
+  txHash: "0x7a3f8e2b1c9d4a5e6f8b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2",
+  verifiedAt: new Date("2024-11-15")
 }, {
   id: 2,
   studentName: "Alice L.",
@@ -206,7 +209,10 @@ const studentNotes = [{
   price: "€12",
   rating: 4.8,
   description: "Well-organized summary notes with mind maps and visual frameworks. Perfect for quick revision before exams. Covers Porter's Five Forces in detail.",
-  pageCount: 32
+  pageCount: 32,
+  isVerified: true,
+  txHash: "0x1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+  verifiedAt: new Date("2023-12-01")
 }, {
   id: 3,
   studentName: "Martina D.",
@@ -215,7 +221,8 @@ const studentNotes = [{
   price: "€18",
   rating: 4.3,
   description: "Comprehensive notes including all guest lecture content and real company examples discussed in class. Great for understanding practical applications.",
-  pageCount: 58
+  pageCount: 58,
+  isVerified: false
 }];
 const StarRating = ({
   rating
@@ -387,35 +394,54 @@ const CourseDetail = () => {
             {/* Student Notes Section */}
             <Card>
               <CardHeader>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
                     <CardTitle>Student Notes Available</CardTitle>
                     <p className="text-sm text-muted-foreground italic">made by students, for students</p>
                   </div>
-                  <VerificationBadge courseId={courseId || ""} courseName={course.name} />
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                    <Shield className="w-4 h-4 text-emerald-500" />
+                    <span className="text-xs font-medium text-emerald-600">
+                      {studentNotes.filter(n => n.isVerified).length}/{studentNotes.length} Blockchain Verified
+                    </span>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {studentNotes.map(note => <div key={note.id} className="border rounded-lg p-4 hover:bg-muted/50 transition-colors">
+                  {studentNotes.map(note => (
+                    <div 
+                      key={note.id} 
+                      className={`border rounded-lg p-4 transition-all ${
+                        note.isVerified 
+                          ? 'hover:bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/40' 
+                          : 'hover:bg-muted/50'
+                      }`}
+                    >
                       <div className="flex justify-between items-start mb-3">
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-semibold">{note.studentName} - {note.year} (Grade: {note.grade})</h4>
-                            <VerificationBadge courseId={courseId || ""} courseName={course.name} compact />
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <h4 className="font-semibold">{note.studentName} - {note.year}</h4>
+                            <ReviewVerificationBadge 
+                              isVerified={note.isVerified} 
+                              grade={note.isVerified ? note.grade : undefined}
+                              txHash={note.txHash}
+                              verifiedAt={note.verifiedAt}
+                            />
                           </div>
-                          <div className="flex items-center gap-2 mt-1">
+                          <div className="flex items-center gap-2 mt-1 flex-wrap">
                             <div className="flex items-center">
-                              {Array.from({
-                            length: Math.floor(note.rating)
-                          }, (_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                              {Array.from({ length: Math.floor(note.rating) }, (_, i) => (
+                                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                              ))}
                               {note.rating % 1 >= 0.5 && <StarHalf className="w-4 h-4 fill-yellow-400 text-yellow-400" />}
                               <span className="ml-1 text-sm text-muted-foreground">({note.rating})</span>
                             </div>
                             <span className="text-sm text-muted-foreground">• {note.pageCount} pages</span>
+                            <span className="text-sm text-muted-foreground">• Grade: {note.grade}</span>
                           </div>
                         </div>
-                        <div className="text-right">
+                        <div className="text-right ml-4">
                           <div className="font-bold text-lg text-primary">{note.price}</div>
                           <Button 
                             size="sm" 
@@ -427,7 +453,15 @@ const CourseDetail = () => {
                         </div>
                       </div>
                       <p className="text-sm text-muted-foreground">{note.description}</p>
-                    </div>)}
+                      
+                      {note.isVerified && (
+                        <div className="mt-3 pt-3 border-t border-emerald-500/20 flex items-center gap-2 text-xs text-emerald-600">
+                          <ShieldCheck className="w-3.5 h-3.5" />
+                          <span>Oracle verified attendance & grade on {note.verifiedAt?.toLocaleDateString()}</span>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
