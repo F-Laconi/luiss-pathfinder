@@ -271,42 +271,111 @@ const graduateCoursesData: Record<string, any> = {
   }
 };
 
-// Mock student notes data with verification status
-const studentNotes = [{
-  id: 1,
-  studentName: "Francesco L.",
-  year: "2024",
-  grade: "28/30",
-  price: "€15",
-  rating: 4.5,
-  description: "Complete notes covering all lectures with detailed case studies and frameworks. Includes my personal insights and exam preparation tips that helped me get a grade between 28 and 30.",
-  pageCount: 45,
-  isVerified: true,
-  txHash: "0x7a3f8e2b1c9d4a5e6f8b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2",
-  verifiedAt: new Date("2024-11-15")
-}, {
-  id: 2,
-  studentName: "Alice L.",
-  year: "2023",
-  grade: "30/30",
-  price: "€12",
-  rating: 4.8,
-  description: "Well-organized summary notes with mind maps and visual frameworks. Perfect for quick revision before exams. Covers Porter's Five Forces in detail.",
-  pageCount: 32,
-  isVerified: true,
-  txHash: "0x1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
-  verifiedAt: new Date("2023-12-01")
-}, {
-  id: 3,
-  studentName: "Martina D.",
-  year: "2024",
-  grade: "26/30",
-  price: "€18",
-  rating: 4.3,
-  description: "Comprehensive notes including all guest lecture content and real company examples discussed in class. Great for understanding practical applications.",
-  pageCount: 58,
-  isVerified: false
-}];
+// Student note authors pool
+const studentAuthors = [
+  { name: "Francesco L.", initial: "FL" },
+  { name: "Alice M.", initial: "AM" },
+  { name: "Marco R.", initial: "MR" },
+  { name: "Sofia B.", initial: "SB" },
+  { name: "Luca T.", initial: "LT" },
+  { name: "Giulia P.", initial: "GP" },
+  { name: "Andrea C.", initial: "AC" },
+  { name: "Elena V.", initial: "EV" },
+  { name: "Matteo S.", initial: "MS" },
+  { name: "Chiara D.", initial: "CD" }
+];
+
+// Generate student notes based on course ID (deterministic)
+const getStudentNotesForCourse = (courseId: string, courseName: string) => {
+  const hash = courseId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const noteCount = 2 + (hash % 3); // 2-4 notes per course
+  
+  const notes = [];
+  for (let i = 0; i < noteCount; i++) {
+    const authorIndex = (hash + i * 7) % studentAuthors.length;
+    const year = 2023 + ((hash + i) % 2);
+    const grade = 24 + ((hash + i * 3) % 7);
+    const pages = 25 + ((hash + i * 5) % 40);
+    const price = 10 + ((hash + i * 2) % 12);
+    const rating = 4.0 + ((hash + i) % 10) / 10;
+    const isVerified = (hash + i) % 3 !== 0;
+    
+    notes.push({
+      id: i + 1,
+      studentName: studentAuthors[authorIndex].name,
+      year: year.toString(),
+      grade: `${grade}/30`,
+      price: `€${price}`,
+      rating: Math.round(rating * 10) / 10,
+      description: getNoteDescription(courseName, i),
+      pageCount: pages,
+      isVerified,
+      txHash: isVerified ? `0x${hash.toString(16)}${i}a3f8e2b1c9d4a5e6f8b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2` : undefined,
+      verifiedAt: isVerified ? new Date(year, 10 + (i % 2), 10 + (hash % 20)) : undefined
+    });
+  }
+  return notes;
+};
+
+const getNoteDescription = (courseName: string, index: number) => {
+  const descriptions = [
+    `Complete lecture notes covering all ${courseName.toLowerCase()} topics with detailed explanations and practical examples. Includes exam preparation tips and key concepts highlighted.`,
+    `Well-organized summary with visual diagrams and frameworks. Perfect for quick revision before the exam. All major theories and models explained clearly.`,
+    `Comprehensive notes including guest lecture content and real-world case studies discussed in class. Great for understanding practical applications of ${courseName.toLowerCase()}.`,
+    `Detailed notes with personal annotations and professor's key points highlighted. Includes practice questions and sample exam answers that helped me succeed.`
+  ];
+  return descriptions[index % descriptions.length];
+};
+
+// Course-specific learning outcomes
+const getLearningOutcomes = (courseId: string, courseName: string) => {
+  const outcomes: Record<string, { emoji: string; title: string; description: string }[]> = {
+    "1-0-0": [
+      { emoji: "🏛️", title: "Master EU institutional frameworks", description: "Understand how EU institutions work together in decision-making and policy implementation." },
+      { emoji: "📜", title: "Analyze integration processes", description: "Trace the historical evolution of European integration and its impact on member states." },
+      { emoji: "🌍", title: "Evaluate governance structures", description: "Compare different governance models across European institutions." }
+    ],
+    "1-0-1": [
+      { emoji: "⚖️", title: "Compare political systems", description: "Analyze different constitutional frameworks and governance structures across Europe." },
+      { emoji: "🗳️", title: "Understand electoral dynamics", description: "Study voting systems, party politics, and democratic representation." },
+      { emoji: "📊", title: "Apply comparative methods", description: "Use rigorous analytical tools to compare political institutions and outcomes." }
+    ],
+    "2-0-0": [
+      { emoji: "📈", title: "Master macroeconomic models", description: "Build and analyze models of economic growth, business cycles, and aggregate demand." },
+      { emoji: "💹", title: "Understand fiscal policy", description: "Evaluate government spending, taxation, and their effects on the economy." },
+      { emoji: "🌐", title: "Analyze global economics", description: "Study international trade, exchange rates, and cross-border economic flows." }
+    ],
+    "2-0-1": [
+      { emoji: "🎯", title: "Master consumer theory", description: "Analyze consumer behavior, preferences, and optimal decision-making." },
+      { emoji: "🏭", title: "Understand producer decisions", description: "Study firm behavior, production functions, and cost optimization." },
+      { emoji: "⚖️", title: "Evaluate market structures", description: "Compare perfect competition, monopoly, oligopoly, and monopolistic competition." }
+    ],
+    "3-0-0": [
+      { emoji: "🎯", title: "Develop strategic thinking", description: "Learn frameworks for competitive analysis and strategic positioning." },
+      { emoji: "📊", title: "Analyze market dynamics", description: "Understand industry forces and how to create sustainable competitive advantages." },
+      { emoji: "🚀", title: "Plan corporate growth", description: "Master techniques for organic growth, M&A, and strategic partnerships." }
+    ],
+    "3-0-3": [
+      { emoji: "💰", title: "Master capital budgeting", description: "Evaluate investment decisions using NPV, IRR, and payback analysis." },
+      { emoji: "📈", title: "Optimize capital structure", description: "Balance debt and equity to minimize cost of capital and maximize firm value." },
+      { emoji: "💵", title: "Manage working capital", description: "Optimize cash, inventory, and receivables for operational efficiency." }
+    ],
+    "9-1-0": [
+      { emoji: "🤖", title: "Build an AI-powered marketing plan", description: "Learn how to design killer digital strategies using today's most important AI tools." },
+      { emoji: "📈", title: "Understand tech's impact on marketing", description: "Discover how AI is shaping the evolution of marketing — from current practices to future trends." },
+      { emoji: "👥", title: "Work on real cases as a team", description: "Strengthen teamwork and problem-solving skills by applying AI tools to real-world marketing challenges." }
+    ]
+  };
+  
+  // Default outcomes for courses not explicitly defined
+  const defaultOutcomes = [
+    { emoji: "📚", title: `Master core ${courseName} concepts`, description: `Build a solid foundation in the fundamental principles and theories of ${courseName.toLowerCase()}.` },
+    { emoji: "🔍", title: "Apply analytical frameworks", description: "Learn to use professional tools and methodologies used by practitioners in the field." },
+    { emoji: "💼", title: "Develop practical skills", description: "Work on real-world case studies and projects to prepare for your future career." }
+  ];
+  
+  return outcomes[courseId] || defaultOutcomes;
+};
 const StarRating = ({
   rating
 }: {
@@ -339,6 +408,8 @@ const CourseDetail = () => {
   };
   
   const professorData = getProfessorForCourse(courseId || "");
+  const studentNotes = getStudentNotesForCourse(courseId || "", course.name);
+  const learningOutcomes = getLearningOutcomes(courseId || "", course.name);
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -454,27 +525,15 @@ const CourseDetail = () => {
                 
                 <h4 className="font-semibold mb-4 text-lg">What You'll Actually Learn</h4>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
-                    <span className="text-2xl">🤖</span>
-                    <div>
-                      <span className="font-medium text-foreground">Build an AI-powered marketing plan</span>
-                      <p className="text-sm text-muted-foreground mt-1">Learn how to design killer digital strategies using today's most important AI tools.</p>
+                  {learningOutcomes.map((outcome, index) => (
+                    <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
+                      <span className="text-2xl">{outcome.emoji}</span>
+                      <div>
+                        <span className="font-medium text-foreground">{outcome.title}</span>
+                        <p className="text-sm text-muted-foreground mt-1">{outcome.description}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
-                    <span className="text-2xl">📈</span>
-                    <div>
-                      <span className="font-medium text-foreground">Understand tech's impact on marketing</span>
-                      <p className="text-sm text-muted-foreground mt-1">Discover how AI is shaping the evolution of marketing — from current practices to future trends.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
-                    <span className="text-2xl">👥</span>
-                    <div>
-                      <span className="font-medium text-foreground">Work on real cases as a team</span>
-                      <p className="text-sm text-muted-foreground mt-1">Strengthen teamwork and problem-solving skills by applying AI tools to real-world marketing challenges.</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
                 <div className="mt-6 pt-6 border-t">
