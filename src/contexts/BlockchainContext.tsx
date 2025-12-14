@@ -273,7 +273,10 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       return false;
     }
 
-    toast.info("📋 Creating proposal on-chain...");
+    const dao = userDAOs.find(d => d.id === daoId);
+    toast.info("📋 Creating proposal on-chain...", {
+      description: `Submitting to ${dao?.name || "DAO"}...`
+    });
     await simulateBlockchainDelay();
 
     const newProposal: DAOProposal = {
@@ -294,7 +297,18 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       return dao;
     }));
 
-    toast.success("Proposal created successfully!");
+    const typeEmoji = proposal.type === "direction" ? "🎯" : 
+                      proposal.type === "role" ? "👥" : 
+                      proposal.type === "funding" ? "💰" : "🏁";
+
+    toast.success(`${typeEmoji} New Proposal Created!`, {
+      description: `"${proposal.title}" is now open for voting in ${dao?.name}`,
+      duration: 5000,
+      action: {
+        label: "View",
+        onClick: () => window.location.href = "/dao-management"
+      }
+    });
     return true;
   };
 
@@ -304,8 +318,15 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       return false;
     }
 
-    toast.info("🗳️ Recording vote on-chain...");
+    const dao = userDAOs.find(d => d.id === daoId);
+    const proposal = dao?.proposals.find(p => p.id === proposalId);
+
+    toast.info("🗳️ Recording vote on-chain...", {
+      description: `Voting ${voteType.toUpperCase()} on "${proposal?.title}"`
+    });
     await simulateBlockchainDelay();
+
+    let updatedProposal: DAOProposal | undefined;
 
     setUserDAOs(prev => prev.map(dao => {
       if (dao.id === daoId) {
@@ -315,7 +336,8 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
             if (prop.id === proposalId) {
               const newVotes = { ...prop.votes };
               newVotes[voteType] += 1;
-              return { ...prop, votes: newVotes };
+              updatedProposal = { ...prop, votes: newVotes };
+              return updatedProposal;
             }
             return prop;
           })
@@ -324,7 +346,14 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       return dao;
     }));
 
-    toast.success("Vote recorded!");
+    const voteEmoji = voteType === "for" ? "✅" : voteType === "against" ? "❌" : "⚪";
+    const totalVotes = updatedProposal ? 
+      updatedProposal.votes.for + updatedProposal.votes.against + updatedProposal.votes.abstain : 0;
+
+    toast.success(`${voteEmoji} Vote Recorded!`, {
+      description: `You voted ${voteType.toUpperCase()} • Total votes: ${totalVotes}`,
+      duration: 4000
+    });
     return true;
   };
 
