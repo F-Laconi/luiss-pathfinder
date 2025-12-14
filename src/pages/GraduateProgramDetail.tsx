@@ -578,9 +578,9 @@ const programsData: Record<string, any> = {
         credits: 6,
         description: "AI-driven marketing strategies and digital transformation"
       }, {
-        name: "Digital Transformation Strategy",
+        name: "Emerging Technologies for Sustainability",
         credits: 6,
-        description: "Technology-driven change"
+        description: "Sustainable innovation through emerging tech"
       }, {
         name: "Master's Thesis",
         credits: 21,
