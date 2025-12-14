@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb, PartyPopper, Wallet } from "lucide-react";
-import { toast } from "sonner";
+import { Search, Menu, X, BookOpen, Heart, User, ChevronDown, Lightbulb, PartyPopper } from "lucide-react";
+import WalletButton from "@/components/blockchain/WalletButton";
 
 declare global {
   interface Window {
@@ -596,28 +596,7 @@ const Navigation = () => {
                 <User className="h-5 w-5" />
               </Link>
             </Button>
-            {walletAddress ? (
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={disconnectWallet}
-                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20 hover:text-orange-700 flex items-center gap-2"
-              >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
-                {formatAddress(walletAddress)}
-              </Button>
-            ) : (
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={connectMetaMask}
-                disabled={isConnecting}
-                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20 hover:text-orange-700 flex items-center gap-2"
-              >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
-                {isConnecting ? "Connecting..." : "MetaMask"}
-              </Button>
-            )}
+            <WalletButton />
             <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
               Sign Up
             </Button>
@@ -630,27 +609,7 @@ const Navigation = () => {
                 <User className="h-5 w-5" />
               </Link>
             </Button>
-            {walletAddress ? (
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={disconnectWallet}
-                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20 flex items-center gap-1 px-2"
-              >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
-                <span className="text-xs">{formatAddress(walletAddress)}</span>
-              </Button>
-            ) : (
-              <Button 
-                variant="outline" 
-                size="icon" 
-                onClick={connectMetaMask}
-                disabled={isConnecting}
-                className="bg-orange-500/10 border-orange-500/30 text-orange-600 hover:bg-orange-500/20"
-              >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" className="h-4 w-4" />
-              </Button>
-            )}
+            <WalletButton />
             <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
               Sign Up
             </Button>
