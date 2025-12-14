@@ -472,7 +472,7 @@ const CourseDetail = () => {
   const navigate = useNavigate();
   const course = graduateCoursesData[courseId || ""] || {
     name: "Course Not Found",
-    credits: 0,
+    credits: 6,
     description: "This course could not be found.",
     programId: "1"
   };
