@@ -9,17 +9,100 @@ import Footer from "@/components/Footer";
 import OracleVerificationPanel from "@/components/blockchain/OracleVerificationPanel";
 import ReviewVerificationBadge from "@/components/blockchain/ReviewVerificationBadge";
 
-// Mock professor data - in a real app this would come from an API
-const professorData = {
-  name: "Prof. Maximo Ibarra",
-  image: "/placeholder.svg",
-  // Placeholder for professor image
-  rating: 8.5,
-  description: "Prof. Maximo Ibarra is a global tech and telecom leader with years of experience guiding major companies through digital transformation. Born in Colombia and educated in Italy and abroad, he has worked as CEO in top international firms and built a strong reputation in marketing, innovation, and business strategy. Here in LUISS he brings real-world insights straight into the classroom. If you want a teacher who combines industry expertise with a passion for the future of tech, he's exactly that.",
-  levelOfEnglish: "Native",
-  classPercentage: "85%",
-  examType: "Written final exam 50%, Oral presentation 50%",
-  attendanceMandatory: true
+// Professor pool - different professors for different courses
+const professorPool = [
+  {
+    name: "Prof. Maximo Ibarra",
+    rating: 8.5,
+    description: "Prof. Maximo Ibarra is a global tech and telecom leader with years of experience guiding major companies through digital transformation. Born in Colombia and educated in Italy and abroad, he has worked as CEO in top international firms and built a strong reputation in marketing, innovation, and business strategy. Here in LUISS he brings real-world insights straight into the classroom.",
+    levelOfEnglish: "Native",
+    classPercentage: "85%",
+    examType: "Written final exam 50%, Oral presentation 50%",
+    attendanceMandatory: true,
+    useImage: true
+  },
+  {
+    name: "Prof. Elena Ferrante",
+    rating: 9.2,
+    description: "Prof. Ferrante is an expert in European governance with over 15 years of experience in policy analysis. She previously worked at the European Commission and brings deep institutional knowledge to her teaching. Known for her engaging lectures and real-world case studies.",
+    levelOfEnglish: "Fluent",
+    classPercentage: "90%",
+    examType: "Written exam 60%, Group project 40%",
+    attendanceMandatory: true,
+    useImage: false
+  },
+  {
+    name: "Prof. Alessandro Moretti",
+    rating: 7.8,
+    description: "Prof. Moretti specializes in quantitative economics and financial modeling. With a PhD from MIT and experience at major investment banks, he bridges academic theory with practical financial applications. His courses are rigorous but highly rewarding.",
+    levelOfEnglish: "Fluent",
+    classPercentage: "75%",
+    examType: "Written final exam 70%, Problem sets 30%",
+    attendanceMandatory: false,
+    useImage: false
+  },
+  {
+    name: "Prof. Chiara Romano",
+    rating: 8.9,
+    description: "Prof. Romano is a renowned expert in corporate strategy and organizational behavior. She has consulted for Fortune 500 companies and authored several influential papers on strategic management. Her interactive teaching style makes complex concepts accessible.",
+    levelOfEnglish: "Native",
+    classPercentage: "80%",
+    examType: "Case study analysis 50%, Final presentation 50%",
+    attendanceMandatory: true,
+    useImage: false
+  },
+  {
+    name: "Prof. Marco Bellini",
+    rating: 8.1,
+    description: "Prof. Bellini brings two decades of experience in public administration and regulatory affairs. He has served as an advisor to multiple Italian ministries and is passionate about preparing students for careers in public service and governance.",
+    levelOfEnglish: "Fluent",
+    classPercentage: "70%",
+    examType: "Written exam 40%, Policy brief 30%, Oral 30%",
+    attendanceMandatory: false,
+    useImage: false
+  },
+  {
+    name: "Prof. Giulia Santini",
+    rating: 9.0,
+    description: "Prof. Santini is a leading researcher in environmental policy and sustainable development. Her work on EU climate regulations has been cited by policymakers across Europe. She combines academic excellence with a commitment to real-world impact.",
+    levelOfEnglish: "Fluent",
+    classPercentage: "85%",
+    examType: "Research paper 60%, Presentation 40%",
+    attendanceMandatory: true,
+    useImage: false
+  },
+  {
+    name: "Prof. Roberto Conti",
+    rating: 7.5,
+    description: "Prof. Conti is a veteran economist with extensive experience in monetary policy and central banking. Previously with the Bank of Italy, he offers unique insights into the workings of financial institutions and macroeconomic policy.",
+    levelOfEnglish: "Good",
+    classPercentage: "65%",
+    examType: "Written final exam 100%",
+    attendanceMandatory: false,
+    useImage: false
+  },
+  {
+    name: "Prof. Valentina De Luca",
+    rating: 8.7,
+    description: "Prof. De Luca is an expert in international law and human rights. She has worked with the United Nations and various NGOs, bringing a global perspective to her teaching. Her courses are known for stimulating debates and critical thinking.",
+    levelOfEnglish: "Native",
+    classPercentage: "95%",
+    examType: "Essay 40%, Oral exam 40%, Participation 20%",
+    attendanceMandatory: true,
+    useImage: false
+  }
+];
+
+// Function to get professor based on course ID (deterministic but varied)
+const getProfessorForCourse = (courseId: string) => {
+  // AI & Digital Marketing course gets Maximo Ibarra
+  if (courseId === "9-1-0") {
+    return professorPool[0];
+  }
+  // Use course ID to deterministically select a professor (not random each render)
+  const hash = courseId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const index = (hash % (professorPool.length - 1)) + 1; // Skip index 0 (Maximo Ibarra)
+  return professorPool[index];
 };
 
 // Graduate programs data to extract courses from
@@ -254,6 +337,8 @@ const CourseDetail = () => {
     description: "This course could not be found.",
     programId: "1"
   };
+  
+  const professorData = getProfessorForCourse(courseId || "");
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -283,15 +368,23 @@ const CourseDetail = () => {
             {/* Professor card */}
             <Card>
               <CardHeader>
-                <CardTitle>Prof. Maximo Ibarra</CardTitle>
+                <CardTitle>{professorData.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Professor image */}
-                <img 
-                  src={professorImage} 
-                  alt="Professor Maximo Ibarra" 
-                  className="w-24 h-24 rounded-full mx-auto object-cover"
-                />
+                {professorData.useImage ? (
+                  <img 
+                    src={professorImage} 
+                    alt={professorData.name} 
+                    className="w-24 h-24 rounded-full mx-auto object-cover"
+                  />
+                ) : (
+                  <div className="w-24 h-24 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-primary">
+                      {professorData.name.split(' ').slice(1).map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                )}
                 
                 <div className="text-center">
                   <h3 className="font-semibold text-lg">{professorData.name}</h3>
