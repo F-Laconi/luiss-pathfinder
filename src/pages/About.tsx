@@ -23,7 +23,7 @@ const About = () => {
               
               <h1 className="font-nunito text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
                 About
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> UniCompass</span>
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> EduBlockChain</span>
               </h1>
               
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in">
@@ -55,7 +55,7 @@ const About = () => {
                   </p>
                   
                   <p>
-                    Born from late-night conversations and shared frustrations, UniCompass emerged as our answer 
+                    Born from late-night conversations and shared frustrations, EduBlockChain emerged as our answer 
                     to the overwhelming complexity of choosing the right master's program and university path.
                   </p>
                   
@@ -107,7 +107,7 @@ const About = () => {
                   </h2>
                   
                   <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    UniCompass exists to transform the overwhelming maze of higher education into 
+                    EduBlockChain exists to transform the overwhelming maze of higher education into
                     a clear, navigable journey filled with opportunities and connections.
                   </p>
                 </div>

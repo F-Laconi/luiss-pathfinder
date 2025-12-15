@@ -51,7 +51,7 @@ const AuthDialog = ({ open, onOpenChange }: AuthDialogProps) => {
             <DialogHeader>
               <DialogTitle>Create an account</DialogTitle>
               <DialogDescription>
-                Join UniCompass to explore university programs
+                Join EduBlockChain to explore university programs
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSignUp} className="mt-4">
@@ -106,7 +106,7 @@ const AuthDialog = ({ open, onOpenChange }: AuthDialogProps) => {
             <DialogHeader>
               <DialogTitle>Welcome back</DialogTitle>
               <DialogDescription>
-                Sign in to your UniCompass account
+                Sign in to your EduBlockChain account
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSignIn} className="mt-4">
