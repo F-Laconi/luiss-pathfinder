@@ -19,7 +19,7 @@ const mockProjects = [
     title: "EduBlockChain",
     briefDescription: "A blockchain-based platform designed to help students with verified credentials, course reviews, and collaborative projects",
     skillsNeeded: ["Blockchain Developer", "Marketer"],
-    author: "Francesco Laconi",
+    author: "Francesco L., Mattia M. M., Kristoffer L. H.",
     fullDescription: "EduBlockChain is revolutionizing the student experience through blockchain technology. Our platform enables verified student credentials, anonymous but trusted course reviews, and transparent project collaboration through DAOs. Join us to build the future of education.",
     stage: "MVP Ready",
     goals: "Launch beta and onboard first 1000 students"
@@ -29,7 +29,7 @@ const mockProjects = [
     title: "3Better",
     briefDescription: "A sustainable startup focused on biomethane production and renewable energy solutions",
     skillsNeeded: ["Financial Advisor", "Chemist"],
-    author: "Francesco L., Mattia M. M., Kristoffer L. H.",
+    author: "Filippo A., Katharina H.",
     fullDescription: "3Better is pioneering sustainable biomethane production from organic waste. We're building scalable solutions to transform agricultural and food waste into clean energy, contributing to a circular economy and carbon neutrality goals.",
     stage: "Concept",
     goals: "Secure seed funding and validate production process"
