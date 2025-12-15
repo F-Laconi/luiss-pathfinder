@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Compass, UserCheck, Pin } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import compassWallpaper from "@/assets/compass-wallpaper.jpg";
+import homeWallpaper from "@/assets/home-wallpaper.png";
 const Index = () => {
   return <main>
       <Navigation />
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{
-      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(${compassWallpaper})`,
+      backgroundImage: `url(${homeWallpaper})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
