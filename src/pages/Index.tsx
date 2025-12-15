@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Compass, UserCheck, Pin } from "lucide-react";
+import { UserCheck } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import homeWallpaper from "@/assets/home-wallpaper.png";
+import compassIcon from "@/assets/compass-icon.png";
 const Index = () => {
   return <main>
       <Navigation />
@@ -36,9 +37,7 @@ const Index = () => {
           {/* Make the Right Choice */}
           <Link to="/universities" className="group flex flex-col items-center space-y-6 transition-all duration-500 hover:scale-105" aria-label="Explore Italian universities and programs">
             <div className="relative">
-              <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
-                <Compass className="w-12 h-12 md:w-14 md:h-14 text-white" />
-              </div>
+              <img src={compassIcon} alt="Compass on book" className="w-28 h-28 md:w-36 md:h-36 object-contain group-hover:animate-float drop-shadow-2xl" />
               <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
             </div>
             <h2 className="font-nunito text-xl md:text-2xl font-bold text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_90%),_0_2px_4px_rgb(0_0_0_/_80%)] group-hover:scale-105 transition-transform duration-300">
