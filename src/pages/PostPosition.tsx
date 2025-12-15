@@ -16,33 +16,33 @@ import postPositionBackground from "@/assets/post-position-background.png";
 const mockProjects = [
   {
     id: 1,
-    title: "Project 1",
-    briefDescription: "Innovative project seeking talented collaborators",
-    skillsNeeded: ["Skill 1", "Skill 2", "Skill 3"],
-    author: "Student A.",
-    fullDescription: "Detailed description of project 1. This project aims to solve real-world problems through innovative solutions.",
-    stage: "Concept",
-    goals: "Define specific goals and milestones"
+    title: "EduBlockChain",
+    briefDescription: "A blockchain-based platform designed to help students with verified credentials, course reviews, and collaborative projects",
+    skillsNeeded: ["Blockchain Developer", "Marketer"],
+    author: "Marco R.",
+    fullDescription: "EduBlockChain is revolutionizing the student experience through blockchain technology. Our platform enables verified student credentials, anonymous but trusted course reviews, and transparent project collaboration through DAOs. Join us to build the future of education.",
+    stage: "MVP Ready",
+    goals: "Launch beta and onboard first 1000 students"
   },
   {
     id: 2,
-    title: "Project 2",
-    briefDescription: "Exciting initiative looking for team members",
-    skillsNeeded: ["Skill A", "Skill B", "Skill C"],
-    author: "Student B.",
-    fullDescription: "Detailed description of project 2. We're building something amazing and need your expertise.",
-    stage: "MVP Ready",
-    goals: "Launch and gather user feedback"
+    title: "3Better",
+    briefDescription: "A sustainable startup focused on biomethane production and renewable energy solutions",
+    skillsNeeded: ["Financial Advisor", "Chemist"],
+    author: "Sofia L.",
+    fullDescription: "3Better is pioneering sustainable biomethane production from organic waste. We're building scalable solutions to transform agricultural and food waste into clean energy, contributing to a circular economy and carbon neutrality goals.",
+    stage: "Concept",
+    goals: "Secure seed funding and validate production process"
   },
   {
     id: 3,
-    title: "Project 3",
-    briefDescription: "Revolutionary idea ready to be developed",
-    skillsNeeded: ["Development", "Design", "Marketing"],
-    author: "Student C.",
-    fullDescription: "Detailed description of project 3. Join us in creating the next big thing.",
+    title: "UrbanCommon",
+    briefDescription: "A platform that aims to enhance and optimize green areas in urban cities through data-driven insights",
+    skillsNeeded: ["Data Analyst"],
+    author: "Andrea B.",
+    fullDescription: "UrbanCommon connects citizens, municipalities, and urban planners to maximize the potential of city green spaces. Using data analytics and community feedback, we identify underutilized areas and propose sustainable improvements for healthier, greener cities.",
     stage: "Beta Testing",
-    goals: "Scale and optimize for growth"
+    goals: "Partner with 3 municipalities for pilot program"
   },
   {
     id: 4,
