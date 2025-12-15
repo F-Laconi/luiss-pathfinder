@@ -10,11 +10,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <BookOpen className="h-6 w-6 text-accent" />
-              <span className="font-bold text-xl">LUISS Explorer</span>
+              <span className="font-bold text-xl">EduBlockChain</span>
             </div>
             <p className="text-background/80 text-sm leading-relaxed">
-              Empowering LUISS students to make informed decisions about their academic journey. 
-              Discover, compare, and choose the perfect master's program for your future.
+              Empowering students to make informed decisions about their academic journey. 
+              Discover, compare, and choose the perfect program for your future.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-background/60 hover:text-accent transition-colors">
@@ -77,7 +77,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-background/80">
                 <Mail className="h-4 w-4 text-accent" />
-                <span className="text-sm">hello@luissexplorer.com</span>
+                <span className="text-sm">hello@edublockchain.com</span>
               </div>
               <div className="flex items-center space-x-3 text-background/80">
                 <Phone className="h-4 w-4 text-accent" />
@@ -91,7 +91,7 @@ const Footer = () => {
         <div className="border-t border-background/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-background/60 text-sm">
-              © 2024 LUISS University. All rights reserved.
+              © 2024 EduBlockChain. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/terms" className="text-background/60 hover:text-accent transition-colors">
