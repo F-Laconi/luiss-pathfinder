@@ -70,7 +70,7 @@ const BusinessPartner = () => {
             animationDelay: '0.3s'
           }}>
               {/* Looking for Opportunities Card */}
-              <Link to="/student-board" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] hover:border-primary/40 shadow-lg">
+              <Link to="/student-board" className="group relative p-8 sm:p-10 transition-all duration-500 hover:scale-105">
                 {/* Pushpin */}
                 
                 <div className="flex flex-col items-center space-y-6">
@@ -92,7 +92,7 @@ const BusinessPartner = () => {
               </Link>
 
               {/* Post Opportunities Card */}
-              <Link to="/post-position" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(251,146,60,0.2)] hover:border-accent/40 shadow-lg">
+              <Link to="/post-position" className="group relative p-8 sm:p-10 transition-all duration-500 hover:scale-105">
                 {/* Pushpin */}
                 
                 <div className="flex flex-col items-center space-y-6">
