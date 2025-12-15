@@ -19,7 +19,7 @@ const mockProjects = [
     title: "EduBlockChain",
     briefDescription: "A blockchain-based platform designed to help students with verified credentials, course reviews, and collaborative projects",
     skillsNeeded: ["Blockchain Developer", "Marketer"],
-    author: "Marco R.",
+    author: "Francesco Laconi",
     fullDescription: "EduBlockChain is revolutionizing the student experience through blockchain technology. Our platform enables verified student credentials, anonymous but trusted course reviews, and transparent project collaboration through DAOs. Join us to build the future of education.",
     stage: "MVP Ready",
     goals: "Launch beta and onboard first 1000 students"
