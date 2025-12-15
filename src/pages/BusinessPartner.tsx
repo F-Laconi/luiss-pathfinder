@@ -22,8 +22,19 @@ const BusinessPartner = () => {
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}>
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          {/* Floating Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-violet-200/60 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-blue-200/50 rounded-full blur-3xl animate-float" style={{
+            animationDelay: '1s'
+          }}></div>
+            <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-cyan-200/60 rounded-full blur-2xl animate-float" style={{
+            animationDelay: '2s'
+          }}></div>
+            <div className="absolute top-1/2 right-1/3 w-36 h-36 bg-accent/30 rounded-full blur-3xl animate-float" style={{
+            animationDelay: '1.5s'
+          }}></div>
+          </div>
 
           <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
             {/* Back Link */}
@@ -35,11 +46,11 @@ const BusinessPartner = () => {
             {/* Header */}
             <header className="text-center mb-12 animate-fade-up">
               <h1 className="font-nunito text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
-                <span className="text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
-                  FIND YOUR PARTNER
+                <span className="bg-gradient-to-br from-primary via-primary-hover to-secondary bg-clip-text text-transparent drop-shadow-2xl">
+                  Find Your Partner
                 </span>
               </h1>
-              <p className="text-xl sm:text-2xl text-white font-semibold drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] max-w-2xl mx-auto">
+              <p className="text-xl sm:text-2xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto">
                 Connect talent with outstanding opportunities
               </p>
             </header>
