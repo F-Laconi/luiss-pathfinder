@@ -39,7 +39,7 @@ const mockProjects = [
     title: "UrbanCommon",
     briefDescription: "A platform that aims to enhance and optimize green areas in urban cities through data-driven insights",
     skillsNeeded: ["Data Analyst"],
-    author: "Andrea B.",
+    author: "Andrea P.",
     fullDescription: "UrbanCommon connects citizens, municipalities, and urban planners to maximize the potential of city green spaces. Using data analytics and community feedback, we identify underutilized areas and propose sustainable improvements for healthier, greener cities.",
     stage: "Beta Testing",
     goals: "Partner with 3 municipalities for pilot program"
