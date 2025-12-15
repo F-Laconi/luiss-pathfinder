@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DAOPanel from "@/components/blockchain/DAOPanel";
 import businessPartnerWallpaper from "@/assets/business-partner-wallpaper.png";
+import findOpportunityIcon from "@/assets/find-opportunity-icon.png";
 const BusinessPartner = () => {
   return <>
       <title>Business Partner Opportunities | UniCompass</title>
@@ -73,8 +74,8 @@ const BusinessPartner = () => {
                 
                 <div className="flex flex-col items-center space-y-6">
                   <div className="relative">
-                    <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
-                      <Search className="w-12 h-12 md:w-14 md:h-14 text-white" />
+                    <div className="w-24 h-24 md:w-28 md:h-28 rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl overflow-hidden">
+                      <img src={findOpportunityIcon} alt="Find Opportunities" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
                   </div>
