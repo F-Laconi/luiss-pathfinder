@@ -27,11 +27,12 @@ const Index = () => {
         <header className="mb-12 sm:mb-20 animate-fade-up">
           <div className="relative inline-block">
             <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 relative mt-20 sm:mt-24 px-2">
-              <span className="bg-gradient-to-br from-primary via-primary-hover to-secondary bg-clip-text text-transparent drop-shadow-2xl">
+              <span className="text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] [text-shadow:_0_4px_20px_rgb(0_0_0_/_80%),_0_2px_4px_rgb(0_0_0_/_90%)]">
                 UniCompass
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-white font-semibold px-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Navigate Your Academic Journey
+            <p className="text-xl sm:text-2xl md:text-3xl text-white font-semibold px-4 [text-shadow:_0_4px_20px_rgb(0_0_0_/_90%),_0_2px_4px_rgb(0_0_0_/_80%)]">
+              Navigate Your Academic Journey
             </p>
           </div>
         </header>
@@ -41,7 +42,7 @@ const Index = () => {
           animationDelay: '0.3s'
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
-          <Link to="/universities" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] hover:border-primary/40 shadow-lg" aria-label="Explore Italian universities and programs">
+          <Link to="/universities" className="group relative bg-black/60 backdrop-blur-md border-2 border-white/30 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(59,130,246,0.4)] hover:border-primary/60 shadow-2xl" aria-label="Explore Italian universities and programs">
             {/* Pushpin */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               
@@ -63,7 +64,7 @@ const Index = () => {
           </Link>
 
           {/* Find Your Business Partner */}
-          <Link to="/business-partner" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(251,146,60,0.2)] hover:border-accent/40 shadow-lg" aria-label="Connect with business partners and opportunities">
+          <Link to="/business-partner" className="group relative bg-black/60 backdrop-blur-md border-2 border-white/30 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(251,146,60,0.4)] hover:border-accent/60 shadow-2xl" aria-label="Connect with business partners and opportunities">
             {/* Pushpin */}
             
             <div className="flex flex-col items-center space-y-6">
@@ -87,7 +88,7 @@ const Index = () => {
         <footer className="mt-8 animate-fade-up" style={{
           animationDelay: '0.6s'
         }}>
-          <p className="text-lg md:text-xl text-white/70 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <p className="text-lg md:text-xl text-white font-semibold [text-shadow:_0_4px_20px_rgb(0_0_0_/_90%),_0_2px_4px_rgb(0_0_0_/_80%)]">
             Choose Your Journey and Unlock Your Potential
           </p>
         </footer>
