@@ -59,7 +59,7 @@ const BusinessPartner = () => {
                 
                 <div className="flex flex-col items-center space-y-8">
                   <div className="relative">
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl group-hover:animate-float shadow-2xl overflow-hidden border-4 border-white/20">
+                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl group-hover:animate-float shadow-2xl overflow-hidden border-4 border-white">
                       <img src={findOpportunityIcon} alt="Find Opportunities" className="w-full h-full object-cover rounded-xl" />
                     </div>
                     <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
@@ -81,7 +81,7 @@ const BusinessPartner = () => {
                 
                 <div className="flex flex-col items-center space-y-8">
                   <div className="relative">
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl group-hover:animate-float shadow-2xl overflow-hidden border-4 border-white/20">
+                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl group-hover:animate-float shadow-2xl overflow-hidden border-4 border-white">
                       <img src={postOpportunityIcon} alt="Post Opportunities" className="w-full h-full object-cover rounded-xl" />
                     </div>
                     <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
