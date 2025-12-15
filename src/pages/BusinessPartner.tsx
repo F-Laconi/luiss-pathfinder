@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DAOPanel from "@/components/blockchain/DAOPanel";
-import compassWallpaper from "@/assets/compass-wallpaper.jpg";
+import businessPartnerWallpaper from "@/assets/business-partner-wallpaper.png";
 
 const BusinessPartner = () => {
   return (
@@ -21,7 +21,7 @@ const BusinessPartner = () => {
         <section 
           className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
           style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(${compassWallpaper})`,
+            backgroundImage: `url(${businessPartnerWallpaper})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
