@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { Search, Briefcase, Users, Shield, Vote, Coins, Target, ArrowRight, Building2, TrendingUp } from "lucide-react";
+import { Search, Briefcase, Users, Shield, Vote, Coins, Target, ArrowLeft, Pin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DAOPanel from "@/components/blockchain/DAOPanel";
+import compassWallpaper from "@/assets/compass-wallpaper.jpg";
 
 const BusinessPartner = () => {
   return (
@@ -13,97 +14,112 @@ const BusinessPartner = () => {
       <meta name="description" content="Connect exceptional talent with innovative companies. Discover career opportunities or post positions to find qualified professionals for your team." />
       <link rel="canonical" href="https://unicompass.lovable.app/business-partner" />
       
-      <div className="min-h-screen bg-[#fafafa] text-foreground">
+      <div className="min-h-screen bg-background">
         <Navigation />
         
-        {/* Hero Header */}
-        <header className="relative pt-24 pb-20 md:pt-32 md:pb-28 bg-gradient-to-b from-white to-[#f5f5f7]">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
-                Professional Network
-              </p>
-              
-              <h1 className="font-helvetica text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] uppercase tracking-tight text-[#1d1d1f]">
-                Connect Talent with
-                <span className="block text-[#1d1d1f]/60">
-                  Opportunity
+        {/* Hero Section with Background */}
+        <section 
+          className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(${compassWallpaper})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          {/* Floating Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-violet-200/60 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-blue-200/50 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-cyan-200/60 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 right-1/3 w-36 h-36 bg-accent/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+          </div>
+
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            {/* Back Link */}
+            <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors drop-shadow-lg">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Link>
+
+            {/* Header */}
+            <header className="text-center mb-12 animate-fade-up">
+              <h1 className="font-nunito text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
+                <span className="bg-gradient-to-br from-primary via-primary-hover to-secondary bg-clip-text text-transparent drop-shadow-2xl">
+                  Find Your Partner
                 </span>
               </h1>
-              
-              <p className="text-lg sm:text-xl text-[#6e6e73] max-w-2xl mx-auto leading-relaxed mb-12">
-                Where exceptional talent meets innovative companies. 
-                Build meaningful connections that drive careers forward.
+              <p className="text-xl sm:text-2xl text-white font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto">
+                Connect talent with outstanding opportunities
               </p>
-              
-              {/* Stats */}
-              <div className="flex flex-wrap justify-center gap-12 md:gap-16">
-                {[
-                  { value: "500+", label: "Companies" },
-                  { value: "2,500+", label: "Positions" },
-                  { value: "95%", label: "Success Rate" }
-                ].map((stat, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-[#1d1d1f] mb-1">{stat.value}</div>
-                    <div className="text-sm text-[#6e6e73]">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </header>
+            </header>
 
-        {/* Main Action Cards */}
-        <section className="py-20 md:py-28 bg-white">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center mb-16">
-              <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#1d1d1f] uppercase tracking-tight">
-                How Can We Help?
-              </h2>
-              <p className="text-lg text-[#6e6e73] max-w-xl mx-auto">
-                Choose your path to meaningful connections
-              </p>
+            {/* Stats Row */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              {[
+                { value: "500+", label: "Active Companies" },
+                { value: "2,500+", label: "Open Positions" },
+                { value: "95%", label: "Success Rate" }
+              ].map((stat, idx) => (
+                <div key={idx} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-1">{stat.value}</div>
+                  <div className="text-sm text-white/80 drop-shadow-md">{stat.label}</div>
+                </div>
+              ))}
             </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+            {/* Action Cards - Post-it Style */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: '0.3s' }}>
               {/* Looking for Opportunities Card */}
-              <Link to="/student-board" className="group">
-                <div className="h-full bg-[#f5f5f7] rounded-2xl p-8 md:p-10 transition-all duration-300 hover:bg-[#e8e8ed] hover:shadow-lg">
-                  <div className="w-14 h-14 rounded-2xl bg-[#1d1d1f] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-                    <Search className="w-7 h-7 text-white" />
+              <Link 
+                to="/student-board" 
+                className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 rotate-[-2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] hover:border-primary/40 shadow-lg"
+              >
+                {/* Pushpin */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                  <Pin className="w-8 h-8 text-primary rotate-45" fill="currentColor" />
+                </div>
+                <div className="flex flex-col items-center space-y-6">
+                  <div className="relative">
+                    <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
+                      <Search className="w-12 h-12 md:w-14 md:h-14 text-white" />
+                    </div>
+                    <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
                   </div>
-                  
-                  <h3 className="font-helvetica text-2xl md:text-3xl font-bold mb-3 text-[#1d1d1f] uppercase tracking-tight">
-                    Find Opportunities
-                  </h3>
-                  <p className="text-[#6e6e73] mb-6 leading-relaxed">
-                    Discover career-defining positions tailored to your skills. Connect with top companies seeking exceptional talent.
-                  </p>
-                  
-                  <div className="flex items-center text-[#1d1d1f] font-medium">
-                    Explore positions
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <div className="space-y-2 text-center">
+                    <h2 className="font-nunito text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors duration-300">
+                      Find Opportunities
+                    </h2>
+                    <p className="text-white/70 text-sm">
+                      Browse curated positions from top employers
+                    </p>
                   </div>
                 </div>
               </Link>
 
               {/* Post Opportunities Card */}
-              <Link to="/post-position" className="group">
-                <div className="h-full bg-[#1d1d1f] rounded-2xl p-8 md:p-10 transition-all duration-300 hover:bg-[#2d2d2f] hover:shadow-lg">
-                  <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-                    <Briefcase className="w-7 h-7 text-[#1d1d1f]" />
+              <Link 
+                to="/post-position" 
+                className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 rotate-[2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(251,146,60,0.2)] hover:border-accent/40 shadow-lg"
+              >
+                {/* Pushpin */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                  <Pin className="w-8 h-8 text-accent rotate-45" fill="currentColor" />
+                </div>
+                <div className="flex flex-col items-center space-y-6">
+                  <div className="relative">
+                    <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-accent via-orange-400 to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-accent/20">
+                      <Briefcase className="w-12 h-12 md:w-14 md:h-14 text-white" />
+                    </div>
+                    <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
                   </div>
-                  
-                  <h3 className="font-helvetica text-2xl md:text-3xl font-bold mb-3 text-white uppercase tracking-tight">
-                    Post Opportunities
-                  </h3>
-                  <p className="text-white/70 mb-6 leading-relaxed">
-                    Connect with qualified professionals ready to drive your business forward. Find talent that aligns with your vision.
-                  </p>
-                  
-                  <div className="flex items-center text-white font-medium">
-                    Post a position
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <div className="space-y-2 text-center">
+                    <h2 className="font-nunito text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors duration-300">
+                      Post Opportunities
+                    </h2>
+                    <p className="text-white/70 text-sm">
+                      Connect with qualified professionals
+                    </p>
                   </div>
                 </div>
               </Link>
@@ -112,59 +128,63 @@ const BusinessPartner = () => {
         </section>
 
         {/* DAO Section */}
-        <section className="py-20 md:py-28 bg-[#f5f5f7]">
-          <div className="container mx-auto px-4 sm:px-6">
+        <section className="py-20 md:py-28 bg-gradient-to-b from-background via-muted/30 to-background relative">
+          {/* Mesh gradient background */}
+          <div className="absolute inset-0 mesh-gradient opacity-50"></div>
+          
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center mb-12">
-              <p className="text-sm font-medium text-violet-600 uppercase tracking-widest mb-4">
-                Blockchain-Powered
-              </p>
-              <h2 className="font-helvetica text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#1d1d1f] uppercase tracking-tight">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+                <Vote className="w-4 h-4 text-secondary" />
+                <span className="text-sm font-semibold text-secondary">Blockchain-Powered</span>
+              </div>
+              <h2 className="font-nunito text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
                 Project Team DAOs
               </h2>
-              <p className="text-lg text-[#6e6e73] max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Decentralized governance for student projects with transparent treasury and on-chain voting.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               <div className="space-y-4">
-                <div className="bg-white rounded-2xl p-1 shadow-sm">
+                <div className="card-glass p-1">
                   <DAOPanel />
                 </div>
                 <Link to="/dao-management">
                   <Button 
                     variant="outline" 
-                    className="w-full border-[#1d1d1f]/20 text-[#1d1d1f] hover:bg-[#1d1d1f] hover:text-white transition-all duration-300"
+                    className="w-full border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/50"
                   >
                     <Vote className="w-4 h-4 mr-2" />
-                    Open DAO Dashboard
+                    Open Full DAO Dashboard
                   </Button>
                 </Link>
               </div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="font-bold text-xl mb-6 text-[#1d1d1f]">
-                  Why DAO Governance?
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    { icon: Vote, title: "Democratic Decisions", description: "Votes recorded on immutable ledger" },
-                    { icon: Coins, title: "Transparent Treasury", description: "Multi-sig wallets for milestone releases" },
-                    { icon: Shield, title: "Full Accountability", description: "On-chain governance records" },
-                    { icon: Target, title: "Attract Sponsors", description: "Verified track record for investors" }
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-[#f5f5f7]">
-                      <div className="w-10 h-10 rounded-xl bg-[#1d1d1f] flex items-center justify-center flex-shrink-0">
-                        <item.icon className="w-5 h-5 text-white" />
+              <Card className="card-glass border-secondary/20">
+                <CardContent className="p-8">
+                  <h3 className="font-bold text-2xl mb-6 text-foreground">Why DAO Governance?</h3>
+                  <div className="space-y-4">
+                    {[
+                      { icon: Vote, title: "Democratic Decisions", description: "Votes recorded on immutable ledger", color: "from-primary to-secondary" },
+                      { icon: Coins, title: "Transparent Treasury", description: "Multi-sig wallets for milestone releases", color: "from-secondary to-accent" },
+                      { icon: Shield, title: "Full Accountability", description: "On-chain governance records", color: "from-accent to-orange-500" },
+                      { icon: Target, title: "Attract Sponsors", description: "Verified track record for investors", color: "from-primary to-primary-hover" }
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-300">
+                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                          <item.icon className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground">{item.title}</h4>
+                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-[#1d1d1f]">{item.title}</h4>
-                        <p className="text-sm text-[#6e6e73]">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
