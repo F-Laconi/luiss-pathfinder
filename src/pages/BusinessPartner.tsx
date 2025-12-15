@@ -6,10 +6,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DAOPanel from "@/components/blockchain/DAOPanel";
 import businessPartnerWallpaper from "@/assets/business-partner-wallpaper.png";
-
 const BusinessPartner = () => {
-  return (
-    <>
+  return <>
       <title>Business Partner Opportunities | UniCompass</title>
       <meta name="description" content="Connect exceptional talent with innovative companies. Discover career opportunities or post positions to find qualified professionals for your team." />
       <link rel="canonical" href="https://unicompass.lovable.app/business-partner" />
@@ -18,21 +16,24 @@ const BusinessPartner = () => {
         <Navigation />
         
         {/* Hero Section with Background */}
-        <section 
-          className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
-          style={{
-            backgroundImage: `url(${businessPartnerWallpaper})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
-          }}
-        >
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16" style={{
+        backgroundImage: `url(${businessPartnerWallpaper})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
           {/* Floating Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-violet-200/60 rounded-full blur-3xl animate-float"></div>
-            <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-blue-200/50 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-cyan-200/60 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute top-1/2 right-1/3 w-36 h-36 bg-accent/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-blue-200/50 rounded-full blur-3xl animate-float" style={{
+            animationDelay: '1s'
+          }}></div>
+            <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-cyan-200/60 rounded-full blur-2xl animate-float" style={{
+            animationDelay: '2s'
+          }}></div>
+            <div className="absolute top-1/2 right-1/3 w-36 h-36 bg-accent/30 rounded-full blur-3xl animate-float" style={{
+            animationDelay: '1.5s'
+          }}></div>
           </div>
 
           <div className="container max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
@@ -55,26 +56,30 @@ const BusinessPartner = () => {
             </header>
 
             {/* Stats Row */}
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              {[
-                { value: "500+", label: "Active Companies" },
-                { value: "2,500+", label: "Open Positions" },
-                { value: "95%", label: "Success Rate" }
-              ].map((stat, idx) => (
-                <div key={idx} className="text-center">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16 animate-fade-up" style={{
+            animationDelay: '0.2s'
+          }}>
+              {[{
+              value: "500+",
+              label: "Active Companies"
+            }, {
+              value: "2,500+",
+              label: "Open Positions"
+            }, {
+              value: "95%",
+              label: "Success Rate"
+            }].map((stat, idx) => <div key={idx} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-1">{stat.value}</div>
                   <div className="text-sm text-white/80 drop-shadow-md">{stat.label}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             {/* Action Cards - Post-it Style */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: '0.3s' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-4xl mx-auto animate-fade-up" style={{
+            animationDelay: '0.3s'
+          }}>
               {/* Looking for Opportunities Card */}
-              <Link 
-                to="/student-board" 
-                className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 rotate-[-2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] hover:border-primary/40 shadow-lg"
-              >
+              <Link to="/student-board" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 rotate-[-2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] hover:border-primary/40 shadow-lg">
                 {/* Pushpin */}
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
                   <Pin className="w-8 h-8 text-primary rotate-45" fill="currentColor" />
@@ -98,14 +103,9 @@ const BusinessPartner = () => {
               </Link>
 
               {/* Post Opportunities Card */}
-              <Link 
-                to="/post-position" 
-                className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 rotate-[2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(251,146,60,0.2)] hover:border-accent/40 shadow-lg"
-              >
+              <Link to="/post-position" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 rotate-[2deg] hover:rotate-0 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(251,146,60,0.2)] hover:border-accent/40 shadow-lg">
                 {/* Pushpin */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                  <Pin className="w-8 h-8 text-accent rotate-45" fill="currentColor" />
-                </div>
+                
                 <div className="flex flex-col items-center space-y-6">
                   <div className="relative">
                     <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-accent via-orange-400 to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-accent/20">
@@ -152,10 +152,7 @@ const BusinessPartner = () => {
                   <DAOPanel />
                 </div>
                 <Link to="/dao-management">
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/50"
-                  >
+                  <Button variant="outline" className="w-full border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/50">
                     <Vote className="w-4 h-4 mr-2" />
                     Open Full DAO Dashboard
                   </Button>
@@ -166,13 +163,27 @@ const BusinessPartner = () => {
                 <CardContent className="p-8">
                   <h3 className="font-bold text-2xl mb-6 text-foreground">Why DAO Governance?</h3>
                   <div className="space-y-4">
-                    {[
-                      { icon: Vote, title: "Democratic Decisions", description: "Votes recorded on immutable ledger", color: "from-primary to-secondary" },
-                      { icon: Coins, title: "Transparent Treasury", description: "Multi-sig wallets for milestone releases", color: "from-secondary to-accent" },
-                      { icon: Shield, title: "Full Accountability", description: "On-chain governance records", color: "from-accent to-orange-500" },
-                      { icon: Target, title: "Attract Sponsors", description: "Verified track record for investors", color: "from-primary to-primary-hover" }
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-300">
+                    {[{
+                    icon: Vote,
+                    title: "Democratic Decisions",
+                    description: "Votes recorded on immutable ledger",
+                    color: "from-primary to-secondary"
+                  }, {
+                    icon: Coins,
+                    title: "Transparent Treasury",
+                    description: "Multi-sig wallets for milestone releases",
+                    color: "from-secondary to-accent"
+                  }, {
+                    icon: Shield,
+                    title: "Full Accountability",
+                    description: "On-chain governance records",
+                    color: "from-accent to-orange-500"
+                  }, {
+                    icon: Target,
+                    title: "Attract Sponsors",
+                    description: "Verified track record for investors",
+                    color: "from-primary to-primary-hover"
+                  }].map((item, idx) => <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all duration-300">
                         <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
                           <item.icon className="w-5 h-5 text-white" />
                         </div>
@@ -180,8 +191,7 @@ const BusinessPartner = () => {
                           <h4 className="font-semibold text-foreground">{item.title}</h4>
                           <p className="text-sm text-muted-foreground">{item.description}</p>
                         </div>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
               </Card>
@@ -193,23 +203,22 @@ const BusinessPartner = () => {
         
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Business Partner Opportunities",
-            "description": "Connect talent with outstanding opportunities",
-            "url": "https://unicompass.lovable.app/business-partner",
-            "about": {
-              "@type": "Service",
-              "name": "Professional Networking",
-              "provider": {
-                "@type": "Organization",
-                "name": "UniCompass"
-              }
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Business Partner Opportunities",
+          "description": "Connect talent with outstanding opportunities",
+          "url": "https://unicompass.lovable.app/business-partner",
+          "about": {
+            "@type": "Service",
+            "name": "Professional Networking",
+            "provider": {
+              "@type": "Organization",
+              "name": "UniCompass"
             }
-          })}
+          }
+        })}
         </script>
       </div>
-    </>
-  );
+    </>;
 };
 export default BusinessPartner;
