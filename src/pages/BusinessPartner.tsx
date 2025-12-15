@@ -58,11 +58,11 @@ const BusinessPartner = () => {
                 {/* Pushpin */}
                 
                 <div className="flex flex-col items-center space-y-8">
-                  <div className="relative border-4 rounded-2xl">
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl overflow-hidden">
-                      <img src={findOpportunityIcon} alt="Find Opportunities" className="w-full h-full object-cover" />
+                  <div className="relative">
+                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl group-hover:animate-float shadow-2xl overflow-hidden border-4 border-white/20">
+                      <img src={findOpportunityIcon} alt="Find Opportunities" className="w-full h-full object-cover rounded-xl" />
                     </div>
-                    <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
                   </div>
                   <div className="space-y-3 text-center">
                     <h2 className="font-nunito text-2xl md:text-3xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] group-hover:text-white transition-colors duration-300">
@@ -80,11 +80,11 @@ const BusinessPartner = () => {
                 {/* Pushpin */}
                 
                 <div className="flex flex-col items-center space-y-8">
-                  <div className="relative border-4 rounded-2xl">
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl overflow-hidden">
-                      <img src={postOpportunityIcon} alt="Post Opportunities" className="w-full h-full object-cover" />
+                  <div className="relative">
+                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl group-hover:animate-float shadow-2xl overflow-hidden border-4 border-white/20">
+                      <img src={postOpportunityIcon} alt="Post Opportunities" className="w-full h-full object-cover rounded-xl" />
                     </div>
-                    <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
                   </div>
                   <div className="space-y-3 text-center">
                     <h2 className="font-nunito text-2xl md:text-3xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] group-hover:text-white transition-colors duration-300">
