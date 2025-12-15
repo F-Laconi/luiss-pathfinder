@@ -11,16 +11,8 @@ const Index = () => {
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
     }} aria-label="UniCompass homepage hero section">
-      {/* Floating Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-violet-200/60 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-blue-200/50 rounded-full blur-3xl animate-float" style={{
-          animationDelay: '1s'
-        }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-cyan-200/60 rounded-full blur-2xl animate-float" style={{
-          animationDelay: '2s'
-        }}></div>
-      </div>
+      {/* Dark overlay to fade background */}
+      <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
 
       <article className="container max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-40">
         {/* Brand Title with Enhanced Styling */}
@@ -42,7 +34,7 @@ const Index = () => {
           animationDelay: '0.3s'
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
-          <Link to="/universities" className="group relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-[0_15px_40px_rgba(59,130,246,0.3)] hover:border-white/40 shadow-xl" aria-label="Explore Italian universities and programs">
+          <Link to="/universities" className="group relative bg-white/90 backdrop-blur-sm border border-white/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(59,130,246,0.4)] shadow-xl" aria-label="Explore Italian universities and programs">
             {/* Pushpin */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               
@@ -55,7 +47,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors duration-300">
+                <h2 className="font-nunito text-xl md:text-2xl font-bold text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
                   Make the Right Choice
                 </h2>
                 
@@ -64,7 +56,7 @@ const Index = () => {
           </Link>
 
           {/* Find Your Business Partner */}
-          <Link to="/business-partner" className="group relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-[0_15px_40px_rgba(251,146,60,0.3)] hover:border-white/40 shadow-xl" aria-label="Connect with business partners and opportunities">
+          <Link to="/business-partner" className="group relative bg-white/90 backdrop-blur-sm border border-white/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(251,146,60,0.4)] shadow-xl" aria-label="Connect with business partners and opportunities">
             {/* Pushpin */}
             
             <div className="flex flex-col items-center space-y-6">
@@ -75,7 +67,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-white group-hover:text-white transition-colors duration-300">
+                <h2 className="font-nunito text-xl md:text-2xl font-bold text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
                   Find Your Future Project Partner
                 </h2>
                 
