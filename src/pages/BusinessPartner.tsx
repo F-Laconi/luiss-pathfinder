@@ -70,9 +70,7 @@ const BusinessPartner = () => {
               {/* Looking for Opportunities Card */}
               <Link to="/student-board" className="group relative bg-card/20 backdrop-blur-sm border-2 border-border/30 rounded-sm p-8 sm:p-10 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] hover:border-primary/40 shadow-lg">
                 {/* Pushpin */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                  <Pin className="w-8 h-8 text-primary rotate-45" fill="currentColor" />
-                </div>
+                
                 <div className="flex flex-col items-center space-y-6">
                   <div className="relative">
                     <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
