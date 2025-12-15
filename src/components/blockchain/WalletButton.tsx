@@ -63,13 +63,16 @@ const WalletButton = () => {
       {isDemoMode && demoUser && (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="gap-2 px-2">
-              <Avatar className="w-8 h-8">
+            <Button className="gap-3 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+              <Avatar className="w-9 h-9 border-2 border-white/30">
                 <AvatarImage src={demoUser.avatar} alt={demoUser.name} />
-                <AvatarFallback>{demoUser.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                <AvatarFallback className="bg-white/20 text-white font-bold">{demoUser.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
               </Avatar>
-              <span className="hidden md:inline text-sm font-medium">{demoUser.name.split(' ')[0]}</span>
-              <ChevronDown className="w-4 h-4 text-muted-foreground" />
+              <div className="hidden md:flex flex-col items-start">
+                <span className="text-sm font-bold text-white">{demoUser.name.split(' ')[0]}</span>
+                <span className="text-xs text-white/70">Demo Mode</span>
+              </div>
+              <ChevronDown className="w-4 h-4 text-white/80" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-72 bg-card border-border">
