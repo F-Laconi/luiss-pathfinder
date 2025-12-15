@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useForm } from "react-hook-form";
 import Navigation from "@/components/Navigation";
-import businessPartnerWallpaper from "@/assets/business-partner-wallpaper.png";
+import postPositionBackground from "@/assets/post-position-background.png";
 // Mock data for existing projects
 const mockProjects = [
   {
@@ -206,7 +206,7 @@ const PostPosition = () => {
         {/* Hero Background */}
         <div 
           className="fixed inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${businessPartnerWallpaper})` }}
+          style={{ backgroundImage: `url(${postPositionBackground})` }}
         />
         <div className="fixed inset-0 bg-black/60" />
         
