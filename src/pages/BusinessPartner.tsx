@@ -58,7 +58,7 @@ const BusinessPartner = () => {
                 {/* Pushpin */}
                 
                 <div className="flex flex-col items-center space-y-8">
-                  <div className="relative">
+                  <div className="relative border-4 rounded-2xl">
                     <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl overflow-hidden">
                       <img src={findOpportunityIcon} alt="Find Opportunities" className="w-full h-full object-cover" />
                     </div>
@@ -80,7 +80,7 @@ const BusinessPartner = () => {
                 {/* Pushpin */}
                 
                 <div className="flex flex-col items-center space-y-8">
-                  <div className="relative">
+                  <div className="relative border-4 rounded-2xl">
                     <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl overflow-hidden">
                       <img src={postOpportunityIcon} alt="Post Opportunities" className="w-full h-full object-cover" />
                     </div>
