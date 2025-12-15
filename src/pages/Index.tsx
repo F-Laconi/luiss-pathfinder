@@ -34,7 +34,7 @@ const Index = () => {
           animationDelay: '0.3s'
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
-          <Link to="/universities" className="group relative bg-white/90 backdrop-blur-sm border border-white/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(59,130,246,0.4)] shadow-xl" aria-label="Explore Italian universities and programs">
+          <Link to="/universities" className="group relative bg-amber-900/70 backdrop-blur-sm border border-amber-700/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-amber-800/80 hover:shadow-[0_15px_40px_rgba(180,120,60,0.5)] shadow-xl" aria-label="Explore Italian universities and programs">
             {/* Pushpin */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               
@@ -47,7 +47,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
+                <h2 className="font-nunito text-xl md:text-2xl font-bold text-amber-100 group-hover:text-white transition-colors duration-300">
                   Make the Right Choice
                 </h2>
                 
@@ -56,7 +56,7 @@ const Index = () => {
           </Link>
 
           {/* Find Your Business Partner */}
-          <Link to="/business-partner" className="group relative bg-white/90 backdrop-blur-sm border border-white/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(251,146,60,0.4)] shadow-xl" aria-label="Connect with business partners and opportunities">
+          <Link to="/business-partner" className="group relative bg-amber-900/70 backdrop-blur-sm border border-amber-700/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-amber-800/80 hover:shadow-[0_15px_40px_rgba(180,120,60,0.5)] shadow-xl" aria-label="Connect with business partners and opportunities">
             {/* Pushpin */}
             
             <div className="flex flex-col items-center space-y-6">
@@ -67,7 +67,7 @@ const Index = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
+                <h2 className="font-nunito text-xl md:text-2xl font-bold text-amber-100 group-hover:text-white transition-colors duration-300">
                   Find Your Future Project Partner
                 </h2>
                 
