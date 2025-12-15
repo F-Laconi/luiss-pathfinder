@@ -47,23 +47,7 @@ const BusinessPartner = () => {
             </header>
 
             {/* Stats Row */}
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16 animate-fade-up" style={{
-            animationDelay: '0.2s'
-          }}>
-              {[{
-              value: "500+",
-              label: "Active Companies"
-            }, {
-              value: "2,500+",
-              label: "Open Positions"
-            }, {
-              value: "95%",
-              label: "Success Rate"
-            }].map((stat, idx) => <div key={idx} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-1">{stat.value}</div>
-                  <div className="text-sm text-white/80 drop-shadow-md">{stat.label}</div>
-                </div>)}
-            </div>
+            
 
             {/* Action Cards - Post-it Style */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-4xl mx-auto animate-fade-up" style={{
