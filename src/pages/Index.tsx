@@ -11,7 +11,7 @@ const Index = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
-    }} aria-label="UniCompass homepage hero section">
+    }} aria-label="EduBlockChain homepage hero section">
       {/* Dark overlay to fade background */}
       <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
 
@@ -21,7 +21,7 @@ const Index = () => {
           <div className="relative inline-block">
             <h1 className="font-nunito text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 relative mt-8 sm:mt-12 px-2">
               <span className="text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] [text-shadow:_0_4px_20px_rgb(0_0_0_/_80%),_0_2px_4px_rgb(0_0_0_/_90%)]">
-                UniCompass
+                EduBlockChain
               </span>
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-white font-semibold px-4 [text-shadow:_0_4px_20px_rgb(0_0_0_/_90%),_0_2px_4px_rgb(0_0_0_/_80%)]">
@@ -72,7 +72,7 @@ const Index = () => {
         {JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "UniCompass",
+        "name": "EduBlockChain",
         "description": "Navigate your academic journey through Italy's top universities. Compare programs, connect with students, and find business partners.",
         "url": "https://unicompass.lovable.app",
         "applicationCategory": "EducationalApplication",

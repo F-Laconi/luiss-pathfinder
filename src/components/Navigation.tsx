@@ -551,7 +551,7 @@ const Navigation = () => {
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to="/" className="font-bold text-xl text-primary hover:text-primary/80 transition-colors">
-            UniCompass
+            EduBlockChain
           </Link>
         </div>
 
