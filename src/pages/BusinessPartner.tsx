@@ -8,7 +8,7 @@ import DAOPanel from "@/components/blockchain/DAOPanel";
 import businessPartnerWallpaper from "@/assets/business-partner-wallpaper.png";
 const BusinessPartner = () => {
   return <>
-      <title>Business Partner Opportunities | UniCompass</title>
+      <title>Business Partner Opportunities | EduBlockChain</title>
       <meta name="description" content="Connect exceptional talent with innovative companies. Discover career opportunities or post positions to find qualified professionals for your team." />
       <link rel="canonical" href="https://unicompass.lovable.app/business-partner" />
       
@@ -200,7 +200,7 @@ const BusinessPartner = () => {
             "name": "Professional Networking",
             "provider": {
               "@type": "Organization",
-              "name": "UniCompass"
+              "name": "EduBlockChain"
             }
           }
         })}

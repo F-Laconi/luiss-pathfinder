@@ -46,7 +46,7 @@ const Suggestions = () => {
               Share Your Ideas
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Your feedback shapes the future of UniCompass. Every suggestion matters! 🌟
+              Your feedback shapes the future of EduBlockChain. Every suggestion matters! 🌟
             </p>
           </div>
 
