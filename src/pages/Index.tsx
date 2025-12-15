@@ -36,7 +36,7 @@ const Index = () => {
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
           <Link to="/universities" className="group flex flex-col items-center space-y-6 transition-all duration-500 hover:scale-105" aria-label="Explore Italian universities and programs">
-            <div className="relative">
+            <div className="relative border-4 rounded-2xl">
               <img src={compassIcon} alt="Compass on book" className="w-28 h-28 md:w-36 md:h-36 object-contain group-hover:animate-float drop-shadow-2xl" />
               <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
             </div>
@@ -46,7 +46,7 @@ const Index = () => {
           </Link>
 
           <Link to="/business-partner" className="group flex flex-col items-center space-y-6 transition-all duration-500 hover:scale-105" aria-label="Connect with business partners and opportunities">
-            <div className="relative">
+            <div className="relative border-4 rounded-2xl">
               <img src={partnerIcon} alt="Handshake partnership" className="w-28 h-28 md:w-36 md:h-36 object-contain group-hover:animate-float drop-shadow-2xl" />
               <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
             </div>
