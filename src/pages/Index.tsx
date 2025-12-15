@@ -42,7 +42,7 @@ const Index = () => {
           animationDelay: '0.3s'
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
-          <Link to="/universities" className="group relative bg-black/60 backdrop-blur-md border-2 border-white/30 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(59,130,246,0.4)] hover:border-primary/60 shadow-2xl" aria-label="Explore Italian universities and programs">
+          <Link to="/universities" className="group relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-[0_15px_40px_rgba(59,130,246,0.3)] hover:border-white/40 shadow-xl" aria-label="Explore Italian universities and programs">
             {/* Pushpin */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
               
@@ -64,7 +64,7 @@ const Index = () => {
           </Link>
 
           {/* Find Your Business Partner */}
-          <Link to="/business-partner" className="group relative bg-black/60 backdrop-blur-md border-2 border-white/30 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:shadow-[0_15px_40px_rgba(251,146,60,0.4)] hover:border-accent/60 shadow-2xl" aria-label="Connect with business partners and opportunities">
+          <Link to="/business-partner" className="group relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-white/20 hover:shadow-[0_15px_40px_rgba(251,146,60,0.3)] hover:border-white/40 shadow-xl" aria-label="Connect with business partners and opportunities">
             {/* Pushpin */}
             
             <div className="flex flex-col items-center space-y-6">
