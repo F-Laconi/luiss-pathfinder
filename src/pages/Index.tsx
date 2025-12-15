@@ -34,45 +34,28 @@ const Index = () => {
           animationDelay: '0.3s'
         }} aria-label="Main navigation options">
           {/* Make the Right Choice */}
-          <Link to="/universities" className="group relative bg-amber-900/70 backdrop-blur-sm border border-amber-700/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-amber-800/80 hover:shadow-[0_15px_40px_rgba(180,120,60,0.5)] shadow-xl" aria-label="Explore Italian universities and programs">
-            {/* Pushpin */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-              
-            </div>
-            <div className="flex flex-col items-center space-y-6">
-              <div className="relative">
-                <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
-                  <Compass className="w-12 h-12 md:w-14 md:h-14 text-white" />
-                </div>
-                <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+          <Link to="/universities" className="group flex flex-col items-center space-y-6 transition-all duration-500 hover:scale-105" aria-label="Explore Italian universities and programs">
+            <div className="relative">
+              <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-primary via-primary-hover to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-primary/20">
+                <Compass className="w-12 h-12 md:w-14 md:h-14 text-white" />
               </div>
-              <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-amber-100 group-hover:text-white transition-colors duration-300">
-                  Make the Right Choice
-                </h2>
-                
-              </div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
             </div>
+            <h2 className="font-nunito text-xl md:text-2xl font-bold text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_90%),_0_2px_4px_rgb(0_0_0_/_80%)] group-hover:scale-105 transition-transform duration-300">
+              Make the Right Choice
+            </h2>
           </Link>
 
-          {/* Find Your Business Partner */}
-          <Link to="/business-partner" className="group relative bg-amber-900/70 backdrop-blur-sm border border-amber-700/50 rounded-sm p-8 sm:p-10 md:p-14 transition-all duration-500 hover:scale-105 hover:bg-amber-800/80 hover:shadow-[0_15px_40px_rgba(180,120,60,0.5)] shadow-xl" aria-label="Connect with business partners and opportunities">
-            {/* Pushpin */}
-            
-            <div className="flex flex-col items-center space-y-6">
-              <div className="relative">
-                <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-accent via-orange-400 to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-accent/20">
-                  <UserCheck className="w-12 h-12 md:w-14 md:h-14 text-white" />
-                </div>
-                <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+          <Link to="/business-partner" className="group flex flex-col items-center space-y-6 transition-all duration-500 hover:scale-105" aria-label="Connect with business partners and opportunities">
+            <div className="relative">
+              <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-accent via-orange-400 to-secondary rounded-3xl flex items-center justify-center group-hover:animate-float shadow-2xl shadow-accent/20">
+                <UserCheck className="w-12 h-12 md:w-14 md:h-14 text-white" />
               </div>
-              <div className="space-y-2">
-                <h2 className="font-nunito text-xl md:text-2xl font-bold text-amber-100 group-hover:text-white transition-colors duration-300">
-                  Find Your Future Project Partner
-                </h2>
-                
-              </div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-accent to-secondary rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500"></div>
             </div>
+            <h2 className="font-nunito text-xl md:text-2xl font-bold text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_90%),_0_2px_4px_rgb(0_0_0_/_80%)] group-hover:scale-105 transition-transform duration-300">
+              Find Your Future Project Partner
+            </h2>
           </Link>
         </nav>
 
