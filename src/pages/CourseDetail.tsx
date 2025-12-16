@@ -660,13 +660,13 @@ const CourseDetail = () => {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-accent/20 to-transparent rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
               
               <CardHeader className="relative">
-                <div className="flex items-center justify-between flex-wrap gap-4">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 text-center md:text-left">
+                  <div className="flex flex-col md:flex-row items-center gap-3">
                     <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-lg shadow-primary/30">
                       <Brain className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <CardTitle className="flex items-center gap-2">
+                      <CardTitle className="flex items-center justify-center md:justify-start gap-2">
                         AI Exam Simulator
                         <Sparkles className="w-5 h-5 text-yellow-500" />
                       </CardTitle>
