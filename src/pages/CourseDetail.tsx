@@ -484,7 +484,7 @@ const CourseDetail = () => {
   return <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
       
-      <main className="container mx-auto px-4 sm:px-6 py-8 max-w-7xl">
+      <main className="container px-4 sm:px-6 py-8 max-w-7xl ml-0 lg:ml-4 xl:ml-8">
         {/* Back button */}
         <Link to="/school/graduate" className="inline-flex items-center text-primary hover:text-primary/80 mb-6 mx-auto lg:mx-0 w-full justify-center lg:justify-start">
           <ArrowLeft className="w-4 h-4 mr-2" />
