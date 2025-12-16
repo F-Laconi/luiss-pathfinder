@@ -680,8 +680,8 @@ const CourseDetail = () => {
                 </div>
               </CardHeader>
               
-              <CardContent className="relative space-y-6">
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="relative space-y-6 text-center md:text-left">
+                <p className="text-muted-foreground leading-relaxed mx-auto md:mx-0">
                   Unlike generic Large Language Models (LLMs) that rely on broad, often irrelevant internet data, 
                   our AI agent utilizes a <span className="font-semibold text-foreground">Retrieval-Augmented Generation (RAG)</span> architecture 
                   trained exclusively on the platform's hyper-local dataset.
@@ -689,7 +689,7 @@ const CourseDetail = () => {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center md:justify-start gap-2">
                       <Database className="w-5 h-5 text-primary" />
                       <span className="font-semibold">Verified Data Sources</span>
                     </div>
@@ -700,7 +700,7 @@ const CourseDetail = () => {
                   </div>
                   
                   <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center md:justify-start gap-2">
                       <Zap className="w-5 h-5 text-yellow-500" />
                       <span className="font-semibold">Professor-Style Questions</span>
                     </div>
@@ -711,7 +711,7 @@ const CourseDetail = () => {
                   </div>
                   
                   <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center md:justify-start gap-2">
                       <Lock className="w-5 h-5 text-emerald-500" />
                       <span className="font-semibold">Blockchain Guaranteed</span>
                     </div>
@@ -721,7 +721,7 @@ const CourseDetail = () => {
                   </div>
                   
                   <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center md:justify-start gap-2">
                       <Brain className="w-5 h-5 text-purple-500" />
                       <span className="font-semibold">Safe Sandbox</span>
                     </div>
