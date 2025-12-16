@@ -684,16 +684,16 @@ const CourseDetail = () => {
                 </div>
               </CardHeader>
               
-              <CardContent className="relative space-y-6 text-center md:text-left">
-                <p className="text-muted-foreground leading-relaxed mx-auto md:mx-0">
+              <CardContent className="relative space-y-6 text-left">
+                <p className="text-muted-foreground leading-relaxed">
                   Unlike generic Large Language Models (LLMs) that rely on broad, often irrelevant internet data, 
                   our AI agent utilizes a <span className="font-semibold text-foreground">Retrieval-Augmented Generation (RAG)</span> architecture 
                   trained exclusively on the platform's hyper-local dataset.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-2">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-left">
+                    <div className="flex items-center justify-start gap-2">
                       <Database className="w-5 h-5 text-primary" />
                       <span className="font-semibold">Verified Data Sources</span>
                     </div>
@@ -703,8 +703,8 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-2">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-left">
+                    <div className="flex items-center justify-start gap-2">
                       <Zap className="w-5 h-5 text-yellow-500" />
                       <span className="font-semibold">Professor-Style Questions</span>
                     </div>
@@ -714,8 +714,8 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-2">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-left">
+                    <div className="flex items-center justify-start gap-2">
                       <Lock className="w-5 h-5 text-emerald-500" />
                       <span className="font-semibold">Blockchain Guaranteed</span>
                     </div>
@@ -724,8 +724,8 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-2">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-left">
+                    <div className="flex items-center justify-start gap-2">
                       <Brain className="w-5 h-5 text-purple-500" />
                       <span className="font-semibold">Safe Sandbox</span>
                     </div>
@@ -737,8 +737,8 @@ const CourseDetail = () => {
                 </div>
 
                 <div className="pt-4 border-t border-border/50">
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10">
-                    <div className="text-center sm:text-left">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10">
+                    <div className="text-left">
                       <p className="font-semibold text-foreground">Ready to ace your exam?</p>
                       <p className="text-sm text-muted-foreground">Start practicing with AI-powered exam simulations</p>
                     </div>
