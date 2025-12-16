@@ -206,38 +206,40 @@ export const AIExamSimulator = ({ open, onOpenChange, courseName }: AIExamSimula
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-primary/70">
-              <Brain className="w-5 h-5 text-primary-foreground" />
+      <DialogContent className="w-[95vw] max-w-2xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto p-3 sm:p-6">
+        <DialogHeader className="pb-2 sm:pb-4">
+          <DialogTitle className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 sm:p-2 rounded-lg bg-gradient-to-br from-primary to-primary/70">
+                <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
+              </div>
+              <span className="text-base sm:text-lg">AI Exam Simulator</span>
             </div>
-            AI Exam Simulator
-            <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 ml-2">
-              <Sparkles className="w-3 h-3 mr-1" />
+            <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 text-[10px] sm:text-xs">
+              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1" />
               RAG-Powered
             </Badge>
           </DialogTitle>
         </DialogHeader>
 
         {!isComplete ? (
-          <div className="space-y-6">
+          <div className="space-y-3 sm:space-y-6">
             {/* Progress */}
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Question {currentQuestion + 1} of {examQuestions.length}</span>
+            <div className="space-y-1.5 sm:space-y-2">
+              <div className="flex justify-between text-xs sm:text-sm">
+                <span className="text-muted-foreground">Q{currentQuestion + 1}/{examQuestions.length}</span>
                 <span className="text-muted-foreground">Score: {score}/{currentQuestion + (showResult ? 1 : 0)}</span>
               </div>
-              <Progress value={progress} className="h-2" />
+              <Progress value={progress} className="h-1.5 sm:h-2" />
             </div>
 
             {/* Question */}
-            <div className="p-4 rounded-xl bg-muted/30 border">
-              <p className="font-medium text-lg">{question.question}</p>
+            <div className="p-3 sm:p-4 rounded-lg sm:rounded-xl bg-muted/30 border">
+              <p className="font-medium text-sm sm:text-lg leading-snug">{question.question}</p>
             </div>
 
             {/* Options */}
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {question.options.map((option, index) => {
                 const isSelected = selectedAnswer === index;
                 const isCorrect = index === question.correctAnswer;
@@ -249,7 +251,7 @@ export const AIExamSimulator = ({ open, onOpenChange, courseName }: AIExamSimula
                     onClick={() => handleAnswerSelect(index)}
                     disabled={showResult}
                     className={cn(
-                      "w-full p-4 rounded-xl border-2 text-left transition-all",
+                      "w-full p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 text-left transition-all active:scale-[0.98]",
                       !showResult && isSelected && "border-primary bg-primary/10",
                       !showResult && !isSelected && "border-border hover:border-primary/50 hover:bg-muted/50",
                       showResult && isCorrect && "border-emerald-500 bg-emerald-500/10",
@@ -257,23 +259,24 @@ export const AIExamSimulator = ({ open, onOpenChange, courseName }: AIExamSimula
                       showResult && "cursor-default"
                     )}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-start sm:items-center gap-2 sm:gap-3">
                       <div className={cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium border-2",
+                        "w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium border-2 flex-shrink-0 mt-0.5 sm:mt-0",
                         !showResult && isSelected && "border-primary bg-primary text-primary-foreground",
                         !showResult && !isSelected && "border-muted-foreground/30",
                         showResult && isCorrect && "border-emerald-500 bg-emerald-500 text-white",
                         showResult && isSelected && !isCorrect && "border-red-500 bg-red-500 text-white"
                       )}>
                         {showResult && isCorrect ? (
-                          <CheckCircle className="w-5 h-5" />
+                          <CheckCircle className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                         ) : showResult && isSelected && !isCorrect ? (
-                          <XCircle className="w-5 h-5" />
+                          <XCircle className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                         ) : (
                           String.fromCharCode(65 + index)
                         )}
                       </div>
                       <span className={cn(
+                        "text-xs sm:text-base leading-snug",
                         showResult && isCorrect && "text-emerald-700 dark:text-emerald-400 font-medium",
                         showResult && isSelected && !isCorrect && "text-red-700 dark:text-red-400"
                       )}>
@@ -288,39 +291,42 @@ export const AIExamSimulator = ({ open, onOpenChange, courseName }: AIExamSimula
             {/* Explanation */}
             {showResult && (
               <div className={cn(
-                "p-4 rounded-xl border",
+                "p-3 sm:p-4 rounded-lg sm:rounded-xl border",
                 selectedAnswer === question.correctAnswer 
                   ? "bg-emerald-500/10 border-emerald-500/30" 
                   : "bg-amber-500/10 border-amber-500/30"
               )}>
-                <p className="text-sm font-medium mb-1">
+                <p className="text-xs sm:text-sm font-medium mb-1">
                   {selectedAnswer === question.correctAnswer ? "✓ Correct!" : "✗ Incorrect"}
                 </p>
-                <p className="text-sm text-muted-foreground">{question.explanation}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{question.explanation}</p>
               </div>
             )}
 
             {/* Actions */}
-            <div className="flex justify-end gap-3">
+            <div className="flex justify-end gap-2 sm:gap-3 pt-1 sm:pt-0">
               {!showResult ? (
                 <Button 
                   onClick={handleSubmitAnswer} 
                   disabled={selectedAnswer === null}
-                  className="gap-2"
+                  className="gap-1.5 sm:gap-2 text-sm sm:text-base h-9 sm:h-10 px-4 sm:px-6"
                 >
-                  Submit Answer
+                  Submit
                 </Button>
               ) : (
-                <Button onClick={handleNextQuestion} className="gap-2">
+                <Button 
+                  onClick={handleNextQuestion} 
+                  className="gap-1.5 sm:gap-2 text-sm sm:text-base h-9 sm:h-10 px-4 sm:px-6"
+                >
                   {currentQuestion < examQuestions.length - 1 ? (
                     <>
-                      Next Question
-                      <ArrowRight className="w-4 h-4" />
+                      Next
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </>
                   ) : (
                     <>
-                      See Results
-                      <Trophy className="w-4 h-4" />
+                      Results
+                      <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </>
                   )}
                 </Button>
@@ -329,28 +335,28 @@ export const AIExamSimulator = ({ open, onOpenChange, courseName }: AIExamSimula
           </div>
         ) : (
           /* Results Screen */
-          <div className="space-y-6 text-center py-4">
-            <div className="text-6xl">{getScoreMessage().emoji}</div>
+          <div className="space-y-4 sm:space-y-6 text-center py-2 sm:py-4">
+            <div className="text-4xl sm:text-6xl">{getScoreMessage().emoji}</div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Exam Complete!</h3>
-              <p className="text-muted-foreground">{getScoreMessage().message}</p>
+              <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Exam Complete!</h3>
+              <p className="text-xs sm:text-base text-muted-foreground px-2">{getScoreMessage().message}</p>
             </div>
             
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 via-background to-accent/10 border">
-              <div className="text-5xl font-bold text-primary mb-2">
+            <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/10 via-background to-accent/10 border">
+              <div className="text-3xl sm:text-5xl font-bold text-primary mb-1 sm:mb-2">
                 {score}/{examQuestions.length}
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-xs sm:text-base text-muted-foreground">
                 {Math.round((score / examQuestions.length) * 100)}% correct
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 px-2">
               {answers.map((answer, index) => (
                 <div
                   key={index}
                   className={cn(
-                    "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium",
+                    "w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[10px] sm:text-sm font-medium",
                     answer === examQuestions[index].correctAnswer
                       ? "bg-emerald-500 text-white"
                       : "bg-red-500 text-white"
@@ -361,8 +367,8 @@ export const AIExamSimulator = ({ open, onOpenChange, courseName }: AIExamSimula
               ))}
             </div>
 
-            <Button onClick={handleRestart} variant="outline" className="gap-2">
-              <RotateCcw className="w-4 h-4" />
+            <Button onClick={handleRestart} variant="outline" className="gap-1.5 sm:gap-2 text-sm sm:text-base h-9 sm:h-10">
+              <RotateCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               Try Again
             </Button>
           </div>
