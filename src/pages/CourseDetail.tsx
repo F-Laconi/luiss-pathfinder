@@ -3,12 +3,11 @@ import professorImage from "@/assets/professor-maximo-ibarra.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Star, StarHalf, Shield, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Star, StarHalf, Shield, ShieldCheck, Brain, Sparkles, Database, Lock, Zap, Crown } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import OracleVerificationPanel from "@/components/blockchain/OracleVerificationPanel";
 import ReviewVerificationBadge from "@/components/blockchain/ReviewVerificationBadge";
-
 // Professor pool - different professors for different courses
 const professorPool = [{
   name: "Prof. Maximo Ibarra",
@@ -647,6 +646,103 @@ const CourseDetail = () => {
                           <span>Oracle verified attendance & grade on {note.verifiedAt?.toLocaleDateString()}</span>
                         </div>}
                     </div>)}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* AI Exam Simulator Section */}
+            <Card className="relative overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-accent/20 to-transparent rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+              
+              <CardHeader className="relative">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-lg shadow-primary/30">
+                      <Brain className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <CardTitle className="flex items-center gap-2">
+                        AI Exam Simulator
+                        <Sparkles className="w-5 h-5 text-yellow-500" />
+                      </CardTitle>
+                      <p className="text-sm text-muted-foreground">The Intelligence Layer: AI-Driven Exam Simulation</p>
+                    </div>
+                  </div>
+                  <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 shadow-lg">
+                    <Crown className="w-3 h-3 mr-1" />
+                    Premium Feature
+                  </Badge>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="relative space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  Unlike generic Large Language Models (LLMs) that rely on broad, often irrelevant internet data, 
+                  our AI agent utilizes a <span className="font-semibold text-foreground">Retrieval-Augmented Generation (RAG)</span> architecture 
+                  trained exclusively on the platform's hyper-local dataset.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Database className="w-5 h-5 text-primary" />
+                      <span className="font-semibold">Verified Data Sources</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      By ingesting specific, high-grade notes and historical exam formats validated by our Oracle system, 
+                      the AI constructs precise, exam-like simulations.
+                    </p>
+                  </div>
+                  
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-yellow-500" />
+                      <span className="font-semibold">Professor-Style Questions</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Mirrors the actual difficulty and structural nuances of each professor's testing style 
+                      for authentic exam preparation.
+                    </p>
+                  </div>
+                  
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Lock className="w-5 h-5 text-emerald-500" />
+                      <span className="font-semibold">Blockchain Guaranteed</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      A high-quality, noise-free data environment that only our blockchain infrastructure can guarantee.
+                    </p>
+                  </div>
+                  
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Brain className="w-5 h-5 text-purple-500" />
+                      <span className="font-semibold">Safe Sandbox</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Transform static "verified notes" into a dynamic preparation tool—test your readiness 
+                      before the real exam.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-border/50">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10">
+                    <div className="text-center sm:text-left">
+                      <p className="font-semibold text-foreground">Ready to ace your exam?</p>
+                      <p className="text-sm text-muted-foreground">Start practicing with AI-powered exam simulations</p>
+                    </div>
+                    <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/30 gap-2">
+                      <Sparkles className="w-4 h-4" />
+                      Try AI Simulator
+                      <Badge variant="outline" className="ml-1 text-[10px] border-primary-foreground/30 text-primary-foreground">
+                        Premium
+                      </Badge>
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
