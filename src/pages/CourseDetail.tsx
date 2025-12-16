@@ -691,8 +691,8 @@ const CourseDetail = () => {
                   trained exclusively on the platform's hyper-local dataset.
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start gap-2">
                       <Database className="w-5 h-5 text-primary" />
                       <span className="font-semibold">Verified Data Sources</span>
@@ -703,7 +703,7 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start gap-2">
                       <Zap className="w-5 h-5 text-yellow-500" />
                       <span className="font-semibold">Professor-Style Questions</span>
@@ -714,7 +714,7 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start gap-2">
                       <Lock className="w-5 h-5 text-emerald-500" />
                       <span className="font-semibold">Blockchain Guaranteed</span>
@@ -724,7 +724,7 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   
-                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2">
+                  <div className="p-4 rounded-xl bg-background/50 backdrop-blur border border-border/50 space-y-2 text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start gap-2">
                       <Brain className="w-5 h-5 text-purple-500" />
                       <span className="font-semibold">Safe Sandbox</span>
