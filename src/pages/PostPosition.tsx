@@ -215,55 +215,55 @@ const PostPosition = () => {
         <div className="fixed bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[150px]" />
         
-        <div className="relative z-10 min-h-screen px-4 sm:px-6 py-8 pt-24">
+        <div className="relative z-10 min-h-screen px-3 sm:px-6 py-6 sm:py-8 pt-20 sm:pt-24">
           {/* Header */}
-          <div className="mb-8 animate-fade-in">
+          <div className="mb-6 sm:mb-8 animate-fade-in">
             <Link 
               to="/business-partner" 
-              className="inline-flex items-center text-white/70 hover:text-white font-medium mb-6 transition-colors group"
+              className="inline-flex items-center text-white/70 hover:text-white font-medium mb-4 sm:mb-6 transition-colors group text-sm sm:text-base"
             >
               <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-              Back to Business Partner
+              Back
             </Link>
             
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-6">
-              <div className="bg-white/10 backdrop-blur-xl p-8 sm:p-10 rounded-2xl border border-white/20 max-w-2xl w-full lg:w-auto shadow-2xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary text-sm font-semibold mb-4 animate-scale-in border border-primary/30">
-                  <Rocket className="h-4 w-4" />
+            <div className="flex flex-col gap-4 sm:gap-6">
+              <div className="bg-white/10 backdrop-blur-xl p-5 sm:p-10 rounded-xl sm:rounded-2xl border border-white/20 shadow-2xl">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/20 backdrop-blur-sm text-primary text-xs sm:text-sm font-semibold mb-3 sm:mb-4 animate-scale-in border border-primary/30">
+                  <Rocket className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span>Project Board</span>
                 </div>
-                <h1 className="font-helvetica text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight uppercase tracking-tight">
-                  Student Project Board
+                <h1 className="font-helvetica text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4 leading-tight uppercase tracking-tight">
+                  Student Projects
                 </h1>
-                <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                  Discover innovative student projects seeking talented collaborators
+                <p className="text-white/70 text-sm sm:text-lg leading-relaxed">
+                  Discover projects seeking collaborators
                 </p>
                 
                 {/* Quick Stats */}
-                <div className="flex gap-6 mt-6 pt-6 border-t border-white/10">
+                <div className="flex gap-4 sm:gap-6 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">{projects.length}</div>
-                    <div className="text-xs text-white/60 uppercase tracking-wide">Projects</div>
+                    <div className="text-lg sm:text-2xl font-bold text-primary">{projects.length}</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 uppercase tracking-wide">Projects</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-accent">24</div>
-                    <div className="text-xs text-white/60 uppercase tracking-wide">Active Teams</div>
+                    <div className="text-lg sm:text-2xl font-bold text-accent">24</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 uppercase tracking-wide">Teams</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-400">89%</div>
-                    <div className="text-xs text-white/60 uppercase tracking-wide">Match Rate</div>
+                    <div className="text-lg sm:text-2xl font-bold text-green-400">89%</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 uppercase tracking-wide">Match</div>
                   </div>
                 </div>
               </div>
               
               <Dialog open={showForm} onOpenChange={setShowForm}>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground text-base sm:text-lg px-8 py-6 h-auto rounded-xl shadow-lg hover:shadow-primary/25 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group">
-                    <Plus className="w-5 h-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
+                  <Button className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground text-sm sm:text-lg px-4 sm:px-8 py-4 sm:py-6 h-auto rounded-xl shadow-lg hover:shadow-primary/25 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group self-start">
+                    <Plus className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-90 transition-transform duration-300" />
                     Post My Project
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto mx-2 sm:mx-auto">
                   <DialogHeader>
                     <DialogTitle>Post Your Project</DialogTitle>
                   </DialogHeader>
@@ -382,16 +382,16 @@ const PostPosition = () => {
           </div>
 
           {/* Search and Filters Section */}
-          <div className="max-w-7xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-white/10 backdrop-blur-xl p-6 rounded-xl border border-white/20 shadow-xl">
+          <div className="max-w-7xl mx-auto mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="bg-white/10 backdrop-blur-xl p-4 sm:p-6 rounded-xl border border-white/20 shadow-xl">
               {/* Search Bar */}
-              <div className="relative mb-4 group">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/50 group-focus-within:text-primary transition-colors" />
+              <div className="relative mb-3 sm:mb-4 group">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-white/50 group-focus-within:text-primary transition-colors" />
                 <Input
-                  placeholder="Search projects by title, description, or skills..."
+                  placeholder="Search projects..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 pr-10 h-12 text-base bg-white/10 border-white/20 focus:border-primary/50 text-white placeholder:text-white/40 transition-colors"
+                  className="pl-10 pr-10 h-10 sm:h-12 text-sm sm:text-base bg-white/10 border-white/20 focus:border-primary/50 text-white placeholder:text-white/40 transition-colors"
                 />
                 {searchQuery && (
                   <Button
@@ -406,62 +406,60 @@ const PostPosition = () => {
               </div>
 
               {/* Filters Row */}
-              <div className="flex flex-wrap gap-3 items-center">
-                <div className="flex items-center gap-2 text-sm font-medium text-white/60">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 items-stretch sm:items-center">
+                <div className="hidden sm:flex items-center gap-2 text-sm font-medium text-white/60">
                   <SlidersHorizontal className="h-4 w-4" />
-                  <span>Filter by:</span>
+                  <span>Filter:</span>
                 </div>
                 
-                <Select value={selectedStage} onValueChange={setSelectedStage}>
-                  <SelectTrigger className="w-[160px] h-9 bg-white/10 border-white/20 text-white">
-                    <SelectValue placeholder="All Stages" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background border-border">
-                    <SelectItem value="all">All Stages</SelectItem>
-                    {allStages.map(stage => (
-                      <SelectItem key={stage} value={stage}>{stage}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="grid grid-cols-2 sm:flex gap-2 sm:gap-3">
+                  <Select value={selectedStage} onValueChange={setSelectedStage}>
+                    <SelectTrigger className="w-full sm:w-[140px] h-9 bg-white/10 border-white/20 text-white text-xs sm:text-sm">
+                      <SelectValue placeholder="Stage" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border-border">
+                      <SelectItem value="all">All Stages</SelectItem>
+                      {allStages.map(stage => (
+                        <SelectItem key={stage} value={stage}>{stage}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
 
-                <Select value={selectedSkill} onValueChange={setSelectedSkill}>
-                  <SelectTrigger className="w-[180px] h-9 bg-white/10 border-white/20 text-white">
-                    <SelectValue placeholder="All Skills" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background border-border">
-                    <SelectItem value="all">All Skills</SelectItem>
-                    {allSkills.map(skill => (
-                      <SelectItem key={skill} value={skill}>{skill}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                  <Select value={selectedSkill} onValueChange={setSelectedSkill}>
+                    <SelectTrigger className="w-full sm:w-[140px] h-9 bg-white/10 border-white/20 text-white text-xs sm:text-sm">
+                      <SelectValue placeholder="Skill" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border-border">
+                      <SelectItem value="all">All Skills</SelectItem>
+                      {allSkills.map(skill => (
+                        <SelectItem key={skill} value={skill}>{skill}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
 
-                <div className="flex items-center gap-2 text-sm font-medium text-white/60 ml-auto">
-                  <span>Sort by:</span>
+                  <Select value={sortBy} onValueChange={setSortBy}>
+                    <SelectTrigger className="w-full sm:w-[120px] h-9 bg-white/10 border-white/20 text-white text-xs sm:text-sm">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border-border">
+                      <SelectItem value="recent">Recent</SelectItem>
+                      <SelectItem value="title">A-Z</SelectItem>
+                      <SelectItem value="stage">Stage</SelectItem>
+                    </SelectContent>
+                  </Select>
+
+                  {activeFiltersCount > 0 && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={clearFilters}
+                      className="h-9 text-white/70 hover:text-white hover:bg-white/10 text-xs sm:text-sm"
+                    >
+                      <X className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                      Clear
+                    </Button>
+                  )}
                 </div>
-
-                <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-[140px] h-9 bg-white/10 border-white/20 text-white">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background border-border">
-                    <SelectItem value="recent">Most Recent</SelectItem>
-                    <SelectItem value="title">Title A-Z</SelectItem>
-                    <SelectItem value="stage">Stage</SelectItem>
-                  </SelectContent>
-                </Select>
-
-                {activeFiltersCount > 0 && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={clearFilters}
-                    className="h-9 text-white/70 hover:text-white hover:bg-white/10"
-                  >
-                    <X className="h-4 w-4 mr-1" />
-                    Clear {activeFiltersCount} filter{activeFiltersCount > 1 ? 's' : ''}
-                  </Button>
-                )}
               </div>
 
               {/* Results Count */}
@@ -475,9 +473,9 @@ const PostPosition = () => {
 
           {/* Projects Grid or Loading State */}
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-white/10 animate-pulse">
+                <div key={i} className="bg-white/5 backdrop-blur-xl p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/10 animate-pulse">
                   <div className="flex items-start justify-between mb-4">
                     <Skeleton className="h-6 w-24 bg-white/10" />
                     <Skeleton className="h-5 w-5 rounded-full bg-white/10" />
@@ -488,7 +486,6 @@ const PostPosition = () => {
                   <div className="flex gap-2 mb-4">
                     <Skeleton className="h-7 w-20 rounded-full bg-white/10" />
                     <Skeleton className="h-7 w-24 rounded-full bg-white/10" />
-                    <Skeleton className="h-7 w-16 rounded-full bg-white/10" />
                   </div>
                   <div className="flex items-center justify-between pt-2 border-t border-white/10">
                     <div className="flex items-center gap-2">
@@ -500,7 +497,7 @@ const PostPosition = () => {
               ))}
             </div>
           ) : filteredAndSortedProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
               {filteredAndSortedProjects.map((project, index) => {
                 const isBookmarked = bookmarkedProjects.includes(project.id);
                 const stageConfig = {
