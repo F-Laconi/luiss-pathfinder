@@ -481,10 +481,10 @@ const CourseDetail = () => {
   const professorData = getProfessorForCourse(courseId || "");
   const studentNotes = getStudentNotesForCourse(courseId || "", course.name);
   const learningOutcomes = getLearningOutcomes(courseId || "", course.name);
-  return <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
       
-      <main className="container mx-auto px-6 py-8">
+      <main className="container mx-auto px-4 sm:px-6 py-8 max-w-7xl">
         {/* Back button */}
         <Link to="/school/graduate" className="inline-flex items-center text-primary hover:text-primary/80 mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -492,25 +492,25 @@ const CourseDetail = () => {
         </Link>
 
         {/* Course header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-4 mb-4">
-            <h1 className="font-nunito text-4xl font-bold text-foreground">{course.name}</h1>
+        <div className="mb-8 text-center lg:text-left">
+          <div className="flex flex-col lg:flex-row items-center gap-4 mb-4 justify-center lg:justify-start">
+            <h1 className="font-nunito text-3xl sm:text-4xl font-bold text-foreground">{course.name}</h1>
             <Badge variant="secondary">LUISS Graduate</Badge>
           </div>
-          <div className="flex items-center gap-6 text-muted-foreground">
+          <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 text-muted-foreground flex-wrap">
             <span>12 weeks</span>
             <span>{course.credits} ECTS</span>
             <span>English</span>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
           {/* Sidebar */}
-          <div className="space-y-6">
+          <div className="space-y-6 mx-auto lg:mx-0 w-full max-w-md lg:max-w-none">
             {/* Professor card */}
-            <Card>
+            <Card className="mx-auto lg:mx-0">
               <CardHeader>
-                <CardTitle>{professorData.name}</CardTitle>
+                <CardTitle className="text-center lg:text-left">{professorData.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Professor image */}
@@ -522,17 +522,19 @@ const CourseDetail = () => {
                 
                 <div className="text-center">
                   <h3 className="font-semibold text-lg">{professorData.name}</h3>
-                  <StarRating rating={professorData.rating} />
+                  <div className="flex justify-center">
+                    <StarRating rating={professorData.rating} />
+                  </div>
                 </div>
 
-                <p className="text-sm text-muted-foreground">{professorData.description}</p>
+                <p className="text-sm text-muted-foreground text-center lg:text-left">{professorData.description}</p>
               </CardContent>
             </Card>
 
             {/* Key aspects */}
-            <Card>
+            <Card className="mx-auto lg:mx-0">
               <CardHeader>
-                <CardTitle>Key Course Aspects</CardTitle>
+                <CardTitle className="text-center lg:text-left">Key Course Aspects</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b">
@@ -560,14 +562,16 @@ const CourseDetail = () => {
             </Card>
 
             {/* Oracle Verification Panel */}
-            <OracleVerificationPanel courseId={courseId || ""} courseName={course.name} />
+            <div className="mx-auto lg:mx-0">
+              <OracleVerificationPanel courseId={courseId || ""} courseName={course.name} />
+            </div>
 
             {/* Action buttons */}
             
           </div>
 
           {/* Main content */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-8 mx-auto lg:mx-0 w-full max-w-2xl lg:max-w-none">
             {/* Course description */}
             <Card>
               <CardHeader>
