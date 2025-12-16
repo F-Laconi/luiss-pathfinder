@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { toast } from "sonner";
+import demoAvatarImg from "@/assets/demo-avatar.png";
 
 interface VerificationToken {
   id: string;
@@ -229,7 +230,7 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       id: "demo-user-001",
       email: "francesco.laconi@studenti.luiss.it",
       name: "Francesco Laconi",
-      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+      avatar: demoAvatarImg,
       university: "LUISS Guido Carli",
       program: "Strategic Management",
       year: 2,
