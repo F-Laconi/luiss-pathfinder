@@ -94,34 +94,34 @@ const DAOManagement = () => {
 
       <Navigation />
       
-      <main className="container mx-auto px-4 pt-24 pb-16 relative z-10">
+      <main className="container mx-auto px-3 sm:px-4 pt-20 sm:pt-24 pb-16 relative z-10">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-10">
+        <div className="flex items-center gap-2 sm:gap-4 mb-6 sm:mb-10">
           <Link to="/business-partner">
-            <Button variant="ghost" size="icon" className="text-white/70 hover:text-white hover:bg-white/10 border border-white/10">
-              <ArrowLeft className="w-5 h-5" />
+            <Button variant="ghost" size="icon" className="text-white/70 hover:text-white hover:bg-white/10 border border-white/10 w-8 h-8 sm:w-10 sm:h-10">
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </Link>
-          <div className="flex-1">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/30">
-                  <Box className="w-6 h-6 text-white" />
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/30 flex-shrink-0">
+                  <Box className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-3xl font-bold uppercase tracking-tight bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent">
+                <div className="min-w-0">
+                  <h1 className="text-xl sm:text-3xl font-bold uppercase tracking-tight bg-gradient-to-r from-white via-violet-200 to-purple-300 bg-clip-text text-transparent truncate">
                     DAO MANAGEMENT
                   </h1>
-                  <p className="text-white/50 text-sm flex items-center gap-2">
-                    <Terminal className="w-3 h-3" />
-                    Decentralized Autonomous Organizations
+                  <p className="text-white/50 text-xs sm:text-sm flex items-center gap-1 sm:gap-2 truncate">
+                    <Terminal className="w-3 h-3 flex-shrink-0" />
+                    <span className="truncate">Decentralized Organizations</span>
                   </p>
                 </div>
               </div>
               {isDemoMode && (
-                <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30 animate-pulse ml-4">
+                <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30 animate-pulse self-start sm:ml-4 text-xs">
                   <Sparkles className="w-3 h-3 mr-1" />
-                  Demo Mode
+                  Demo
                 </Badge>
               )}
             </div>
@@ -130,37 +130,37 @@ const DAOManagement = () => {
 
         {!walletAddress ? (
           /* Connect Wallet Prompt */
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-lg mx-auto px-2">
             <div className="relative group">
               {/* Glow Effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
               
               <Card className="relative bg-[#12121a]/90 backdrop-blur-xl border-white/10">
-                <CardContent className="p-12 text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-8">
+                <CardContent className="p-6 sm:p-12 text-center">
+                  <div className="relative w-16 h-16 sm:w-24 sm:h-24 mx-auto mb-6 sm:mb-8">
                     {/* Animated Rings */}
                     <div className="absolute inset-0 rounded-full border-2 border-violet-500/30 animate-ping" style={{ animationDuration: '2s' }} />
                     <div className="absolute inset-2 rounded-full border border-purple-500/40 animate-ping" style={{ animationDuration: '2.5s' }} />
                     <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-violet-500/40">
-                      <Wallet className="w-12 h-12 text-white" />
+                      <Wallet className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
                     </div>
                   </div>
                   
-                  <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-violet-200 bg-clip-text text-transparent">
+                  <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 bg-gradient-to-r from-white to-violet-200 bg-clip-text text-transparent">
                     Connect Your Wallet
                   </h2>
-                  <p className="text-white/50 mb-8 text-sm leading-relaxed">
-                    Connect your Web3 wallet to access DAO management features, vote on proposals, and manage treasury funds with blockchain-verified security.
+                  <p className="text-white/50 mb-6 sm:mb-8 text-xs sm:text-sm leading-relaxed">
+                    Connect your Web3 wallet to access DAO management features.
                   </p>
                   
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-3 sm:gap-4">
                     <Button 
                       onClick={connectWallet} 
                       size="lg"
-                      className="relative overflow-hidden bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 border-0 shadow-lg shadow-violet-500/30 group"
+                      className="relative overflow-hidden bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 border-0 shadow-lg shadow-violet-500/30 group h-10 sm:h-12 text-sm sm:text-base"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                      <Wallet className="w-5 h-5 mr-2" />
+                      <Wallet className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                       Connect Wallet
                     </Button>
                     
@@ -174,13 +174,13 @@ const DAOManagement = () => {
                       onClick={loadDemoData} 
                       variant="outline"
                       size="lg"
-                      className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/50 bg-transparent"
+                      className="border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/50 bg-transparent h-10 sm:h-12 text-sm sm:text-base"
                     >
-                      <Sparkles className="w-5 h-5 mr-2" />
+                      <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                       Try Demo Mode
                     </Button>
                     <p className="text-xs text-white/30">
-                      Explore with sample DAOs, proposals, and treasury data
+                      Explore with sample DAOs and data
                     </p>
                   </div>
                 </CardContent>
@@ -190,25 +190,25 @@ const DAOManagement = () => {
         ) : (
           <>
             {/* Stats Overview */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-6 sm:mb-10">
               {[
                 { icon: Vote, label: "Your DAOs", value: userDAOs.length, color: "violet", gradient: "from-violet-500 to-purple-600" },
                 { icon: Activity, label: "Active Votes", value: activeProposals, color: "cyan", gradient: "from-cyan-500 to-blue-600" },
-                { icon: Users, label: "Total Members", value: totalMembers, color: "emerald", gradient: "from-emerald-500 to-green-600" },
-                { icon: Coins, label: "Total Proposals", value: totalProposals, color: "amber", gradient: "from-amber-500 to-orange-600" },
+                { icon: Users, label: "Members", value: totalMembers, color: "emerald", gradient: "from-emerald-500 to-green-600" },
+                { icon: Coins, label: "Proposals", value: totalProposals, color: "amber", gradient: "from-amber-500 to-orange-600" },
               ].map((stat, i) => (
                 <div key={i} className="group relative">
                   <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.gradient} rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity`} />
                   <Card className="relative bg-[#12121a]/80 backdrop-blur-xl border-white/10 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-bl-full" />
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center shadow-lg`}>
-                          <stat.icon className="w-6 h-6 text-white" />
+                    <div className="absolute top-0 right-0 w-12 sm:w-20 h-12 sm:h-20 bg-gradient-to-br from-white/5 to-transparent rounded-bl-full" />
+                    <CardContent className="p-3 sm:p-5">
+                      <div className="flex items-center gap-2 sm:gap-4">
+                        <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center shadow-lg flex-shrink-0`}>
+                          <stat.icon className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-white">{stat.value}</div>
-                          <div className="text-xs text-white/50 uppercase tracking-wider">{stat.label}</div>
+                        <div className="min-w-0">
+                          <div className="text-xl sm:text-3xl font-bold text-white">{stat.value}</div>
+                          <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider truncate">{stat.label}</div>
                         </div>
                       </div>
                     </CardContent>
@@ -217,18 +217,18 @@ const DAOManagement = () => {
               ))}
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-3 gap-4 sm:gap-8">
               {/* DAO List Sidebar */}
-              <div className="lg:col-span-1 space-y-4">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-lg font-semibold text-white flex items-center gap-2">
+              <div className="lg:col-span-1 space-y-3 sm:space-y-4">
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <h2 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
                     <GitBranch className="w-4 h-4 text-violet-400" />
                     Your DAOs
                   </h2>
                   <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                     <DialogTrigger asChild>
-                      <Button size="sm" className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 border-0 shadow-lg shadow-violet-500/20">
-                        <Plus className="w-4 h-4 mr-1" />
+                      <Button size="sm" className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 border-0 shadow-lg shadow-violet-500/20 h-8 sm:h-9 text-xs sm:text-sm px-2 sm:px-3">
+                        <Plus className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                         Create
                       </Button>
                     </DialogTrigger>
@@ -448,27 +448,27 @@ const DAOManagement = () => {
 
                     {/* Tabs for Proposals and Treasury */}
                     <Tabs defaultValue="proposals" className="w-full">
-                      <TabsList className="w-full bg-[#12121a]/80 border border-white/10 p-1 rounded-xl">
+                      <TabsList className="w-full bg-[#12121a]/80 border border-white/10 p-1 rounded-xl grid grid-cols-3 h-auto">
                         <TabsTrigger 
                           value="proposals" 
-                          className="flex-1 data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-white/60"
+                          className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-white/60 text-xs sm:text-sm py-2 px-1 sm:px-4"
                         >
-                          <Vote className="w-4 h-4 mr-2" />
-                          Proposals
+                          <Vote className="w-3 h-3 sm:w-4 sm:h-4 sm:mr-2" />
+                          <span className="hidden sm:inline">Proposals</span>
                         </TabsTrigger>
                         <TabsTrigger 
                           value="treasury" 
-                          className="flex-1 data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-white/60"
+                          className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-white/60 text-xs sm:text-sm py-2 px-1 sm:px-4"
                         >
-                          <Coins className="w-4 h-4 mr-2" />
-                          Treasury
+                          <Coins className="w-3 h-3 sm:w-4 sm:h-4 sm:mr-2" />
+                          <span className="hidden sm:inline">Treasury</span>
                         </TabsTrigger>
                         <TabsTrigger 
                           value="members" 
-                          className="flex-1 data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-white/60"
+                          className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg text-white/60 text-xs sm:text-sm py-2 px-1 sm:px-4"
                         >
-                          <Users className="w-4 h-4 mr-2" />
-                          Members
+                          <Users className="w-3 h-3 sm:w-4 sm:h-4 sm:mr-2" />
+                          <span className="hidden sm:inline">Members</span>
                         </TabsTrigger>
                       </TabsList>
                       

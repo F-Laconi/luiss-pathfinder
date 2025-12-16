@@ -573,15 +573,12 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex md:hidden items-center space-x-2">
-            <Button variant="ghost" size="icon" asChild>
-              <Link to="/profile">
-                <User className="h-5 w-5" />
-              </Link>
-            </Button>
+          <div className="flex md:hidden items-center space-x-1">
             <WalletButton />
-            <Button variant="default" size="sm" onClick={() => setIsAuthOpen(true)}>
-              Sign Up
+            <Button variant="ghost" size="icon" className="w-8 h-8" asChild>
+              <Link to="/profile">
+                <User className="h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>
