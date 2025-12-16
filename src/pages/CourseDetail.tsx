@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import professorImage from "@/assets/professor-maximo-ibarra.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import OracleVerificationPanel from "@/components/blockchain/OracleVerificationPanel";
 import ReviewVerificationBadge from "@/components/blockchain/ReviewVerificationBadge";
+import { AIExamSimulator } from "@/components/AIExamSimulator";
 // Professor pool - different professors for different courses
 const professorPool = [{
   name: "Prof. Maximo Ibarra",
@@ -469,6 +471,7 @@ const CourseDetail = () => {
     courseId
   } = useParams();
   const navigate = useNavigate();
+  const [simulatorOpen, setSimulatorOpen] = useState(false);
   const course = graduateCoursesData[courseId || ""] || {
     name: "Course Not Found",
     credits: 6,
@@ -735,7 +738,11 @@ const CourseDetail = () => {
                       <p className="font-semibold text-foreground">Ready to ace your exam?</p>
                       <p className="text-sm text-muted-foreground">Start practicing with AI-powered exam simulations</p>
                     </div>
-                    <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/30 gap-2">
+                    <Button 
+                      size="lg" 
+                      className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/30 gap-2"
+                      onClick={() => setSimulatorOpen(true)}
+                    >
                       <Sparkles className="w-4 h-4" />
                       Try AI Simulator
                       <Badge variant="outline" className="ml-1 text-[10px] border-primary-foreground/30 text-primary-foreground">
@@ -746,6 +753,12 @@ const CourseDetail = () => {
                 </div>
               </CardContent>
             </Card>
+
+            <AIExamSimulator 
+              open={simulatorOpen} 
+              onOpenChange={setSimulatorOpen}
+              courseName={course.name}
+            />
           </div>
         </div>
       </main>
