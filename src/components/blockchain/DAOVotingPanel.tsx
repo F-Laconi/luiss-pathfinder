@@ -91,21 +91,21 @@ const DAOVotingPanel = ({ daoId }: DAOVotingPanelProps) => {
   };
 
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="flex items-center gap-2">
-          <Vote className="w-5 h-5 text-violet-500" />
+    <Card className="bg-[#12121a]/80 backdrop-blur-xl border-white/10">
+      <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 sm:p-6">
+        <CardTitle className="flex items-center gap-2 text-white text-base sm:text-lg">
+          <Vote className="w-4 h-4 sm:w-5 sm:h-5 text-violet-500" />
           Governance Proposals
         </CardTitle>
         
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button size="sm" variant="outline">
-              <Plus className="w-4 h-4 mr-1" />
+            <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 h-8 text-xs sm:text-sm">
+              <Plus className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
               New Proposal
             </Button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent className="mx-2 sm:mx-auto bg-card border-border max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Create New Proposal</DialogTitle>
             </DialogHeader>
@@ -156,14 +156,14 @@ const DAOVotingPanel = ({ daoId }: DAOVotingPanelProps) => {
         </Dialog>
       </CardHeader>
       
-      <CardContent>
+      <CardContent className="p-3 sm:p-6">
         {dao.proposals.length === 0 ? (
-          <div className="text-center py-8 text-muted-foreground">
-            <Vote className="w-12 h-12 mx-auto mb-3 opacity-50" />
-            <p>No proposals yet. Create one to start governance!</p>
+          <div className="text-center py-6 sm:py-8 text-muted-foreground">
+            <Vote className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 opacity-50" />
+            <p className="text-sm sm:text-base">No proposals yet. Create one to start!</p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {dao.proposals.map((proposal) => {
               const totalVotes = proposal.votes.for + proposal.votes.against + proposal.votes.abstain;
               const forPercent = totalVotes > 0 ? (proposal.votes.for / totalVotes) * 100 : 0;
@@ -172,26 +172,26 @@ const DAOVotingPanel = ({ daoId }: DAOVotingPanelProps) => {
               return (
                 <div
                   key={proposal.id}
-                  className="p-4 rounded-xl border border-border"
+                  className="p-3 sm:p-4 rounded-lg sm:rounded-xl border border-white/10 bg-white/5"
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-lg">{getTypeIcon(proposal.type)}</span>
-                        <h4 className="font-semibold">{proposal.title}</h4>
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2 sm:mb-3 gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5 sm:gap-2 mb-1 flex-wrap">
+                        <span className="text-base sm:text-lg">{getTypeIcon(proposal.type)}</span>
+                        <h4 className="font-semibold text-sm sm:text-base text-white truncate">{proposal.title}</h4>
                         {getStatusBadge(proposal.status)}
                       </div>
-                      <p className="text-sm text-muted-foreground">{proposal.description}</p>
+                      <p className="text-xs sm:text-sm text-white/60 line-clamp-2">{proposal.description}</p>
                     </div>
                   </div>
 
                   {/* Voting Progress */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between text-xs">
-                      <span className="text-emerald-500">For: {proposal.votes.for}</span>
-                      <span className="text-red-500">Against: {proposal.votes.against}</span>
+                  <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+                    <div className="flex justify-between text-[10px] sm:text-xs">
+                      <span className="text-emerald-400">For: {proposal.votes.for}</span>
+                      <span className="text-red-400">Against: {proposal.votes.against}</span>
                     </div>
-                    <div className="h-2 rounded-full bg-muted overflow-hidden flex">
+                    <div className="h-1.5 sm:h-2 rounded-full bg-white/10 overflow-hidden flex">
                       <div 
                         className="bg-emerald-500 transition-all" 
                         style={{ width: `${forPercent}%` }} 
@@ -201,59 +201,65 @@ const DAOVotingPanel = ({ daoId }: DAOVotingPanelProps) => {
                         style={{ width: `${againstPercent}%` }} 
                       />
                     </div>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <div className="flex items-center justify-between text-[10px] sm:text-xs text-white/50">
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        Ends: {new Date(proposal.deadline).toLocaleDateString()}
+                        <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                        {new Date(proposal.deadline).toLocaleDateString()}
                       </span>
-                      <span>{totalVotes} total votes</span>
+                      <span>{totalVotes} votes</span>
                     </div>
                   </div>
 
                   {/* Voting Buttons */}
                   {proposal.status === "active" && (
-                    <div className="flex gap-2">
+                    <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                       <Button
                         size="sm"
                         variant="outline"
-                        className="flex-1 border-emerald-500/30 text-emerald-600 hover:bg-emerald-500/10"
+                        className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 h-8 sm:h-9 text-xs sm:text-sm px-1 sm:px-3"
                         onClick={() => handleVote(proposal.id, "for")}
                         disabled={votingProposalId === proposal.id}
                       >
                         {votingProposalId === proposal.id ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <Loader2 className="w-3 h-3 sm:w-4 sm:h-4 animate-spin" />
                         ) : (
-                          <ThumbsUp className="w-4 h-4 mr-1" />
+                          <>
+                            <ThumbsUp className="w-3 h-3 sm:w-4 sm:h-4 sm:mr-1" />
+                            <span className="hidden sm:inline">For</span>
+                          </>
                         )}
-                        For
                       </Button>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="flex-1 border-red-500/30 text-red-600 hover:bg-red-500/10"
+                        className="border-red-500/30 text-red-400 hover:bg-red-500/10 h-8 sm:h-9 text-xs sm:text-sm px-1 sm:px-3"
                         onClick={() => handleVote(proposal.id, "against")}
                         disabled={votingProposalId === proposal.id}
                       >
                         {votingProposalId === proposal.id ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <Loader2 className="w-3 h-3 sm:w-4 sm:h-4 animate-spin" />
                         ) : (
-                          <ThumbsDown className="w-4 h-4 mr-1" />
+                          <>
+                            <ThumbsDown className="w-3 h-3 sm:w-4 sm:h-4 sm:mr-1" />
+                            <span className="hidden sm:inline">Against</span>
+                          </>
                         )}
-                        Against
                       </Button>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="flex-1"
+                        className="border-white/20 text-white/60 hover:bg-white/10 h-8 sm:h-9 text-xs sm:text-sm px-1 sm:px-3"
                         onClick={() => handleVote(proposal.id, "abstain")}
                         disabled={votingProposalId === proposal.id}
                       >
                         {votingProposalId === proposal.id ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <Loader2 className="w-3 h-3 sm:w-4 sm:h-4 animate-spin" />
                         ) : (
-                          <Minus className="w-4 h-4 mr-1" />
+                          <>
+                            <Minus className="w-3 h-3 sm:w-4 sm:h-4 sm:mr-1" />
+                            <span className="hidden sm:inline">Abstain</span>
+                          </>
                         )}
-                        Abstain
                       </Button>
                     </div>
                   )}
