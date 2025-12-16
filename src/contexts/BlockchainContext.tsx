@@ -229,7 +229,7 @@ export const BlockchainProvider = ({ children }: { children: ReactNode }) => {
       id: "demo-user-001",
       email: "francesco.laconi@studenti.luiss.it",
       name: "Francesco Laconi",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Francesco&top=longHairBun&accessories=prescription02&facialHairType=beardLight&facialHairColor=4a312c",
+      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
       university: "LUISS Guido Carli",
       program: "Strategic Management",
       year: 2,
