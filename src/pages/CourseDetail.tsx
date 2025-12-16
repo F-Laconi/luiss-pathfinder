@@ -486,7 +486,7 @@ const CourseDetail = () => {
       
       <main className="container mx-auto px-4 sm:px-6 py-8 max-w-7xl">
         {/* Back button */}
-        <Link to="/school/graduate" className="inline-flex items-center text-primary hover:text-primary/80 mb-6">
+        <Link to="/school/graduate" className="inline-flex items-center text-primary hover:text-primary/80 mb-6 mx-auto lg:mx-0 w-full justify-center lg:justify-start">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Graduate Programs
         </Link>
@@ -575,14 +575,14 @@ const CourseDetail = () => {
             {/* Course description */}
             <Card>
               <CardHeader>
-                <CardTitle>Course Description</CardTitle>
+                <CardTitle className="text-center sm:text-left">Course Description</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-6">{course.description}</p>
+                <p className="text-muted-foreground mb-6 text-center sm:text-left">{course.description}</p>
                 
-                <h4 className="font-semibold mb-4 text-lg">What You'll Actually Learn</h4>
+                <h4 className="font-semibold mb-4 text-lg text-center sm:text-left">What You'll Actually Learn</h4>
                 <div className="space-y-4">
-                  {learningOutcomes.map((outcome, index) => <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary">
+                  {learningOutcomes.map((outcome, index) => <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-transparent border-l-4 border-primary text-center sm:text-left">
                       <span className="text-2xl">{outcome.emoji}</span>
                       <div>
                         <span className="font-medium text-foreground">{outcome.title}</span>
@@ -591,7 +591,7 @@ const CourseDetail = () => {
                     </div>)}
                 </div>
 
-                <div className="mt-6 pt-6 border-t">
+                <div className="mt-6 pt-6 border-t text-center sm:text-left">
                   <h4 className="font-semibold mb-2">Prerequisites</h4>
                   <p className="text-muted-foreground">Bachelor's degree or equivalent qualification. Basic knowledge of the subject area recommended.</p>
                 </div>
@@ -601,7 +601,7 @@ const CourseDetail = () => {
             {/* Student Notes Section */}
             <Card>
               <CardHeader>
-                <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
                   <div>
                     <CardTitle>Student Notes Available</CardTitle>
                     <p className="text-sm text-muted-foreground italic">made by students, for students</p>
@@ -617,13 +617,13 @@ const CourseDetail = () => {
               <CardContent>
                 <div className="space-y-4">
                   {studentNotes.map(note => <div key={note.id} className={`border rounded-lg p-4 transition-all ${note.isVerified ? 'hover:bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/40' : 'hover:bg-muted/50'}`}>
-                      <div className="flex justify-between items-start mb-3">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 flex-wrap">
+                      <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-3 mb-3">
+                        <div className="flex-1 text-center sm:text-left w-full">
+                          <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
                             <h4 className="font-semibold">{note.studentName} - {note.year}</h4>
                             <ReviewVerificationBadge isVerified={note.isVerified} grade={note.isVerified ? note.grade : undefined} txHash={note.txHash} verifiedAt={note.verifiedAt} />
                           </div>
-                          <div className="flex items-center gap-2 mt-1 flex-wrap">
+                          <div className="flex items-center justify-center sm:justify-start gap-2 mt-1 flex-wrap">
                             <div className="flex items-center">
                               {Array.from({
                             length: Math.floor(note.rating)
@@ -635,7 +635,7 @@ const CourseDetail = () => {
                             <span className="text-sm text-muted-foreground">• Grade: {note.grade}</span>
                           </div>
                         </div>
-                        <div className="text-right ml-4">
+                        <div className="text-center sm:text-right">
                           <div className="font-bold text-lg text-primary">{note.price}</div>
                           <Button size="sm" className="mt-1" onClick={() => navigate('/checkout', {
                         state: {
@@ -646,9 +646,9 @@ const CourseDetail = () => {
                           </Button>
                         </div>
                       </div>
-                      <p className="text-sm text-muted-foreground">{note.description}</p>
+                      <p className="text-sm text-muted-foreground text-center sm:text-left">{note.description}</p>
                       
-                      {note.isVerified && <div className="mt-3 pt-3 border-t border-emerald-500/20 flex items-center gap-2 text-xs text-emerald-600">
+                      {note.isVerified && <div className="mt-3 pt-3 border-t border-emerald-500/20 flex items-center justify-center sm:justify-start gap-2 text-xs text-emerald-600">
                           <ShieldCheck className="w-3.5 h-3.5" />
                           <span>Oracle verified attendance & grade on {note.verifiedAt?.toLocaleDateString()}</span>
                         </div>}
