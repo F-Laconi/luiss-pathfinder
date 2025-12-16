@@ -86,8 +86,8 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-lg transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-12">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-12 min-w-0">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <DropdownMenu>
@@ -573,9 +573,9 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex md:hidden items-center space-x-1">
+          <div className="flex md:hidden items-center gap-0.5 flex-shrink-0">
             <WalletButton />
-            <Button variant="ghost" size="icon" className="w-8 h-8" asChild>
+            <Button variant="ghost" size="icon" className="w-7 h-7 flex-shrink-0" asChild>
               <Link to="/profile">
                 <User className="h-4 w-4" />
               </Link>
