@@ -143,9 +143,7 @@ const StudentBoard = () => {
               ← Back to Business Partner
             </Link>
             <h1 className="font-nunito text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 drop-shadow-lg">Student's Profile Board</h1>
-            <p className="text-sm sm:text-lg text-white/90 max-w-3xl drop-shadow">
-              Connect with fellow students and join exciting projects!
-            </p>
+            <p className="text-sm sm:text-lg text-white/90 max-w-3xl drop-shadow">Connect with fellow students to launch your projects!</p>
           </div>
         </header>
       </div>
