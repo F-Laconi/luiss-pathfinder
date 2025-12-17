@@ -13,79 +13,70 @@ import { useForm } from "react-hook-form";
 import Navigation from "@/components/Navigation";
 import postPositionBackground from "@/assets/post-position-background.png";
 // Mock data for existing projects
-const mockProjects = [
-  {
-    id: 1,
-    title: "EduBlockChain",
-    briefDescription: "A blockchain-based platform designed to help students with verified credentials, course reviews, and collaborative projects",
-    skillsNeeded: ["Blockchain Developer", "Marketer"],
-    author: "Francesco L., Mattia M. M., Kristoffer L. H.",
-    fullDescription: "EduBlockChain is revolutionizing the student experience through blockchain technology. Our platform enables verified student credentials, anonymous but trusted course reviews, and transparent project collaboration through DAOs. Join us to build the future of education.",
-    stage: "MVP Ready",
-    goals: "Launch beta and onboard first 1000 students"
-  },
-  {
-    id: 2,
-    title: "3Better",
-    briefDescription: "A sustainable startup focused on biomethane production and renewable energy solutions",
-    skillsNeeded: ["Financial Advisor", "Chemist"],
-    author: "Filippo A., Katharina H.",
-    fullDescription: "3Better is pioneering sustainable biomethane production from organic waste. We're building scalable solutions to transform agricultural and food waste into clean energy, contributing to a circular economy and carbon neutrality goals.",
-    stage: "Concept",
-    goals: "Secure seed funding and validate production process"
-  },
-  {
-    id: 3,
-    title: "UrbanCommon",
-    briefDescription: "A platform that aims to enhance and optimize green areas in urban cities through data-driven insights",
-    skillsNeeded: ["Data Analyst"],
-    author: "Andrea P.",
-    fullDescription: "UrbanCommon connects citizens, municipalities, and urban planners to maximize the potential of city green spaces. Using data analytics and community feedback, we identify underutilized areas and propose sustainable improvements for healthier, greener cities.",
-    stage: "Beta Testing",
-    goals: "Partner with 3 municipalities for pilot program"
-  },
-  {
-    id: 4,
-    title: "Project 4",
-    briefDescription: "Innovative solution for modern challenges",
-    skillsNeeded: ["Frontend", "Backend", "UI/UX"],
-    author: "Student D.",
-    fullDescription: "Detailed description of project 4. We're addressing important market needs.",
-    stage: "Concept",
-    goals: "Validate market fit and expand"
-  },
-  {
-    id: 5,
-    title: "Project 5",
-    briefDescription: "Creative project with high impact potential",
-    skillsNeeded: ["Data Science", "Analytics", "Strategy"],
-    author: "Student E.",
-    fullDescription: "Detailed description of project 5. Help us make a difference through data-driven solutions.",
-    stage: "MVP Ready",
-    goals: "Achieve product-market fit"
-  },
-  {
-    id: 6,
-    title: "Project 6",
-    briefDescription: "Groundbreaking platform for future growth",
-    skillsNeeded: ["Product Management", "Engineering", "Growth"],
-    author: "Student F.",
-    fullDescription: "Detailed description of project 6. Building the future, one feature at a time.",
-    stage: "Beta Testing",
-    goals: "User acquisition and retention"
-  },
-  {
-    id: 7,
-    title: "Project 7",
-    briefDescription: "Transformative project seeking passionate collaborators",
-    skillsNeeded: ["Business Development", "Sales", "Operations"],
-    author: "Student G.",
-    fullDescription: "Detailed description of project 7. Join our mission to transform the industry.",
-    stage: "Concept",
-    goals: "Build team and secure funding"
-  }
-];
-
+const mockProjects = [{
+  id: 1,
+  title: "EduBlockChain",
+  briefDescription: "A blockchain-based platform designed to help students with verified credentials, course reviews, and collaborative projects",
+  skillsNeeded: ["Blockchain Developer", "Marketer"],
+  author: "Francesco L., Mattia M. M., Kristoffer L. H.",
+  fullDescription: "EduBlockChain is revolutionizing the student experience through blockchain technology. Our platform enables verified student credentials, anonymous but trusted course reviews, and transparent project collaboration through DAOs. Join us to build the future of education.",
+  stage: "MVP Ready",
+  goals: "Launch beta and onboard first 1000 students"
+}, {
+  id: 2,
+  title: "3Better",
+  briefDescription: "A sustainable startup focused on biomethane production and renewable energy solutions",
+  skillsNeeded: ["Financial Advisor", "Chemist"],
+  author: "Filippo A., Katharina H.",
+  fullDescription: "3Better is pioneering sustainable biomethane production from organic waste. We're building scalable solutions to transform agricultural and food waste into clean energy, contributing to a circular economy and carbon neutrality goals.",
+  stage: "Concept",
+  goals: "Secure seed funding and validate production process"
+}, {
+  id: 3,
+  title: "UrbanCommon",
+  briefDescription: "A platform that aims to enhance and optimize green areas in urban cities through data-driven insights",
+  skillsNeeded: ["Data Analyst"],
+  author: "Andrea P.",
+  fullDescription: "UrbanCommon connects citizens, municipalities, and urban planners to maximize the potential of city green spaces. Using data analytics and community feedback, we identify underutilized areas and propose sustainable improvements for healthier, greener cities.",
+  stage: "Beta Testing",
+  goals: "Partner with 3 municipalities for pilot program"
+}, {
+  id: 4,
+  title: "Project 4",
+  briefDescription: "Innovative solution for modern challenges",
+  skillsNeeded: ["Frontend", "Backend", "UI/UX"],
+  author: "Student D.",
+  fullDescription: "Detailed description of project 4. We're addressing important market needs.",
+  stage: "Concept",
+  goals: "Validate market fit and expand"
+}, {
+  id: 5,
+  title: "Project 5",
+  briefDescription: "Creative project with high impact potential",
+  skillsNeeded: ["Data Science", "Analytics", "Strategy"],
+  author: "Student E.",
+  fullDescription: "Detailed description of project 5. Help us make a difference through data-driven solutions.",
+  stage: "MVP Ready",
+  goals: "Achieve product-market fit"
+}, {
+  id: 6,
+  title: "Project 6",
+  briefDescription: "Groundbreaking platform for future growth",
+  skillsNeeded: ["Product Management", "Engineering", "Growth"],
+  author: "Student F.",
+  fullDescription: "Detailed description of project 6. Building the future, one feature at a time.",
+  stage: "Beta Testing",
+  goals: "User acquisition and retention"
+}, {
+  id: 7,
+  title: "Project 7",
+  briefDescription: "Transformative project seeking passionate collaborators",
+  skillsNeeded: ["Business Development", "Sales", "Operations"],
+  author: "Student G.",
+  fullDescription: "Detailed description of project 7. Join our mission to transform the industry.",
+  stage: "Concept",
+  goals: "Build team and secure funding"
+}];
 const PostPosition = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showForm, setShowForm] = useState(false);
@@ -96,12 +87,11 @@ const PostPosition = () => {
   const [sortBy, setSortBy] = useState<string>("recent");
   const [isLoading, setIsLoading] = useState(true);
   const [bookmarkedProjects, setBookmarkedProjects] = useState<number[]>([]);
-  
+
   // Simulate loading
   useState(() => {
     setTimeout(() => setIsLoading(false), 800);
   });
-  
   const form = useForm({
     defaultValues: {
       title: "",
@@ -117,7 +107,6 @@ const PostPosition = () => {
   const allStages = useMemo(() => {
     return Array.from(new Set(projects.map(p => p.stage)));
   }, [projects]);
-
   const allSkills = useMemo(() => {
     const skills = new Set<string>();
     projects.forEach(p => p.skillsNeeded.forEach(skill => skills.add(skill)));
@@ -127,14 +116,9 @@ const PostPosition = () => {
   // Filter and sort projects
   const filteredAndSortedProjects = useMemo(() => {
     let filtered = projects.filter(project => {
-      const matchesSearch = 
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.briefDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.skillsNeeded.some(skill => skill.toLowerCase().includes(searchQuery.toLowerCase()));
-      
+      const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || project.briefDescription.toLowerCase().includes(searchQuery.toLowerCase()) || project.skillsNeeded.some(skill => skill.toLowerCase().includes(searchQuery.toLowerCase()));
       const matchesStage = selectedStage === "all" || project.stage === selectedStage;
       const matchesSkill = selectedSkill === "all" || project.skillsNeeded.includes(selectedSkill);
-      
       return matchesSearch && matchesStage && matchesSkill;
     });
 
@@ -151,10 +135,8 @@ const PostPosition = () => {
         // Keep original order (most recent first)
         break;
     }
-
     return filtered;
   }, [projects, searchQuery, selectedStage, selectedSkill, sortBy]);
-
   const onSubmit = (data: any) => {
     const newProject = {
       id: projects.length + 1,
@@ -170,26 +152,16 @@ const PostPosition = () => {
     setShowForm(false);
     form.reset();
   };
-
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedStage("all");
     setSelectedSkill("all");
     setSortBy("recent");
   };
-
-  const activeFiltersCount = 
-    (searchQuery ? 1 : 0) + 
-    (selectedStage !== "all" ? 1 : 0) + 
-    (selectedSkill !== "all" ? 1 : 0);
-
+  const activeFiltersCount = (searchQuery ? 1 : 0) + (selectedStage !== "all" ? 1 : 0) + (selectedSkill !== "all" ? 1 : 0);
   const toggleBookmark = (projectId: number, e: React.MouseEvent) => {
     e.stopPropagation();
-    setBookmarkedProjects(prev => 
-      prev.includes(projectId) 
-        ? prev.filter(id => id !== projectId)
-        : [...prev, projectId]
-    );
+    setBookmarkedProjects(prev => prev.includes(projectId) ? prev.filter(id => id !== projectId) : [...prev, projectId]);
   };
 
   // Initialize loading effect
@@ -198,30 +170,26 @@ const PostPosition = () => {
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
-
-  return (
-    <div>
+  return <div>
       <Navigation />
       <div className="relative min-h-screen">
         {/* Hero Background */}
-        <div 
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${postPositionBackground})` }}
-        />
+        <div className="fixed inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${postPositionBackground})`
+      }} />
         <div className="fixed inset-0 bg-black/60" />
         
         {/* Floating gradient orbs */}
         <div className="fixed top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
-        <div className="fixed bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="fixed bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse" style={{
+        animationDelay: '1s'
+      }} />
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[150px]" />
         
         <div className="relative z-10 min-h-screen px-3 sm:px-6 py-6 sm:py-8 pt-20 sm:pt-24">
           {/* Header */}
           <div className="mb-6 sm:mb-8 animate-fade-in">
-            <Link 
-              to="/business-partner" 
-              className="inline-flex items-center text-white/70 hover:text-white font-medium mb-4 sm:mb-6 transition-colors group text-sm sm:text-base"
-            >
+            <Link to="/business-partner" className="inline-flex items-center text-white/70 hover:text-white font-medium mb-4 sm:mb-6 transition-colors group text-sm sm:text-base">
               <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
               Back
             </Link>
@@ -232,12 +200,8 @@ const PostPosition = () => {
                   <Rocket className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span>Project Board</span>
                 </div>
-                <h1 className="font-helvetica text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4 leading-tight uppercase tracking-tight">
-                  Student Projects
-                </h1>
-                <p className="text-white/70 text-sm sm:text-lg leading-relaxed">
-                  Discover projects seeking collaborators
-                </p>
+                <h1 className="font-helvetica text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4 leading-tight uppercase tracking-tight">STUDENT'S PROJECTS BOARD</h1>
+                <p className="text-white/70 text-sm sm:text-lg leading-relaxed">Discover the perfect project for your interest</p>
                 
                 {/* Quick Stats */}
                 <div className="flex gap-4 sm:gap-6 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
@@ -269,107 +233,65 @@ const PostPosition = () => {
                   </DialogHeader>
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                      <FormField
-                        control={form.control}
-                        name="title"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="title" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Project Title</FormLabel>
                             <FormControl>
                               <Input placeholder="My Amazing Project" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="briefDescription"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="briefDescription" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Brief Description</FormLabel>
                             <FormControl>
-                              <Textarea 
-                                placeholder="A short description of your project..."
-                                className="min-h-[80px]"
-                                {...field} 
-                              />
+                              <Textarea placeholder="A short description of your project..." className="min-h-[80px]" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="skillsNeeded"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="skillsNeeded" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Skills Needed (comma separated)</FormLabel>
                             <FormControl>
-                              <Input 
-                                placeholder="React, Design, Marketing, etc."
-                                {...field} 
-                              />
+                              <Input placeholder="React, Design, Marketing, etc." {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="stage"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="stage" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Project Stage</FormLabel>
                             <FormControl>
-                              <Input 
-                                placeholder="Concept, MVP, Beta, etc."
-                                {...field} 
-                              />
+                              <Input placeholder="Concept, MVP, Beta, etc." {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="fullDescription"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="fullDescription" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Full Description</FormLabel>
                             <FormControl>
-                              <Textarea 
-                                placeholder="Detailed description of your project, goals, and what kind of help you need..."
-                                className="min-h-[120px]"
-                                {...field} 
-                              />
+                              <Textarea placeholder="Detailed description of your project, goals, and what kind of help you need..." className="min-h-[120px]" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
-                      <FormField
-                        control={form.control}
-                        name="goals"
-                        render={({ field }) => (
-                          <FormItem>
+                      <FormField control={form.control} name="goals" render={({
+                      field
+                    }) => <FormItem>
                             <FormLabel>Goals</FormLabel>
                             <FormControl>
-                              <Textarea 
-                                placeholder="What do you want to achieve?"
-                                className="min-h-[80px]"
-                                {...field} 
-                              />
+                              <Textarea placeholder="What do you want to achieve?" className="min-h-[80px]" {...field} />
                             </FormControl>
                             <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                          </FormItem>} />
                       
                       <Button type="submit" className="w-full">
                         Post Project
@@ -382,27 +304,17 @@ const PostPosition = () => {
           </div>
 
           {/* Search and Filters Section */}
-          <div className="max-w-7xl mx-auto mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <div className="max-w-7xl mx-auto mb-6 sm:mb-8 animate-fade-in" style={{
+          animationDelay: '0.1s'
+        }}>
             <div className="bg-white/10 backdrop-blur-xl p-4 sm:p-6 rounded-xl border border-white/20 shadow-xl">
               {/* Search Bar */}
               <div className="relative mb-3 sm:mb-4 group">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-white/50 group-focus-within:text-primary transition-colors" />
-                <Input
-                  placeholder="Search projects..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 pr-10 h-10 sm:h-12 text-sm sm:text-base bg-white/10 border-white/20 focus:border-primary/50 text-white placeholder:text-white/40 transition-colors"
-                />
-                {searchQuery && (
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 text-white/60 hover:text-white hover:bg-white/10"
-                    onClick={() => setSearchQuery("")}
-                  >
+                <Input placeholder="Search projects..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10 pr-10 h-10 sm:h-12 text-sm sm:text-base bg-white/10 border-white/20 focus:border-primary/50 text-white placeholder:text-white/40 transition-colors" />
+                {searchQuery && <Button variant="ghost" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 text-white/60 hover:text-white hover:bg-white/10" onClick={() => setSearchQuery("")}>
                     <X className="h-4 w-4" />
-                  </Button>
-                )}
+                  </Button>}
               </div>
 
               {/* Filters Row */}
@@ -419,9 +331,7 @@ const PostPosition = () => {
                     </SelectTrigger>
                     <SelectContent className="bg-background border-border">
                       <SelectItem value="all">All Stages</SelectItem>
-                      {allStages.map(stage => (
-                        <SelectItem key={stage} value={stage}>{stage}</SelectItem>
-                      ))}
+                      {allStages.map(stage => <SelectItem key={stage} value={stage}>{stage}</SelectItem>)}
                     </SelectContent>
                   </Select>
 
@@ -431,9 +341,7 @@ const PostPosition = () => {
                     </SelectTrigger>
                     <SelectContent className="bg-background border-border">
                       <SelectItem value="all">All Skills</SelectItem>
-                      {allSkills.map(skill => (
-                        <SelectItem key={skill} value={skill}>{skill}</SelectItem>
-                      ))}
+                      {allSkills.map(skill => <SelectItem key={skill} value={skill}>{skill}</SelectItem>)}
                     </SelectContent>
                   </Select>
 
@@ -448,17 +356,10 @@ const PostPosition = () => {
                     </SelectContent>
                   </Select>
 
-                  {activeFiltersCount > 0 && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={clearFilters}
-                      className="h-9 text-white/70 hover:text-white hover:bg-white/10 text-xs sm:text-sm"
-                    >
+                  {activeFiltersCount > 0 && <Button variant="ghost" size="sm" onClick={clearFilters} className="h-9 text-white/70 hover:text-white hover:bg-white/10 text-xs sm:text-sm">
                       <X className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                       Clear
-                    </Button>
-                  )}
+                    </Button>}
                 </div>
               </div>
 
@@ -472,10 +373,8 @@ const PostPosition = () => {
           </div>
 
           {/* Projects Grid or Loading State */}
-          {isLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-xl p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/10 animate-pulse">
+          {isLoading ? <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
+              {[1, 2, 3, 4, 5, 6].map(i => <div key={i} className="bg-white/5 backdrop-blur-xl p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-white/10 animate-pulse">
                   <div className="flex items-start justify-between mb-4">
                     <Skeleton className="h-6 w-24 bg-white/10" />
                     <Skeleton className="h-5 w-5 rounded-full bg-white/10" />
@@ -493,28 +392,38 @@ const PostPosition = () => {
                       <Skeleton className="h-4 w-24 bg-white/10" />
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          ) : filteredAndSortedProjects.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
+                </div>)}
+            </div> : filteredAndSortedProjects.length > 0 ? <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
               {filteredAndSortedProjects.map((project, index) => {
-                const isBookmarked = bookmarkedProjects.includes(project.id);
-                const stageConfig = {
-                  "Concept": { bg: "from-blue-500/20 to-blue-600/10", badge: "bg-blue-500/20 text-blue-300 border-blue-400/30", icon: Lightbulb },
-                  "MVP Ready": { bg: "from-purple-500/20 to-purple-600/10", badge: "bg-purple-500/20 text-purple-300 border-purple-400/30", icon: Code },
-                  "Beta Testing": { bg: "from-green-500/20 to-green-600/10", badge: "bg-green-500/20 text-green-300 border-green-400/30", icon: TrendingUp }
-                };
-                const config = stageConfig[project.stage as keyof typeof stageConfig] || { bg: "from-orange-500/20 to-orange-600/10", badge: "bg-orange-500/20 text-orange-300 border-orange-400/30", icon: Sparkles };
-                const StageIcon = config.icon;
-                
-                return (
-                  <Dialog key={project.id}>
+            const isBookmarked = bookmarkedProjects.includes(project.id);
+            const stageConfig = {
+              "Concept": {
+                bg: "from-blue-500/20 to-blue-600/10",
+                badge: "bg-blue-500/20 text-blue-300 border-blue-400/30",
+                icon: Lightbulb
+              },
+              "MVP Ready": {
+                bg: "from-purple-500/20 to-purple-600/10",
+                badge: "bg-purple-500/20 text-purple-300 border-purple-400/30",
+                icon: Code
+              },
+              "Beta Testing": {
+                bg: "from-green-500/20 to-green-600/10",
+                badge: "bg-green-500/20 text-green-300 border-green-400/30",
+                icon: TrendingUp
+              }
+            };
+            const config = stageConfig[project.stage as keyof typeof stageConfig] || {
+              bg: "from-orange-500/20 to-orange-600/10",
+              badge: "bg-orange-500/20 text-orange-300 border-orange-400/30",
+              icon: Sparkles
+            };
+            const StageIcon = config.icon;
+            return <Dialog key={project.id}>
                     <DialogTrigger asChild>
-                      <div 
-                        className={`group relative bg-gradient-to-br ${config.bg} backdrop-blur-xl p-6 rounded-2xl border border-white/10 cursor-pointer hover:border-white/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in overflow-hidden`}
-                        style={{ animationDelay: `${index * 0.05}s` }}
-                      >
+                      <div className={`group relative bg-gradient-to-br ${config.bg} backdrop-blur-xl p-6 rounded-2xl border border-white/10 cursor-pointer hover:border-white/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in overflow-hidden`} style={{
+                  animationDelay: `${index * 0.05}s`
+                }}>
                         {/* Glow effect on hover */}
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                         
@@ -525,17 +434,8 @@ const PostPosition = () => {
                               {project.stage}
                             </Badge>
                             <div className="flex gap-2">
-                              <Button
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 hover:bg-white/10 transition-colors"
-                                onClick={(e) => toggleBookmark(project.id, e)}
-                              >
-                                <Bookmark 
-                                  className={`h-4 w-4 transition-all ${
-                                    isBookmarked ? 'fill-primary text-primary scale-110' : 'text-white/50 hover:text-white'
-                                  }`}
-                                />
+                              <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-white/10 transition-colors" onClick={e => toggleBookmark(project.id, e)}>
+                                <Bookmark className={`h-4 w-4 transition-all ${isBookmarked ? 'fill-primary text-primary scale-110' : 'text-white/50 hover:text-white'}`} />
                               </Button>
                               <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                 <Eye className="w-4 h-4 text-white/70" />
@@ -545,20 +445,12 @@ const PostPosition = () => {
                           <h3 className="font-bold text-xl mb-3 text-white group-hover:text-primary transition-colors">{project.title}</h3>
                           <p className="text-white/60 mb-4 text-sm leading-relaxed line-clamp-2">{project.briefDescription}</p>
                           <div className="flex flex-wrap gap-2 mb-4">
-                            {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => (
-                              <Badge 
-                                key={skillIndex}
-                                variant="outline"
-                                className="px-3 py-1 bg-white/5 text-white/80 text-xs font-medium border-white/20 hover:bg-white/10 hover:scale-105 transition-all"
-                              >
+                            {project.skillsNeeded.slice(0, 3).map((skill, skillIndex) => <Badge key={skillIndex} variant="outline" className="px-3 py-1 bg-white/5 text-white/80 text-xs font-medium border-white/20 hover:bg-white/10 hover:scale-105 transition-all">
                                 {skill}
-                              </Badge>
-                            ))}
-                            {project.skillsNeeded.length > 3 && (
-                              <Badge className="px-3 py-1 text-xs font-medium bg-white/10 text-white/60 border-white/10">
+                              </Badge>)}
+                            {project.skillsNeeded.length > 3 && <Badge className="px-3 py-1 text-xs font-medium bg-white/10 text-white/60 border-white/10">
                                 +{project.skillsNeeded.length - 3} more
-                              </Badge>
-                            )}
+                              </Badge>}
                           </div>
                           <div className="flex items-center justify-between pt-3 border-t border-white/10">
                             <div className="flex items-center space-x-2">
@@ -594,14 +486,9 @@ const PostPosition = () => {
                             <h4 className="font-semibold">Skills Needed</h4>
                           </div>
                           <div className="flex flex-wrap gap-2">
-                            {project.skillsNeeded.map((skill, skillIndex) => (
-                              <Badge 
-                                key={skillIndex}
-                                className="px-3 py-1.5 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
-                              >
+                            {project.skillsNeeded.map((skill, skillIndex) => <Badge key={skillIndex} className="px-3 py-1.5 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors">
                                 {skill}
-                              </Badge>
-                            ))}
+                              </Badge>)}
                           </div>
                         </div>
                         
@@ -627,35 +514,25 @@ const PostPosition = () => {
                         </div>
                       </div>
                     </DialogContent>
-                </Dialog>
-              );
-            })}
-          </div>
-          ) : (
-            <div className="max-w-2xl mx-auto animate-fade-in">
+                </Dialog>;
+          })}
+          </div> : <div className="max-w-2xl mx-auto animate-fade-in">
               <div className="bg-white/10 backdrop-blur-xl p-12 rounded-2xl border border-white/20 text-center shadow-2xl">
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center animate-pulse">
                   <Search className="h-10 w-10 text-primary/60" />
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-white">No projects found</h3>
                 <p className="text-white/60 mb-6 max-w-md mx-auto">
-                  {searchQuery || selectedStage !== "all" || selectedSkill !== "all"
-                    ? "Try adjusting your filters or search query to find more projects."
-                    : "Be the first to post a project and start building something amazing!"}
+                  {searchQuery || selectedStage !== "all" || selectedSkill !== "all" ? "Try adjusting your filters or search query to find more projects." : "Be the first to post a project and start building something amazing!"}
                 </p>
-                {activeFiltersCount > 0 && (
-                  <Button onClick={clearFilters} variant="outline" className="group border-white/20 text-white hover:bg-white/10">
+                {activeFiltersCount > 0 && <Button onClick={clearFilters} variant="outline" className="group border-white/20 text-white hover:bg-white/10">
                     <X className="h-4 w-4 mr-2 group-hover:rotate-90 transition-transform" />
                     Clear all filters
-                  </Button>
-                )}
+                  </Button>}
               </div>
-            </div>
-          )}
+            </div>}
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default PostPosition;
