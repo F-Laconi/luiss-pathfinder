@@ -586,7 +586,7 @@ const programsData: Record<string, any> = {
         credits: 6,
         description: "Strategic research"
       }, {
-        name: "Strategy Project",
+        name: "IP...",
         credits: 6,
         description: "Consulting engagement"
       }]
