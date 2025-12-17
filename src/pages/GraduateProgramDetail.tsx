@@ -583,7 +583,7 @@ const programsData: Record<string, any> = {
         description: "Sustainable innovation through emerging tech"
       }, {
         name: "Master's Thesis",
-        credits: 21,
+        credits: 6,
         description: "Strategic research"
       }, {
         name: "Strategy Project",
