@@ -68,9 +68,7 @@ const BusinessPartner = () => {
                     <h2 className="font-nunito text-2xl md:text-3xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] group-hover:text-white transition-colors duration-300">
                       Find Opportunities
                     </h2>
-                    <p className="text-white/80 text-base drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                      Browse curated positions from top employers
-                    </p>
+                    <p className="text-white/80 text-base drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">Student's Profiles Board</p>
                   </div>
                 </div>
               </Link>
@@ -90,9 +88,7 @@ const BusinessPartner = () => {
                     <h2 className="font-nunito text-2xl md:text-3xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] group-hover:text-white transition-colors duration-300">
                       Post Opportunities
                     </h2>
-                    <p className="text-white/80 text-base drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                      Connect with qualified professionals
-                    </p>
+                    <p className="text-white/80 text-base drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">Student's Projects Board</p>
                   </div>
                 </div>
               </Link>
